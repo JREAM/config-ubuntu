@@ -1,0 +1,34 @@
+# Install Terminator and run:
+#   $ mkdir ~/.config/terminator/
+#   $ touch ~/.config/terminator/config
+#   Paste below for the settings and restart terminator.
+
+[global_config]
+  title_hide_sizetext = False
+  title_inactive_fg_color = "#e1e1e1"
+  borderless = False
+  title_transmit_bg_color = "#007bc8"
+  title_inactive_bg_color = "#000000"
+[keybindings]
+  close_term = <Ctrl><Alt>w
+  go_up = <Ctrl>k
+  split_horiz = <Ctrl><Alt>minus
+  go_down = <Ctrl>j
+  split_vert = <Ctrl><Alt>semicolon
+  go_right = <Ctrl>l
+  go_left = <Ctrl>h
+[profiles]
+  [[default]]
+    background_darkness = 0.93
+    scrollback_lines = 10000
+    background_type = transparent
+    scrollbar_position = hidden
+[layouts]
+  [[default]]
+    [[[child1]]]
+      type = Terminal
+      parent = window0
+    [[[window0]]]
+      type = Window
+      parent = ""
+[plugins]
