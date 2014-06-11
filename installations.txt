@@ -6,10 +6,16 @@ Applications:
 -------------
 chrome
 sublime text 3
+skype
+dconf
+    - org -> gnome -> desktop -> wm -> preferences
+    - button-layout to: :minimize,maximize,close
 virtualbox
 vagrant
 terminator
 mysql workbench
+wine (Do Last, takes long)
+    - heidi sql
 
 Terminal:
 ---------
