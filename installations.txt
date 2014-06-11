@@ -41,3 +41,8 @@ $ vagrant plugin install vagrant-vbguest
 $ vagrant ssh
 $ sudo ln -s /opt/VBoxGuestAdditions-4.3.10/lib/VBoxGuestAdditions /usr/lib/VBoxGuestAdditions
 
+
+Install VirtualBox with Windows 8.1 Requires:
+---------------------------------------------
+$ vboxmanage list vms
+$ vboxmanage setextradata "The Box Name" VBoxInternal/CPUM/CMPXCHG16B 1
