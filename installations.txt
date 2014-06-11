@@ -9,14 +9,24 @@ sublime text 3
 virtualbox
 vagrant
 terminator
+mysql workbench
 
 Terminal:
 ---------
-$ sudo apt-get install vim curl htop redis-server \
+$ sudo apt-get install vim curl htop xclip redis-server \
     apache2 php5 mysql-server mysql-client \
-    libapache2-mod-php5 libapache2-mod-wsgi
+    libapache2-mod-php5 libapache2-mod-wsgi\
+    php5-mysql php5-curl libpcre3-dev
+
 
 $ sudo pip install fabric virtualenv
+
+# Make MySQL Open to Apps
+$ sudo sed -i 's/bind-address/bind-address = 0.0.0.0#/' /etc/mysql/my.cnf
+
+PHP Composer:
+-------------
+curl -sS https://getcomposer.org/installer | php && sudo mv composer.phar /usr/local/bin/composer
 
 Install Vagrant VBGuest & Fix Bug:
 ----------------------------------
