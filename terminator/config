@@ -4,30 +4,33 @@
 #   Paste below for the settings and restart terminator.
 
 [global_config]
-  title_hide_sizetext = False
+  title_transmit_bg_color = "#077a00"
   title_inactive_fg_color = "#e1e1e1"
-  borderless = False
-  title_transmit_bg_color = "#007bc8"
-  title_inactive_bg_color = "#000000"
+  handle_size = -3
+  title_inactive_bg_color = "#424242"
 [keybindings]
-  close_term = <Ctrl><Alt>w
   go_up = <Ctrl>k
-  split_horiz = <Ctrl><Alt>minus
+  split_horiz = <Primary>minus
+  new_terminator = <Primary><Shift>n
   go_down = <Ctrl>j
-  split_vert = <Ctrl><Alt>semicolon
+  close_term = <Ctrl><Alt>w
+  split_vert = <Primary>equal
   go_right = <Ctrl>l
+  new_tab = <Primary>t
   go_left = <Ctrl>h
 [profiles]
   [[default]]
     background_darkness = 0.93
     scrollback_lines = 10000
     background_type = transparent
-    scrollbar_position = hidden
+    background_image = None
 [layouts]
   [[default]]
     [[[child1]]]
       type = Terminal
       parent = window0
+      profile = default
+      command = ""
     [[[window0]]]
       type = Window
       parent = ""

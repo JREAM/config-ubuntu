@@ -1,0 +1,27 @@
+First run:
+-------------
+$ sudo apt-get update
+
+Applications:
+-------------
+chrome
+sublime text 3
+virtualbox
+vagrant
+terminator
+
+Terminal:
+---------
+$ sudo apt-get install vim curl htop redis-server \
+    apache2 php5 mysql-server mysql-client \
+    libapache2-mod-php5 libapache2-mod-wsgi
+
+$ sudo pip install fabric virtualenv
+
+Install Vagrant VBGuest & Fix Bug:
+----------------------------------
+$ vagrant plugin install vagrant-vbguest
+
+$ vagrant ssh
+$ sudo ln -s /opt/VBoxGuestAdditions-4.3.10/lib/VBoxGuestAdditions /usr/lib/VBoxGuestAdditions
+
