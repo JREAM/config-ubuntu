@@ -13,6 +13,7 @@ dconf
 virtualbox
 vagrant
 terminator
+gnome-system-tools
 mysql workbench
 wine (Do Last, takes long)
     - heidi sql
