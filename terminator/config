@@ -12,8 +12,10 @@
   inactive_color_offset = 0.74
   title_inactive_bg_color = "#083800"
 [keybindings]
+  zoom_in = <Primary>equal
   go_up = <Ctrl>k
   split_horiz = <Primary>bracketleft
+  broadcast_group = None
   next_tab = <Primary>Tab
   new_terminator = <Primary><Shift>n
   broadcast_all = <Primary>grave
@@ -21,6 +23,7 @@
   close_term = <Ctrl><Alt>w
   split_vert = <Primary>bracketright
   go_right = <Ctrl>l
+  broadcast_off = <Primary>BackSpace
   new_tab = <Primary>t
   go_left = <Ctrl>h
 [profiles]
