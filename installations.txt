@@ -12,6 +12,7 @@ vagrant
 terminator
 gnome-system-tools
 mysql workbench
+DBeaver
 wine (Do in Terminal)
     - heidi sql
 
@@ -20,7 +21,8 @@ Terminal:
 $ sudo apt-get install vim curl htop xclip redis-server \
     apache2 php5 mysql-server mysql-client \
     libapache2-mod-php5 libapache2-mod-wsgi\
-    php5-mysql php5-curl libpcre3-dev
+    php5-mysql php5-curl libpcre3-dev\
+    default-jre
 
 
 $ sudo pip install fabric virtualenv
