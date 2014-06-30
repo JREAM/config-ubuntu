@@ -4,45 +4,60 @@ $ sudo apt-get update
 
 Applications:
 -------------
-chrome
-sublime text 3
-skype
-virtualbox
-vagrant
-terminator
-gnome-system-tools
-mysql workbench
-DBeaver
-wine (Do in Terminal)
-    - heidi sql
+- Chrome
+- Sublime Text 3
+- Skype
+- Virtualbox
+- Vagrant
+- Terminator
+- Compiz Config
+- gnome-system-tools
+- Gdeb
+- Shutter
+- MySQL Workbench
+- DBeaver
+- HeidiSql (After Wine in Terminal)
+    
+
 
 Terminal:
 ---------
-$ sudo apt-get install vim curl htop xclip redis-server \
+
+    # LAMP + JRE + etc
+    $ sudo apt-get install vim curl htop xclip redis-server \
     apache2 php5 mysql-server mysql-client \
     libapache2-mod-php5 libapache2-mod-wsgi\
     php5-mysql php5-curl libpcre3-dev\
     default-jre
+    
+    # Wine
+    $ sudo apt-get install wine
 
-
-$ sudo pip install fabric virtualenv
+    # Python 
+    $ sudo pip install fabric virtualenv
+    
+    # Ruby
+    $ sudo gem install sass compass
 
 # Make MySQL Open to Apps
 $ sudo sed -i 's/bind-address/bind-address = 0.0.0.0#/' /etc/mysql/my.cnf
 
 PHP Composer:
 -------------
-curl -sS https://getcomposer.org/installer | php && sudo mv composer.phar /usr/local/bin/composer
+
+    $ curl -sS https://getcomposer.org/installer | php && sudo mv composer.phar /usr/local/bin/composer
 
 Install Vagrant VBGuest & Fix Bug:
 ----------------------------------
-$ vagrant plugin install vagrant-vbguest
 
-$ vagrant ssh
-$ sudo ln -s /opt/VBoxGuestAdditions-4.3.10/lib/VBoxGuestAdditions /usr/lib/VBoxGuestAdditions
+    $ vagrant plugin install vagrant-vbguest
+
+    $ vagrant ssh
+    $ sudo ln -s /opt/VBoxGuestAdditions-4.3.10/lib/VBoxGuestAdditions /usr/lib/VBoxGuestAdditions
 
 
 Install VirtualBox with Windows 8.1 Requires:
 ---------------------------------------------
-$ vboxmanage list vms
-$ vboxmanage setextradata "The Box Name" VBoxInternal/CPUM/CMPXCHG16B 1
+
+    $ vboxmanage list vms
+    $ vboxmanage setextradata "The Box Name" VBoxInternal/CPUM/CMPXCHG16B 1
