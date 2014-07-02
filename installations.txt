@@ -62,3 +62,18 @@ Install VirtualBox with Windows 8.1 Requires:
 
     $ vboxmanage list vms
     $ vboxmanage setextradata "The Box Name" VBoxInternal/CPUM/CMPXCHG16B 1
+
+
+Install AMD/ATI Drivers (Ubuntu Trusty 14)
+-------------------------------------
+
+    $ sudo apt-add-repository ppa:xorg-edgers/ppa
+    [ENTER]
+    $ sudo apt-get update
+    $ sudo apt-get install fglrx
+    $ sudo amdconfig --initial
+    $ sudo apt-get install gksu
+    
+    To Edit Catalyst Settings:
+    1: Launcher Type in: gksu amdcccle
+
