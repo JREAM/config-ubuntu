@@ -4,19 +4,20 @@ $ sudo apt-get update
 
 Applications:
 -------------
-- Chrome
-- Sublime Text 3
-- Skype
-- Virtualbox
-- Vagrant
+- (Chrome)[https://www.google.com/intl/en-US/chrome/browser/]
+- (Sublime Text 3)[http://www.sublimetext.com/3]
+- (Skype)[http://www.skype.com/en/download-skype/skype-for-computer/]
+- (Virtualbox)[https://www.virtualbox.org/wiki/Downloads]
+- (Vagrant)[http://www.vagrantup.com/]
 - Terminator
 - Compiz Config
 - gnome-system-tools
 - Gdeb
 - Shutter
 - MySQL Workbench
-- DBeaver
-- HeidiSql (After Wine in Terminal)
+- Synaptic Package Manager
+- (DBeaver)[http://dbeaver.jkiss.org/]
+- (HeidiSql)[http://www.heidisql.com/] (After Wine in Terminal)
     
 
 
