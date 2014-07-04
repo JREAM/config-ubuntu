@@ -43,6 +43,10 @@ Terminal:
 
     $ sudo gem install sass compass
 
+## NodeJS
+
+    $ sudo apt-get install nodejs npm
+
 #### Make MySQL Open to Apps
 
     $ sudo sed -i 's/bind-address/bind-address = 0.0.0.0#/' /etc/mysql/my.cnf
