@@ -30,22 +30,37 @@ Terminal:
     $ sudo apt-get install vim curl htop xclip terminator gdebi wine
 
 ## LAMP & JRE
-
-    $ sudo apt-get install apache2 php5 mysql-server mysql-client libapache2-mod-php5 libapache2-mod-wsgi\
+Apache 2, PHP 5.5+, ApacheMods, Php5Mods, MySQL, Redis, and Header Files.
+    $ sudo apt-get install apache2 php5 php5-dev mysql-server mysql-client libapache2-mod-php5 libapache2-mod-wsgi\
     php5-mysql php5-curl libpcre3-dev default-jre redis-server
 
 ## Python
 
     $ sudo apt-get install python-pip
-    $ sudo pip install fabric virtualenv
+    $ sudo pip install fabric virtualenv flask
 
 ## Ruby
+Install Ruby 1.9+ with header files in dev.
 
-    $ sudo gem install sass compass
+    $ sudo apt-get install ruby1.9.1 ruby1.9.1-dev
+    
+    # Front End Items:
+    $ sudo gem install sass compass middleman
 
 ## NodeJS
+Use PPA to fix the nodejs path issue
 
-    $ sudo apt-get install nodejs npm
+    $ sudo add-apt-repository ppa:chris-lea/node.js
+    $ sudo apt-get update
+    $ sudo apt-get install nodejs
+    $ sudo apt-get install coffeescript
+    
+    # @TODO:
+    # npm is having dependency issues
+    
+If typing `$ coffee` produces an error, check:
+
+    $ echo $PATH -- Make sure coffee is not linked there.
 
 #### Make MySQL Open to Apps
 
