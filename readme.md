@@ -21,9 +21,19 @@ Applications:
 - Synaptic Package Manager
 - [DBeaver](http://dbeaver.jkiss.org/)
 - [HeidiSql](http://www.heidisql.com/) (After Wine in Terminal)
+- Numix Theme & Numix Circle Icons
 
 Terminal:
 ---------
+
+### Numix Circle Icons
+
+After installing this use the Unity Tweak Tool
+
+    $ sudo add-apt-repository ppa:numix/ppa
+    $ sudo apt-get update
+    $ sudo apt-get install numix-gtk-theme numix-icon-theme numix-icon-theme-circle 
+    
 
 ### Utilities
 
