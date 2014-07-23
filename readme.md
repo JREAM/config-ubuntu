@@ -19,6 +19,8 @@ Applications:
     - Gdeb
 - MySQL Workbench
 - Synaptic Package Manager
+- Bleachbit (Trash Cleaner)
+- Preload (Intelligent Bootup Time)
 - [DBeaver](http://dbeaver.jkiss.org/)
 - [HeidiSql](http://www.heidisql.com/) (After Wine in Terminal)
 - Numix Theme & Numix Circle Icons
@@ -37,7 +39,8 @@ After installing this use the Unity Tweak Tool
 
 ### Utilities
 
-    $ sudo apt-get install vim curl htop xclip terminator gdebi wine
+    $ sudo apt-get install vim curl htop xclip terminator gdebi preload bleachbit wine\
+    ubuntu-restricted-extras
 
 ## LAMP & JRE
 Apache 2, PHP 5.5+, ApacheMods, Php5Mods, MySQL, Redis, and Header Files.
