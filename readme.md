@@ -87,6 +87,13 @@ PHP Composer:
     # Usage
     $ composer <command>
 
+PHPUnit Global
+--------------------
+    
+    $ composer global require "phpunit/phpunit=3.7.*"
+    $ PATH=$PATH:~/.composer/vendor/bin/
+
+
 Install Vagrant VBGuest & Fix Bug:
 ----------------------------------
 
