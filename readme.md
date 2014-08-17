@@ -11,6 +11,7 @@ Applications:
 - [Virtualbox](https://www.virtualbox.org/wiki/Downloads)
   - Preferred: [Debian-based Linux distributions](https://www.virtualbox.org/wiki/Linux_Downloads)
 - [Vagrant](http://www.vagrantup.com/)
+- Kazam (Screen Recorder)
 - Shutter
 - Compiz Config
 - gnome-system-tools
