@@ -1,0 +1,31 @@
+# Local Apache
+This is for non-vagrant projects for on-the-fly editing.
+
+First create my projects folder, my username is `jesse`
+
+    $ mkdir ~/projects
+    
+Edit the Apache file, remove all them comments to just get it done with:
+
+    $ sudo vim /etc/apache2/sites-available/000-default.conf
+
+Paste this goodie in:
+
+    <VirtualHost *:80>
+        ServerAdmin webmaster@localhost
+        DocumentRoot /home/jesse/projects
+        ErrorLog ${APACHE_LOG_DIR}/error.log
+        CustomLog ${APACHE_LOG_DIR}/access.log combined
+    </VirtualHost>
+
+    <Directory "/home/jesse/projects">
+        Options Indexes Followsymlinks
+        AllowOverride All
+        Require all granted
+    </Directory>
+
+    # vim: syntax=apache ts=4 sw=4 sts=4 sr noet
+
+Lastly, reload apache
+
+    $ sudo service apache2 reload
