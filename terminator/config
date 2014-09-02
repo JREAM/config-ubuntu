@@ -36,8 +36,7 @@
     use_system_font = False
     foreground_color = "#ffffff"
     icon_bell = False
-    font = Monospace 11
-    background_color = "#23071a"
+    font = Ubuntu Mono 13
 [layouts]
   [[default]]
     [[[child1]]]
@@ -48,16 +47,4 @@
     [[[window0]]]
       type = Window
       parent = ""
-  [[New Layout]]
-    [[[child0]]]
-      position = 609:219
-      type = Window
-      order = 0
-      parent = ""
-      size = 642, 427
-    [[[terminal1]]]
-      profile = default
-      type = Terminal
-      order = 0
-      parent = child0
 [plugins]
