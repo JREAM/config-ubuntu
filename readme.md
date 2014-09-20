@@ -25,6 +25,7 @@ Applications:
 - [DBeaver](http://dbeaver.jkiss.org/)
 - [HeidiSql](http://www.heidisql.com/) (After Wine in Terminal)
 - Numix Theme & Numix Circle Icons
+- PIP Grip (For easy localhost preview of markdown)
 
 Terminal:
 ---------
@@ -51,7 +52,7 @@ Apache 2, PHP 5.5+, ApacheMods, Php5Mods, MySQL, Redis, and Header Files.
 ## Python
 
     $ sudo apt-get install python-pip
-    $ sudo pip install fabric virtualenv flask
+    $ sudo pip install fabric virtualenv flask grip
 
 ## Ruby
 Install Ruby 1.9+ with header files in dev.
