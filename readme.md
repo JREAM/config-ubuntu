@@ -22,6 +22,7 @@ Applications:
 - Synaptic Package Manager
 - Bleachbit (Trash Cleaner)
 - Preload (Intelligent Bootup Time)
+- [Pixeluvo](http://www.pixeluvo.com/) Nice Image Editor
 - [DBeaver](http://dbeaver.jkiss.org/)
 - [HeidiSql](http://www.heidisql.com/) (After Wine in Terminal)
 - Numix Theme & Numix Circle Icons
