@@ -42,13 +42,12 @@ After installing this use the Unity Tweak Tool
 
 ### Utilities
 
-    $ sudo apt-get install vim curl htop xclip terminator gdebi preload bleachbit wine\
-    ubuntu-restricted-extras
+    $ sudo apt-get install vim curl htop xclip terminator gdebi preload bleachbit wine ubuntu-restricted-extras
 
 ## LAMP & JRE
 Apache 2, PHP 5.5+, ApacheMods, Php5Mods, MySQL, Redis, and Header Files.
-    $ sudo apt-get install apache2 php5 php5-dev mysql-server mysql-client libapache2-mod-php5 libapache2-mod-wsgi\
-    php5-mysql php5-curl libpcre3-dev default-jre redis-server
+
+    $ sudo apt-get install apache2 php5 php5-dev mysql-server mysql-client libapache2-mod-php5 libapache2-mod-wsgi php5-mysql php5-curl libpcre3-dev default-jre redis-server
 
 ## Python
 
