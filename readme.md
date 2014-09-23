@@ -37,8 +37,8 @@ After installing this use the Unity Tweak Tool
 
     $ sudo add-apt-repository ppa:numix/ppa
     $ sudo apt-get update
-    $ sudo apt-get install numix-gtk-theme numix-icon-theme numix-icon-theme-circle 
-    
+    $ sudo apt-get install numix-gtk-theme numix-icon-theme numix-icon-theme-circle
+
 
 ### Utilities
 
@@ -49,6 +49,19 @@ Apache 2, PHP 5.5+, ApacheMods, Php5Mods, MySQL, Redis, and Header Files.
 
     $ sudo apt-get install apache2 php5 php5-dev mysql-server mysql-client libapache2-mod-php5 libapache2-mod-wsgi php5-mysql php5-curl libpcre3-dev default-jre redis-server
 
+## Phalcon
+
+    $ sudo apt-add-repository ppa:phalcon/stable
+    $ sudo apt-get update
+    $ sudo apt-get install php5-phalcon
+
+#### Phalcon Dev Tools
+This is an easy to use install script that will cleanup after itself. It can also be used for updating:
+
+    $ sudo bash install_phalcon_devtools.sh
+
+To test it run: `$ phalcon`
+
 ## Python
 
     $ sudo apt-get install python-pip
@@ -58,7 +71,7 @@ Apache 2, PHP 5.5+, ApacheMods, Php5Mods, MySQL, Redis, and Header Files.
 Install Ruby 1.9+ with header files in dev.
 
     $ sudo apt-get install ruby1.9.1 ruby1.9.1-dev
-    
+
     # Front End Items:
     $ sudo gem install sass compass middleman
 
@@ -69,10 +82,10 @@ Use PPA to fix the nodejs path issue
     $ sudo apt-get update
     $ sudo apt-get install nodejs
     $ sudo apt-get install coffeescript
-    
+
     # @TODO:
     # npm is having dependency issues
-    
+
 If typing `$ coffee` produces an error, check:
 
     $ echo $PATH -- Make sure coffee is not linked there.
@@ -91,7 +104,7 @@ PHP Composer:
 
 PHPUnit Global
 --------------------
-    
+
     $ composer global require "phpunit/phpunit=3.7.*"
     $ PATH=$PATH:~/.composer/vendor/bin/
 
