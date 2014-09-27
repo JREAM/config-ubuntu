@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-# Run $ bash <filename>.sh
+# Run $ bash phalcon-devtools.sh
 # Will be prompted to place in the /opt folder
 #
 

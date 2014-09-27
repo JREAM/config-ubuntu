@@ -1,10 +1,20 @@
-First Run:
--------------
+# Config Ubuntu
+
+- This is for the user named Jesse
+    - To change this, change the variable in `install.sh` and the `apache/sites-available/projects.conf`
+- Currently Using [Ubuntu 14 LTS](http://ubuntu.com/desktop)
+- Manually or Automatically Install
+
+## Automatic Install
+This hasn't been tested yet, but I'll do it eventually :)
+
+    $ sudo bash install.sh
+
+## Manual Install
 
     $ sudo apt-get update
 
-Applications:
--------------
+### Applications:
 - [Chrome](https://www.google.com/intl/en-US/chrome/browser/)
 - [Sublime Text 3](http://www.sublimetext.com/3)
 - [Skype](http://www.skype.com/en/download-skype/skype-for-computer/)
