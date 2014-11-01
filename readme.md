@@ -5,14 +5,6 @@ Works with __Debian__ and __Elementary OS__
 - [Ubuntu Desktop](http://ubuntu.com/desktop)
 - [Elementary Desktop](http://elementaryos.org/)
 
-# Automatic Install
-**This is not ready** - But the command would go as follows
-
-- This is for the user named Jesse
-    - To change this, change the variable in `install.sh` and the `apache/sites-available/projects.conf`
-
-    $ sudo bash install.sh
-
 # Manual Install
 Run these commands and tweak them as needed. The `-y` flag installs without a prompt. Run these commands from the terminal.
 
@@ -37,7 +29,7 @@ Now lets run an update with our PPA's
 
 ### Numix Circle Icons
 
-Use the Unity Tweak Tool (Apply Icon and Themes)
+Use the Unity Tweak Tool (Apply Icon & Themes)
 
     $ sudo apt-get install -y numix-gtk-theme numix-icon-theme numix-icon-theme-circle
 
@@ -48,10 +40,36 @@ Use the Unity Tweak Tool (Apply Icon and Themes)
     # If you want wine
     $ sudo apt-get install -y wine
 
-## LAMP & JRE
+## LAMP & Python
 Apache 2, PHP 5.5+, ApacheMods, Php5Mods, MySQL, Redis, and Header Files.
 
-    $ sudo apt-get install -y apache2 php5 php5-dev mysql-server mysql-client libapache2-mod-php5 libapache2-mod-wsgi php5-mysql php5-curl libpcre3-dev default-jre redis-server
+PHP 5
+
+    $ sudo apt-get install -y php5 php5-dev php5-curl libpcre3-dev
+
+Apache     
+
+    $ sudo apt-get install -y apache2 libapache2-mod-php5
+    
+Nginx
+
+    $ sudo apt-get install -y nginx 
+    
+Apache can serve python with mod_wsgi, otherwise Nginx + Gunicorn is cool
+
+    $ sudo apt-get install libapache2-mod-wsgi
+
+MySQL
+    
+    $ sudo apt-get install -y mysql-server mysql-client php5-mysql 
+    
+Redis
+    
+    $ sudo apt-get install -y redis-server
+    
+Java Runtime
+
+    $ sudo apt-get install -y default-jre
 
 ## Phalcon
 
@@ -74,7 +92,7 @@ If you need Python headers for some PIP packages install `python-dev`:
 Otherwise you are good to go with PIP and a few packages:
 
     $ sudo apt-get install -y python-pip
-    $ sudo pip install fabric virtualenv flask grip
+    $ sudo pip install fabric virtualenv flask grip gunicorn
 
 ### Ruby
 Install Ruby 1.9+ with header files in dev.
@@ -88,8 +106,10 @@ A few gems for front-end (I prefer NPM Gulp currently)
 ### NodeJS
 Using a PPA to fix the nodejs path issue
 
-    $ sudo apt-get update
     $ sudo apt-get install nodejs
+    
+Bower
+
     $ sudo npm install bower -g
 
 If installing coffee-script and typing `$ coffee` produces an error, make sure coffee is not within the $PATH
