@@ -25,7 +25,7 @@ Now lets run an update with our PPA's
 
 ### System Tools
 
-    $ sudo apt-get install -y unity-tweak-tool dconf-editor
+    $ sudo apt-get install -y unity-tweak-tool compizconfig-settings-manager dconf-editor
 
 ### Numix Circle Icons
 
