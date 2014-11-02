@@ -126,6 +126,13 @@ If installing coffee-script and typing `$ coffee` produces an error, make sure c
 
     # Usage
     $ composer <command>
+    
+### Fix Mouse Side Buttons in VMWare
+Append the following to `yourbox.vmx` with the machine off.
+
+    mouse.vusb.enable = "TRUE"
+    mouse.vusb.useBasicMouse = "FALSE"
+    usb.generic.allowHID = "TRUE"
 
 ### Install Vagrant VBGuest & Fix Bug with Location:
 
