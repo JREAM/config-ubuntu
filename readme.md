@@ -5,20 +5,23 @@ Works with __Debian__ and __Elementary OS__
 - [Ubuntu Desktop](http://ubuntu.com/desktop)
 - [Elementary Desktop](http://elementaryos.org/)
 
+# Items Copied
+- Some items (`termatinator`, `virtualenvs`) copied from [Dan Sackett](https://github.com/dansackett/dotfiles).
+
 # Manual Install
 Run these commands and tweak them as needed. The `-y` flag installs without a prompt. Run these commands from the terminal.
 
 ### Make PPA's Available
 
     $ sudo apt-get install -y python-software-properties
-    
+
 ### PPA's for: Phalcon, Numix Icons, NodeJS
 You must hit enter after each one of these.
 
     $ sudo apt-add-repository ppa:phalcon/stable
     $ sudo add-apt-repository ppa:numix/ppa
     $ sudo add-apt-repository ppa:chris-lea/node.js
-    
+
 Now lets run an update with our PPA's
 
     $ sudo apt-get update
@@ -36,7 +39,7 @@ Use the Unity Tweak Tool (Apply Icon & Themes)
 ### Utilities
 
     $ sudo apt-get install -y vim curl htop xclip terminator gdebi preload bleachbit ubuntu-restricted-extras
-    
+
     # If you want wine
     $ sudo apt-get install -y wine
 
@@ -47,26 +50,26 @@ PHP 5
 
     $ sudo apt-get install -y php5 php5-dev php5-curl libpcre3-dev
 
-Apache     
+Apache
 
     $ sudo apt-get install -y apache2 libapache2-mod-php5
-    
+
 Nginx
 
-    $ sudo apt-get install -y nginx 
-    
+    $ sudo apt-get install -y nginx
+
 Apache can serve python with mod_wsgi, otherwise Nginx + Gunicorn is cool
 
     $ sudo apt-get install libapache2-mod-wsgi
 
 MySQL
-    
-    $ sudo apt-get install -y mysql-server mysql-client php5-mysql 
-    
+
+    $ sudo apt-get install -y mysql-server mysql-client php5-mysql
+
 Redis
-    
+
     $ sudo apt-get install -y redis-server
-    
+
 Java Runtime
 
     $ sudo apt-get install -y default-jre
@@ -86,9 +89,9 @@ To test it run: `$ phalcon`
 ## Python
 
 If you need Python headers for some PIP packages install `python-dev`:
-    
-    $ sudo apt-get install -y python-dev 
-    
+
+    $ sudo apt-get install -y python-dev
+
 Otherwise you are good to go with PIP and a few packages:
 
     $ sudo apt-get install -y python-pip
@@ -100,14 +103,14 @@ Install Ruby 1.9+ with header files in dev.
     $ sudo apt-get install ruby1.9.1 ruby1.9.1-dev
 
 A few gems for front-end (I prefer NPM Gulp currently)
-    
+
     $ sudo gem install sass compass middleman
 
 ### NodeJS
 Using a PPA to fix the nodejs path issue
 
     $ sudo apt-get install nodejs
-    
+
 Bower
 
     $ sudo npm install bower -g
@@ -126,7 +129,7 @@ If installing coffee-script and typing `$ coffee` produces an error, make sure c
 
     # Usage
     $ composer <command>
-    
+
 ### Fix Mouse Side Buttons in VMWare
 Append the following to `yourbox.vmx` with the machine off.
 
@@ -151,13 +154,13 @@ Append the following to `yourbox.vmx` with the machine off.
 
     $ sudo apt-add-repository ppa:xorg-edgers/ppa
     [ENTER]
-    
+
     $ sudo apt-get update
     $ sudo apt-get install fglrx
     $ sudo amdconfig --initial
     $ sudo apt-get install gksu
 
-To Edit Catalyst Settings, Type the following in the Global Launcher: 
+To Edit Catalyst Settings, Type the following in the Global Launcher:
 
     gksu amdcccle
 
