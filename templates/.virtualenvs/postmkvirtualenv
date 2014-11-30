@@ -1,0 +1,7 @@
+#!/bin/bash
+# This hook is sourced after a new virtualenv is activated.
+
+proj_name=$(echo $VIRTUAL_ENV|awk -F'/' '{print $NF}')
+[ ! -d ~/projects/$proj_name ] && mkdir -p ~/projects/$proj_name
+add2virtualenv ~/projects/$proj_name
+cd ~/projects/$proj_name

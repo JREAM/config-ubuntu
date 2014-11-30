@@ -1,0 +1,23 @@
+[user]
+    name = Jesse Boyer
+    email = aniyishay@gmail.com
+    IdentityFile = ~/.ssh/id_rsa
+[credential]
+    helper = cache -- timeout=3600
+[color]
+    ui = auto
+[merge]
+    tool = meld
+[mergetool]
+    keepBackup = false
+[alias]
+    lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+    co = checkout
+    ci = commit
+    aa = add --all
+    st = status
+    di = diff
+    dc = diff --cached
+[core]
+    excludesfile = ~/.gitignore
+    filemode = false
