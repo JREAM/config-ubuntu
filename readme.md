@@ -36,7 +36,12 @@ This hasn't been tested yet, but I'll do it eventually :)
 - [DBeaver](http://dbeaver.jkiss.org/)
 - [HeidiSql](http://www.heidisql.com/) (After Wine in Terminal)
 - Numix Theme & Numix Circle Icons
-- PIP Grip (For easy localhost preview of markdown)
+- Python Pip
+    - grip
+    - fabric
+    - virtualenv
+    - virtualenvwrapper (see `templates/.bashrc` for location)
+
 
 Terminal:
 ---------
@@ -75,7 +80,7 @@ To test it run: `$ phalcon`
 ## Python
 
     $ sudo apt-get install python-pip
-    $ sudo pip install fabric virtualenv flask grip
+    $ sudo pip install fabric virtualenv virtualenvwrapper grip
 
 ## Ruby
 Install Ruby 1.9+ with header files in dev.
