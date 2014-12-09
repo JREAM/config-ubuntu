@@ -39,6 +39,9 @@ Use the Unity Tweak Tool (Apply Icon & Themes)
 ### Utilities
 
     $ sudo apt-get install -y vim git meld curl htop xclip terminator gdebi preload bleachbit ubuntu-restricted-extras
+    
+    # Nice little Device Tool
+    $ sudo apt-get install hardinfo
 
     # If you want wine
     $ sudo apt-get install -y wine
