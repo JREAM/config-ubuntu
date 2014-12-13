@@ -36,7 +36,7 @@
     use_system_font = False
     foreground_color = "#ffffff"
     icon_bell = False
-    font = Ubuntu Mono 13
+    font = Inconsolata Medium 11
 [layouts]
   [[default]]
     [[[child1]]]
