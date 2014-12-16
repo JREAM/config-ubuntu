@@ -36,7 +36,7 @@
     use_system_font = False
     foreground_color = "#ffffff"
     icon_bell = False
-    font = Inconsolata Medium 11
+    font = Inconsolata Medium 13
 [layouts]
   [[default]]
     [[[child1]]]
