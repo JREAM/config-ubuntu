@@ -1,13 +1,20 @@
 # Config Ubuntu
-This is primarily for a Workstation (_Not a server_)
-Works with __Debian__ and __Elementary OS__
+
+This is primarily a __Debian__ based OS, such as __Debuan__, __Ubuntu__, __Mint__, and __Elementary OS__.
 
 - [Ubuntu Desktop](http://ubuntu.com/desktop)
 - [Elementary Desktop](http://elementaryos.org/)
+- [Linux Mint](http://www.linuxmint.com/)
+
+# Simple Install
+
+- Login to your Linux user and go to your home directory, `cd ~`
+- Clone this repostiory in your home folder
+- Optionally install extra software.
 
 # Items Copied
 - Some items (`termatinator`, `virtualenvs`) copied from [Dan Sackett](https://github.com/dansackett/dotfiles).
-
+a
 # Manual Install
 Run these commands and tweak them as needed. The `-y` flag installs without a prompt. Run these commands from the terminal.
 
@@ -15,14 +22,14 @@ Run these commands and tweak them as needed. The `-y` flag installs without a pr
 
     $ sudo apt-get install -y python-software-properties
 
-### PPA's for: Phalcon, Numix Icons, NodeJS
+### PPA: Phalcon, Numix Icons, NodeJS
 You must hit enter after each one of these.
 
     $ sudo apt-add-repository ppa:phalcon/stable
     $ sudo add-apt-repository ppa:numix/ppa
     $ sudo add-apt-repository ppa:chris-lea/node.js
 
-Now lets run an update with our PPA's
+Now lets run an update with our PPA
 
     $ sudo apt-get update
 
@@ -38,7 +45,7 @@ Use the Unity Tweak Tool (Apply Icon & Themes)
 
 ### Utilities
 
-    $ sudo apt-get install -y vim git meld curl htop xclip terminator gdebi preload bleachbit ubuntu-restricted-extras
+    $ sudo apt-get install -y vim git mercurial meld curl htop xclip terminator gdebi preload bleachbit ubuntu-restricted-extras
     
     # Nice little Device Tool
     $ sudo apt-get install hardinfo
@@ -59,7 +66,7 @@ Apache
 
 Nginx
 
-    $ sudo apt-get install -y nginx
+    $ sudo apt-get install -y nginx uwsgi
 
 Apache can serve python with mod_wsgi, otherwise Nginx
 
@@ -98,7 +105,7 @@ If you need Python headers for some PIP packages install `python-dev`:
 Otherwise you are good to go with PIP and a few packages:
 
     $ sudo apt-get install -y python-pip
-    $ sudo pip install fabric virtualenv flask grip gunicorn
+    $ sudo pip install fabric virtualenv virtualenvwrapper
 
 ### Ruby
 Install Ruby 1.9+ with header files in dev.
@@ -107,7 +114,7 @@ Install Ruby 1.9+ with header files in dev.
 
 A few gems for front-end (I prefer NPM Gulp currently)
 
-    $ sudo gem install sass compass middleman
+    $ sudo gem install capistrano 
 
 ### NodeJS
 Using a PPA to fix the nodejs path issue
@@ -116,7 +123,7 @@ Using a PPA to fix the nodejs path issue
 
 Bower
 
-    $ sudo npm install bower -g
+    $ sudo npm install bower gulp grunt-cli -g
 
 If installing coffee-script and typing `$ coffee` produces an error, make sure coffee is not within the $PATH
 
@@ -191,12 +198,9 @@ To Edit Catalyst Settings, Type the following in the Global Launcher:
 - Synaptic Package Manager
 - Bleachbit (Trash Cleaner)
 - Preload (Intelligent Bootup Time)
-- [Pixeluvo](http://www.pixeluvo.com/) Nice Image Editor
 - [DBeaver](http://dbeaver.jkiss.org/)
-- [HeidiSql](http://www.heidisql.com/) (After Wine in Terminal)
 - Numix Theme & Numix Circle Icons
-- PIP Grip (For easy localhost preview of markdown)
-    - grip
+- PIP
     - fabric
     - virtualenv
-    - virtualenvwrapper (see `templates/.bashrc` for location)
+    - virtualenvwrapper
