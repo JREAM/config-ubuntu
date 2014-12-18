@@ -9,5 +9,3 @@ if [ -s $_PROJECT_FILE ]; then
     _HOOK=$_PROJECT_DIR/$_HOOK_PATH
     [ -f $_HOOK ] && . $_HOOK
 fi
-
-PS1="\n┌─[ \e[1mWorking On\e[0m ]──[ \e[1m\e[93m`basename \"$VIRTUAL_ENV\"`\e[0m\e[0m ]\n├[ \e[32m\e[1m\u\e[0m\e[0m ]──[ \e[1m\e[94m\w\e[0m\e[0m ]\$(current_git_branch)\n└──▶ \e[1m$\e[0m "
