@@ -9,3 +9,7 @@ if [ -s $_PROJECT_FILE ]; then
     _HOOK=$_PROJECT_DIR/$_HOOK_PATH
     [ -f $_HOOK ] && . $_HOOK
 fi
+
+# Go to the projects folder and name of the Virtual Env
+cd ~/projects/$(basename $VIRTUAL_ENV)
+
