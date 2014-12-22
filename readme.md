@@ -20,7 +20,7 @@ Run these commands and tweak them as needed. The `-y` flag installs without a pr
 
 ## 32-Bit Apps on 64-bit Host
 
-    sudo apt-get update && sudo apt-get install unetbootin
+    sudo apt-get update && sudo apt-get install -y unetbootin
 
 ### Make PPA's Available
 
@@ -192,6 +192,7 @@ To Edit Catalyst Settings, Type the following in the Global Launcher:
 - [Virtualbox](https://www.virtualbox.org/wiki/Downloads)
   - Preferred: [Debian-based Linux distributions](https://www.virtualbox.org/wiki/Linux_Downloads)
 - [Vagrant](http://www.vagrantup.com/)
+- [DragonDisk](http://www.dragondisk.com/) S3
 - Kazam (Screen Recorder)
 - Shutter
 - Compiz Config
