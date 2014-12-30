@@ -29,6 +29,7 @@ Run these commands and tweak them as needed. The `-y` flag installs without a pr
 ### PPA: Phalcon, Numix Icons, NodeJS
 You must hit enter after each one of these.
 
+    sudo add-apt-repository ppa:git-core/ppa
     sudo apt-add-repository ppa:phalcon/stable
     sudo add-apt-repository ppa:numix/ppa
     sudo add-apt-repository ppa:chris-lea/node.js
