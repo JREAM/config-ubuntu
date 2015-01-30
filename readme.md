@@ -2,7 +2,7 @@
 
 This is primarily a __Debian__ based OS, such as __Debuan__, __Ubuntu__, __Mint__, and __Elementary OS__.
 
-# Index
+# Table of Contents
 - [OS Downloads](#os-downloads)
 - [Optional Configurations](#optional-configurations)
 - [Installation Packages](#installation-packages)
@@ -31,14 +31,20 @@ This is primarily a __Debian__ based OS, such as __Debuan__, __Ubuntu__, __Mint_
 	- [Remove ATI Drivers](#remove-ati-drivers)
 - [Other Applications](#other-applications)
 
+***
+
 # OS Downloads
 
 - [Ubuntu Desktop](http://ubuntu.com/desktop)
 - [Elementary Desktop](http://elementaryos.org/)
 - [Linux Mint](http://www.linuxmint.com/)
 
+***
+
 # Optional Configurations
 - Some items (`termatinator`, `virtualenvs`) copied from [Dan Sackett](https://github.com/dansackett/dotfiles).
+
+***
 
 # Installation Packages
 
@@ -54,7 +60,8 @@ Run these commands and tweak them as needed. The `-y` flag installs without a pr
 
     sudo apt-get update && sudo apt-get install -y unetbootin
 
-## Enable PPA
+## Enable PPA 
+[top](#top)
 PPA's are provided within cateogories below.
 
     sudo apt-get install -y python-software-properties
@@ -83,6 +90,8 @@ Use the Unity Tweak Tool (Apply Icon & Themes)
 If you need a 32bit installation:
 
     sudo apt-get install -y wine1.7-i386
+
+***
 
 ## LAMP
 Apache 2, PHP 5.5+, ApacheMods, Php5Mods, MySQL, Redis, and Header Files.
@@ -127,6 +136,8 @@ This is an easy to use install script that will cleanup after itself. It can als
 
 To test it run: `$ phalcon`
 
+***
+
 ## Python
 
 If you need Python headers for some PIP packages install `python-dev`:
@@ -134,6 +145,8 @@ If you need Python headers for some PIP packages install `python-dev`:
     sudo apt-get install -y python-dev python-pip
     sudo apt-get install -y python-pip
     sudo pip install fabric virtualenv virtualenvwrapper
+
+***
 
 ## Ruby
 Install Ruby 1.9+ with header files in dev.
@@ -144,6 +157,8 @@ For Ruby RVM (Version Management)
 
     gpg --keyserver hkp://keys.gnupg.net --recv-keys D39DC0E3
     \curl -sSL https://get.rvm.io | bash -s stable
+
+***
 
 ## NodeJS
 Using a PPA to fix the nodejs path issue
@@ -156,6 +171,8 @@ Using a PPA to fix the nodejs path issue
 If installing coffee-script and typing `$ coffee` produces an error, make sure coffee is not within the $PATH
 
     echo $PATH
+
+***
 
 # Virtual Machine Related
 
@@ -199,6 +216,8 @@ To Edit Catalyst Settings, Type the following in the Global Launcher:
     sudo apt-get install --reinstall xserver-xorg-core libgl1-mesa-glx libgl1-mesa-dri libgl1-mesa-glx libgl1-mesa-dri
     sudo dpkg-reconfigure xserver-xorg
 
+***
+
 # Other Applications
 - [Chrome](https://www.google.com/intl/en-US/chrome/browser/)
 - [Sublime Text 3](http://www.sublimetext.com/3)
@@ -223,3 +242,7 @@ To Edit Catalyst Settings, Type the following in the Global Launcher:
     - fabric
     - virtualenv
     - virtualenvwrapper
+
+***
+
+By [JREAM](http://jream.com)
