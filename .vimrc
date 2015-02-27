@@ -1,26 +1,61 @@
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => VIM user interface
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Turn on the WiLd menu
-set wildmenu
+" break with the busted old vi junk
+" must be first
+set nocompatible
+filetype off
 
-" Ignore compiled files
-set wildignore=*.o,*~,*.pyc
+""""""""""""""""""""""""""""""""""""""""
+" Plugins
+""""""""""""""""""""""""""""""""""""""""
 
-"Always show current position
+" vundle stuff
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#rc()
+
+" vundle repo
+Bundle 'gmarik/Vundle.vim'
+
+" github repos
+Plugin 'rking/ag.vim'
+Plugin 'tpope/vim-pathogen'
+Plugin 'scrooloose/nerdtree'
+Plugin 'kien/ctrlp.vim'
+Plugin 'flazz/vim-colorschemes'
+Plugin 'benjaminwhite/Benokai'
+
+" custom file ignores
+let g:ctrlp_custom_ignore = {
+    \ 'dir':  '\.git$\|\.hg$\|\.svn$\|bower_components$\|dist$\|node_modules$\|project_files$\|test$',
+    \ 'file': '\.exe$\|\.so$\|\.dll$\|\.pyc$' }
+
+
+""""""""""""""""""""""""""""""""""""""""
+" General VIM
+""""""""""""""""""""""""""""""""""""""""
+
+" show line numbers
+"set number
+
+" show lines in lower right
 set ruler
 
-" Height of the command bar
-set cmdheight=2
+" don't wrap lines ever
+set nowrap
 
-" Highlight search results
-set hlsearch
+" Set to auto read when a file is changed from the outside
+set autoread
 
-" Makes search act like search in modern browsers
-set incsearch
+" global text columns
+set textwidth=80
+
+" don't automatically break long lines unless they are new
+set formatoptions+=l
+
+" detect file type, turn on that type's plugins and indent preferences
+filetype plugin indent on
 
 " Show matching brackets when text indicator is over them
 set showmatch
+
 " How many tenths of a second to blink when matching brackets
 set mat=2
 
@@ -30,48 +65,100 @@ set novisualbell
 set t_vb=
 set tm=500
 
+" allow background buffers
+set hidden
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Colors and Fonts
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Enable syntax highlighting
-syntax enable
-
-colorscheme desert
-set background=dark
-
-" Set utf8 as standard encoding and en_US as the standard language
-set encoding=utf8
-
-" Use Unix as the standard file type
-set ffs=unix,dos,mac
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Files, backups and undo
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Turn backup off, since most stuff is in SVN, git et.c anyway...
-set nobackup
-set nowb
-set noswapfile
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Text, tab and indent related
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Use spaces instead of tabs
+" global tab settings
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
 set expandtab
-
-" Be smart when using tabs ;)
 set smarttab
 
-" 1 tab == 4 spaces
-set shiftwidth=4
-set tabstop=4
+" ignore these nonsense files
+set wildignore=*.swp,*.bak,*.pyc,*.class
 
-""""""""""""""""""""""""""""""
-" => Status line
-""""""""""""""""""""""""""""""
-" Always show the status line
-set laststatus=2
+" Return to last edit position when opening files
+autocmd BufReadPost *
+     \ if line("'\"") > 0 && line("'\"") <= line("$") |
+     \   exe "normal! g`\"" |
+     \ endif
 
-" Format the status line
-" set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ %l
+" Remember info about open buffers on close
+set viminfo^=%
+
+" no backups, please!
+set nobackup
+set noswapfile
+
+" keep a longer history
+set history=1000
+
+" enable folding
+"set foldmethod=indent
+"set foldlevel=99
+
+" make file/command tab completion useful
+set wildmode=list:longest
+
+" clipboard fusion!
+set clipboard^=unnamed clipboard^=unnamedplus
+
+" Source the vimrc file after saving it.
+" This way, you don't have to reload Vim to see the changes.
+if has("autocmd")
+ augroup myvimrchooks
+  au!
+  autocmd bufwritepost .vimrc source ~/.vimrc
+ augroup END
+endif
+
+""""""""""""""""""""""""""""""""""""""""
+" Searching
+""""""""""""""""""""""""""""""""""""""""
+
+" show search matches as you type
+set incsearch
+
+" clear the search buffer when hitting return
+nnoremap <CR> :nohlsearch<cr>
+
+" Ignore case when searching
+set ignorecase
+
+" When searching try to be smart about cases
+set smartcase
+
+" highlight search results
+set hlsearch
+
+""""""""""""""""""""""""""""""""""""""""
+" Aestehtics
+""""""""""""""""""""""""""""""""""""""""
+
+" keep cursor somewhat centered
+set scrolloff=3
+
+" highlight current line
+:set cursorline
+
+" invert and bold status line
+set highlight=sbr
+
+" enable syntax highlighting
+syntax on
+
+"tell the term has 256 colors
+set t_Co=256
+
+colorscheme Benokai
+set guifont=Inconsolata\ Medium\ 10
+
+" highlight col 80
+"set colorcolumn=80
+"highlight ColorColumn guibg=#333
+
+" extra whitespace sucks, make it RED
+highlight ExtraWhitespace ctermbg=red guibg=red
+autocmd ColorScheme * highlight ExtraWhitespace ctermbg=red guibg=red
+match ExtraWhitespace /\s\+$/
