@@ -5,6 +5,7 @@ This is primarily a __Debian__ based OS, such as __Debuan__, __Ubuntu__, __Mint_
 # Table of Contents
 - [OS Downloads](#os-downloads)
 - [Optional Configurations](#optional-configurations)
+- [VIM Customization](#vim-customization)
 - [Installation Packages](#installation-packages)
 	- [Use 32Bit on 64bit](#use-32bit-on-64bit)
 	- [Enable PPA](#enable-ppa)
@@ -46,12 +47,21 @@ This is primarily a __Debian__ based OS, such as __Debuan__, __Ubuntu__, __Mint_
 
 ***
 
-# Installation Packages
-Set Capslock to Escape
+# VIM Customization
 
-# Set Capslock key to Esc
+Setup VIM
+
+	git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+
+	$ vim
+	:PluginInstall
+
+Set Capslock key to Esc
 
 	$ dconf write /org/gnome/desktop/input-sources/xkb-options "['caps:escape']
+
+# Installation Packages
+
 
 Login to your Linux user and go to your home directory, 
  
