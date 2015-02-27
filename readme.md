@@ -47,6 +47,11 @@ This is primarily a __Debian__ based OS, such as __Debuan__, __Ubuntu__, __Mint_
 ***
 
 # Installation Packages
+Set Capslock to Escape
+
+# Set Capslock key to Esc
+
+	$ dconf write /org/gnome/desktop/input-sources/xkb-options "['caps:escape']
 
 Login to your Linux user and go to your home directory, 
  
