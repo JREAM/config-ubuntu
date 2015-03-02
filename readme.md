@@ -181,6 +181,7 @@ Using a PPA to fix the nodejs path issue
     sudo add-apt-repository ppa:chris-lea/node.js
     sudo apt-get update
     sudo apt-get install nodejs
+    sudo chown -R $(whoami) ~/.npm
     sudo npm install bower gulp grunt-cli -g
 
 If installing coffee-script and typing `$ coffee` produces an error, make sure coffee is not within the $PATH
