@@ -134,7 +134,7 @@ Or if you prefer to use nginx
 
     sudo apt-get install -y redis-server
 
-Java Runtime
+### Java Runtime
 
     sudo apt-get install -y default-jre
 
