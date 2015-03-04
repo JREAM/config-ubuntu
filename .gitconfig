@@ -2,10 +2,29 @@
     name = Jesse Boyer
     email = aniyishay@gmail.com
     IdentityFile = ~/.ssh/id_rsa
+[apply]
+    # Detect whitespace errors when applying a patch
+    whitespace = fix
 [credential]
     helper = cache -- timeout=3600
 [color]
     ui = auto
+[color "branch"]
+    current = yellow reverse
+    local = yellow
+    remote = green
+[color "diff"]
+    meta = yellow bold
+    frag = magenta bold # line info
+    old = red # deletions
+    new = green # additions
+[color "status"]
+    added = yellow
+    changed = green
+    untracked = cyan
+[help]
+    # Automatically correct and execute mistyped commands
+    autocorrect = 1
 [merge]
     tool = meld
 [mergetool]
