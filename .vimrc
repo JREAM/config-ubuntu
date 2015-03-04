@@ -19,8 +19,19 @@ Plugin 'rking/ag.vim'
 Plugin 'tpope/vim-pathogen'
 Plugin 'scrooloose/nerdtree'
 Plugin 'kien/ctrlp.vim'
-Plugin 'flazz/vim-colorschemes'
+Plugin 'flazz/vim-colorschemes'                                                                                       
 Plugin 'benjaminwhite/Benokai'
+Plugin 'hail2u/vim-css3-syntax'
+Plugin 'pangloss/vim-javascript'
+Plugin 'tpope/vim-markdown'
+Plugin 'othree/html5.vim'
+Plugin 'jnwhiteh/vim-golang'
+Plugin 'hdima/python-syntax'
+Plugin 'Glench/Vim-Jinja2-Syntax'
+Plugin 'StanAngeloff/php.vim'
+
+" For vim-markdown
+autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 
 " custom file ignores
 let g:ctrlp_custom_ignore = {
