@@ -7,25 +7,26 @@
   title_hide_sizetext = True
   title_inactive_fg_color = "#e1e1e1"
   suppress_multiple_term_dialog = True
+  enabled_plugins = CustomCommandsMenu, LaunchpadCodeURLHandler, APTURLHandler, LaunchpadBugURLHandler
   title_receive_bg_color = "#083800"
   title_transmit_bg_color = "#000000"
   inactive_color_offset = 0.74
   title_inactive_bg_color = "#000000"
 [keybindings]
   zoom_in = <Primary>equal
-  go_up = <Ctrl>k
-  split_horiz = <Primary>bracketleft
   broadcast_group = None
   next_tab = <Primary>Tab
-  new_terminator = <Primary><Shift>n
+  split_horiz = <Primary>bracketleft
   broadcast_all = <Primary>grave
-  go_down = <Ctrl>j
   close_term = <Ctrl><Alt>w
   split_vert = <Primary>bracketright
-  go_right = <Ctrl>l
   broadcast_off = <Primary>BackSpace
   new_tab = <Primary>t
-  go_left = <Ctrl>h
+  new_terminator = <Primary><Shift>n
+  go_up = <Alt>Up
+  go_down = <Alt>Down
+  go_left = <Alt>Left
+  go_right = <Alt>Right
 [profiles]
   [[default]]
     palette = "#000000:#cc0000:#4e9a06:#c4a000:#3465a4:#75507b:#06989a:#d3d7cf:#555753:#ef2929:#8ae234:#fce94f:#729fcf:#ad7fa8:#34e2e2:#eeeeec"
@@ -36,7 +37,7 @@
     use_system_font = False
     foreground_color = "#ffffff"
     icon_bell = False
-    font = Inconsolata Medium 13
+    font = Inconsolata Medium 11
 [layouts]
   [[default]]
     [[[child1]]]
@@ -48,3 +49,8 @@
       type = Window
       parent = ""
 [plugins]
+  [[CustomCommandsMenu]]
+    [[[shell]]]
+      command = echo $SHELL
+      enabled = True
+      name = shell
