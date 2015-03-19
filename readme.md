@@ -24,6 +24,7 @@ This is primarily a __Debian__ based OS, such as __Debuan__, __Ubuntu__, __Mint_
 	- [Python](#python)
 	- [Ruby](#ruby)
 	- [NodeJS](#nodejs)
+	- [Google Chrome](#google-chrome)
 - [Virtual Machine Related](#virtual-machine-related)
 	- [Fix Mouse Side Buttons in VMWare](#fix-mouse-side-buttons-in-vmware)
 	- [Vagrant VBGuest Fix](#vagrant-vbguest-fix)
@@ -34,7 +35,7 @@ This is primarily a __Debian__ based OS, such as __Debuan__, __Ubuntu__, __Mint_
 
 ***
 
-# OS Downloads
+# OS Downloads  [^](#table-of-contents)
 
 - [Ubuntu Desktop](http://ubuntu.com/desktop)
 - [Elementary Desktop](http://elementaryos.org/)
@@ -42,28 +43,28 @@ This is primarily a __Debian__ based OS, such as __Debuan__, __Ubuntu__, __Mint_
 
 ***
 
-# Optional Configurations
+# Optional Configurations  [^](#table-of-contents)
 - Some items (`termatinator`, `virtualenvs`) copied from [Dan Sackett](https://github.com/dansackett/dotfiles).
 
 ***
 
-# VIM Customization
+# VIM Customization  [^](#table-of-contents)
 
-Setup VIM
+**Setup VIM**
 
 	git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
 	$ vim
 	:PluginInstall
 
-Set Capslock key to Esc
+**Set Capslock key to Esc**
 
 	$ dconf write /org/gnome/desktop/input-sources/xkb-options "['caps:escape']
 
-# Installation Packages
+# Installation Packages  [^](#table-of-contents)
 
 
-Login to your Linux user and go to your home directory, 
+Login to your Linux user and go to your **home** directory, 
  
 	cd ~
 
@@ -71,44 +72,46 @@ Run these commands and tweak them as needed. The `-y` flag installs without a pr
 
     sudo apt-get update && sudo apt-get upgrade
 
-## Use 32Bit on 64bit
+## Use 32Bit on 64bit  [^](#table-of-contents)
+
+You can use 32Bit applications if you like, sometimes this is useful.
 
     sudo apt-get update && sudo apt-get install -y unetbootin
 
-## Enable PPA 
-[top](#top)
-PPA's are provided within cateogories below.
+## Enable PPA [^](#table-of-contents)
+PPA's are provided within cateogories below, I highly recommend using PPA's or atleast installing this package incase you ever use them.
 
     sudo apt-get install -y python-software-properties
 
-## System Tools
+## System Tools  [^](#table-of-contents)
+This is for tweaking the UI
 
     sudo apt-get install -y unity-tweak-tool compizconfig-settings-manager dconf-editor
 
-### Numix Theme
+### Numix Theme  [^](#table-of-contents)
 
-Use the Unity Tweak Tool (Apply Icon & Themes)
+Use the **Unity Tweak Tool** to set these. *(Apply Icon & Themes)*
 
     sudo add-apt-repository ppa:numix/ppa
     sudo apt-get update
     sudo apt-get install -y numix-gtk-theme numix-icon-theme numix-icon-theme-circle
 
-### Utilities
-I want the bleeding edge Git:
+### Utilities  [^](#table-of-contents)
+I prefer Git 2.X, so I'll use a PPA. Otherwise you can simply install git by default.
 
     sudo add-apt-repository ppa:git-core/ppa -y
     
-Install the utilities:
+**Install the Utilities:**
     
     sudo apt-get install -y vim git mercurial meld curl htop xclip terminator gdebi preload bleachbit ubuntu-restricted-extras
 
-Then setup the git defaults
+To setup the git defaults *(Omit the `push.default` if you are using below 2.X)*
 
     git config --global push.default simple
     git config --global user.name your name
     git config --global user.email your@email.com
     
-That creates a `~/.gitconfig` with:
+That will create a `~/.gitconfig` with:
 
  	[user]
     	email = aniyishay@gmail.com
@@ -117,7 +120,8 @@ That creates a `~/.gitconfig` with:
 		default = simple
 
 
-### Wine
+### Wine  [^](#table-of-contents)
+To run windows applications Wine is the best option. I often use HeidiSQL with Wine.
 
     sudo add-apt-repository ppa:ubuntu-wine/ppa
     sudo apt-get install -y wine1.7-amd64
@@ -128,43 +132,61 @@ If you need a 32bit installation:
 
 ***
 
-## LAMP
-Apache 2, PHP 5.5+, ApacheMods, Php5Mods, MySQL, Redis, and Header Files.
+## LAMP  [^](#table-of-contents)
+Linux Apache MySQL PHP
 
-### PHP5
+**- Installation for the following:**
+- PHP 5.5+ (and Modules)
+- Apache 2 (and Modules)
+- Nginx *(Optional)*
+- MySQL
+- Redis
+- and Header Files.
+
+### PHP5  [^](#table-of-contents)
+It's important to install **php5-dev** if you want to compile any add-ons later. We also want composer (PHP Package Manager) to be installed globally and accessible via `$ composer`
 
     sudo apt-get install -y php5 php5-dev php5-curl libpcre3-dev
-    curl -sS https://getcomposer.org/installer | php && sudo mv composer.phar /usr/local/bin/composer
     
-### Apache
+    curl -sS https://getcomposer.org/installer | php && sudo mv composer.phar /usr/local/bin/composer
+
+If you are looking for more PHP modules try:
+
+    sudo apt-cache search php5-
+    
+### Apache  [^](#table-of-contents)
 
     sudo apt-get install -y apache2 libapache2-mod-php5
 
-### Nginx
+If you are looking for more Apache modules try:
+
+    sudo apt-cache search libapache2-mod
+
+### Nginx  [^](#table-of-contents)
 Or if you prefer to use nginx
 
     sudo apt-get install -y nginx
 
-### MySQL
+### MySQL  [^](#table-of-contents)
 
     sudo apt-get install -y mysql-server mysql-client php5-mysql
     sudo sed -i 's/bind-address/bind-address = 0.0.0.0#/' /etc/mysql/my.cnf
 
-### Redis
+### Redis  [^](#table-of-contents)
 
     sudo apt-get install -y redis-server
 
-### Java Runtime
+### Java Runtime  [^](#table-of-contents)
 
     sudo apt-get install -y default-jre
 
-### Phalcon
+### Phalcon  [^](#table-of-contents)
 
     sudo apt-add-repository ppa:phalcon/stable
     sudo apt-get update
     sudo apt-get install -y php5-phalcon
 
-### Phalcon Dev Tools
+### Phalcon Dev Tools  [^](#table-of-contents)
 This is an easy to use install script that will cleanup after itself. It can also be used for updating:
 
     sudo bash install_phalcon_devtools.sh
@@ -173,18 +195,18 @@ To test it run: `$ phalcon`
 
 ***
 
-## Python
+## Python  [^](#table-of-contents)
 
-If you need Python headers for some PIP packages install `python-dev`:
+Python is installed by default on Ubuntu, version 2.7 is suitable. I strongly recommend installing `python-dev` for headers to compile certain PIP packages.
 
-    sudo apt-get install -y python-dev python-pip
+    sudo apt-get install -y python-dev 
     sudo apt-get install -y python-pip
     sudo pip install fabric virtualenv virtualenvwrapper
 
 ***
 
-## Ruby
-Install Ruby 1.9+ with header files in dev.
+## Ruby  [^](#table-of-contents)
+Install Ruby 2.X with header files in `ruby2.0-dev`, this will keep your gems from having issues.
 
     sudo apt-get install -y ruby2.0 ruby2.0-dev
 
@@ -195,8 +217,8 @@ For Ruby RVM (Version Management)
 
 ***
 
-## NodeJS
-Using a PPA to fix the nodejs path issue
+## NodeJS  [^](#table-of-contents)
+I am using a PPA to fix the nodejs path issue(s)
 
     sudo add-apt-repository ppa:chris-lea/node.js
     sudo apt-get update
@@ -208,7 +230,7 @@ If installing coffee-script and typing `$ coffee` produces an error, make sure c
 
     echo $PATH
 
-*Upgrade NodeJS*
+**Upgrade NodeJS**
 
 Clear NPM's cache:
 
@@ -226,19 +248,38 @@ Or pick a specific version:
 
     sudo n 0.8.20
 
+***
+
+## Google Chrome  [^](#table-of-contents)
+Version 41 has some annoying issues. It's best to revert to version 40, and Ubuntu does not auto update Chrome without you doing a update.
+
+Stable versions at at: http://mirror.pcbeta.com/google/chrome/deb/pool/main/g/google-chrome-stable/
+
+If you have chrome installed, I'd backup anything if you need it, and remove it *(If you are sync'd, you won't lose anything)*:
+
+    sudo apt-get purge google-chrome-stable
+    rm -rf ~/.config/google-chrome
+
+Then install an older version -- This is **40** for a 64-bit OS:
+
+	wget http://mirror.pcbeta.com/google/chrome/deb/pool/main/g/google-chrome-stable/google-chrome-stable_40.0.2214.95-1_amd64.deb
+	
+    sudo dpkg -i google-chrome-stable_40.0.2214.95-1_amd64.deb
+
+Then launch it with `$ google-chrome` and you can pin it to a unity bar.
 
 ***
 
-# Virtual Machine Related
+# Virtual Machine Related  [^](#table-of-contents)
 
-## Fix Mouse Side Buttons in VMWare
+## Fix Mouse Side Buttons in VMWare  [^](#table-of-contents)
 Append the following to `yourbox.vmx` with the machine off.
 
     mouse.vusb.enable = "TRUE"
     mouse.vusb.useBasicMouse = "FALSE"
     usb.generic.allowHID = "TRUE"
 
-## Vagrant VBGuest Fix:
+## Vagrant VBGuest Fix:  [^](#table-of-contents)
 
     vagrant plugin install vagrant-vbguest
 
@@ -246,12 +287,13 @@ Append the following to `yourbox.vmx` with the machine off.
     sudo ln -s /opt/VBoxGuestAdditions-4.3.10/lib/VBoxGuestAdditions /usr/lib/VBoxGuestAdditions
 
 
-## Windows 8 VirtualBox Fix:
+## Windows 8 VirtualBox Fix  [^](#table-of-contents)
+Running Windows 8 in Virtualbox has an odd error, run this in `cmd` or `powershell`, or `terminal` on linux.
 
     vboxmanage list vms
     vboxmanage setextradata "The Box Name" VBoxInternal/CPUM/CMPXCHG16B 1
 
-## Install ATI Drivers
+## Install ATI Drivers  [^](#table-of-contents)
 
     sudo apt-add-repository ppa:xorg-edgers/ppa
     sudo apt-get update
@@ -260,12 +302,12 @@ Append the following to `yourbox.vmx` with the machine off.
     sudo amdconfig --initial
     sudo apt-get install gksu
 
-To Edit Catalyst Settings, Type the following in the Global Launcher:
+**To Edit Catalyst Settings**; Type the following in the Global Launcher *(Super Key/Windows Key)*:
 
     gksu amdcccle
 
-## Remove ATI Drivers
-
+## Remove ATI Drivers  [^](#table-of-contents)
+ 
     sudo apt-get remove --purge fglrx fglrx_* fglrx-amdcccle* fglrx-dev*
     sudo rm /etc/X11/xorg.conf
     sudo apt-get install --reinstall xserver-xorg-core libgl1-mesa-glx libgl1-mesa-dri libgl1-mesa-glx libgl1-mesa-dri
@@ -273,7 +315,7 @@ To Edit Catalyst Settings, Type the following in the Global Launcher:
 
 ***
 
-# Other Applications
+# Other Applications  [^](#table-of-contents)
 - [Chrome](https://www.google.com/intl/en-US/chrome/browser/)
 - [Sublime Text 3](http://www.sublimetext.com/3)
 - [Skype](http://www.skype.com/en/download-skype/skype-for-computer/)
@@ -300,4 +342,4 @@ To Edit Catalyst Settings, Type the following in the Global Launcher:
 
 ***
 
-By [JREAM](http://jream.com)
+By [JREAM](http://jream.com) 2014-2015
