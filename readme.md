@@ -94,8 +94,28 @@ Use the Unity Tweak Tool (Apply Icon & Themes)
     sudo apt-get install -y numix-gtk-theme numix-icon-theme numix-icon-theme-circle
 
 ### Utilities
+I want the bleeding edge Git:
 
+    sudo add-apt-repository ppa:git-core/ppa -y
+    
+Install the utilities:
+    
     sudo apt-get install -y vim git mercurial meld curl htop xclip terminator gdebi preload bleachbit ubuntu-restricted-extras
+
+Then setup the git defaults
+
+    git config --global push.default simple
+    git config --global user.name your name
+    git config --global user.email your@email.com
+    
+That creates a `~/.gitconfig` with:
+
+ 	[user]
+    	email = aniyishay@gmail.com
+    	name = Jesse Boyer
+	[push]
+		default = simple
+
 
 ### Wine
 
