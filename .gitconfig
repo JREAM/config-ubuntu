@@ -2,6 +2,8 @@
     name = Jesse Boyer
     email = aniyishay@gmail.com
     IdentityFile = ~/.ssh/id_rsa
+[push]
+    default = simple
 [apply]
     # Detect whitespace errors when applying a patch
     whitespace = fix
