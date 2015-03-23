@@ -48,7 +48,7 @@ This is less painful when creating a group with rwx permissions for `/usr/local`
     sudo groupadd local
     sudo usermod -a -G local jesse
 
-    sudo groupchgrp -R local /usr/local
+    sudo chgrp -R local /usr/local
     sudo chmod -R g+rwx /usr/local
 
 ## Use 32Bit on 64bit
