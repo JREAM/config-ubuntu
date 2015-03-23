@@ -9,6 +9,7 @@ This is for a __Debian__ based OS, such as: [Ubuntu](http://ubuntu.com/desktop),
     - [Better Local Folder](#better-local-folder)
     - [Use 32Bit on 64bit](#use-32bit-on-64bit)
     - [VIM Customization](#vim-customization)
+    - [Networking](#networking)
 - [Installation Packages](#installation-packages)
 	- [Enable PPA](#enable-ppa)
 	- [System Tools](#system-tools)
@@ -69,6 +70,22 @@ You can use 32Bit applications if you like, sometimes this is useful.
 **Set Capslock key to Esc**
 
 	$ dconf write /org/gnome/desktop/input-sources/xkb-options "['caps:escape']
+
+## Networking
+
+To enable Networking, and make it accessible to all computers such as Windows also first install Samba:
+
+	$ sudo apt-get install samba
+
+Then edit the Samba config:
+
+	$ vim /etc/samba/smb.conf
+
+Under `[global]` change the workgroup to what you use, the default is WORKGROUP:
+
+	workgroup = WORKGROUP
+	
+Then you will have to reload your Session.
 
 ***
 
