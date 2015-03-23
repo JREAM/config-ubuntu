@@ -1,17 +1,19 @@
 # Config Ubuntu
 
-This is primarily a __Debian__ based OS, such as __Debuan__, __Ubuntu__, __Mint__, and __Elementary OS__.
+This is for a __Debian__ based OS, such as: [Ubuntu](http://ubuntu.com/desktop), [Mint](http://www.linuxmint.com/), and [Elementary OS](http://elementaryos.org/).
+
+***
 
 # Table of Contents
-- [OS Downloads](#os-downloads)
 - [Optional Configurations](#optional-configurations)
-- [VIM Customization](#vim-customization)
+    - [Better Local Folder](#better-local-folder)
+    - [Use 32Bit on 64bit](#use-32bit-on-64bit)
+    - [VIM Customization](#vim-customization)
 - [Installation Packages](#installation-packages)
-	- [Use 32Bit on 64bit](#use-32bit-on-64bit)
 	- [Enable PPA](#enable-ppa)
 	- [System Tools](#system-tools)
+        - [Utilities](#utilities)
 		- [Numix Theme](#numix-theme)
-		- [Utilities](#utilities)
 		- [Wine](#wine)
 	- [LAMP](#lamp)
 		- [PHP5](#php5)
@@ -37,23 +39,25 @@ This is primarily a __Debian__ based OS, such as __Debuan__, __Ubuntu__, __Mint_
 
 [(Back to top)](#table-of-contents)
 
-# OS Downloads  
-
-- [Ubuntu Desktop](http://ubuntu.com/desktop)
-- [Elementary Desktop](http://elementaryos.org/)
-- [Linux Mint](http://www.linuxmint.com/)
-
-***
-
-[(Back to top)](#table-of-contents)
-
-# Optional Configurations  
+# Optional Configurations
 - Some items (`termatinator`, `virtualenvs`) copied from [Dan Sackett](https://github.com/dansackett/dotfiles).
 
-***
-[(Back to top)](#table-of-contents)
+## Better Local Folder
+This is less painful when creating a group with rwx permissions for `/usr/local`
 
-# VIM Customization  
+    sudo groupadd local
+    sudo usermod -a -G local jesse
+
+    sudo groupchgrp -R local /usr/local
+    sudo chmod -R g+rwx /usr/local
+
+## Use 32Bit on 64bit
+
+You can use 32Bit applications if you like, sometimes this is useful.
+
+    sudo apt-get update && sudo apt-get install -y unetbootin
+
+## VIM Customization
 
 **Setup VIM**
 
@@ -70,47 +74,33 @@ This is primarily a __Debian__ based OS, such as __Debuan__, __Ubuntu__, __Mint_
 
 [(Back to top)](#table-of-contents)
 
-# Installation Packages  
+# Installation Packages
 
-Login to your Linux user and go to your **home** directory, 
- 
+Login to your Linux user and go to your **home** directory,
+
 	cd ~
 
 Run these commands and tweak them as needed. The `-y` flag installs without a prompt. Run these commands from the terminal.
 
     sudo apt-get update && sudo apt-get upgrade
 
-## Use 32Bit on 64bit  
-
-You can use 32Bit applications if you like, sometimes this is useful.
-
-    sudo apt-get update && sudo apt-get install -y unetbootin
-
-## Enable PPA 
+## Enable PPA
 PPA's are provided within cateogories below, I highly recommend using PPA's or atleast installing this package incase you ever use them.
 
     sudo apt-get install -y python-software-properties
 
-## System Tools  
+## System Tools
 This is for tweaking the UI
 
     sudo apt-get install -y unity-tweak-tool compizconfig-settings-manager dconf-editor
 
-### Numix Theme  
-
-Use the **Unity Tweak Tool** to set these. *(Apply Icon & Themes)*
-
-    sudo add-apt-repository ppa:numix/ppa
-    sudo apt-get update
-    sudo apt-get install -y numix-gtk-theme numix-icon-theme numix-icon-theme-circle
-
-### Utilities  
+### Utilities
 I prefer Git 2.X, so I'll use a PPA. Otherwise you can simply install git by default.
 
     sudo add-apt-repository ppa:git-core/ppa -y
-    
+
 **Install the Utilities:**
-    
+
     sudo apt-get install -y vim git mercurial meld curl htop xclip terminator gdebi preload bleachbit ubuntu-restricted-extras
 
 To setup the git defaults *(Omit the `push.default` if you are using below 2.X)*
@@ -118,7 +108,7 @@ To setup the git defaults *(Omit the `push.default` if you are using below 2.X)*
     git config --global push.default simple
     git config --global user.name your name
     git config --global user.email your@email.com
-    
+
 That will create a `~/.gitconfig` with:
 
  	[user]
@@ -126,6 +116,14 @@ That will create a `~/.gitconfig` with:
     	name = Jesse Boyer
 	[push]
 		default = simple
+
+### Numix Theme
+
+Use the **Unity Tweak Tool** to set these. *(Apply Icon & Themes)*
+
+    sudo add-apt-repository ppa:numix/ppa
+    sudo apt-get update
+    sudo apt-get install -y numix-gtk-theme numix-icon-theme numix-icon-theme-circle
 
 
 ### Wine
@@ -141,7 +139,7 @@ If you need a 32bit installation:
 ***
 [(Back to top)](#table-of-contents)
 
-## LAMP  
+## LAMP
 Linux Apache MySQL PHP
 
 **- Installation for the following:**
@@ -152,17 +150,17 @@ Linux Apache MySQL PHP
 - Redis
 - and Header Files.
 
-### PHP5  
+### PHP5
 It's important to install **php5-dev** if you want to compile any add-ons later. We also want composer (PHP Package Manager) to be installed globally and accessible via `$ composer`
 
     sudo apt-get install -y php5 php5-dev php5-curl libpcre3-dev
-    
+
     curl -sS https://getcomposer.org/installer | php && sudo mv composer.phar /usr/local/bin/composer
 
 If you are looking for more PHP modules try:
 
     sudo apt-cache search php5-
-    
+
 ### Apache
 
     sudo apt-get install -y apache2 libapache2-mod-php5
@@ -171,7 +169,7 @@ If you are looking for more Apache modules try:
 
     sudo apt-cache search libapache2-mod
 
-### Nginx  
+### Nginx
 Or if you prefer to use nginx
 
     sudo apt-get install -y nginx
@@ -181,7 +179,7 @@ Or if you prefer to use nginx
     sudo apt-get install -y mysql-server mysql-client php5-mysql
     sudo sed -i 's/bind-address/bind-address = 0.0.0.0#/' /etc/mysql/my.cnf
 
-### Redis 
+### Redis
 
     sudo apt-get install -y redis-server
 
@@ -189,13 +187,13 @@ Or if you prefer to use nginx
 
     sudo apt-get install -y default-jre
 
-### Phalcon  
+### Phalcon
 
     sudo apt-add-repository ppa:phalcon/stable
     sudo apt-get update
     sudo apt-get install -y php5-phalcon
 
-### Phalcon Dev Tools 
+### Phalcon Dev Tools
 This is an easy to use install script that will cleanup after itself. It can also be used for updating:
 
     sudo bash install_phalcon_devtools.sh
@@ -206,11 +204,11 @@ To test it run: `$ phalcon`
 
 [(Back to top)](#table-of-contents)
 
-## Python  
+## Python
 
 Python is installed by default on Ubuntu, version 2.7 is suitable. I strongly recommend installing `python-dev` for headers to compile certain PIP packages.
 
-    sudo apt-get install -y python-dev 
+    sudo apt-get install -y python-dev
     sudo apt-get install -y python-pip
     sudo pip install fabric virtualenv virtualenvwrapper
 
@@ -248,15 +246,15 @@ If installing coffee-script and typing `$ coffee` produces an error, make sure c
 Clear NPM's cache:
 
     sudo npm cache clean -f
-    
+
 Install a helper called `n`
 
     sudo npm install -g n
-    
+
 Install latest stable NodeJS version
 
     sudo n stable
-  
+
 Or pick a specific version:
 
     sudo n 0.8.20
@@ -277,7 +275,7 @@ If you have chrome installed, I'd backup anything if you need it, and remove it 
 Then install an older version -- This is **40** for a 64-bit OS:
 
 	wget http://mirror.pcbeta.com/google/chrome/deb/pool/main/g/google-chrome-stable/google-chrome-stable_40.0.2214.95-1_amd64.deb
-	
+
     sudo dpkg -i google-chrome-stable_40.0.2214.95-1_amd64.deb
 
 Then launch it with `$ google-chrome` and you can pin it to a unity bar.
@@ -285,18 +283,18 @@ Then launch it with `$ google-chrome` and you can pin it to a unity bar.
 ***
 [(Back to top)](#table-of-contents)
 
-# Virtual Machine Related  
+# Virtual Machine Related
 
 This has to do with VirtualBox, not VMWare even though I favor it.
 
-## Fix Mouse Side Buttons in VMWare 
+## Fix Mouse Side Buttons in VMWare
 Append the following to `yourbox.vmx` with the machine off.
 
     mouse.vusb.enable = "TRUE"
     mouse.vusb.useBasicMouse = "FALSE"
     usb.generic.allowHID = "TRUE"
 
-## Vagrant VBGuest Fix: 
+## Vagrant VBGuest Fix:
 
     vagrant plugin install vagrant-vbguest
 
@@ -304,13 +302,13 @@ Append the following to `yourbox.vmx` with the machine off.
     sudo ln -s /opt/VBoxGuestAdditions-4.3.10/lib/VBoxGuestAdditions /usr/lib/VBoxGuestAdditions
 
 
-## Windows 8 VirtualBox Fix 
+## Windows 8 VirtualBox Fix
 Running Windows 8 in Virtualbox has an odd error, run this in `cmd` or `powershell`, or `terminal` on linux.
 
     vboxmanage list vms
     vboxmanage setextradata "The Box Name" VBoxInternal/CPUM/CMPXCHG16B 1
 
-## Install ATI Drivers  
+## Install ATI Drivers
 
     sudo apt-add-repository ppa:xorg-edgers/ppa
     sudo apt-get update
@@ -324,7 +322,7 @@ Running Windows 8 in Virtualbox has an odd error, run this in `cmd` or `powershe
     gksu amdcccle
 
 ## Remove ATI Drivers
- 
+
     sudo apt-get remove --purge fglrx fglrx_* fglrx-amdcccle* fglrx-dev*
     sudo rm /etc/X11/xorg.conf
     sudo apt-get install --reinstall xserver-xorg-core libgl1-mesa-glx libgl1-mesa-dri libgl1-mesa-glx libgl1-mesa-dri
@@ -361,3 +359,5 @@ Running Windows 8 in Virtualbox has an odd error, run this in `cmd` or `powershe
 ***
 
 By [JREAM](http://jream.com) 2014-2015
+
+[(Back to top)](#table-of-contents)
