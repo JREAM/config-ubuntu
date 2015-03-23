@@ -92,7 +92,11 @@ PPA's are provided within cateogories below, I highly recommend using PPA's or a
 ## System Tools
 This is for tweaking the UI
 
-    sudo apt-get install -y unity-tweak-tool compizconfig-settings-manager dconf-editor
+    sudo apt-get install -y\
+        unity-tweak-tool\
+        compizconfig-settings-manager\
+        dconf-editor\
+        synaptic
 
 ### Utilities
 I prefer Git 2.X, so I'll use a PPA. Otherwise you can simply install git by default.
