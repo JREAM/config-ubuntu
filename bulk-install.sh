@@ -18,7 +18,7 @@ sudo add-apt-repository -y ppa:chris-lea/node.js
 ## Enable PPA
 sudo apt-get install -y\
     python-software-properties\
-    unity-tweak-tool compizconfig-settings-manager\
+    unity-tweak-tool compizconfig-settings-manager compiz-plugins\
     dconf-editor synaptic unetbootin\
     vim\
     git mercurial meld\
