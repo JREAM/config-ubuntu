@@ -112,6 +112,7 @@ This is for tweaking the UI
     sudo apt-get install -y\
         unity-tweak-tool\
         compizconfig-settings-manager\
+        compiz-plugins\
         dconf-editor\
         synaptic
 
