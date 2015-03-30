@@ -12,7 +12,7 @@ Create a file with `$ touch /etc/apache2/sites-available/projects.conf`:
     </VirtualHost>
     
     <Directory /home/jesse/projects>
-        Options FollowSymLinks MultiViews
+        Options Indexes FollowSymLinks MultiViews
         AllowOverride All
         Require all granted
     </Directory>
