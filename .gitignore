@@ -1,0 +1,41 @@
+# Apple
+.DS_Store
+.AppleDouble
+.LSOverride
+# Thumbnails
+._*
+
+# Linux
+*~
+.directory
+.Trash-*
+Session.vim
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+*.lnk
+
+# Sublime Text
+*.tmlanguage.cache
+*.tmPreferences.cache
+*.stTheme.cache
+*.sublime-workspace
+
+# Sass
+.sass-cache
+*.css.map
+
+# NodeJS
+npm_modules/
+node-debug.txt
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+*.egg
+
+# Vagrant
+.vagrant/
