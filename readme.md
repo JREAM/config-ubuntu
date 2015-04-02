@@ -123,7 +123,7 @@ I prefer Git 2.X, so I'll use a PPA. Otherwise you can simply install git by def
 
 **Install the Utilities:**
 
-    sudo apt-get install -y vim git mercurial meld curl htop xclip terminator gdebi preload bleachbit ubuntu-restricted-extras
+    sudo apt-get install -y vim git mercurial meld curl htop xclip unzip terminator gdebi preload bleachbit ubuntu-restricted-extras
 
 To setup the git defaults *(Omit the `push.default` if you are using below 2.X)*
 
