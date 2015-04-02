@@ -9,6 +9,9 @@
 cd ~
 sudo apt-get update && sudo apt-get upgrade -y
 
+# This should come first for PPA's
+sudo apt-get install -y python-software-properties\
+
 sudo add-apt-repository -y ppa:git-core/ppa
 sudo add-apt-repository -y ppa:numix/ppa
 sudo add-apt-repository -y ppa:ubuntu-wine/ppa
@@ -17,7 +20,6 @@ sudo add-apt-repository -y ppa:chris-lea/node.js
 
 ## Enable PPA
 sudo apt-get install -y\
-    python-software-properties\
     unity-tweak-tool compizconfig-settings-manager compiz-plugins\
     dconf-editor synaptic unetbootin\
     vim\
