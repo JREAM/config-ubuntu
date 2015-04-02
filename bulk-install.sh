@@ -22,7 +22,7 @@ sudo add-apt-repository -y ppa:chris-lea/node.js
 sudo apt-get install -y\
     unity-tweak-tool compizconfig-settings-manager compiz-plugins\
     dconf-editor synaptic unetbootin\
-    vim\
+    vim unzip\
     git mercurial meld\
     curl htop xclip terminator\
     gdebi preload bleachbit ubuntu-restricted-extras\
