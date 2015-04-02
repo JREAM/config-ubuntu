@@ -28,6 +28,7 @@ This is for a __Debian__ based OS, such as: [Ubuntu](http://ubuntu.com/desktop),
 	- [Ruby](#ruby)
 	- [NodeJS](#nodejs)
 	- [Google Chrome](#google-chrome)
+- [Adjust Mouse and Devices](#adjust-mouse-and-devices)
 - [Virtual Machine Related](#virtual-machine-related)
 	- [Fix Mouse Side Buttons in VMWare](#fix-mouse-side-buttons-in-vmware)
 	- [Vagrant VBGuest Fix](#vagrant-vbguest-fix)
@@ -301,6 +302,54 @@ Then install an older version -- This is **40** for a 64-bit OS:
     sudo dpkg -i google-chrome-stable_40.0.2214.95-1_amd64.deb
 
 Then launch it with `$ google-chrome` and you can pin it to a unity bar.
+
+***
+[(Back to top)](#table-of-contents)
+
+# Adjust Mouse and Devices
+When using a USB mouse sometimes the speed is just not right, in my case it's too slow often. Here is how to adjust it:
+
+    xinput --list
+    
+I get something like this:
+    
+	⎡ Virtual core pointer                    	id=2	[master pointer  (3)]
+	⎜   ↳ Virtual core XTEST pointer              	id=4	[slave  pointer  (2)]
+	⎜   ↳ ETPS/2 Elantech Touchpad                	id=15	[slave  pointer  (2)]
+	⎜   ↳ Logitech Unifying Device. Wireless PID:101b	id=12	[slave  pointer  (2)]
+	⎣ Virtual core keyboard                   	id=3	[master keyboard (2)]
+    	↳ Virtual core XTEST keyboard             	id=5	[slave  keyboard (3)]
+    	↳ Power Button                            	id=6	[slave  keyboard (3)]
+    	↳ Video Bus                               	id=7	[slave  keyboard (3)]
+    	↳ Power Button                            	id=8	[slave  keyboard (3)]
+    ...
+
+The ID of my mouse is `12`. 
+You can see all the properties with:
+
+	$ xinput --list-props 12
+	
+Then you can adjust the settings the String value and a value at the end:
+
+	$ xinput --set-prop 12 "Device Accel Constant Deceleration" 2
+
+## Preserve Settings
+
+To keep the settings in Gnome, do the following:
+
+	$ cd ~
+	$ touch gnome-boot.sh && chmod +x gnome-boot.sh
+
+Example of `gnome-boot.sh` file (Note: You can call it whatever you like):
+
+	#!/bin/bash                                                                     
+	xinput --set-prop 12 "Device Accel Constant Deceleration" 4
+	
+
+Then Add the Bash script the Gnome Session:
+
+	$ gnome-session-properties
+	
 
 ***
 [(Back to top)](#table-of-contents)
