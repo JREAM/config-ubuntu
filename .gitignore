@@ -28,8 +28,9 @@ Desktop.ini
 *.css.map
 
 # NodeJS
-npm_modules/
+node_modules/
 node-debug.txt
+npm-debug.txt
 
 # Python
 __pycache__/
