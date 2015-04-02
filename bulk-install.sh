@@ -10,7 +10,7 @@ cd ~
 sudo apt-get update && sudo apt-get upgrade -y
 
 # This should come first for PPA's
-sudo apt-get install -y python-software-properties\
+sudo apt-get install -y python-software-properties
 
 sudo add-apt-repository -y ppa:git-core/ppa
 sudo add-apt-repository -y ppa:numix/ppa
