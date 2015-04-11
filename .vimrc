@@ -62,7 +62,8 @@ set textwidth=80
 set formatoptions+=l
 
 " detect file type, turn on that type's plugins and indent preferences
-filetype plugin indent on
+" Turned off -- This was annoying when copy/pasting causes indent problems
+" filetype plugin indent on
 
 " Show matching brackets when text indicator is over them
 set showmatch
