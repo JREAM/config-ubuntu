@@ -16,6 +16,7 @@ This is for a __Debian__ based OS, such as: [Ubuntu](http://ubuntu.com/desktop),
         - [Utilities](#utilities)
 		- [Numix Theme](#numix-theme)
 		- [Wine](#wine)
+		- [USB Maker for Windows on Linux](#usb-maker-for-windows-on-linux)
 	- [LAMP](#lamp)
 		- [PHP5](#php5)
 		- [Apache](#apache)
@@ -159,6 +160,15 @@ To run windows applications Wine is the best option. I often use HeidiSQL with W
 If you need a 32bit installation:
 
     sudo apt-get install -y wine1.7-i386
+
+### USB Maker for Windows on Linux
+You can easily use `Startup Disk Creator` and `UNetbootin` to create Linux to USB. But if you need Windows to USB from your Linux OS use Win USB:
+
+	sudo add-apt-repository ppa:colingille/freshlight
+	sudo sh -c "sed -i 's/trusty/saucy/g' /etc/apt/sources.list.d/colingille-freshlight-trusty.list"
+	sudo apt-get update && sudo install -y winusb
+
+We replace the sources.list back to saucy in order to get it to work for ubuntu 14, that is the purpose of the `sed` command.
 
 ***
 [(Back to top)](#table-of-contents)
