@@ -16,7 +16,7 @@ This is for a __Debian__ based OS, such as: [Ubuntu](http://ubuntu.com/desktop),
         - [Utilities](#utilities)
 		- [Numix Theme](#numix-theme)
 		- [Wine](#wine)
-		- [USB Maker for Windows on Linux](#usb-maker-for-windows-on-linux)
+		- [USB Maker for Windows ISO on Linux](#usb-maker-for-windows-on-linux)
 	- [LAMP](#lamp)
 		- [PHP5](#php5)
 		- [Apache](#apache)
@@ -161,7 +161,7 @@ If you need a 32bit installation:
 
     sudo apt-get install -y wine1.7-i386
 
-### USB Maker for Windows on Linux
+### USB Maker for Windows ISO on Linux
 You can easily use `Startup Disk Creator` and `UNetbootin` to create Linux to USB. But if you need Windows to USB from your Linux OS use Win USB:
 
 	sudo add-apt-repository ppa:colingille/freshlight
