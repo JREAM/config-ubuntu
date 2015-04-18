@@ -16,6 +16,7 @@ This is for a __Debian__ based OS, such as: [Ubuntu](http://ubuntu.com/desktop),
         - [Utilities](#utilities)
 		- [Numix Theme](#numix-theme)
 		- [Wine](#wine)
+		- [USB Maker for Windows ISO on Linux](#usb-maker-for-windows-on-linux)
 	- [LAMP](#lamp)
 		- [PHP5](#php5)
 		- [Apache](#apache)
@@ -24,6 +25,7 @@ This is for a __Debian__ based OS, such as: [Ubuntu](http://ubuntu.com/desktop),
 		- [Redis](#redis)
 		- [Phalcon](#phalcon)
 		- [Phalcon Dev Tools](#phalcon-dev-tools)
+		- [Secure Permissions](#secure-permissions)
 	- [Python](#python)
 	- [Ruby](#ruby)
 	- [NodeJS](#nodejs)
@@ -159,6 +161,15 @@ If you need a 32bit installation:
 
     sudo apt-get install -y wine1.7-i386
 
+### USB Maker for Windows ISO on Linux
+You can easily use `Startup Disk Creator` and `UNetbootin` to create Linux to USB. But if you need Windows to USB from your Linux OS use Win USB:
+
+	sudo add-apt-repository ppa:colingille/freshlight
+	sudo sh -c "sed -i 's/trusty/saucy/g' /etc/apt/sources.list.d/colingille-freshlight-trusty.list"
+	sudo apt-get update && sudo install -y winusb
+
+We replace the sources.list back to saucy in order to get it to work for ubuntu 14, that is the purpose of the `sed` command.
+
 ***
 [(Back to top)](#table-of-contents)
 
@@ -222,6 +233,52 @@ This is an easy to use install script that will cleanup after itself. It can als
     sudo bash install_phalcon_devtools.sh
 
 To test it run: `$ phalcon`
+
+### Secure Permissions
+We will use the Access Control Lists (ACL) or (Filesystem Access Control List). We will use group permissions for folders so you don't have to make the public writable, because `777` is dangerous.
+
+	# Make sure you have ACL installed
+	sudo apt-get install acl
+
+Look for your main partition with:
+
+	$ df
+
+	
+Mine happens to be `dev/root`, yours may be `dev/sda` or something. Make sure to replace that below:
+
+	# T
+	sudo /sbin/tune2fs -o +acl /dev/root
+	
+To see what file system you are using `ext3`, `ext4`, etc, use the partition:
+
+	sudo file -sL /dev/root
+
+We have to put the partition in read-only mode, then remount it:
+
+    sudo /bin/mount -o remount /dev/root
+    
+Apply Group 
+
+	# This sets the Defaults
+	setfacl -Rd g:www-data:rw /var/www
+	# This sets future file
+	setfacl -Rm g:www-data:rw /var/www
+
+To Modify
+
+	setfacl -Rm g:www-data:rw /var/www 
+	
+Otherwise you could always set up a crontab such as:
+
+	crontab -e
+	
+Then append this to run every five minutes.
+
+	*/5 * * * * /home/ramesh/backup.sh chgrp -R www-data /var/www && chmod g+rw /var/www
+
+Lastly, you could have a deploy script that does this for you, such as Python `Fabfile`, but that's another topic.
+
 
 ***
 
