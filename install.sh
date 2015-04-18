@@ -14,18 +14,100 @@ echo "====================================================================="
 echo "                        JREAM - Config Ubuntu                      "
 echo ""
 echo " * To exit at anytime press CTRL+C"
-echo " * Your answers can be 'y' for yes, and empty for no (default)"
+echo " * Select a Package to install (Or, Type A at anytime to install ALL)"
 echo " * Installation runs after answers."
 echo ""
 echo "====================================================================="
+echo ""
+
+while true; do
+cat <<- command_list
+    CMD         PROCESS
+    ----        --------------------------------
+    A           Run All Commands
+    ppa         Install PPAs
+    gui         Install Ubuntu GUI Tools
+    util        Install Utilities
+    jre         Install Java Runtime Enviroment
+    lamp        Install LAMP (apache, php5, mysql)
+    phalcon     Install PhalconPHP
+    node        Install NodeJS (nodejs, bower, gulp, grunt-cli)
+    rb          Install Ruby (ruby-2.0, ruby-2.0-dev)
+    py          Install Python (python, python-dev, python-pip)
+    redis       Install Redis
+    nwjs        Install NW.js (io.js for GUI development in JS)
+    dot         Copy Dotfiles
+    perm        Update /usr/local permissions
+    q           Quit
+command_list
+read -p "Type a Command: " cmd
+
+    case $cmd in
+        A)
+            for entry in ./bin/*
+            do
+                bash $entry
+            done
+            ;;
+        ppa)
+            bash ./bin/ppa.sh
+            ;;
+        gui)
+            bash ./bin/gui.sh
+            ;;
+        util)
+            bash ./bin/util.sh
+            ;;
+        lamp)
+            bash ./bin/lamp.sh
+            ;;
+        lamp)
+            bash ./bin/phalcon.sh
+            ;;
+        node)
+            bash ./bin/node.sh
+            ;;
+        jre)
+            bash ./bin/jre.sh
+            ;;
+        nwjs)
+            bash ./bin/nwjs.sh
+            ;;
+        dot)
+            bash ./bin/dot.sh
+            ;;
+        rb)
+            bash ./bin/rb.sh
+            ;;
+        py)
+            bash ./bin/py.sh
+            ;;
+        redis)
+            bash ./bin/redis.sh
+            ;;
+        perm)
+            bash ./bin/perm.sh
+            ;;
+        q)
+            exit 1
+            ;;
+        *)
+            echo "Nothing"
+    esac
+
+    echo ""
+
+done
 
 read -p "Add Development PPA's? (Required for Developer Tools, Numix, NodeJS, Etc) (y/n): " ppa
 read -p "Install Ubuntu GUI Tools (Unity Tweak, Compiz)? (y/n): " ubuntu_tools
+read -p "Install Utilities? (y/n): " utilities
 
 if [[ $ppa == "y" ]]; then
     read -p "Install Developer Tools (PHP, Apache, SQL, etc) ? (y/n): " web_dev_tools
     if [[ $web_dev_tools == "y" ]]; then
         read -p "Install Several NodeJS Packages? (Bower, Grunt-CLI, Gulp)? (y/n): " nodejs_packages
+        read -p "Install NW.js for building Cross Platform Apps? ($ nw) (y/n): " nwjs
     fi
 fi
 
@@ -34,107 +116,35 @@ read -p "Copy dotfiles for your user (.vimrc, .bashrc, etc)? (y/n): " dotfiles
 
 
 if [[ $ppa == "y" ]]; then
-    # This should come first for PPA's
-    sudo apt-get install -y python-software-properties
-
-    sudo add-apt-repository -y ppa:git-core/ppa
-    sudo add-apt-repository -y ppa:numix/ppa
-    sudo add-apt-repository -y ppa:ubuntu-wine/ppa
-    sudo add-apt-repository -y ppa:phalcon/stable
-    sudo add-apt-repository -y ppa:chris-lea/node.js
-
-    echo "(+) Updating Sources List"
-    sudo apt-get update
+    # This runs an update, since it's required for packages
+    bash ./bin/ppa.sh
 fi
 
-# Always upgrade after they added PPA's
-# If PPA was run, no need to update again
+# If PPA was NOT run we update
 if [[ $ppa != "y" ]]; then
     sudo apt-get update
 fi
+
 sudo apt-get upgrade -y
 
-# These are core tools
-sudo apt-get install -y\
-    vim unzip\
-    git mercurial\
-    curl htop xclip\
-    terminator
+if [[ $utilities == "y" ]]; then
+    bash ./bin/utilities.sh
+fi
 
 if [[ $ubuntu_tools == "y" ]]; then
-    sudo apt-get install -y\
-        unity-tweak-tool compizconfig-settings-manager compiz-plugins\
-        dconf-editor synaptic unetbootin\
-        gdebi preload bleachbit ubuntu-restricted-extras\
-        numix-gtk-theme numix-icon-theme numix-icon-theme-circle
-
-    cp compizconfig.profile ~
-    echo " (+) Make sure to open Compiz and load the compizconfig.profile in ~"
-
-    cp .config ~/.config
-    echo " (+) Terminator config added"
-
+    bash ./bin/ubuntu-tools.sh
 fi
 
 if [[ $web_dev_tools == "y" ]]; then
-    sudo apt-get install -y\
-        meld\
-        mysql-server\
-        python-dev python-pip\
-        php5 php5-dev php5-curl php5-phalcon php5-mysql\
-        libsqlite3-dev libpcre3-dev\
-        apache2 libapache2-mod-php5\
-        redis-server\
-        default-jre\
-        ruby2.0 ruby2.0-dev\
-        nodejs
-
-    # Copy project folder over
-    if [ ! -d "~/projects" ]; then
-        cp projects ~/projects
-    else
-        echo " (-) Skipping, ~/projects folder already exists"
-    fi
-
-    # Install Phalcon Dev Tools
-    sudo ./bin/setup-phalcon-devtools.sh
-
-    # Add PHP Composer
-    curl -sS https://getcomposer.org/installer | php && sudo mv composer.phar /usr/local/bin/composer
-
-    # Permissions for local NPM folder
-    sudo chown -R $(whoami) ~/.npm
-
-    if [[ $nodejs_packages ]]; then
-        echo "(+) Installing NodeJS Packages."
-        sudo npm install bower gulp grunt-cli n -g
-    else
-        echo "(-) Skipping NodeJS Packages."
-    fi
+    bash ./bin/web-tools.sh
 fi
 
 if [[ $local_perms == "y" ]]; then
-
-    # Create user Permissions for usr/local
-    sudo groupadd local
-    sudo usermod -a -G local $USER
-    sudo groupchgrp -R local /usr/local
-    sudo chmod -R g+rwx /usr/local
+    bash ./bin/local-permissions.sh
 fi
 
 if [[ $dotfiles == "y" ]]; then
-    cp .vimrc ~
-    cp .bashrc ~
-    cp .gitignore ~
-    cp .hgignore ~
-    cp .gitconfig ~
-    cp .exports ~
-
-    # Reload Bash Config
-    source ~/.bashrc
-
-    # Instsall Vundle (For VIM Plugins)
-    git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+    bash ./bin/dot-files.sh
 fi
 
 echo "====================================================================="
