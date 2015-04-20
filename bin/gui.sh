@@ -16,8 +16,8 @@ sudo apt-get install -y\
 
 # IMPORTANT: Do NOT have a trailing \ on the LAST item!
 
-cp .config ~/.config
+cp $PROJECT_FILE_PATH/.config ~/.config
 echo " (+) Terminator config added."
 
-cp compizconfig.profile ~
+cp $PROJECT_FILE_PATH/compizconfig.profile ~
 echo " (+) Make sure to Open Compiz and load the compizconfig.profile in ~"

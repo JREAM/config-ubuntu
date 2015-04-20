@@ -1,10 +1,10 @@
 #/bin/bash
-cp .vimrc ~
-cp .bashrc ~
-cp .gitignore ~
-cp .hgignore ~
-cp .gitconfig ~
-cp .exports ~
+cp $PROJECT_FILE_PATH/.vimrc ~
+cp $PROJECT_FILE_PATH/.bashrc ~
+cp $PROJECT_FILE_PATH/.gitignore ~
+cp $PROJECT_FILE_PATH/.hgignore ~
+cp $PROJECT_FILE_PATH/.gitconfig ~
+cp $PROJECT_FILE_PATH/.exports ~
 
 # Reload Bash Config
 source ~/.bashrc
@@ -16,3 +16,4 @@ fi
 
 echo "(+) Complete! Make sure to $ source ~/.bashrc"
 echo "(+) You also want to run $ vim and type :PluginInstall"
+echo "(+) Make sure to change your ~/.gitconfig to your Name and Email!"

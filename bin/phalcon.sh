@@ -13,39 +13,37 @@ sudo apt-get install -y\
 echo "(+) Phalcon Installed."
 echo "(+) Installing Phalcon Dev Tools."
 
-# Temporary Directory
-TMP_DIR="$HOME/tmp_phalcon"
-
 # Destination Directory
-DST_DIR="/opt/phalcon_devtools"
+DEST_DIR="/usr/local/phalcon_devtools"
 
-if [ ! -d "$TMP_DIR" ]
-    then mkdir "$TMP_DIR" && cd "$TMP_DIR"
+# Clear out anything old
+if [ -d $DEST_DIR ]; then
+    sudo rm -rf $DEST_DIR
+    sudo mkdir $DEST_DIR
 fi
 
-if [ ! -d "$DST_DIR" ]
-    then mkdir "$DST_DIR"
+# See if we need composer (Duplicate in LAMP for now)
+if [ ! -f /usr/local/bin/composer ]; then
+    curl -sS https://getcomposer.org/installer | php && sudo mv composer.phar /usr/local/bin/composer
+else
+    sudo composer self-update
 fi
 
-echo '{"require":{"phalcon/devtools":"dev-master"}}' > composer.json
-composer install
+echo '{"require":{"phalcon/devtools":"dev-master"}}' > $PROJECT_TEMP_PATH/composer.json
+cd $PROJECT_TEMP_PATH
+sudo composer install  # For Permission Issues :\
 
-if [ -d "/opt/phalcon_devtools" ]; then
-    sudo rm -rf /opt/phalcon_devtools
-    sudo mkdir /opt/phalcon_devtools
-fi
+# Move the composer install items we want to a good spot
+sudo mv vendor/phalcon/devtools/* $DEST_DIR
 
-sudo mv vendor/phalcon/devtools/* /opt/phalcon_devtools
-cd ~
+# Cleanup (We are already in the $DEFAULT_TMP_PATH)
+sudo rm composer.json
+sudo rm composer.lock
+sudo rm -rf vendor
 
-# Cleanup
-rm -rf "$TMP_DIR"
-rm -rf composer.json
-rm -rf ./bin/composer.lock
-rm -rf ./bin/vendor
 
 if [ ! -L /usr/bin/phalcon ]; then
-    sudo ln -s /opt/phalcon_devtools/phalcon.php /usr/bin/phalcon
+    sudo ln -s $DEST_DIR/phalcon.php /usr/bin/phalcon
 fi
 
 echo "(+) Phalcon Dev Tools Installed, run with $ phalcon."
