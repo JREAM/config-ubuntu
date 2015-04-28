@@ -33,13 +33,23 @@ if [ ! -f /etc/apache2/sites-available/projects.conf ]; then
 
     echo " (+) Creating projects VirtualHost"
 
-    echo '<VirtualHost *:80>
-            DocumentRoot /home/$USER/projects
+    echo 'ServerName projects  
+    <VirtualHost *:80>
+    
+        # Indexes + Directory Root.
+        DocumentRoot /home/$USER/projects
+        
+        # Logfiles
+        ErrorLog  /home/$USER/projects/error.log
+        CustomLog /home/$USER/projects/access.log combined
+        
     </VirtualHost>
+    
     <Directory "/home/$USER/projects">
-            Options Indexes Followsymlinks
-            AllowOverride All
-            Require all granted
+        Header set Access-Control-Allow-Origin "*"
+        Options Indexes Followsymlinks
+        AllowOverride All
+        Require all granted
     </Directory>' > projects.conf
 
     sudo mv projects.conf /etc/apache2/sites-available
