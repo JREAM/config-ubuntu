@@ -1,4 +1,4 @@
-#/bin/bash
+#!/bin/bash
 #
 # This will automatically install a lot of the packages for a quick start.
 # You can configure them yourself according to the readme.
