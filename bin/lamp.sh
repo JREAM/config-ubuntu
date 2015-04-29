@@ -33,7 +33,7 @@ if [ ! -f /etc/apache2/sites-available/projects.conf ]; then
 
     echo " (+) Creating projects VirtualHost"
 
-    echo 'ServerName projects  
+    echo "ServerName projects  
     <VirtualHost *:80>
     
         # Indexes + Directory Root.
@@ -45,12 +45,12 @@ if [ ! -f /etc/apache2/sites-available/projects.conf ]; then
         
     </VirtualHost>
     
-    <Directory "/home/$USER/projects">
-        Header set Access-Control-Allow-Origin "*"
+    <Directory /home/$USER/projects>
+        Header set Access-Control-Allow-Origin '*'
         Options Indexes Followsymlinks
         AllowOverride All
         Require all granted
-    </Directory>' > projects.conf
+    </Directory>" > projects.conf
 
     sudo mv projects.conf /etc/apache2/sites-available
     sudo a2ensite projects
@@ -81,7 +81,7 @@ sudo sed -i 's/display_errors = Off/display_errors = On/' /etc/php5/apache2/php.
 
 
 # Some Apache Finishing up
-sudo a2enmod rewrite
+sudo a2enmod rewrite headers
 sudo service apache2 restart
 
 echo "(+) LAMP Completed."
