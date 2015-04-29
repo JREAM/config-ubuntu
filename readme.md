@@ -72,7 +72,7 @@ You can use 32Bit applications if you like, sometimes this is useful.
 
 **Set Capslock key to Esc**
 
-	$ dconf write /org/gnome/desktop/input-sources/xkb-options "['caps:escape']
+	$ dconf write /org/gnome/desktop/input-sources/xkb-options "['caps:escape']"
 
 ## Networking
 
