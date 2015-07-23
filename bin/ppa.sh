@@ -1,11 +1,16 @@
 #/bin/bash
 # This should come first for PPA's
-sudo apt-get install -y python-software-properties
 
-sudo add-apt-repository -y ppa:git-core/ppa
-sudo add-apt-repository -y ppa:numix/ppa
-sudo add-apt-repository -y ppa:ubuntu-wine/ppa
-# Phalcon was moved to the phalcon sh
+sources=(git-core numix ubuntu-wine)
+
+echo "(+) Removing and Re-Adding Sources List"
+
+for s in $sources; do
+    if [ -f /etc/apt/sources.list.d/$s*ppa ]; then
+        sudo rm /etc/apt/sources.list.d/$s*ppa
+    fi
+    sudo add-apt-repository -y ppa:$s
+done
 
 echo "(+) Updating Sources List"
 sudo apt-get update
