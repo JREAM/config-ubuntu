@@ -33,18 +33,18 @@ if [ ! -f /etc/apache2/sites-available/projects.conf ]; then
 
     echo " (+) Creating projects VirtualHost"
 
-    echo "ServerName projects  
+    echo "ServerName projects
     <VirtualHost *:80>
-    
+
         # Indexes + Directory Root.
         DocumentRoot /home/$USER/projects
-        
+
         # Logfiles
         ErrorLog  /home/$USER/projects/error.log
         CustomLog /home/$USER/projects/access.log combined
-        
+
     </VirtualHost>
-    
+
     <Directory /home/$USER/projects>
         Header set Access-Control-Allow-Origin '*'
         Options Indexes Followsymlinks
