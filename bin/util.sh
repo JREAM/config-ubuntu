@@ -9,6 +9,8 @@ sudo apt-get install -y\
     curl\
     htop\
     xclip\
-    terminator
+    screen\
+    terminator\
+    tmux
 
 # IMPORTANT: Do NOT have a trailing \ on the LAST item!
