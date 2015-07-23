@@ -19,5 +19,11 @@ sudo apt-get install -y\
 cp $PROJECT_FILE_PATH/.config ~/.config
 echo " (+) Terminator config added."
 
-cp $PROJECT_FILE_PATH/compizconfig.profile ~
+echo $PROJECT_FILE_PATH
+
+if [ -f ~/compizconfig.profile ]; then
+    rm ~/compizconfig.profile ~
+fi
+
+cp ../files/compizconfig.profile ~
 echo " (+) Make sure to Open Compiz and load the compizconfig.profile in ~"
