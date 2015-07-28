@@ -22,8 +22,8 @@ echo " (+) Terminator config added."
 echo $PROJECT_FILE_PATH
 
 if [ -f ~/compizconfig.profile ]; then
-    rm ~/compizconfig.profile ~
+    rm ~/compizconfig.profile
 fi
 
-cp ../files/compizconfig.profile ~
+cp $PROJECT_FILE_PATH/compizconfig.profile ~
 echo " (+) Make sure to Open Compiz and load the compizconfig.profile in ~"

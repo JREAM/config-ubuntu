@@ -16,11 +16,12 @@ export PROJECT_FILE_PATH=$PWD/files  # (NO Trailing Slash!)
 export PROJECT_TEMP_PATH=$PWD/tmp    # (NO Trailing Slash!)
 
 echo "====================================================================="
+echo ""
 echo "                        JREAM - Config Ubuntu                      "
 echo ""
 echo " * To exit at anytime press CTRL+C"
 echo " * Select a Package to install (Or, Type A at anytime to install ALL)"
-echo " * Installation runs after answers."
+echo " * Installation runs after command is entered."
 echo ""
 echo "====================================================================="
 echo ""
@@ -30,25 +31,27 @@ cat <<- command_list
     CMD         PROCESS
     ----        --------------------------------
     A           Run All Commands
+    ----        --------------------------------
     dot         Copy Dotfiles (.bashrc, .vimrc, .gitconfig, .gitignore)
     gui         Install Ubuntu GUI Tools (Compiz, Unity Tweak)
-    jre         Install Java Runtime Enviroment
+    jre         Install Java Runtime Enviroment (Default)
     lamp        Install LAMP (apache, php5, mysql)
     node        Install NodeJS (nodejs, bower, gulp, grunt-cli)
-    nwjs        Install NW.js (io.js for GUI development in JS)
     perm        Update /usr/local permissions
-    phalcon     Install PhalconPHP
+    phalcon     Install PhalconPHP (Adds PPA)
     ppa         Install PPAs (nodejs, wine, git, numix icons)
     py          Install Python (python, python-dev, python-pip)
-    rb          Install Ruby (ruby-2.0, ruby-2.0-dev)
-    redis       Install Redis
-    util        Install Utilities (vim, git, curl, htop, terminator)
-    q           Quit
+    redis       Install Redis (redis-server)
+    util        Install Utilities (vim, git, curl, htop, unzip, terminator, tmux, screen)
+    q           Quit (or CTRL + C)
 command_list
 
 echo ""
+echo "====================================================================="
+echo ""
 
 read -p "Type a Command: " cmd
+
 
     case $cmd in
         A)
@@ -101,9 +104,12 @@ read -p "Type a Command: " cmd
             ;;
         *)
             echo ""
-            echo "(!) Sorry, you typed a command that's not available."
+            echo "    (!) OOPS! You typed a command that's not available."
+            echo ""
+            echo "====================================================================="
+            echo ""
+
     esac
 
-    echo ""
 
 done

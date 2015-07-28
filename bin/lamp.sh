@@ -9,6 +9,7 @@ sudo apt-get install -y\
     php5-sqlite\
     php5-redis\
     php5-xmlrpc\
+    php5-xdebug\
     php5-gd\
     php5-imagick\
     php5-intl\
@@ -79,6 +80,15 @@ sudo sed -i 's/error_reporting = E_ALL & ~E_DEPRECATED & ~E_STRICT/error_reporti
 # Turn Display Errors On
 sudo sed -i 's/display_errors = Off/display_errors = On/' /etc/php5/apache2/php.ini
 
+# Append X-Debug to it's INI
+sudo echo "zend_extension=xdebug.so
+
+xdebug.remote_enable=1
+xdebug.remote_handler=dbgp
+xdebug.remote_host=127.0.0.1
+xdebug.remote_port=9000
+xdebug.remote_log=\"/var/log/xdebug/xdebug.log\"
+" > /etc/php5/mods-available/xdebug.ini
 
 # Some Apache Finishing up
 sudo a2enmod rewrite headers

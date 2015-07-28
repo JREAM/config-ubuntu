@@ -1,9 +1,10 @@
 #/bin/bash
 
-if ! grep -q ^ /etc/apt/sources.list /etc/apt/sources.list.d/* | grep "phalcon-stable"; then
-    echo "(+) You need to add the PPA to install Phalcon."
-    sudo add-apt-repository -y ppa:phalcon/stable
+if [ -f /etc/apt/sources.list.d/phalcon*ppa ]; then
+    sudo rm /etc/apt/sources.list.d/phalcon*ppa
 fi
+sudo add-apt-repository -y ppa:phalcon/stable
+echo "(+) Re-Adding Phalcon PPA."
 
 echo "(+) Installing Phalcon."
 
@@ -19,8 +20,8 @@ DEST_DIR="/usr/local/phalcon_devtools"
 # Clear out anything old
 if [ -d $DEST_DIR ]; then
     sudo rm -rf $DEST_DIR
-    sudo mkdir $DEST_DIR
 fi
+sudo mkdir $DEST_DIR
 
 # See if we need composer (Duplicate in LAMP for now)
 if [ ! -f /usr/local/bin/composer ]; then
@@ -28,7 +29,7 @@ if [ ! -f /usr/local/bin/composer ]; then
 else
     sudo composer self-update
 fi
-
+echo $PROJECT_TEMP_PATH
 echo '{"require":{"phalcon/devtools":"dev-master"}}' > $PROJECT_TEMP_PATH/composer.json
 cd $PROJECT_TEMP_PATH
 sudo composer install  # For Permission Issues :\
