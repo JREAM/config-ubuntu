@@ -6,6 +6,7 @@ This is for a __Debian__ based OS, such as: [Ubuntu](http://ubuntu.com/desktop),
 
 # Table of Contents
 - [Optional Configurations](#optional-configurations)
+    - [List all KeyBindings](#list-all-keybindings)
     - [Better Local Folder](#better-local-folder)
     - [Use 32Bit on 64bit](#use-32bit-on-64bit)
     - [VIM Customization](#vim-customization)
@@ -45,6 +46,18 @@ This is for a __Debian__ based OS, such as: [Ubuntu](http://ubuntu.com/desktop),
 
 # Optional Configurations
 - Some items (`termatinator`, `virtualenvs`) copied from [Dan Sackett](https://github.com/dansackett/dotfiles).
+
+# List all Keybindings
+
+	gsettings list-recursively  org.gnome.desktop.wm.keybindings | sort | more
+
+See your keypressed:
+
+	xev
+	
+Or for a lot of details:
+
+	xev | grep KeyPress
 
 ## Better Local Folder
 This is less painful when creating a group with rwx permissions for `/usr/local`
