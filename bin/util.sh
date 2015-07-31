@@ -3,7 +3,6 @@
 sudo apt-get install -y\
     vim\
     unzip\
-    autohotkey-gtk\
     bzip2\
     git\
     mercurial\
