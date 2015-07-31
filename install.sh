@@ -11,6 +11,7 @@ if [[ $USER == "root" ]]; then
 fi
 
 # Temporary Environment Variable.
+export INSTALL_SCRIPT=true
 export PROJECT_BIN_PATH= $PWD/bin    # (NO Trailing Slash!)
 export PROJECT_FILE_PATH=$PWD/files  # (NO Trailing Slash!)
 export PROJECT_TEMP_PATH=$PWD/tmp    # (NO Trailing Slash!)
@@ -18,6 +19,8 @@ export PROJECT_TEMP_PATH=$PWD/tmp    # (NO Trailing Slash!)
 echo "====================================================================="
 echo ""
 echo "                        JREAM - Config Ubuntu                      "
+echo ""
+echo " RECOMMENDED: Run 'ppa' first to prevent any problems!"
 echo ""
 echo " * To exit at anytime press CTRL+C"
 echo " * Select a Package to install (Or, Type A at anytime to install ALL)"
@@ -59,45 +62,81 @@ read -p "Type a Command: " cmd
             do
                 bash $entry
             done
+            echo ""
+            echo "====================================================================="
+            echo ""
             ;;
         dot)
             bash ./bin/dot.sh
+            echo ""
+            echo "====================================================================="
+            echo ""
             ;;
         gui)
             bash ./bin/gui.sh
+            echo ""
+            echo "====================================================================="
+            echo ""
             ;;
         jre)
             bash ./bin/jre.sh
+            echo ""
+            echo "====================================================================="
+            echo ""
             ;;
         lamp)
             bash ./bin/lamp.sh
+            echo ""
+            echo "====================================================================="
+            echo ""
             ;;
         node)
             bash ./bin/node.sh
-            ;;
-        nwjs)
-            bash ./bin/nwjs.sh
+            echo ""
+            echo "====================================================================="
+            echo ""
             ;;
         perm)
             bash ./bin/perm.sh
+            echo ""
+            echo "====================================================================="
+            echo ""
             ;;
         phalcon)
             bash ./bin/phalcon.sh
+            echo ""
+            echo "====================================================================="
+            echo ""
             ;;
         ppa)
             bash ./bin/ppa.sh
+            echo ""
+            echo "====================================================================="
+            echo ""
             ;;
         py)
             bash ./bin/py.sh
+            echo ""
+            echo "====================================================================="
+            echo ""
             ;;
         rb)
             bash ./bin/rb.sh
+            echo ""
+            echo "====================================================================="
+            echo ""
             ;;
         redis)
             bash ./bin/redis.sh
+            echo ""
+            echo "====================================================================="
+            echo ""
             ;;
         util)
             bash ./bin/util.sh
+            echo ""
+            echo "====================================================================="
+            echo ""
             ;;
         q)
             exit 1

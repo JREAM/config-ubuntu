@@ -1,5 +1,9 @@
 #/bin/bash
 # This should come first for PPA's
+if [[ ! $INSTALL_SCRIPT ]]; then
+    echo "(!) Error: You must use the ./install.sh script."
+    exit
+fi
 
 sources=(git-core numix ubuntu-wine)
 

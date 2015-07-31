@@ -1,4 +1,8 @@
 #/bin/bash
+if [[ ! $INSTALL_SCRIPT ]]; then
+    echo "(!) Error: You must use the ./install.sh script."
+    exit
+fi
 
 if [ -f /etc/apt/sources.list.d/phalcon*ppa ]; then
     sudo rm /etc/apt/sources.list.d/phalcon*ppa

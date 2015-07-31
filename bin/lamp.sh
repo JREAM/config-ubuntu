@@ -1,4 +1,9 @@
 #/bin/bash
+if [[ ! $INSTALL_SCRIPT ]]; then
+    echo "(!) Error: You must use the ./install.sh script."
+    exit
+fi
+
 # These are most of the modules the general public use at some point.
 sudo apt-get install -y\
     mysql-server\
