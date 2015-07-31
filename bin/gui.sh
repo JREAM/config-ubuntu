@@ -1,5 +1,7 @@
 #/bin/bash
 sudo apt-get install -y\
+    ubuntu-restricted-addons\
+    ubuntu-restricted-extras\
     unity-tweak-tool\
     compizconfig-settings-manager \
     compiz-plugins\
@@ -9,7 +11,11 @@ sudo apt-get install -y\
     gdebi\
     preload\
     bleachbit\
-    ubuntu-restricted-extras\
+    shutter\
+    audacity\
+    vlc\
+    xchat\
+    atom\
     numix-gtk-theme\
     numix-icon-theme\
     numix-icon-theme-circle
