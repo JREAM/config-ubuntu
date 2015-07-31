@@ -20,7 +20,6 @@ sudo apt-get install -y\
     audacity\
     vlc\
     xchat\
-    atom\
     numix-gtk-theme\
     numix-icon-theme\
     numix-icon-theme-circle
