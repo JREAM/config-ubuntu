@@ -11,6 +11,7 @@ This is for a __Debian__ based OS, such as: [Ubuntu](http://ubuntu.com/desktop),
     - [Use 32Bit on 64bit](#use-32bit-on-64bit)
     - [VIM Customization](#vim-customization)
     - [Networking](#networking)
+    - [Order of Grub](#order-of-grub)
 - [Installation Packages](#installation-packages)
 	- [Enable PPA](#enable-ppa)
 	- [System Tools](#system-tools)
@@ -102,6 +103,24 @@ Under `[global]` change the workgroup to what you use, the default is WORKGROUP:
 	workgroup = WORKGROUP
 	
 Then you will have to reload your Session.
+
+[(Back to top)](#table-of-contents)
+
+***
+
+# Order of Grub
+If you are running Grub as your default boot-loader, you can use this application to make it easier to change the order.
+
+	sudo add-apt-repository ppa:danielrichter2007/grub-customizer
+	sudo apt-get update && sudo apt-get install grub-customizer
+	
+Load the application either with `<Super>` and look for grub customizer or terminal `gksudo grub-customizer`.
+
+Go to the `General Settings` tab, and you'll see *default entry*. 
+
+- Click the drop-down list and you can either select Entry By Order (Left Column) Or a specific Item (Right Column).
+- If you are dual booting Windows and want Windows the default, Select the right column for Windows.
+- The reason is if more items are added, perhaps new kernels, then if Position 5 which held Windows will no longer be the default.
 
 ***
 
