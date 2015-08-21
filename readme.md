@@ -32,6 +32,8 @@ This is for a __Debian__ based OS, such as: [Ubuntu](http://ubuntu.com/desktop),
 	- [Ruby](#ruby)
 	- [NodeJS](#nodejs)
 	- [Google Chrome](#google-chrome)
+- [Ubuntu Fixes](#ubuntu-fixes)
+ 	- [Sound Indicator Not Showing](#sound-indicator-not-showing)
 - [Adjust Mouse and Devices](#adjust-mouse-and-devices)
 - [Virtual Machine Related](#virtual-machine-related)
 	- [Fix Mouse Side Buttons in VMWare](#fix-mouse-side-buttons-in-vmware)
@@ -391,6 +393,26 @@ Then install an older version -- This is **40** for a 64-bit OS:
     sudo dpkg -i google-chrome-stable_40.0.2214.95-1_amd64.deb
 
 Then launch it with `$ google-chrome` and you can pin it to a unity bar.
+***
+[(Back to top)](#table-of-contents)
+
+# Ubuntu Fixes 
+These are solutions to fix problems I've encountered.
+
+### Sound Indicator Not Showing
+This appears in the top-right menu on Unity. Tested in 14/15.
+
+This will also fix Tweak UI if a sound item is missing.
+
+    sudo apt-get install indicator-sound
+
+For Unity (Default)
+
+   killall unity-panel-service
+
+For Gnome
+
+    killall gnome-panel
 
 ***
 [(Back to top)](#table-of-contents)
