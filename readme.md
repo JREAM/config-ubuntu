@@ -34,6 +34,7 @@ This is for a __Debian__ based OS, such as: [Ubuntu](http://ubuntu.com/desktop),
 	- [Google Chrome](#google-chrome)
 - [Ubuntu Fixes](#ubuntu-fixes)
  	- [Sound Indicator Not Showing](#sound-indicator-not-showing)
+ 	- [Install Gnome 3](#install-gnome-3)
 - [Adjust Mouse and Devices](#adjust-mouse-and-devices)
 - [Virtual Machine Related](#virtual-machine-related)
 	- [Fix Mouse Side Buttons in VMWare](#fix-mouse-side-buttons-in-vmware)
@@ -413,6 +414,18 @@ For Unity (Default)
 For Gnome
 
     killall gnome-panel
+
+### Install Gnome 3
+If you prefer Gnome 3 over the Unity desktop it's easy to install:
+
+    sudo apt-get install ubuntu-gnome-desktop
+    sudo service gdm restart
+
+Unity uses `lightdm` and Gnome uses `gdm`
+
+If you want the default login a certain one select either lightdm or gdm. If you want to change it later run:
+
+    sudo dpkg-reconfigure gdm
 
 ***
 [(Back to top)](#table-of-contents)
