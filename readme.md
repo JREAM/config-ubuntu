@@ -34,7 +34,8 @@ This is for a __Debian__ based OS, such as: [Ubuntu](http://ubuntu.com/desktop),
 	- [Google Chrome](#google-chrome)
 - [Ubuntu Fixes](#ubuntu-fixes)
  	- [Sound Indicator Not Showing](#sound-indicator-not-showing)
- 	- [Install Gnome 3](#install-gnome-3)
+    - [Install Gnome 3](#install-gnome-3)
+ 	  - [My Gnome Extensions](#my-gnome-extensions)
 - [Adjust Mouse and Devices](#adjust-mouse-and-devices)
 - [Virtual Machine Related](#virtual-machine-related)
 	- [Fix Mouse Side Buttons in VMWare](#fix-mouse-side-buttons-in-vmware)
@@ -58,7 +59,7 @@ This is for a __Debian__ based OS, such as: [Ubuntu](http://ubuntu.com/desktop),
 See your keypressed:
 
 	xev
-	
+
 Or for a lot of details:
 
 	xev | grep KeyPress
@@ -104,7 +105,7 @@ Then edit the Samba config:
 Under `[global]` change the workgroup to what you use, the default is WORKGROUP:
 
 	workgroup = WORKGROUP
-	
+
 Then you will have to reload your Session.
 
 [(Back to top)](#table-of-contents)
@@ -116,10 +117,10 @@ If you are running Grub as your default boot-loader, you can use this applicatio
 
 	sudo add-apt-repository ppa:danielrichter2007/grub-customizer
 	sudo apt-get update && sudo apt-get install grub-customizer
-	
+
 Load the application either with `<Super>` and look for grub customizer or terminal `gksudo grub-customizer`.
 
-Go to the `General Settings` tab, and you'll see *default entry*. 
+Go to the `General Settings` tab, and you'll see *default entry*.
 
 - Click the drop-down list and you can either select Entry By Order (Left Column) Or a specific Item (Right Column).
 - If you are dual booting Windows and want Windows the default, Select the right column for Windows.
@@ -279,12 +280,12 @@ Look for your main partition with:
 
 	$ df
 
-	
+
 Mine happens to be `dev/root`, yours may be `dev/sda` or something. Make sure to replace that below:
 
 	# T
 	sudo /sbin/tune2fs -o +acl /dev/root
-	
+
 To see what file system you are using `ext3`, `ext4`, etc, use the partition:
 
 	sudo file -sL /dev/root
@@ -292,8 +293,8 @@ To see what file system you are using `ext3`, `ext4`, etc, use the partition:
 We have to put the partition in read-only mode, then remount it:
 
     sudo /bin/mount -o remount /dev/root
-    
-Apply Group 
+
+Apply Group
 
 	# This sets the Defaults
 	setfacl -Rd g:www-data:rw /var/www
@@ -302,12 +303,12 @@ Apply Group
 
 To Modify
 
-	setfacl -Rm g:www-data:rw /var/www 
-	
+	setfacl -Rm g:www-data:rw /var/www
+
 Otherwise you could always set up a crontab such as:
 
 	crontab -e
-	
+
 Then append this to run every five minutes.
 
 	*/5 * * * * /home/ramesh/backup.sh chgrp -R www-data /var/www && chmod g+rw /var/www
@@ -397,7 +398,7 @@ Then launch it with `$ google-chrome` and you can pin it to a unity bar.
 ***
 [(Back to top)](#table-of-contents)
 
-# Ubuntu Fixes 
+# Ubuntu Fixes
 These are solutions to fix problems I've encountered.
 
 ### Sound Indicator Not Showing
@@ -419,13 +420,28 @@ For Gnome
 If you prefer Gnome 3 over the Unity desktop it's easy to install:
 
     sudo apt-get install ubuntu-gnome-desktop
-    sudo service gdm restart
+    sudo service gdm restart (Or a reboot is easier)
 
 Unity uses `lightdm` and Gnome uses `gdm`
 
 If you want the default login a certain one select either lightdm or gdm. If you want to change it later run:
 
     sudo dpkg-reconfigure gdm
+
+### My Gnome Extensions
+You need to use Firefox or IceWeasle at https://extensions.gnome.org/ to toggle these items. I suggest creating an account so you have a record.
+
+- *Extensions I like*
+- Applications Menu
+- Dash to Dock
+- Places Status Indicator
+- Removable Drive Menu
+- Small Panel Icon
+- Top Icons
+- Workspace Indicator
+- Workspace Dock
+
+
 
 ***
 [(Back to top)](#table-of-contents)
@@ -434,9 +450,9 @@ If you want the default login a certain one select either lightdm or gdm. If you
 When using a USB mouse sometimes the speed is just not right, in my case it's too slow often. Here is how to adjust it:
 
     xinput --list
-    
+
 I get something like this:
-    
+
 	⎡ Virtual core pointer                    	id=2	[master pointer  (3)]
 	⎜   ↳ Virtual core XTEST pointer              	id=4	[slave  pointer  (2)]
 	⎜   ↳ ETPS/2 Elantech Touchpad                	id=15	[slave  pointer  (2)]
@@ -448,11 +464,11 @@ I get something like this:
     	↳ Power Button                            	id=8	[slave  keyboard (3)]
     ...
 
-The ID of my mouse is `12`. 
+The ID of my mouse is `12`.
 You can see all the properties with:
 
 	$ xinput --list-props 12
-	
+
 Then you can adjust the settings the String value and a value at the end:
 
 	$ xinput --set-prop 12 "Device Accel Constant Deceleration" 2
@@ -466,14 +482,14 @@ To keep the settings in Gnome, do the following:
 
 Example of `gnome-boot.sh` file (Note: You can call it whatever you like):
 
-	#!/bin/bash                                                                     
+	#!/bin/bash
 	xinput --set-prop 12 "Device Accel Constant Deceleration" 4
-	
+
 
 Then Add the Bash script the Gnome Session:
 
 	$ gnome-session-properties
-	
+
 
 ***
 [(Back to top)](#table-of-contents)
