@@ -36,6 +36,7 @@ cat <<- command_list
     A           Run All Commands
     ----        --------------------------------
     dot         Copy Dotfiles (.bashrc, .vimrc, .gitconfig, .gitignore)
+    gnome       Install Gnome 3 GUI Tools (You toggle at login or see README)
     gui         Install Ubuntu GUI Tools (Compiz, Unity Tweak)
     jre         Install Java Runtime Enviroment (Default)
     lamp        Install LAMP (apache, php5, mysql)
@@ -68,6 +69,12 @@ read -p "Type a Command: " cmd
             ;;
         dot)
             bash ./bin/dot.sh
+            echo ""
+            echo "====================================================================="
+            echo ""
+            ;;
+        gnome)
+            bash ./bin/gnome.sh
             echo ""
             echo "====================================================================="
             echo ""
