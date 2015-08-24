@@ -6,6 +6,7 @@ This is for a __Debian__ based OS, such as: [Ubuntu](http://ubuntu.com/desktop),
 
 # Table of Contents
 - [Optional Configurations](#optional-configurations)
+    - [Get System Details](#get-system-details)
     - [List all KeyBindings](#list-all-keybindings)
     - [Better Local Folder](#better-local-folder)
     - [Use 32Bit on 64bit](#use-32bit-on-64bit)
@@ -51,6 +52,37 @@ This is for a __Debian__ based OS, such as: [Ubuntu](http://ubuntu.com/desktop),
 
 # Optional Configurations
 - Some items (`termatinator`, `virtualenvs`) copied from [Dan Sackett](https://github.com/dansackett/dotfiles).
+
+### Get System Details
+
+Operating System
+
+    lsb_release -a
+    lsb_release -as     # Short Information
+    lsb_release --help
+
+CPU Info
+
+    nproc               # How many Processing Units
+    cpuid               # Must install cpuid from terminal
+    cat /proc/cpuinfo   # Lots of info
+
+
+Memory and Usage Info
+
+    free -h             # Human readable, or do --help for options
+    top or htop         # Must install htop
+    vmstat -s
+    cat /proc/meminfo   # Lots of info
+
+Disk Space
+
+    df
+    df -B MB    # In Megabtyes,  etc
+
+GUI Processes
+
+    gnome-system-monitor
 
 # List all Keybindings
 
