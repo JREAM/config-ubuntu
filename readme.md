@@ -37,6 +37,7 @@ This is for a __Debian__ based OS, such as: [Ubuntu](http://ubuntu.com/desktop),
  	- [Sound Indicator Not Showing](#sound-indicator-not-showing)
     - [Install Gnome 3](#install-gnome-3)
  	  - [My Gnome Extensions](#my-gnome-extensions)
+ 	  - [Reload Gnome Freeze](#reload-gnome-freeze)
 - [Adjust Mouse and Devices](#adjust-mouse-and-devices)
 - [Virtual Machine Related](#virtual-machine-related)
 	- [Fix Mouse Side Buttons in VMWare](#fix-mouse-side-buttons-in-vmware)
@@ -473,6 +474,11 @@ You need to use Firefox or IceWeasle at https://extensions.gnome.org/ to toggle 
 - Workspace Indicator
 - Workspace Dock
 
+
+### Reload Gnome Freeze
+This is a rare things for me, it happens much more in unity and requires a lot more "damaging" things. To fix a gnome that seems frozen do the following:
+
+<kbd>ALT + F2</kbd> enter in <kbd>r</kbd> (lowecase) and press <kbd>Enter</kbd>
 
 
 ***
