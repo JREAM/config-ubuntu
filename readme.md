@@ -465,14 +465,24 @@ If you want the default login a certain one select either lightdm or gdm. If you
 You need to use Firefox or IceWeasle at https://extensions.gnome.org/ to toggle these items. I suggest creating an account so you have a record.
 
 - *Extensions I like*
-- Applications Menu
-- Dash to Dock
-- Places Status Indicator
-- Removable Drive Menu
-- Small Panel Icon
-- Top Icons
-- Workspace Indicator
-- Workspace Dock
+- [Applications Menu](https://extensions.gnome.org/extension/6/applications-menu/)
+- [Dash to Dock](https://extensions.gnome.org/extension/307/dash-to-dock/)
+- [Files Menu](https://extensions.gnome.org/extension/907/files-menu/)
+- [Places Status Indicator](https://extensions.gnome.org/extension/8/places-status-indicator/)
+- [Removable Drive Menu](https://extensions.gnome.org/extension/7/removable-drive-menu/)
+- [Small Panel Icon](https://extensions.gnome.org/extension/861/small-panel-icon/)
+- [Top Icons](https://extensions.gnome.org/extension/495/topicons/)
+- [MMOD Panel](https://extensions.gnome.org/extension/898/mmod-panel/)
+- [Keyboard Modifiers Status](https://extensions.gnome.org/extension/975/keyboard-modifiers-status/)
+- [Laine](https://extensions.gnome.org/extension/937/laine/)
+- [Disable Workspace Switcher Popup](https://extensions.gnome.org/extension/959/disable-workspace-switcher-popup/)
+- [Workspace Indicator](https://extensions.gnome.org/extension/21/workspace-indicator/)
+- [Workspace Dock](https://extensions.gnome.org/extension/427/workspaces-to-dock/)
+- [Workspace Wraparound](https://extensions.gnome.org/extension/971/workspace-wraparound/)
+- [Refresh Wifi Connections](https://extensions.gnome.org/extension/905/refresh-wifi-connections/)
+- [Disconnect Wifi](https://extensions.gnome.org/extension/904/disconnect-wifi/)
+- [Toggle Touchpad](https://extensions.gnome.org/extension/935/toggle-touchpad/) (For Laptops)
+- [Windows Blur Effects](https://extensions.gnome.org/extension/891/windows-blur-effects/)
 
 
 ### Reload Gnome Freeze
