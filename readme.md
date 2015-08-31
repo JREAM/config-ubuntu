@@ -473,6 +473,7 @@ You need to use Firefox or IceWeasle at https://extensions.gnome.org/ to toggle 
 - [Small Panel Icon](https://extensions.gnome.org/extension/861/small-panel-icon/)
 - [Top Icons](https://extensions.gnome.org/extension/495/topicons/)
 - [MMOD Panel](https://extensions.gnome.org/extension/898/mmod-panel/)
+- [Panel Docklet](https://extensions.gnome.org/extension/105/panel-docklet/) (For Multi Monitor Taskbar)
 - [Keyboard Modifiers Status](https://extensions.gnome.org/extension/975/keyboard-modifiers-status/)
 - [Laine](https://extensions.gnome.org/extension/937/laine/)
 - [Disable Workspace Switcher Popup](https://extensions.gnome.org/extension/959/disable-workspace-switcher-popup/)
