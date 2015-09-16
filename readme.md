@@ -465,25 +465,26 @@ If you want the default login a certain one select either lightdm or gdm. If you
 You need to use Firefox or IceWeasle at https://extensions.gnome.org/ to toggle these items. I suggest creating an account so you have a record.
 
 - *Extensions I like*
-- [Applications Menu](https://extensions.gnome.org/extension/6/applications-menu/) :star::star::star::star::star
-- [Dash to Dock](https://extensions.gnome.org/extension/307/dash-to-dock/)
-- [Files Menu](https://extensions.gnome.org/extension/907/files-menu/)
-- [Places Status Indicator](https://extensions.gnome.org/extension/8/places-status-indicator/)
-- [Removable Drive Menu](https://extensions.gnome.org/extension/7/removable-drive-menu/)
-- [Small Panel Icon](https://extensions.gnome.org/extension/861/small-panel-icon/)
-- [Top Icons](https://extensions.gnome.org/extension/495/topicons/)
-- [MMOD Panel](https://extensions.gnome.org/extension/898/mmod-panel/)
-- [Panel Docklet](https://extensions.gnome.org/extension/105/panel-docklet/) (For Multi Monitor Taskbar)
-- [Keyboard Modifiers Status](https://extensions.gnome.org/extension/975/keyboard-modifiers-status/)
-- [Laine](https://extensions.gnome.org/extension/937/laine/)
-- [Disable Workspace Switcher Popup](https://extensions.gnome.org/extension/959/disable-workspace-switcher-popup/)
-- [Workspace Indicator](https://extensions.gnome.org/extension/21/workspace-indicator/)
-- [Workspace Dock](https://extensions.gnome.org/extension/427/workspaces-to-dock/)
-- [Workspace Wraparound](https://extensions.gnome.org/extension/971/workspace-wraparound/)
-- [Refresh Wifi Connections](https://extensions.gnome.org/extension/905/refresh-wifi-connections/)
-- [Disconnect Wifi](https://extensions.gnome.org/extension/904/disconnect-wifi/)
-- [Toggle Touchpad](https://extensions.gnome.org/extension/935/toggle-touchpad/) (For Laptops)
-- [Windows Blur Effects](https://extensions.gnome.org/extension/891/windows-blur-effects/)
+- [Taskbar](https://extensions.gnome.org/extension/584/taskbar/) :star::star::star::star::star:
+- [Applications Menu](https://extensions.gnome.org/extension/6/applications-menu/) :star::star::star::star::star:
+- [Dash to Dock](https://extensions.gnome.org/extension/307/dash-to-dock/) :star::star::star::star::star:
+- [Files Menu](https://extensions.gnome.org/extension/907/files-menu/) :star::star::star::star:
+- [Places Status Indicator](https://extensions.gnome.org/extension/8/places-status-indicator/) :star::star::star:
+- [Removable Drive Menu](https://extensions.gnome.org/extension/7/removable-drive-menu/) :star::star::star::star:
+- [Small Panel Icon](https://extensions.gnome.org/extension/861/small-panel-icon/) :star::star::star::star::star:
+- [Top Icons](https://extensions.gnome.org/extension/495/topicons/) :star::star::star::star:
+- [MMOD Panel](https://extensions.gnome.org/extension/898/mmod-panel/) :star::star::star::star::star:
+- [Panel Docklet](https://extensions.gnome.org/extension/105/panel-docklet/) (For Multi Monitor Taskbar) :star::star::star::star::star:
+- [Keyboard Modifiers Status](https://extensions.gnome.org/extension/975/keyboard-modifiers-status/) :star::star::star:
+- [Laine](https://extensions.gnome.org/extension/937/laine/) :star::star::star::star:
+- [Disable Workspace Switcher Popup](https://extensions.gnome.org/extension/959/disable-workspace-switcher-popup/) :star::star:
+- [Workspace Indicator](https://extensions.gnome.org/extension/21/workspace-indicator/) :star::star:
+- [Workspace Dock](https://extensions.gnome.org/extension/427/workspaces-to-dock/) :star::star::star::star:
+- [Workspace Wraparound](https://extensions.gnome.org/extension/971/workspace-wraparound/) :star::star::star::star:
+- [Refresh Wifi Connections](https://extensions.gnome.org/extension/905/refresh-wifi-connections/) :star::star::star::star:
+- [Disconnect Wifi](https://extensions.gnome.org/extension/904/disconnect-wifi/) :star::star::star::star::star:
+- [Toggle Touchpad](https://extensions.gnome.org/extension/935/toggle-touchpad/) (For Laptops) :star::star::star::star::star:
+- [Windows Blur Effects](https://extensions.gnome.org/extension/891/windows-blur-effects/) :star::star::star::star: (Doesn't work well with WINE)
 
 
 ### Reload Gnome Freeze
