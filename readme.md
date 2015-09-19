@@ -465,6 +465,7 @@ If you want the default login a certain one select either lightdm or gdm. If you
 You need to use Firefox or IceWeasle at https://extensions.gnome.org/ to toggle these items. I suggest creating an account so you have a record.
 
 - *Extensions I like*
+- [Frippery](https://extensions.gnome.org/extension/3/bottom-panel/) :star::star::star::star::star: Horizontal Workspaces 
 - [Taskbar](https://extensions.gnome.org/extension/584/taskbar/) :star::star::star::star::star:
 - [Applications Menu](https://extensions.gnome.org/extension/6/applications-menu/) :star::star::star::star::star:
 - [Dash to Dock](https://extensions.gnome.org/extension/307/dash-to-dock/) :star::star::star::star::star:
