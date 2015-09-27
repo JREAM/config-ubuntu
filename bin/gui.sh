@@ -16,6 +16,7 @@ sudo apt-get install -y\
     gdebi\
     preload\
     bleachbit\
+    alacarte\
     shutter\
     audacity\
     vlc\
