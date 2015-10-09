@@ -37,6 +37,7 @@ This is for a __Debian__ based OS, such as: [Ubuntu](http://ubuntu.com/desktop),
  	- [Sound Indicator Not Showing](#sound-indicator-not-showing)
     - [Install Gnome 3](#install-gnome-3)
  	  - [My Gnome Extensions](#my-gnome-extensions)
+ 	  - [Fix Gnome Lockscreen](#fix-gnome-lockscreen)
  	  - [Reload Gnome Freeze](#reload-gnome-freeze)
 - [Adjust Mouse and Devices](#adjust-mouse-and-devices)
 - [Virtual Machine Related](#virtual-machine-related)
@@ -460,6 +461,13 @@ Unity uses `lightdm` and Gnome uses `gdm`
 If you want the default login a certain one select either lightdm or gdm. If you want to change it later run:
 
     sudo dpkg-reconfigure gdm
+
+### Fix Gnome Lockscreen
+In terminal make sure this is false, then try your hotkey `ctrl+alt+l` or if you set it like min `super+l` in the settings:
+
+	gsettings set org.gnome.desktop.lockdown disable-lock-screen 'false'
+
+
 
 ### My Gnome Extensions
 You need to use Firefox or IceWeasle at https://extensions.gnome.org/ to toggle these items. I suggest creating an account so you have a record.
