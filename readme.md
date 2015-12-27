@@ -1,6 +1,6 @@
 # Config Ubuntu
 
-This is for a __Debian__ based OS, such as: [Ubuntu](http://ubuntu.com/desktop), [Mint](http://www.linuxmint.com/), and [Elementary OS](http://elementaryos.org/).
+This is for a __Debian__ based OS, such as: [Ubuntu](http://ubuntu.com/desktop), [Mint](http://www.linuxmint.com/), and [Elementary OS](http://elementaryos.org/). I prefer Ubuntu 15 with Gnome 3.
 
 ***
 
@@ -14,38 +14,40 @@ This is for a __Debian__ based OS, such as: [Ubuntu](http://ubuntu.com/desktop),
     - [Networking](#networking)
     - [Order of Grub](#order-of-grub)
 - [Installation Packages](#installation-packages)
-	- [Enable PPA](#enable-ppa)
-	- [System Tools](#system-tools)
+    - [Enable PPA](#enable-ppa)
+    - [System Tools](#system-tools)
         - [Utilities](#utilities)
-		- [Numix Theme](#numix-theme)
-		- [Wine](#wine)
-		- [USB Maker for Windows ISO on Linux](#usb-maker-for-windows-on-linux)
-	- [LAMP](#lamp)
-		- [PHP5](#php5)
-		- [Apache](#apache)
-		- [Nginx](#nginx)
-		- [MySQL](#mysql)
-		- [Redis](#redis)
-		- [Phalcon](#phalcon)
-		- [Phalcon Dev Tools](#phalcon-dev-tools)
-		- [Secure Permissions](#secure-permissions)
-	- [Python](#python)
-	- [Ruby](#ruby)
-	- [NodeJS](#nodejs)
-	- [Google Chrome](#google-chrome)
+        - [RedShift For Eye Strain](#redshift-for-eye-strain)
+        - [Numix Theme](#numix-theme)
+        - [Wine](#wine)
+        - [USB Maker for Windows ISO on Linux](#usb-maker-for-windows-on-linux)
+    - [LAMP](#lamp)
+        - [PHP5](#php5)
+        - [Apache](#apache)
+        - [Nginx](#nginx)
+        - [MySQL](#mysql)
+        - [Redis](#redis)
+        - [Phalcon](#phalcon)
+        - [Phalcon Dev Tools](#phalcon-dev-tools)
+        - [Secure Permissions](#secure-permissions)
+    - [Python](#python)
+    - [Ruby](#ruby)
+    - [NodeJS](#nodejs)
+    - [Google Chrome](#google-chrome)
 - [Ubuntu Fixes](#ubuntu-fixes)
- 	- [Sound Indicator Not Showing](#sound-indicator-not-showing)
+    - [Sound Indicator Not Showing](#sound-indicator-not-showing)
     - [Install Gnome 3](#install-gnome-3)
- 	  - [My Gnome Extensions](#my-gnome-extensions)
- 	  - [Fix Gnome Lockscreen](#fix-gnome-lockscreen)
- 	  - [Reload Gnome Freeze](#reload-gnome-freeze)
+      - [My Gnome Extensions](#my-gnome-extensions)
+      - [Fix Gnome Lockscreen](#fix-gnome-lockscreen)
+      - [Left or Right Close Buttons](#left-or-right-close-buttons)
+      - [Reload Gnome Freeze](#reload-gnome-freeze)
 - [Adjust Mouse and Devices](#adjust-mouse-and-devices)
 - [Virtual Machine Related](#virtual-machine-related)
-	- [Fix Mouse Side Buttons in VMWare](#fix-mouse-side-buttons-in-vmware)
-	- [Vagrant VBGuest Fix](#vagrant-vbguest-fix)
-	- [Windows 8 VirtualBox Fix](#windows-8-virtualbox-fix)
-	- [Install ATI Drivers](#install-ati-drivers)
-	- [Remove ATI Drivers](#remove-ati-drivers)
+    - [Fix Mouse Side Buttons in VMWare](#fix-mouse-side-buttons-in-vmware)
+    - [Vagrant VBGuest Fix](#vagrant-vbguest-fix)
+    - [Windows 8 VirtualBox Fix](#windows-8-virtualbox-fix)
+    - [Install ATI Drivers](#install-ati-drivers)
+    - [Remove ATI Drivers](#remove-ati-drivers)
 - [Other Applications](#other-applications)
 
 ***
@@ -88,15 +90,15 @@ GUI Processes
 
 # List all Keybindings
 
-	gsettings list-recursively  org.gnome.desktop.wm.keybindings | sort | more
+    gsettings list-recursively  org.gnome.desktop.wm.keybindings | sort | more
 
 See your keypressed:
 
-	xev
+    xev
 
 Or for a lot of details:
 
-	xev | grep KeyPress
+    xev | grep KeyPress
 
 ## Better Local Folder
 This is less painful when creating a group with rwx permissions for `/usr/local`
@@ -117,28 +119,28 @@ You can use 32Bit applications if you like, sometimes this is useful.
 
 **Setup VIM**
 
-	git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+    git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
-	$ vim
-	:PluginInstall
+    $ vim
+    :PluginInstall
 
 **Set Capslock key to Esc**
 
-	$ dconf write /org/gnome/desktop/input-sources/xkb-options "['caps:escape']"
+    $ dconf write /org/gnome/desktop/input-sources/xkb-options "['caps:escape']"
 
 ## Networking
 
 To enable Networking, and make it accessible to all computers such as Windows also first install Samba:
 
-	$ sudo apt-get install samba
+    $ sudo apt-get install samba
 
 Then edit the Samba config:
 
-	$ vim /etc/samba/smb.conf
+    $ vim /etc/samba/smb.conf
 
 Under `[global]` change the workgroup to what you use, the default is WORKGROUP:
 
-	workgroup = WORKGROUP
+    workgroup = WORKGROUP
 
 Then you will have to reload your Session.
 
@@ -149,8 +151,8 @@ Then you will have to reload your Session.
 # Order of Grub
 If you are running Grub as your default boot-loader, you can use this application to make it easier to change the order.
 
-	sudo add-apt-repository ppa:danielrichter2007/grub-customizer
-	sudo apt-get update && sudo apt-get install grub-customizer
+    sudo add-apt-repository ppa:danielrichter2007/grub-customizer
+    sudo apt-get update && sudo apt-get install grub-customizer
 
 Load the application either with `<Super>` and look for grub customizer or terminal `gksudo grub-customizer`.
 
@@ -168,7 +170,7 @@ Go to the `General Settings` tab, and you'll see *default entry*.
 
 Login to your Linux user and go to your **home** directory,
 
-	cd ~
+    cd ~
 
 Run these commands and tweak them as needed. The `-y` flag installs without a prompt. Run these commands from the terminal.
 
@@ -206,11 +208,50 @@ To setup the git defaults *(Omit the `push.default` if you are using below 2.X)*
 
 That will create a `~/.gitconfig` with:
 
- 	[user]
-    	email = aniyishay@gmail.com
-    	name = Jesse Boyer
-	[push]
-		default = simple
+    [user]
+        email = you@email.com
+        name = your name
+    [push]
+        default = simple
+
+
+### RedShift For Eye Strain
+
+    sudo apt-get install redshift
+
+Create your configuration file:
+
+    sudo vim ~/.config/redshift.conf
+
+Adjust the temperatures you prefer. I like mine to be very yellow and dim. (The lower the dimmer)
+
+    [redshift]
+    temp-day=3500                                                                                         
+    temp-night=3500
+    ; Set the screen brightness. Default is 1.0.
+    ;brightness=0.9
+    ; It is also possible to use different settings for day and night
+    ;brightness-day=0.7
+    ;brightness-night=0.4
+    ; There are more settings for Gamma, Location Provider, Manual Location, etc.
+
+Close and reload redshift. If you cannot find the icon anywhere run this in terminal:
+
+    pkill redshift-gtk redshift
+
+If RedShift gives you a `Geoclue2` error do this:
+
+    sudo vim /etc/geoclue/geoclue.conf
+
+Append these lines at the bottom:
+
+    [redshift]
+    allowed=true
+    system=false
+    users=
+
+A newer version of redshift will install a desktop file so a Geoclue2 warning won't happen
+on newer systems.
 
 ### Numix Theme
 
@@ -234,9 +275,9 @@ If you need a 32bit installation:
 ### USB Maker for Windows ISO on Linux
 You can easily use `Startup Disk Creator` and `UNetbootin` to create Linux to USB. But if you need Windows to USB from your Linux OS use Win USB:
 
-	sudo add-apt-repository ppa:colingille/freshlight
-	sudo sh -c "sed -i 's/trusty/saucy/g' /etc/apt/sources.list.d/colingille-freshlight-trusty.list"
-	sudo apt-get update && sudo install -y winusb
+    sudo add-apt-repository ppa:colingille/freshlight
+    sudo sh -c "sed -i 's/trusty/saucy/g' /etc/apt/sources.list.d/colingille-freshlight-trusty.list"
+    sudo apt-get update && sudo install -y winusb
 
 We replace the sources.list back to saucy in order to get it to work for ubuntu 14, that is the purpose of the `sed` command.
 
@@ -307,22 +348,22 @@ To test it run: `$ phalcon`
 ### Secure Permissions
 We will use the Access Control Lists (ACL) or (Filesystem Access Control List). We will use group permissions for folders so you don't have to make the public writable, because `777` is dangerous.
 
-	# Make sure you have ACL installed
-	sudo apt-get install acl
+    # Make sure you have ACL installed
+    sudo apt-get install acl
 
 Look for your main partition with:
 
-	$ df
+    $ df
 
 
 Mine happens to be `dev/root`, yours may be `dev/sda` or something. Make sure to replace that below:
 
-	# T
-	sudo /sbin/tune2fs -o +acl /dev/root
+    # T
+    sudo /sbin/tune2fs -o +acl /dev/root
 
 To see what file system you are using `ext3`, `ext4`, etc, use the partition:
 
-	sudo file -sL /dev/root
+    sudo file -sL /dev/root
 
 We have to put the partition in read-only mode, then remount it:
 
@@ -330,22 +371,22 @@ We have to put the partition in read-only mode, then remount it:
 
 Apply Group
 
-	# This sets the Defaults
-	setfacl -Rd g:www-data:rw /var/www
-	# This sets future file
-	setfacl -Rm g:www-data:rw /var/www
+    # This sets the Defaults
+    setfacl -Rd g:www-data:rw /var/www
+    # This sets future file
+    setfacl -Rm g:www-data:rw /var/www
 
 To Modify
 
-	setfacl -Rm g:www-data:rw /var/www
+    setfacl -Rm g:www-data:rw /var/www
 
 Otherwise you could always set up a crontab such as:
 
-	crontab -e
+    crontab -e
 
 Then append this to run every five minutes.
 
-	*/5 * * * * /home/ramesh/backup.sh chgrp -R www-data /var/www && chmod g+rw /var/www
+    */5 * * * * /home/ramesh/backup.sh chgrp -R www-data /var/www && chmod g+rw /var/www
 
 Lastly, you could have a deploy script that does this for you, such as Python `Fabfile`, but that's another topic.
 
@@ -424,7 +465,7 @@ If you have chrome installed, I'd backup anything if you need it, and remove it 
 
 Then install an older version -- This is **40** for a 64-bit OS:
 
-	wget http://mirror.pcbeta.com/google/chrome/deb/pool/main/g/google-chrome-stable/google-chrome-stable_40.0.2214.95-1_amd64.deb
+    wget http://mirror.pcbeta.com/google/chrome/deb/pool/main/g/google-chrome-stable/google-chrome-stable_40.0.2214.95-1_amd64.deb
 
     sudo dpkg -i google-chrome-stable_40.0.2214.95-1_amd64.deb
 
@@ -456,7 +497,7 @@ If you prefer Gnome 3 over the Unity desktop it's easy to install:
     sudo apt-get install ubuntu-gnome-desktop
     sudo service gdm restart (Or a reboot is easier)
 
-Unity uses `lightdm` and Gnome uses `gdm`
+Unity uses `lightdm` and Gnome uses `gdm`, it's easiest to stick with lightdm.
 
 If you want the default login a certain one select either lightdm or gdm. If you want to change it later run:
 
@@ -465,35 +506,38 @@ If you want the default login a certain one select either lightdm or gdm. If you
 ### Fix Gnome Lockscreen
 In terminal make sure this is false, then try your hotkey `ctrl+alt+l` or if you set it like min `super+l` in the settings:
 
-	gsettings set org.gnome.desktop.lockdown disable-lock-screen 'false'
+    gsettings set org.gnome.desktop.lockdown disable-lock-screen 'false'
 
+### Left or Right Close Buttons
+Run this simple command in the terminal and you will see the positions change right away.
+
+Move to right (terminal)
+
+    gsettings set org.gnome.desktop.wm.preferences button-layout ':maximize,minimize,close'
+
+Move to left (terminal)
+
+    gsettings set org.gnome.desktop.wm.preferences button-layout 'close,minimize,maximize:'
 
 
 ### My Gnome Extensions
 You need to use Firefox or IceWeasle at https://extensions.gnome.org/ to toggle these items. I suggest creating an account so you have a record.
 
-- *Extensions I like*
-- [Frippery](https://extensions.gnome.org/extension/3/bottom-panel/) :star::star::star::star::star: Horizontal Workspaces 
-- [Taskbar](https://extensions.gnome.org/extension/584/taskbar/) :star::star::star::star::star:
-- [Applications Menu](https://extensions.gnome.org/extension/6/applications-menu/) :star::star::star::star::star:
+- **Must Have Extensions**
 - [Dash to Dock](https://extensions.gnome.org/extension/307/dash-to-dock/) :star::star::star::star::star:
-- [Files Menu](https://extensions.gnome.org/extension/907/files-menu/) :star::star::star::star:
-- [Places Status Indicator](https://extensions.gnome.org/extension/8/places-status-indicator/) :star::star::star:
-- [Removable Drive Menu](https://extensions.gnome.org/extension/7/removable-drive-menu/) :star::star::star::star:
+- [Workspace Dock](https://extensions.gnome.org/extension/427/workspaces-to-dock/) :star::star::star::star:
+- [Applications Menu](https://extensions.gnome.org/extension/6/applications-menu/) :star::star::star::star::star:
+- **Nice Extensions**
+- [Taskbar](https://extensions.gnome.org/extension/584/taskbar/) :star::star::star::star::star:
 - [Small Panel Icon](https://extensions.gnome.org/extension/861/small-panel-icon/) :star::star::star::star::star:
 - [Top Icons](https://extensions.gnome.org/extension/495/topicons/) :star::star::star::star:
 - [MMOD Panel](https://extensions.gnome.org/extension/898/mmod-panel/) :star::star::star::star::star:
-- [Panel Docklet](https://extensions.gnome.org/extension/105/panel-docklet/) (For Multi Monitor Taskbar) :star::star::star::star::star:
 - [Keyboard Modifiers Status](https://extensions.gnome.org/extension/975/keyboard-modifiers-status/) :star::star::star:
 - [Laine](https://extensions.gnome.org/extension/937/laine/) :star::star::star::star:
 - [Disable Workspace Switcher Popup](https://extensions.gnome.org/extension/959/disable-workspace-switcher-popup/) :star::star:
-- [Workspace Indicator](https://extensions.gnome.org/extension/21/workspace-indicator/) :star::star:
-- [Workspace Dock](https://extensions.gnome.org/extension/427/workspaces-to-dock/) :star::star::star::star:
-- [Workspace Wraparound](https://extensions.gnome.org/extension/971/workspace-wraparound/) :star::star::star::star:
 - [Refresh Wifi Connections](https://extensions.gnome.org/extension/905/refresh-wifi-connections/) :star::star::star::star:
 - [Disconnect Wifi](https://extensions.gnome.org/extension/904/disconnect-wifi/) :star::star::star::star::star:
 - [Toggle Touchpad](https://extensions.gnome.org/extension/935/toggle-touchpad/) (For Laptops) :star::star::star::star::star:
-- [Windows Blur Effects](https://extensions.gnome.org/extension/891/windows-blur-effects/) :star::star::star::star: (Doesn't work well with WINE)
 
 
 ### Reload Gnome Freeze
@@ -512,42 +556,42 @@ When using a USB mouse sometimes the speed is just not right, in my case it's to
 
 I get something like this:
 
-	⎡ Virtual core pointer                    	id=2	[master pointer  (3)]
-	⎜   ↳ Virtual core XTEST pointer              	id=4	[slave  pointer  (2)]
-	⎜   ↳ ETPS/2 Elantech Touchpad                	id=15	[slave  pointer  (2)]
-	⎜   ↳ Logitech Unifying Device. Wireless PID:101b	id=12	[slave  pointer  (2)]
-	⎣ Virtual core keyboard                   	id=3	[master keyboard (2)]
-    	↳ Virtual core XTEST keyboard             	id=5	[slave  keyboard (3)]
-    	↳ Power Button                            	id=6	[slave  keyboard (3)]
-    	↳ Video Bus                               	id=7	[slave  keyboard (3)]
-    	↳ Power Button                            	id=8	[slave  keyboard (3)]
+    ⎡ Virtual core pointer                      id=2    [master pointer  (3)]
+    ⎜   ↳ Virtual core XTEST pointer                id=4    [slave  pointer  (2)]
+    ⎜   ↳ ETPS/2 Elantech Touchpad                  id=15   [slave  pointer  (2)]
+    ⎜   ↳ Logitech Unifying Device. Wireless PID:101b   id=12   [slave  pointer  (2)]
+    ⎣ Virtual core keyboard                     id=3    [master keyboard (2)]
+        ↳ Virtual core XTEST keyboard               id=5    [slave  keyboard (3)]
+        ↳ Power Button                              id=6    [slave  keyboard (3)]
+        ↳ Video Bus                                 id=7    [slave  keyboard (3)]
+        ↳ Power Button                              id=8    [slave  keyboard (3)]
     ...
 
 The ID of my mouse is `12`.
 You can see all the properties with:
 
-	$ xinput --list-props 12
+    $ xinput --list-props 12
 
 Then you can adjust the settings the String value and a value at the end:
 
-	$ xinput --set-prop 12 "Device Accel Constant Deceleration" 2
+    $ xinput --set-prop 12 "Device Accel Constant Deceleration" 2
 
 ## Preserve Settings
 
 To keep the settings in Gnome, do the following:
 
-	$ cd ~
-	$ touch gnome-boot.sh && chmod +x gnome-boot.sh
+    $ cd ~
+    $ touch gnome-boot.sh && chmod +x gnome-boot.sh
 
 Example of `gnome-boot.sh` file (Note: You can call it whatever you like):
 
-	#!/bin/bash
-	xinput --set-prop 12 "Device Accel Constant Deceleration" 4
+    #!/bin/bash
+    xinput --set-prop 12 "Device Accel Constant Deceleration" 4
 
 
 Then Add the Bash script the Gnome Session:
 
-	$ gnome-session-properties
+    $ gnome-session-properties
 
 
 ***
