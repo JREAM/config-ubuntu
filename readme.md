@@ -521,12 +521,15 @@ Move to left (terminal)
 
 
 ### My Gnome Extensions
-You need to use Firefox or IceWeasle at https://extensions.gnome.org/ to toggle these items. I suggest creating an account so you have a record.
+You need to use **Firefox** or **IceWeasle** at https://extensions.gnome.org/ to toggle these items. I suggest creating an account so you have a record.
 
 - **Must Have Extensions**
 - [Dash to Dock](https://extensions.gnome.org/extension/307/dash-to-dock/) :star::star::star::star::star:
 - [Workspace Dock](https://extensions.gnome.org/extension/427/workspaces-to-dock/) :star::star::star::star:
 - [Applications Menu](https://extensions.gnome.org/extension/6/applications-menu/) :star::star::star::star::star:
+- [TaskBar](https://extensions.gnome.org/extension/584/taskbar/) :star::star::star::star::star:
+- [No Topleft Hot Corner](https://extensions.gnome.org/extension/118/no-topleft-hot-corner/) :star::star::star::star::star:
+- [Force Quit](https://extensions.gnome.org/extension/770/force-quit/) :star::star::star::star::star:
 - **Nice Extensions**
 - [Taskbar](https://extensions.gnome.org/extension/584/taskbar/) :star::star::star::star::star:
 - [Small Panel Icon](https://extensions.gnome.org/extension/861/small-panel-icon/) :star::star::star::star::star:
