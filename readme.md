@@ -513,7 +513,7 @@ Run this simple command in the terminal and you will see the positions change ri
 
 Move to right (terminal)
 
-    gsettings set org.gnome.desktop.wm.preferences button-layout ':maximize,minimize,close'
+    gsettings set org.gnome.desktop.wm.preferences button-layout ':minimize,maximize,close'
 
 Move to left (terminal)
 
