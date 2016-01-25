@@ -36,11 +36,12 @@ This is for a __Debian__ based OS, such as: [Ubuntu](http://ubuntu.com/desktop),
     - [Google Chrome](#google-chrome)
 - [Ubuntu Fixes](#ubuntu-fixes)
     - [Sound Indicator Not Showing](#sound-indicator-not-showing)
-    - [Install Gnome 3](#install-gnome-3)
-      - [My Gnome Extensions](#my-gnome-extensions)
-      - [Fix Gnome Lockscreen](#fix-gnome-lockscreen)
-      - [Left or Right Close Buttons](#left-or-right-close-buttons)
-      - [Reload Gnome Freeze](#reload-gnome-freeze)
+- [Install Gnome 3](#install-gnome-3)
+    - [Easy Window Resize](#easy-window-resize)
+    - [Left or Right Close Buttons](#left-or-right-close-buttons)
+    - [Fix Gnome Lockscreen](#fix-gnome-lockscreen)
+    - [My Gnome Extensions](#my-gnome-extensions)
+    - [Reload Gnome Freeze](#reload-gnome-freeze)
 - [Adjust Mouse and Devices](#adjust-mouse-and-devices)
 - [Virtual Machine Related](#virtual-machine-related)
     - [Fix Mouse Side Buttons in VMWare](#fix-mouse-side-buttons-in-vmware)
@@ -491,7 +492,7 @@ For Gnome
 
     killall gnome-panel
 
-### Install Gnome 3
+# Install Gnome 3
 If you prefer Gnome 3 over the Unity desktop it's easy to install:
 
     sudo apt-get install ubuntu-gnome-desktop
@@ -503,10 +504,11 @@ If you want the default login a certain one select either lightdm or gdm. If you
 
     sudo dpkg-reconfigure gdm
 
-### Fix Gnome Lockscreen
-In terminal make sure this is false, then try your hotkey `ctrl+alt+l` or if you set it like min `super+l` in the settings:
-
-    gsettings set org.gnome.desktop.lockdown disable-lock-screen 'false'
+### Easy Window Resize
+Without Compiz, you can resize windows very nicely:
+- Focus on a window
+- Hold <kbd>ALT</kbd> + Middle Mouse Click + Drag
+- Note: Depending on where you position your mouse to will resize up/down/left/right
 
 ### Left or Right Close Buttons
 Run this simple command in the terminal and you will see the positions change right away.
@@ -519,6 +521,11 @@ Move to left (terminal)
 
     gsettings set org.gnome.desktop.wm.preferences button-layout 'close,minimize,maximize:'
 
+
+### Fix Gnome Lockscreen
+In terminal make sure this is false, then try your hotkey `ctrl+alt+l` or if you set it like min `super+l` in the settings:
+
+    gsettings set org.gnome.desktop.lockdown disable-lock-screen 'false'
 
 ### My Gnome Extensions
 You need to use **Firefox** or **IceWeasle** at https://extensions.gnome.org/ to toggle these items. I suggest creating an account so you have a record.
