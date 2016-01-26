@@ -26,6 +26,7 @@ This is for a __Debian__ based OS, such as: [Ubuntu](http://ubuntu.com/desktop),
         - [Apache](#apache)
         - [Nginx](#nginx)
         - [MySQL](#mysql)
+        - [MyCLI](#mycli) Terminal MySQL Utility
         - [Redis](#redis)
         - [Phalcon](#phalcon)
         - [Phalcon Dev Tools](#phalcon-dev-tools)
@@ -324,6 +325,16 @@ Or if you prefer to use nginx
 
     sudo apt-get install -y mysql-server mysql-client php5-mysql
     sudo sed -i 's/bind-address/bind-address = 0.0.0.0#/' /etc/mysql/my.cnf
+
+### MyCLI
+This is a very nice utility [https://github.com/dbcli/mycli](https://github.com/dbcli/mycli)
+
+    pip install mycli
+    
+Usage (See the documents from the git link above for more example):
+
+    mycli -h localhost -u root
+    mycli -h localhost -u root -p
 
 ### Redis
 
