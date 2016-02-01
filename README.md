@@ -50,6 +50,7 @@ This is for a __Debian__ based OS, such as: [Ubuntu](http://ubuntu.com/desktop),
     - [Windows 8 VirtualBox Fix](#windows-8-virtualbox-fix)
     - [Install ATI Drivers](#install-ati-drivers)
     - [Remove ATI Drivers](#remove-ati-drivers)
+- [Chrome Addons](#chrome-addons)
 - [Other Applications](#other-applications)
 
 ***
@@ -664,6 +665,16 @@ Running Windows 8 in Virtualbox has an odd error, run this in `cmd` or `powershe
     sudo dpkg-reconfigure xserver-xorg
 
 ***
+
+[(Back to top)](#table-of-contents)
+
+# Chrome Addons
+
+- [Chroma Color Picker](https://chrome.google.com/webstore/detail/chroma/gefgglgjdlddcpcapigheknbacbmmggp?utm_source=chrome-app-launcher-info-dialog)
+- [Postman Rest Client](https://chrome.google.com/webstore/detail/postman/fhbjgbiflinjbdggehcddcbncdddomop?utm_source=chrome-app-launcher-info-dialog)
+
+***
+
 [(Back to top)](#table-of-contents)
 
 # Other Applications
