@@ -30,6 +30,9 @@ Plugin 'hdima/python-syntax'
 Plugin 'Glench/Vim-Jinja2-Syntax'
 Plugin 'StanAngeloff/php.vim'
 
+" For vim-airline
+let g:airline#extensions#tabline#enabled = 1
+
 " For vim-markdown
 autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 

@@ -18,7 +18,7 @@ source ~/.bashrc
 if [ ! -d ~/.vim/bundle/Vundle.vim ]; then
     git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 fi
+vim +PluginInstall +qall
 
 echo "(+) Complete! Make sure to $ source ~/.bashrc"
-echo "(+) You also want to run $ vim and type :PluginInstall"
 echo "(+) Make sure to change your ~/.gitconfig to your Name and Email!"
