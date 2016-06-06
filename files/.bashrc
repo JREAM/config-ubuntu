@@ -20,6 +20,15 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
 fi
 
 ################################################
+####################  NGINX  ###################
+################################################
+
+# Usage: ngeanble sitename
+function ngmake { sudo vim /etc/nginx/sites-available/$1; }
+function ngenable { sudo ln -s /etc/nginx/sites-available/$1 /etc/nginx/sites-enabled; }
+function ngdisable { sudo rm /etc/nginx/sites-enabled/$1; }
+
+################################################
 #################### PYTHON ####################
 ################################################
 

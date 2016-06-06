@@ -6,22 +6,26 @@ fi
 
 # These are most of the modules the general public use at some point.
 sudo apt-get install -y\
+    apache2\
     mysql-server\
     php5\
+    php5-cli\
     php5-dev\
     php5-curl\
-    php5-mysql\
-    php5-sqlite\
-    php5-redis\
-    php5-xmlrpc\
-    php5-xdebug\
     php5-gd\
     php5-imagick\
     php5-intl\
+    php5-json\
     php5-mcrypt\
+    php5-mongo\
+    php5-mysql\
+    php5-sqlite\
+    php5-twig\
+    php5-redis\
+    php5-xmlrpc\
+    php5-xdebug\
     libpcre3-dev\
     libsqlite3-dev\
-    apache2\
     libapache2-mod-php5\
     libapache2-mod-wsgi
 

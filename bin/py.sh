@@ -10,6 +10,6 @@ sudo apt-get install -y\
 
 # IMPORTANT: Do NOT have a trailing \ on the LAST item!
 
-sudo pip install virtualenvwrapper fabric mycli --upgrade
+pip install bpython virtualenv virtualenvwrapper fabric mycli --upgrade
 
-echo "(+) Complete! Run with $ python and $ pip"
+echo "(+) Complete! Run with $ python, $ bpython, and $ pip"

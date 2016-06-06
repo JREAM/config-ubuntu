@@ -12,6 +12,7 @@ sudo apt-get install -y\
     compiz-plugins\
     dconf-editor\
     synaptic\
+    gparted\
     unetbootin\
     gdebi\
     preload\
@@ -20,7 +21,6 @@ sudo apt-get install -y\
     shutter\
     audacity\
     vlc\
-    xchat\
     numix-gtk-theme\
     numix-icon-theme\
     numix-icon-theme-circle

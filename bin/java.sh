@@ -5,8 +5,9 @@ if [[ ! $INSTALL_SCRIPT ]]; then
 fi
 
 sudo apt-get install -y\
-    default-jre
+    default-jre\
+    default-jdk
 
 # IMPORTANT: Do NOT have a trailing \ on the LAST item!
 
-echo "(+) Complete! Java Runtime in installed."
+echo "(+) Complete! JRE and JDK in installed."

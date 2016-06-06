@@ -11,5 +11,5 @@ if [ -s $_PROJECT_FILE ]; then
 fi
 
 # Go to the projects folder and name of the Virtual Env
-cd ~/projects/$(basename $VIRTUAL_ENV)
+cd ~/$_PROJECT_DIR/$(basename $VIRTUAL_ENV)
 

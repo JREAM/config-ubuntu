@@ -14,6 +14,7 @@ This is for a __Debian__ based OS, such as: [Ubuntu](http://ubuntu.com/desktop),
     - [Networking](#networking)
     - [Order of Grub](#order-of-grub)
 - [Installation Packages](#installation-packages)
+    - [Dot Files](#dot-files)
     - [Enable PPA](#enable-ppa)
     - [System Tools](#system-tools)
         - [Utilities](#utilities)
@@ -179,6 +180,28 @@ Run these commands and tweak them as needed. The `-y` flag installs without a pr
 
     sudo apt-get update && sudo apt-get upgrade
 
+## Dot Files
+Here are some shortcuts for the dotfiles:
+
+| Shortcut | Action |
+|----------|--------|
+| mkproject <name> | virtualenv in ~/projects/<name> |
+| workon <name> | load virtualenv in ~/projects/<name> |
+| l  | ls -la |
+| la | ls -la |
+| .. | cd .. |
+| ... | cd ../../ |
+| .... | cd ../../../ |
+| ip | current IP address |
+| ports | see open ports |
+| update | apt update |
+| updatey | apt update && install -y |
+| ngmake <name> | vim etc/nginx/sites-available/<name> |
+| ngenable <name> | enable nginx site |
+| ngdisable <name> | disable nginx site |
+| h | history |
+
+
 ## Enable PPA
 PPA's are provided within cateogories below, I highly recommend using PPA's or atleast installing this package incase you ever use them.
 
@@ -229,7 +252,7 @@ Create your configuration file:
 Adjust the temperatures you prefer. I like mine to be very yellow and dim. (The lower the dimmer)
 
     [redshift]
-    temp-day=3500                                                                                         
+    temp-day=3500
     temp-night=3500
     ; Set the screen brightness. Default is 1.0.
     ;brightness=0.9
@@ -331,7 +354,7 @@ Or if you prefer to use nginx
 This is a very nice utility [https://github.com/dbcli/mycli](https://github.com/dbcli/mycli)
 
     pip install mycli
-    
+
 Usage (See the documents from the git link above for more example):
 
     mycli -h localhost -u root

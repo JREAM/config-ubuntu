@@ -9,7 +9,7 @@ sudo apt-get install -y\
     npm
 
 echo "(+) Installing NodeJS Packages."
-sudo npm install bower gulp grunt-cli n -g
+sudo npm n install bower gulp -g
 
 # Permissions for local NPM folder
 sudo chown -R $(whoami) ~/.npm

@@ -25,7 +25,6 @@ Desktop.ini
 
 # Sass
 .sass-cache
-*.css.map
 
 # NodeJS
 node_modules/

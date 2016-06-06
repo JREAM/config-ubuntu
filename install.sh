@@ -35,19 +35,21 @@ cat <<- command_list
     ----        --------------------------------
     A           Run All Commands
     ----        --------------------------------
-    dot         Copy Dotfiles (.bashrc, .vimrc, .gitconfig, .gitignore)
+    dot         Copy Dotfiles (.bashrc, .gitconfig, .gitignore)
     gnome       Install Gnome 3 GUI Tools (You toggle at login or see README)
     gui         Install Ubuntu GUI Tools (Compiz, Unity Tweak)
-    jre         Install Java Runtime Enviroment (Default)
-    lamp        Install LAMP (apache, php5, mysql)
-    node        Install NodeJS (nodejs, bower, gulp, grunt-cli)
+    java        Install JRE and JDK (System-Defaults)
+    lamp        Install LAMP (composer, apache, php5, mysql)
+    node        Install NodeJS (nodejs; npm: n, bower, gulp)
     perm        Update /usr/local permissions
-    phalcon     Install PhalconPHP (Adds PPA)
-    ppa         Install PPAs (nodejs, wine, git, numix icons)
-    py          Install Python (python, python-dev, python-pip)
+    phalcon     Install Phalcon PHP Framework (Adds PPA)
+    ppa         Install PPAs (nodejs, wine, git, numix)
+    py          Install Python (python, bpython, python-dev, pip)
     redis       Install Redis (redis-server)
-    util        Install Utilities (vim, git, curl, htop, unzip, terminator, tmux, screen)
+    util        Install Utilities (git, curl, htop, unzip, terminator, tmux, screen)
+    vim         Install Vim (.vimrc and Vundle Plugins)
     q           Quit (or CTRL + C)
+
 command_list
 
 echo ""
@@ -85,8 +87,8 @@ read -p "Type a Command: " cmd
             echo "====================================================================="
             echo ""
             ;;
-        jre)
-            bash ./bin/jre.sh
+        java)
+            bash ./bin/java.sh
             echo ""
             echo "====================================================================="
             echo ""
@@ -141,6 +143,12 @@ read -p "Type a Command: " cmd
             ;;
         util)
             bash ./bin/util.sh
+            echo ""
+            echo "====================================================================="
+            echo ""
+            ;;
+        vim)
+            bash ./bin/vim.sh
             echo ""
             echo "====================================================================="
             echo ""

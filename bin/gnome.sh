@@ -8,4 +8,5 @@ sudo apt-get install ubuntu-gnome-desktop
 
 echo "(+) Gnome Complete! (You need to reboot)"
 echo "(+) To re-configure your gdm/lightdm use: sudo dpkg-reconfigure gdm"
+echo "(+) Use Gnome from the Screw Icon at your Login Screen"
 echo "(+) For extensions use Firefox at: https://extensions.gnome.org"
