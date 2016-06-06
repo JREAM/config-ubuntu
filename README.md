@@ -185,8 +185,8 @@ Here are some shortcuts for the dotfiles:
 
 | Shortcut | Action |
 |----------|--------|
-| mkproject <name> | virtualenv in ~/projects/<name> |
-| workon <name> | load virtualenv in ~/projects/<name> |
+| mkproject &lt;name&gt; | virtualenv in ~/projects/&lt;name&gt; |
+| workon &lt;name> | load virtualenv in ~/projects/&lt;name&gt; |
 | l  | ls -la |
 | la | ls -la |
 | .. | cd .. |
@@ -196,9 +196,9 @@ Here are some shortcuts for the dotfiles:
 | ports | see open ports |
 | update | apt update |
 | updatey | apt update && install -y |
-| ngmake <name> | vim etc/nginx/sites-available/<name> |
-| ngenable <name> | enable nginx site |
-| ngdisable <name> | disable nginx site |
+| ngmake <name> | vim etc/nginx/sites-available/&lt;name&gt; |
+| ngenable <name> | enable nginx &lt;name&gt; |
+| ngdisable <name> | disable nginx &lt;name&gt; |
 | h | history |
 
 
