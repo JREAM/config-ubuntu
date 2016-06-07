@@ -15,6 +15,7 @@ This is for a __Debian__ based OS, such as: [Ubuntu](http://ubuntu.com/desktop),
     - [Order of Grub](#order-of-grub)
 - [Installation Packages](#installation-packages)
     - [Dot Files](#dot-files)
+    - [SSH Permissions](#ssh-permissions)
     - [Enable PPA](#enable-ppa)
     - [System Tools](#system-tools)
         - [Utilities](#utilities)
@@ -201,6 +202,13 @@ Here are some shortcuts for the dotfiles:
 | ngdisable <name> | disable nginx &lt;name&gt; |
 | h | history |
 
+# SSH Permissions
+These are safe permissions to use for SSH
+```
+chmod 700 ~/.ssh
+chmod 644 ~/.ssh/id_rsa.pub
+chmod 600 ~/.ssh/id_rsa
+```
 
 ## Enable PPA
 PPA's are provided within cateogories below, I highly recommend using PPA's or atleast installing this package incase you ever use them.
