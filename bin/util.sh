@@ -15,6 +15,7 @@ sudo apt-get install -y\
     screen\
     supervisor\
     terminator\
+    tree\
     tmux
 
 # IMPORTANT: Do NOT have a trailing \ on the LAST item!
