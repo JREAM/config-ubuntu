@@ -19,6 +19,7 @@ This is for a __Debian__ based OS, such as: [Ubuntu](http://ubuntu.com/desktop),
     - [Enable PPA](#enable-ppa)
     - [System Tools](#system-tools)
         - [Utilities](#utilities)
+        - [Convert PPK to SSH Key](#convert-ppk-to-ssh-key)
         - [RedShift For Eye Strain](#redshift-for-eye-strain)
         - [Numix Theme](#numix-theme)
         - [Wine](#wine)
@@ -248,6 +249,20 @@ That will create a `~/.gitconfig` with:
     [push]
         default = simple
 
+### Convert PPK to SSH Key
+Already included in the utils is `putty-tools`. To convert a `*.ppk` (Putty Key) to an SSH or EC2 valid key do the following.
+
+```
+puttygen your_key.ppk -O private-openssh -o id_dsa
+puttygen your_key.ppk -O public-openssh -o id_dsa.pub
+```
+
+Then move it to your SSH folder with proper permissions:
+```
+mv -i ~/id_dsa* ~/.ssh
+chmod 600 ~/.ssh/id_dsa
+chmod 666 ~/.ssh/id_dsa.pub
+```
 
 ### RedShift For Eye Strain
 
