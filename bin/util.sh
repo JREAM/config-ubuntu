@@ -11,11 +11,12 @@ sudo apt-get install -y\
     git\
     curl\
     htop\
-    xclip\
+    putty-tools\
     screen\
     supervisor\
     terminator\
     tree\
-    tmux
+    tmux\
+    xclip
 
 # IMPORTANT: Do NOT have a trailing \ on the LAST item!
