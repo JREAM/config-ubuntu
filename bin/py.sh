@@ -13,3 +13,4 @@ sudo apt-get install -y\
 pip install bpython virtualenv virtualenvwrapper fabric mycli --upgrade
 
 echo "(+) Complete! Run with $ python, $ bpython, and $ pip"
+echo "    PIP Packages: bpython, virtualenvwrapper, fabric, mycli"
