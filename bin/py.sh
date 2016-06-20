@@ -6,7 +6,12 @@ fi
 
 sudo apt-get install -y\
     python-dev\
-    python-pip
+    python-pip\
+    libssl-dev\ 
+    libffi-dev\
+    python-dev\
+    libjpeg-dev\ 
+    libjpeg8-dev
 
 # IMPORTANT: Do NOT have a trailing \ on the LAST item!
 
