@@ -8,8 +8,10 @@ cp $PROJECT_FILE_PATH/.bashrc ~
 cp $PROJECT_FILE_PATH/.gitignore ~
 cp $PROJECT_FILE_PATH/.gitconfig ~
 cp $PROJECT_FILE_PATH/.exports ~
+cp $PROJECT_FILE_PATH/.profile ~
 
 # Reload Bash Config
 source ~/.bashrc
+source ~/.profile
 
-echo "(+) Complete! Make sure to $ source ~/.bashrc"
+echo "(+) Complete! Make sure to $ source ~/.bashrc && source ~/.profile"

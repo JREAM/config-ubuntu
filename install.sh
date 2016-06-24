@@ -46,6 +46,7 @@ cat <<- command_list
     ppa         Install PPAs (nodejs, wine, git, numix)
     py          Install Python (python, bpython, python-dev, pip)
     redis       Install Redis (redis-server)
+    security    Install ClamAV, RKHunter (read instructions after install)
     util        Install Utilities (git, curl, htop, unzip, terminator, tmux, screen)
     vim         Install Vim (.vimrc and Vundle Plugins)
     q           Quit (or CTRL + C)
@@ -137,6 +138,12 @@ read -p "Type a Command: " cmd
             ;;
         redis)
             bash ./bin/redis.sh
+            echo ""
+            echo "====================================================================="
+            echo ""
+            ;;
+        security)
+            bash ./bin/security.sh
             echo ""
             echo "====================================================================="
             echo ""

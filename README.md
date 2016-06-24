@@ -15,9 +15,11 @@ This is for a __Debian__ based OS, such as: [Ubuntu](http://ubuntu.com/desktop),
     - [Order of Grub](#order-of-grub)
 - [Installation Packages](#installation-packages)
     - [Dot Files](#dot-files)
+    - [SSH Permissions](#ssh-permissions)
     - [Enable PPA](#enable-ppa)
     - [System Tools](#system-tools)
         - [Utilities](#utilities)
+        - [Convert PPK to SSH Key](#convert-ppk-to-ssh-key)
         - [RedShift For Eye Strain](#redshift-for-eye-strain)
         - [Numix Theme](#numix-theme)
         - [Wine](#wine)
@@ -185,8 +187,8 @@ Here are some shortcuts for the dotfiles:
 
 | Shortcut | Action |
 |----------|--------|
-| mkproject <name> | virtualenv in ~/projects/<name> |
-| workon <name> | load virtualenv in ~/projects/<name> |
+| mkproject &lt;name&gt; | virtualenv in ~/projects/&lt;name&gt; |
+| workon &lt;name> | load virtualenv in ~/projects/&lt;name&gt; |
 | l  | ls -la |
 | la | ls -la |
 | .. | cd .. |
@@ -196,11 +198,18 @@ Here are some shortcuts for the dotfiles:
 | ports | see open ports |
 | update | apt update |
 | updatey | apt update && install -y |
-| ngmake <name> | vim etc/nginx/sites-available/<name> |
-| ngenable <name> | enable nginx site |
-| ngdisable <name> | disable nginx site |
+| ngmake <name> | vim etc/nginx/sites-available/&lt;name&gt; |
+| ngenable <name> | enable nginx &lt;name&gt; |
+| ngdisable <name> | disable nginx &lt;name&gt; |
 | h | history |
 
+# SSH Permissions
+These are safe permissions to use for SSH
+```
+chmod 700 ~/.ssh
+chmod 644 ~/.ssh/id_rsa.pub
+chmod 600 ~/.ssh/id_rsa
+```
 
 ## Enable PPA
 PPA's are provided within cateogories below, I highly recommend using PPA's or atleast installing this package incase you ever use them.
@@ -240,6 +249,20 @@ That will create a `~/.gitconfig` with:
     [push]
         default = simple
 
+### Convert PPK to SSH Key
+Already included in the utils is `putty-tools`. To convert a `*.ppk` (Putty Key) to an SSH or EC2 valid key do the following.
+
+```
+puttygen your_key.ppk -O private-openssh -o id_dsa
+puttygen your_key.ppk -O public-openssh -o id_dsa.pub
+```
+
+Then move it to your SSH folder with proper permissions:
+```
+mv -i ~/id_dsa* ~/.ssh
+chmod 600 ~/.ssh/id_dsa
+chmod 666 ~/.ssh/id_dsa.pub
+```
 
 ### RedShift For Eye Strain
 

@@ -6,10 +6,16 @@ fi
 
 sudo apt-get install -y\
     python-dev\
-    python-pip
+    python-pip\
+    libssl-dev\ 
+    libffi-dev\
+    python-dev\
+    libjpeg-dev\ 
+    libjpeg8-dev
 
 # IMPORTANT: Do NOT have a trailing \ on the LAST item!
 
 pip install bpython virtualenv virtualenvwrapper fabric mycli --upgrade
 
 echo "(+) Complete! Run with $ python, $ bpython, and $ pip"
+echo "    PIP Packages: bpython, virtualenvwrapper, fabric, mycli"
