@@ -24,6 +24,7 @@ sudo apt-get install -y\
     php5-redis\
     php5-xmlrpc\
     php5-xdebug\
+    php-codesniffer\
     libpcre3-dev\
     libsqlite3-dev\
     libapache2-mod-php5\
