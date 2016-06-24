@@ -47,7 +47,7 @@ let g:ctrlp_custom_ignore = {
 """"""""""""""""""""""""""""""""""""""""
 
 " show line numbers
-"set number
+set number
 
 " show lines in lower right
 set ruler
@@ -127,6 +127,12 @@ if has("autocmd")
   autocmd bufwritepost .vimrc source ~/.vimrc
  augroup END
 endif
+
+""""""""""""""""""""""""""""""""""""""""
+" Hotkeys
+""""""""""""""""""""""""""""""""""""""""
+
+map <C-n> :NERDTreeToggle<CR>
 
 " easier window navigation
 nmap <C-h> <C-w>h
