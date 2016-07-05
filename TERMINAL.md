@@ -135,6 +135,19 @@ find /tmp -type d -empty (find empty directories)
 find / -size +50M -size -100M (findby swize)
 ```
 
+## Find All Occurances
+```
+-r is Recursive
+-n is Line Number
+-w Match the whole word
+-l is lowercase only 
+
+grep -rnw /path - "pattern_or_string"
+
+# Output File
+grep -rnw /path - "pattern_or_string" > output.txt
+```
+
 ## Grep
 ```
 grep "hello" file.txt (if in file)
