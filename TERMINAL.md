@@ -2,6 +2,34 @@
 
 This will help you with terminal commands
 
+# Table of Contents
+- [Basics](#basics)
+- [Listing and Navigating](#listing-and-navigating)
+- [Zipping](#zipping)
+- [OS Shutdown](#os-shutdown)
+- [Crontab](#crontab)
+- [Services](#services)
+- [System State](#system-state)
+- [Processes](#processes)
+- [Users](#users)
+- [MySQL](#mysql)
+- [Download Files](#download-files)
+- [Find](#find)
+- [Find In Files](#find-in-files)
+- [Grep](#grep)
+- [SCP](#scp)
+- [SSH](#ssh)
+
+---
+
+## Basics
+```
+whereis bash (find absolute location of bash, or any file)
+whatis ls (tells you about the command)
+man ls (manual to give you a list of all command arguments for any command)
+locate crontab (I like mlocate more)
+```
+
 ## Listing and Navigating
 ```
 ls (list files)
@@ -87,14 +115,6 @@ chgrp group file.txt
 chown user:group file.txt
 ```
 
-## Basics
-```
-whereis bash (find absolute location of bash, or any file)
-whatis ls (tells you about the command)
-man ls (manual to give you a list of all command arguments for any command)
-locate crontab (I like mlocate more)
-```
-
 ## Users
 ```
 su - username (switch users)
@@ -135,7 +155,7 @@ find /tmp -type d -empty (find empty directories)
 find / -size +50M -size -100M (findby swize)
 ```
 
-## Find All Occurances
+## Find In Files
 ```
 -r is Recursive
 -n is Line Number
