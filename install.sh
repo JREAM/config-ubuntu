@@ -41,6 +41,7 @@ cat <<- command_list
     java        Install JRE and JDK (System-Defaults)
     lamp        Install LAMP (composer, apache, php5, mysql)
     node        Install NodeJS (nodejs; npm: n, bower, gulp)
+    nginx       Installs NGINX (Don't use LA[pache]MP and NGINX)
     perm        Update /usr/local permissions
     phalcon     Install Phalcon PHP Framework (Adds PPA)
     ppa         Install PPAs (nodejs, wine, git, numix)
@@ -96,6 +97,12 @@ read -p "Type a Command: " cmd
             ;;
         lamp)
             bash ./bin/lamp.sh
+            echo ""
+            echo "====================================================================="
+            echo ""
+            ;;
+        nginx)
+            bash ./bin/nginx.sh
             echo ""
             echo "====================================================================="
             echo ""
