@@ -6,11 +6,11 @@ fi
 
 # These are most of the modules the general public use at some point.
 sudo apt-get install -y\
+    php5\
+    php5-dev\
+    php5-cli\
     apache2\
     mysql-server\
-    php5\
-    php5-cli\
-    php5-dev\
     php5-curl\
     php5-gd\
     php5-imagick\

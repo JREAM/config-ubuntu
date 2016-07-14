@@ -38,8 +38,10 @@ cat <<- command_list
     dot         Copy Dotfiles (.bashrc, .gitconfig, .gitignore)
     gnome       Install Gnome 3 GUI Tools (You toggle at login or see README)
     gui         Install Ubuntu GUI Tools (Compiz, Unity Tweak)
+    hotkeys     Removes Email/WWW hotkeys, adds <Super+e> to Home Folder
     java        Install JRE and JDK (System-Defaults)
     lamp        Install LAMP (composer, apache, php5, mysql)
+    mysql       Install MySQL-Workbench, common, utils (not the server)
     node        Install NodeJS (nodejs; npm: n, bower, gulp)
     nginx       Installs NGINX (Don't use LA[pache]MP and NGINX)
     perm        Update /usr/local permissions
@@ -89,6 +91,12 @@ read -p "Type a Command: " cmd
             echo "====================================================================="
             echo ""
             ;;
+        hotkeys)
+            bash ./bin/hotkeys.sh
+            echo ""
+            echo "====================================================================="
+            echo ""
+            ;;
         java)
             bash ./bin/java.sh
             echo ""
@@ -97,6 +105,12 @@ read -p "Type a Command: " cmd
             ;;
         lamp)
             bash ./bin/lamp.sh
+            echo ""
+            echo "====================================================================="
+            echo ""
+            ;;
+        mysql)
+            bash ./bin/mysql.sh
             echo ""
             echo "====================================================================="
             echo ""
