@@ -5,13 +5,13 @@ if [[ ! $INSTALL_SCRIPT ]]; then
 fi
 
 sudo apt-get install -y\
+    libssl-dev\
     python-dev\
-    python-pip\
-    libssl-dev\ 
     libffi-dev\
-    python-dev\
-    libjpeg-dev\ 
-    libjpeg8-dev
+    libjpeg8-dev\
+    libjpeg-dev\
+    python-pip\
+    python-dev
 
 # IMPORTANT: Do NOT have a trailing \ on the LAST item!
 

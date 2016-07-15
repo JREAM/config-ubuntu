@@ -35,17 +35,19 @@ cat <<- command_list
     ----        --------------------------------
     A           Run All Commands
     ----        --------------------------------
+    apache      Use for PHP5 Versions
     dot         Copy Dotfiles (.bashrc, .gitconfig, .gitignore)
     gnome       Install Gnome 3 GUI Tools (You toggle at login or see README)
     gui         Install Ubuntu GUI Tools (Compiz, Unity Tweak)
     hotkeys     Removes Email/WWW hotkeys, adds <Super+e> to Home Folder
     java        Install JRE and JDK (System-Defaults)
-    lamp        Install LAMP (composer, apache, php5, mysql)
-    mysql       Install MySQL-Workbench, common, utils (not the server)
+    mysql       Install MySQL, MySQL-Workbench, common, utils (not the server)
     node        Install NodeJS (nodejs; npm: n, bower, gulp)
     nginx       Installs NGINX (Don't use LA[pache]MP and NGINX)
     perm        Update /usr/local permissions
     phalcon     Install Phalcon PHP Framework (Adds PPA)
+    php5        Installs PHP5 and popular packages
+    php7        Installs PHP7 and popular packages
     ppa         Install PPAs (nodejs, wine, git, numix)
     py          Install Python (python, bpython, python-dev, pip)
     redis       Install Redis (redis-server)
@@ -69,6 +71,12 @@ read -p "Type a Command: " cmd
             do
                 bash $entry
             done
+            echo ""
+            echo "====================================================================="
+            echo ""
+            ;;
+        apache)
+            bash ./bin/apache.sh
             echo ""
             echo "====================================================================="
             echo ""
@@ -103,12 +111,6 @@ read -p "Type a Command: " cmd
             echo "====================================================================="
             echo ""
             ;;
-        lamp)
-            bash ./bin/lamp.sh
-            echo ""
-            echo "====================================================================="
-            echo ""
-            ;;
         mysql)
             bash ./bin/mysql.sh
             echo ""
@@ -137,6 +139,18 @@ read -p "Type a Command: " cmd
             bash ./bin/phalcon.sh
             echo ""
             echo "====================================================================="
+            echo ""
+            ;;
+        php5)
+            bash ./bin/php5.sh
+            echo ""
+            echo "====================================================================="   
+            echo ""
+            ;;
+        php7)
+            bash ./bin/php7.sh
+            echo ""
+            echo "====================================================================="   
             echo ""
             ;;
         ppa)

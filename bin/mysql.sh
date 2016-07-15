@@ -5,6 +5,7 @@ if [[ ! $INSTALL_SCRIPT ]]; then
 fi
 
 sudo apt-get install -y\
+    mysql-server\
     mysql-workbench\
     mysql-client\
     mysql-utilities
@@ -12,4 +13,4 @@ sudo apt-get install -y\
 # IMPORTANT: Do NOT have a trailing \ on the LAST item!
 
 echo "(+) Complete! Installed MySQL Utilities."
-echo "    Workbench, Client, Utilities"
+echo "    MySQL Server, Workbench, Client, Utilities"

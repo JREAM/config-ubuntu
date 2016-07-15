@@ -1,47 +1,57 @@
 [global_config]
-  title_hide_sizetext = True
-  title_inactive_fg_color = "#e1e1e1"
-  suppress_multiple_term_dialog = True
-  enabled_plugins = CustomCommandsMenu, LaunchpadCodeURLHandler, APTURLHand
-  title_receive_bg_color = "#083800"
-  title_transmit_bg_color = "#305823"
-  inactive_color_offset = 0.74
-  title_inactive_bg_color = "#585858"
+  title_font = Ubuntu Mono 13
+  title_inactive_bg_color = "#70991f"
+  title_receive_bg_color = "#fd971f"
+  title_transmit_bg_color = "#a6e22e"
+  title_transmit_fg_color = "#000000"
+  title_use_system_font = False
 [keybindings]
-  zoom_in = <Primary>equal
-  broadcast_group = None
-  next_tab = <Primary>Tab
-  split_horiz = <Primary>bracketleft
   broadcast_all = <Alt>semicolon
-  close_term = <Ctrl><Alt>w
-  split_vert = <Primary>bracketright
-  broadcast_off = <Alt>apostrophe
+  broadcast_group = None
+  broadcast_off = <Alt>1
+  close_term = <Primary><Alt>w
+  close_window = None
   new_tab = <Primary>t
-  new_terminator = <Primary><Shift>n
-[profiles]
-  [[default]]
-    palette = "#000000:#cc0000:#4e9a06:#c4a000:#3465a4:#75507b:#06989a:#d3d
-    background_image = None
-    background_darkness = 0.93
-    scrollback_lines = 10000
-    background_type = transparent
-    use_system_font = False
-    foreground_color = "#ffffff"
-    icon_bell = False
-    font = Inconsolata Medium 12
+  new_terminator = <Primary>n
+  next_tab = <Primary>Tab
+  prev_tab = <Primary><Shift>Tab
+  split_horiz = <Primary>bracketleft
+  split_vert = <Primary>bracketright
 [layouts]
   [[default]]
     [[[child1]]]
-      type = Terminal
       parent = window0
-      profile = default
-      command = ""
+      profile = New Profile
+      type = Terminal
     [[[window0]]]
-      type = Window
       parent = ""
+      type = Window
+  [[sub]]
+    [[[child0]]]
+      fullscreen = False
+      last_active_term = c217742a-6710-4193-9d3e-c114834f49e3
+      last_active_window = True
+      maximised = False
+      order = 0
+      parent = ""
+      position = 513:279
+      size = 654, 378
+      title = /bin/bash
+      type = Window
+    [[[terminal1]]]
+      order = 0
+      parent = child0
+      profile = default
+      type = Terminal
+      uuid = c217742a-6710-4193-9d3e-c114834f49e3
 [plugins]
-  [[CustomCommandsMenu]]
-    [[[shell]]]
-      command = echo $SHELL                                                
-      enabled = True
-      name = shell
+[profiles]
+  [[default]]
+    background_color = "#272822"
+    background_darkness = 0.08
+    background_image = None
+    cursor_blink = False
+    cursor_color = "#9da189"
+    font = Ubuntu Mono 14
+    foreground_color = "#fdfdfd"
+    use_system_font = False

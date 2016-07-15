@@ -9,8 +9,6 @@ sudo apt-get install -y\
     php5\
     php5-dev\
     php5-cli\
-    apache2\
-    mysql-server\
     php5-curl\
     php5-gd\
     php5-imagick\
@@ -19,6 +17,7 @@ sudo apt-get install -y\
     php5-mcrypt\
     php5-mongo\
     php5-mysql\
+    php5-soap\
     php5-sqlite\
     php5-twig\
     php5-redis\
@@ -38,40 +37,6 @@ if [ ! -d "~/projects" ]; then
 else
     echo " (-) Skipping, ~/projects folder already exists"
 fi
-
-# Create VHost for the /home/user/projects folder
-if [ ! -f /etc/apache2/sites-available/projects.conf ]; then
-
-    echo " (+) Creating projects VirtualHost"
-
-    echo "ServerName projects
-    <VirtualHost *:80>
-
-        # Indexes + Directory Root.
-        DocumentRoot /home/$USER/projects
-
-        # Logfiles
-        ErrorLog  /home/$USER/projects/error.log
-        CustomLog /home/$USER/projects/access.log combined
-
-    </VirtualHost>
-
-    <Directory /home/$USER/projects>
-        Header set Access-Control-Allow-Origin '*'
-        Options Indexes Followsymlinks
-        AllowOverride All
-        Require all granted
-    </Directory>" > projects.conf
-
-    sudo mv projects.conf /etc/apache2/sites-available
-    sudo a2ensite projects
-
-    # Disable the default site
-    sudo a2dissite 000-default
-else
-    echo " (-) Skipping, ~/projects folder already exists"
-fi
-
 
 # See if we need composer (Duplicate in Phalcon for now)
 if [ ! -f /usr/local/bin/composer ]; then
@@ -101,13 +66,6 @@ xdebug.remote_log=\"/var/log/xdebug/xdebug.log\"
 " > /etc/php5/mods-available/xdebug.ini
 
 # Some Apache Finishing up
-sudo a2enmod rewrite headers
-sudo service apache2 restart
 
-echo "(+) LAMP Completed."
-echo ""
-echo "(+) You can edit /etc/hosts and append 'projects', eg:"
-echo "    127.0.0.1 localhost projects"
-echo ""
-echo "    And you'll be able to access http://projects for your /home/$USER/projects folder!"
+echo "(+) PHP5 Installed"
 echo ""
