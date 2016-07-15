@@ -11,6 +11,7 @@ sudo apt-get install -y\
     git\
     curl\
     htop\
+    gdebi\
     putty-tools\
     screen\
     supervisor\
