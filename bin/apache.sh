@@ -6,9 +6,7 @@ fi
 
 # These are most of the modules the general public use at some point.
 sudo apt-get install -y\
-    apache2\
-    libapache2-mod-php5\
-    libapache2-mod-wsgi
+    apache2
 
 # IMPORTANT: Do NOT have a trailing \ on the LAST item!
 
