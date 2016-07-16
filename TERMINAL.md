@@ -7,13 +7,15 @@ This will help you with terminal commands
 - [Listing and Navigating](#listing-and-navigating)
 - [Users](#users)
 - [Permissions](#permissions)
-- [Zipping](#zipping)
 - [OS Shutdown](#os-shutdown)
 - [Crontab](#crontab)
 - [Services](#services)
 - [System State](#system-state)
 - [Processes](#processes)
-- [MySQL](#mysql)
+- [Reading Files](#reading-files)
+- [Compressing and Uncompressing Files](#compressing-and-uncompressing-files)
+    - [Compressing Files](#compressing-files)
+    - [Decompressing Files](#decompressing-files)
 - [Download Files](#download-files)
     - [Using Wget](#using-wget)
     - [Using cURL](#using-curl)
@@ -26,6 +28,12 @@ This will help you with terminal commands
 - [SSH](#ssh)
     - [Connecting to a server](#connecting-to-a-server)
     - [Using the Config](#using-the-config)
+- [MySQL](#mysql)
+    - [Connecting](#connecting)
+    - [Exporting Database to SQL](#exporting-database-to-sql)
+    - [Importing SQL Files](#importing-sql-files)
+    - [Exporting Compressed Database](#exporting-compressed-database)
+    - [Importing Compressed Database](#importing-compressed-database)
 - [Git](#git)
     - [Populate a Repository](#populate-a-repository)
     - [Add or Remove Files](#add-or-remove-files)
@@ -53,23 +61,23 @@ which python
 
 ## Listing and Navigating
 ```
-ls (list files)
-ls -la (list all files, permissions, and hidden too)
-pwd (print working directory)
-cd .. (go dir down)
-cd / (go to lowest level)
-cd ~ (go to user home)
-cd /var/www (go to specific path)
+ls              (list files)
+ls -la          (list all files, permissions, and hidden too)
+pwd             (print working directory)
+cd ..           (go down a directory)
+cd /            (go to lowest level)
+cd ~            (go to logged in user's home)
+cd /var/www     (go to absolute path)
 ```
 
 
 ## Users
 ```
-su - username (switch users)
-sudo su (switch to root)
+su - username       (switch users)
+sudo su             (switch to root)
 
-passwd (change your pass)
-passwd username (change another users pass)
+passwd              (change logged in users password)
+passwd username     (change another users password)
 
 useradd -m -s /bin/bash username
 usermod -a -G existing_group existing_user
@@ -93,36 +101,26 @@ chgrp -R group files_or_folder
 chmod -R og+rw files_or_folder
 ```
 
-## Zipping
-```
-gzip test.txt  (compress)
-gzip -d test.txt.gz (uncompress)
-bzip test.txt (compress)
-bzip -d test.txt.bz2 (uncompress)
-unzip test.zip
-unzip -i test.zip (see files without unzipping)
-```
-
 ## OS Shutdown
 ```
 shutdown
 reboot
 shutdown -h now
-shutdown -h +10 (shutdown 10 mins)
-shutdown -r now (reboot now)
+shutdown -h +10     (shutdown 10 mins)
+shutdown -r now     (reboot now)
 ```
 
 ## Crontab
 ```
-crontab -e (edit crontab for current user)
-crontab -l (list crontab for other user)
-crontab -u jesse -l (see crontabs for specific user)
+crontab -e              (edit crontab for current user)
+crontab -l              (list crontab for other user)
+crontab -u jesse -l     (see crontabs for specific user)
 ```
 
 ## Services
 ```
-service ssh status (service status)
-service --status-all (all services status)
+service ssh status      (service status)
+service --status-all    (all services status)
 ```
 
 ## System State
@@ -133,9 +131,9 @@ top (See running processes/system status, I suggest installing `htop`)
 top -u www-data
 htop -u www-data
 
-df (display disk space in bytes, default)
-df -h (display disk space human readable)
-df -Th (display disk space with partitions)
+df          (display disk space in bytes, default)
+df -h       (display disk space human readable)
+df -Th      (display disk space with partitions)
 
 free (see memory used)
 free -g (in gigabytes)
@@ -143,66 +141,105 @@ free -g (in gigabytes)
 
 ## Processes
 ```
-ps -ef | more (current running processes)
-ps -efH | more  (current running processes in a tree)
+ps -ef | more       (current running processes)
+ps -efH | more      (current running processes in a tree)
 
-ps -ef | grep vim (find vim process id)
-kill -9 <id> (no brackets)
+ps -ef | grep vim   (find vim process id)
+kill -9 <id>        (no brackets)
 ```
 
 ## Reading Files
+Without having to open a file you can simply read a part of it without `nano`, `pico, `vi`, or `vim`:
 ```
-cat file.txt (view file contents)
-tail file.txt (view end of file contents)
-tail -n20 file.txt (view top 20 lines)
-tail -f filetxt (follow a filename keep updating)
-head file.txt (view top of file contents)
-head -n20 file.txt (view top 20 lines)
+cat file.txt            (view file contents)
+tail file.txt           (view end of file contents)
+tail -n20 file.txt      (view top 20 lines)
+tail -f filetxt         (follow a filename keep updating)
+head file.txt           (view top of file contents)
+head -n20 file.txt      (view top 20 lines)
 ```
 
-## MySQL
+## Compressing and Uncompressing Files
+To Compress a file you can use a variety of tools. You can type `man gzip` to see the full manual and line of commands, and use `esc` + `:x` and `ENTER` to exit from the Manual (It usually uses the Vi editor).
+
+Most often in the Linux word you use and create `*.tar.gz` files, it has the most options. Whatever you prefer is up to you.
+
+What the flags often stand for:
+- `-c` is create
+- `-f` is file
+- `-k` is for Keep 
+    - `gzip` & `bzip2` will remove the original file once compressed
+    -  Or they will remove the `.gz` when decompressing is done
+- `-r` is recursive (for gzip and zip)
+- `-v` is verbose (show details of what's happening)
+- `-z` is for tar to gzip as well
+
+#### Compressing Files
+Note: You can compress more than one file at a time eg: `bzip2 file1.txt file2.txt file3.txt`
 ```
-mysql -u root -p (username, password prompt)
-mysql -u root -p -h localhost (username, password prompt, host)
+gzip -vk file.txt                   (Creates file.txt.gz)
+bzip2 file.txt                      (Creates  file.txt.bz2)
+tar -cvf file.tar file.txt          (Creates tar)
+tar -czvf file.tar.gz file.txt      (Creates tar.gz)
+zip filename.zip file.txt           (Creates filename.zip)
+zip -r folder.zip path/to/folder    (Creates  folder.txt.bz2)
+```
+
+#### Decompressing Files
+To Uncompress we use similar commands for most of them
+```
+gunzip -dvk file.txt.gz
+gzip -dvk file.txt.gz       (Same as above)
+bzip2 -d file.txt.bz2
+tar -xvf file.tar
+tar -zxvf file.tar.gz
+unzip test.zip
 ```
 
 ## Download Files
 
 #### Using Wget
 ```
-wget http://file.com/something.txt (download a file onto server)
-wget -O newname.txt http://file.com/something.txt (download file with newname)
+wget http://file.com/something.txt                (Download a file locally)
+wget -O newname.txt http://file.com/something.txt (Download file locally w/new name)
 ```
 
 #### Using cURL
 ```
-curl -o newname.txt http://file.com/something.txt (save as newname.txt)
-curl -O http://file.com/something.txt (save as something.txt)
-curl -O url_1 -O url_2 (etc.. Download multiple files)
+curl -O http://file.com/something.txt               (Download a file locally)
+curl -o newname.txt http://file.com/something.txt   (Download file locally w/new name)
+curl -O http://url_1 -O http://url_2                (Download multiple files)
 ```
 
 ## Find
+Generally the following arguments are as follows:
+- `-type f` file
+- `-type d` directory
+- `-iname` case insensistive (book.txt would the same as BOOK.TXT)
+- `*` is a wildcard to find anything, usually you put it at the start or end of a filename.
 ```
 find . -name tecmint.txt
 find /home -name tecmint.txt
-find /home -iname tecmint.txt (case ignore)
-find / -type d -name Tecmint (directory)
+find /home -iname tecmint.txt                        (case ignore)
+find / -type d -name Tecmint                         (directory)
 find . -type f -perm 0777 -print (with perms)
 find / -type f ! -perm 777 (find without)
 find . -type f -name "tecmint.txt" -exec rm -f {} \; (find and remove a file)
-find . -type f -name "*.txt" -exec rm -f {} \; (find and remove multiple)
-find /tmp -type f -empty (Find empty files)
-find /tmp -type d -empty (find empty directories)
+find . -type f -name "*.txt" -exec rm -f {} \;       (find and remove multiple)
+find /tmp -type f -empty                             (Find empty files)
+find /tmp -type d -empty                             (find empty directories)
 find / -size +50M -size -100M (findby swize)
 ```
 
 ## Grep (Find in Files)
+GREP means: Global Regular Expression Pattern (or Parser)
 
-Some flags:
+Some common GREP flags:
 - `-r` is Recursive
 - `-n` is Line Number
 - `-w` Match the whole word
 - `-l` is lowercase only
+- `-c` supresses normal output and counts number of matching lines
 
 ```
 grep -rnw /path - "pattern_or_string"
@@ -264,6 +301,62 @@ You can then simply type:
 ssh aws
 ssh my-vps
 ```
+
+## MySQL
+
+#### Connecting
+```
+mysql -u root -p (username, password prompt)
+mysql -u root -p -h localhost (username, password prompt, host)
+```
+
+#### Exporting Database to SQL
+You can dump a single database easily:
+```
+mysqldump -u root -p DATABASE_NAME > file.sql
+```
+
+Or Dump all databases on your MySQL server with the `--all-databases` flag:
+```
+mysqldump -u root -p --all-databases > file.sql 
+```
+
+#### Importing SQL Files
+You can do this through the shell only, or MySQL, first is the shell:
+```
+mysql -u root DATABASE_NAME < path/to/file.sql
+```
+
+To continue when there are MySQL Errors use -f or --force below:
+```
+mysql -u root DATABASE_NAME < path/to/file.sql --force  
+```
+
+To use a password, just pass in the -p flag and type it in after running:
+```
+mysql -u root -p DATABASE_NAME < path/to/file.sql --force  
+```
+
+Second, you can do it through MySQL once you connect:
+```
+mysql> use DATABASE_NAME;
+mysql> source path/to/file.sql;
+```
+
+#### Exporting Compressed Database
+This will save a lot of space in this one liner:
+```
+mysqldump -u root -p DATABASE_NAME | tar -cvzf > output.sql.tar.gz
+mysqldump -u root -p DATABASE_NAME | gzip -v > output.sql.gz
+```
+
+#### Importing Compressed Database
+Here is how you can import with the one liner:
+```
+mysql -u root -p DATABASE_NAME | tar -xzOf output.sql.tar.gz
+mysql -u root -p DATABASE_NAME | gunzip < output.sql.gz
+```
+
 
 ## Git
 
