@@ -36,6 +36,8 @@ cat <<- command_list
     A           Run All Commands
     ----        --------------------------------
     apache      Use for PHP5 Versions
+    btnleft     Move Close/Min/Max to Left on Windows
+    btnright    Move Min/Max/Close to Right on Windows (Familiar to Windows OS)
     dot         Copy Dotfiles (.bashrc, .gitconfig, .gitignore)
     gnome       Install Gnome 3 GUI Tools (You toggle at login or see README)
     gui         Install Ubuntu GUI Tools (Compiz, Unity Tweak)
@@ -77,6 +79,18 @@ read -p "Type a Command: " cmd
             ;;
         apache)
             bash ./bin/apache.sh
+            echo ""
+            echo "====================================================================="
+            echo ""
+            ;;
+        btnleft)
+            bash ./bin/btn-left.sh
+            echo ""
+            echo "====================================================================="
+            echo ""
+            ;;
+        btnright)
+            bash ./bin/btn-right.sh
             echo ""
             echo "====================================================================="
             echo ""
