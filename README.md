@@ -286,7 +286,7 @@ Adjust the temperatures you prefer. I like mine to be very yellow and dim. (The 
 
 Close and reload redshift. If you cannot find the icon anywhere run this in terminal:
 
-    pkill redshift-gtk redshift
+    pkill redshift-gtk && pkill redshift
 
 If RedShift gives you a `Geoclue2` error do this:
 
