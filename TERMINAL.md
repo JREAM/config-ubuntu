@@ -258,7 +258,9 @@ grep "regex" file.txt
 ```
 
 #### Pipe Grep
+```
 php -i | grep ini
+```
 
 ## SCP
 
