@@ -19,6 +19,13 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
 
+#################################################
+############### PHP Version Toggle ##############
+#################################################
+# Remove the -q to see debugging information if there are problems
+alias enphp7="sudo a2dismod php5.6 -q; sudo a2enmod php7.0 -q; sudo ln -sf /usr/bin/php7.0 /usr/bin/php; sudo service apache2 restart"
+alias enphp5="sudo a2dismod php7.0 -q; sudo a2enmod php5.6 -q; sudo ln -sf /usr/bin/php5.6 /usr/bin/php; sudo service apache2 restart" 
+
 ################################################
 ####################  NGINX  ###################
 ################################################
