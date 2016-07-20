@@ -48,6 +48,7 @@ cat <<- command_list
     nginx       Installs NGINX (Don't use LA[pache]MP and NGINX)
     perm        Update /usr/local permissions
     php5phalcon Install Phalcon PHP Framework (Adds PPA)
+    php7phalcon Install Phalcon PHP Framework with Zephir
     php5        Installs PHP5 and popular packages
     php7        Installs PHP7 and popular packages
     ppa         Install PPAs (nodejs, wine, git, numix)
