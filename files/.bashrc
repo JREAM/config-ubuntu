@@ -84,6 +84,12 @@ alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
 # Enable aliases to be sudoed
 alias sudo="sudo "
 
+# Find file in current folder
+alias ffile="find . -name "  
+
+# Find file with contents in current folder
+ftext () { grep -rnwi "$1" . ;}
+
 # This gets really annoying!
 alias apt-get="sudo apt-get"
 
