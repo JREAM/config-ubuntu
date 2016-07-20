@@ -19,9 +19,6 @@ sudo apt-get install -y\
     php7.0-sqlite\
     php7.0-xmlrpc\
     php-codesniffer\
-    phpunit\
-    phpunit-mock-object\
-    phpunit-global-state\
     libapache2-mod-php7.0\
     libpcre3-dev\
     libsqlite3-dev
@@ -42,6 +39,10 @@ else
     sudo composer self-update
 fi
 
+composer global require "hirak/prestissimo:^0.3"
+composer global require "phpunit/phpunit=5.4.*"
+composer global require "phpunit/php-code-coverage=^4.0"
+composer global require "phpunit/phpunit-mock-objects=^3.2"
 
 # Turn on Short Open Tags
 sudo sed -i 's/short_open_tag = Off/short_open_tag = On/' /etc/php/7.0/fpm/php.ini
