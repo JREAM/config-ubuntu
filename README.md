@@ -194,6 +194,8 @@ Here are some shortcuts for the dotfiles:
 | .. | cd .. |
 | ... | cd ../../ |
 | .... | cd ../../../ |
+| ffile | find . name &lt;your_file&gt; (Searches for file in current folder) |
+| ftext | ftext () { grep -rnwi &lt;your_text&gt; . ;} (Searches for text in file of current folder) |
 | ip | current IP address |
 | ports | see open ports |
 | update | apt update |
