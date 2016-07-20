@@ -47,7 +47,7 @@ cat <<- command_list
     node        Install NodeJS (nodejs; npm: n, bower, gulp)
     nginx       Installs NGINX (Don't use LA[pache]MP and NGINX)
     perm        Update /usr/local permissions
-    phalcon     Install Phalcon PHP Framework (Adds PPA)
+    php5phalcon Install Phalcon PHP Framework (Adds PPA)
     php5        Installs PHP5 and popular packages
     php7        Installs PHP7 and popular packages
     ppa         Install PPAs (nodejs, wine, git, numix)
@@ -149,12 +149,17 @@ read -p "Type a Command: " cmd
             echo "====================================================================="
             echo ""
             ;;
-        phalcon)
-            bash ./bin/phalcon.sh
+        php5-phalcon)
+            bash ./bin/php6-phalcon.sh
             echo ""
             echo "====================================================================="
             echo ""
             ;;
+        php7-phalcon)
+            bash ./bin/php7-phalcon.sh
+            echo ""
+            echo "====================================================================="
+            echo ""
         php5)
             bash ./bin/php5.sh
             echo ""
