@@ -19,6 +19,9 @@ sudo apt-get install -y\
     php7.0-sqlite\
     php7.0-xmlrpc\
     php-codesniffer\
+    phpunit\
+    phpunit-mock-object\
+    phpunit-global-state\
     libapache2-mod-php7.0\
     libpcre3-dev\
     libsqlite3-dev
