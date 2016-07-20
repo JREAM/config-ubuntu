@@ -1,0 +1,28 @@
+#/bin/bash
+if [[ ! $INSTALL_SCRIPT ]]; then
+    echo "(!) Error: You must use the ./install.sh script."
+    exit
+fi
+
+# See if we need composer (Duplicate in LAMP for now)
+if [ ! -f /usr/local/bin/composer ]; then
+    curl -sS https://getcomposer.org/installer | php && sudo mv composer.phar /usr/local/bin/composer
+else
+    sudo composer self-update
+fi
+
+echo "(+) Installing Zephir."
+composer global require phalcon/zephir
+
+echo "(+) Compiling Phalcon for PHP7 (Ignore Warnings)."
+git clone http://github.com/phalcon/cphalcon
+cd cphalcon
+git checkout 2.1.x
+$HOME/.composer/vendor/bin/zephir build --backend=ZendEngine3
+
+echo "(+) Phalcon Installed."
+
+sudo sh -c 'echo "extension=phalcon.so" >> /etc/php/7.0/mods-available/phalcon.ini'
+sudo phpenmod phalcon
+
+echo "(+) Phalcon Enabled (phpenmod phalcon)."
