@@ -8,8 +8,14 @@ sudo apt-get install -y\
     nodejs
     npm
 
+
+echo "(+) Installing 'N' for latest stable Node Version."
+sudo npm cache clean -f
+sudo npm install -g n
+sudo n stable
+
 echo "(+) Installing NodeJS Packages."
-sudo npm n install bower gulp -g
+sudo npm install bower gulp grunt-cli -g
 
 # Permissions for local NPM folder
 sudo chown -R $(whoami) ~/.npm

@@ -63,48 +63,6 @@ This is for a __Debian__ based OS, such as: [Ubuntu](http://ubuntu.com/desktop),
 # Optional Configurations
 - Some items (`termatinator`, `virtualenvs`) copied from [Dan Sackett](https://github.com/dansackett/dotfiles).
 
-### Get System Details
-
-Operating System
-
-    lsb_release -a
-    lsb_release -as     # Short Information
-    lsb_release --help
-
-CPU Info
-
-    nproc               # How many Processing Units
-    cpuid               # Must install cpuid from terminal
-    cat /proc/cpuinfo   # Lots of info
-
-
-Memory and Usage Info
-
-    free -h             # Human readable, or do --help for options
-    top or htop         # Must install htop
-    vmstat -s
-    cat /proc/meminfo   # Lots of info
-
-Disk Space
-
-    df
-    df -B MB    # In Megabtyes,  etc
-
-GUI Processes
-
-    gnome-system-monitor
-
-# List all Keybindings
-
-    gsettings list-recursively  org.gnome.desktop.wm.keybindings | sort | more
-
-See your keypressed:
-
-    xev
-
-Or for a lot of details:
-
-    xev | grep KeyPress
 
 ## Better Local Folder
 This is less painful when creating a group with rwx permissions for `/usr/local`
@@ -214,6 +172,7 @@ chmod 600 ~/.ssh/id_rsa
 ```
 
 ## Enable PPA
+(This is not needed for later versions of Ubuntu like 14+).
 PPA's are provided within cateogories below, I highly recommend using PPA's or atleast installing this package incase you ever use them.
 
     sudo apt-get install -y python-software-properties
@@ -229,13 +188,23 @@ This is for tweaking the UI
         synaptic
 
 ### Utilities
-I prefer Git 2.X, so I'll use a PPA. Otherwise you can simply install git by default.
-
-    sudo add-apt-repository ppa:git-core/ppa -y
 
 **Install the Utilities:**
 
-    sudo apt-get install -y vim git mercurial meld curl htop xclip unzip terminator gdebi preload bleachbit ubuntu-restricted-extras
+    sudo apt-get install -y\
+        vim\
+        git\
+        mercurial\
+        meld\
+        curl\
+        htop\
+        xclip\
+        unzip\
+        terminator\
+        gdebi\
+        preload\
+        bleachbit\
+        ubuntu-restricted-extras
 
 To setup the git defaults *(Omit the `push.default` if you are using below 2.X)*
 
@@ -263,7 +232,7 @@ Then move it to your SSH folder with proper permissions:
 ```
 mv -i ~/id_dsa* ~/.ssh
 chmod 600 ~/.ssh/id_dsa
-chmod 666 ~/.ssh/id_dsa.pub
+chmod 644 ~/.ssh/id_dsa.pub
 ```
 
 ### RedShift For Eye Strain
@@ -468,9 +437,12 @@ Python is installed by default on Ubuntu, version 2.7 is suitable. I strongly re
 [(Back to top)](#table-of-contents)
 
 ## Ruby
-Install Ruby 2.X with header files in `ruby2.0-dev`, this will keep your gems from having issues.
+Install Ruby 2.X with header files in `ruby2.3-dev`, this will keep your gems from having issues.
 
-    sudo apt-get install -y ruby2.0 ruby2.0-dev
+    sudo apt-get install -y\
+        ruby2.3\
+        ruby2.3-dev\
+        gems
 
 For Ruby RVM (Version Management)
 
@@ -483,8 +455,6 @@ For Ruby RVM (Version Management)
 ## NodeJS
 I am using a PPA to fix the nodejs path issue(s)
 
-    sudo add-apt-repository ppa:chris-lea/node.js
-    sudo apt-get update
     sudo apt-get install nodejs
     sudo chown -R $(whoami) ~/.npm
     sudo npm install bower gulp grunt-cli -g
@@ -590,25 +560,35 @@ In terminal make sure this is false, then try your hotkey `ctrl+alt+l` or if you
 ### My Gnome Extensions
 You need to use **Firefox** or **IceWeasle** at https://extensions.gnome.org/ to toggle these items. I suggest creating an account so you have a record.
 
-- **Must Have Extensions**
-- [Dash to Dock](https://extensions.gnome.org/extension/307/dash-to-dock/) :star::star::star::star::star:
-- [Workspace Dock](https://extensions.gnome.org/extension/427/workspaces-to-dock/) :star::star::star::star:
-- [Applications Menu](https://extensions.gnome.org/extension/6/applications-menu/) :star::star::star::star::star:
-- [TaskBar](https://extensions.gnome.org/extension/584/taskbar/) :star::star::star::star::star:
-- [No Topleft Hot Corner](https://extensions.gnome.org/extension/118/no-topleft-hot-corner/) :star::star::star::star::star:
-- [Force Quit](https://extensions.gnome.org/extension/770/force-quit/) :star::star::star::star::star:
-- **Nice Extensions**
-- [Taskbar](https://extensions.gnome.org/extension/584/taskbar/) :star::star::star::star::star:
-- [Small Panel Icon](https://extensions.gnome.org/extension/861/small-panel-icon/) :star::star::star::star::star:
-- [Top Icons](https://extensions.gnome.org/extension/495/topicons/) :star::star::star::star:
-- [MMOD Panel](https://extensions.gnome.org/extension/898/mmod-panel/) :star::star::star::star::star:
-- [Keyboard Modifiers Status](https://extensions.gnome.org/extension/975/keyboard-modifiers-status/) :star::star::star:
-- [Laine](https://extensions.gnome.org/extension/937/laine/) :star::star::star::star:
-- [Disable Workspace Switcher Popup](https://extensions.gnome.org/extension/959/disable-workspace-switcher-popup/) :star::star:
-- [Refresh Wifi Connections](https://extensions.gnome.org/extension/905/refresh-wifi-connections/) :star::star::star::star:
-- [Disconnect Wifi](https://extensions.gnome.org/extension/904/disconnect-wifi/) :star::star::star::star::star:
-- [Toggle Touchpad](https://extensions.gnome.org/extension/935/toggle-touchpad/) (For Laptops) :star::star::star::star::star:
+You can use **TweakUI** to toggle Extensions when they are installed.
 
+- **Extensions I use**
+- All Windows
+- Alt tab lift first window
+- Alternatetab
+- [Dash to Dock](https://extensions.gnome.org/extension/307/dash-to-dock/)
+- [Force Quit](https://extensions.gnome.org/extension/770/force-quit/)
+- Frippery move clock
+- Gno-menu
+- Lock screen
+- Netspeed
+- [No Topleft Hot Corner](https://extensions.gnome.org/extension/118/no-topleft-hot-corner/)
+- Quick app launcher
+- Workspace Indicator
+- [Workspaces to Dock](https://extensions.gnome.org/extension/427/workspaces-to-dock/)
+- Windownavigator
+- **Nice Extensions**
+- [Applications Menu](https://extensions.gnome.org/extension/6/applications-menu/)
+- [Taskbar](https://extensions.gnome.org/extension/584/taskbar/)
+- [Small Panel Icon](https://extensions.gnome.org/extension/861/small-panel-icon/)
+- [Top Icons](https://extensions.gnome.org/extension/495/topicons/)
+- [MMOD Panel](https://extensions.gnome.org/extension/898/mmod-panel/)
+- [Keyboard Modifiers Status](https://extensions.gnome.org/extension/975/keyboard-modifiers-status/)
+- [Laine](https://extensions.gnome.org/extension/937/laine/)
+- [Disable Workspace Switcher Popup](https://extensions.gnome.org/extension/959/disable-workspace-switcher-popup/)
+- [Refresh Wifi Connections](https://extensions.gnome.org/extension/905/refresh-wifi-connections/)
+- [Disconnect Wifi](https://extensions.gnome.org/extension/904/disconnect-wifi/)
+- [Toggle Touchpad](https://extensions.gnome.org/extension/935/toggle-touchpad/) (For Laptops)
 
 ### Reload Gnome Freeze
 This is a rare things for me, it happens much more in unity and requires a lot more "damaging" things. To fix a gnome that seems frozen do the following:

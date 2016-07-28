@@ -7,6 +7,14 @@ This will help you with terminal commands
 - [Listing and Navigating](#listing-and-navigating)
 - [Users](#users)
 - [Permissions](#permissions)
+- [OS Details](#os-details)
+    - [Operating System](#operating-system)
+    - [CPU Info](#cpu-info)
+    - [Memory and Usage Info](#memory-and-usage-info)
+    - [Disk Space](#disk-space)
+    - [GUI Processes](#gui-processes)
+- [List all Keybindings](#list-all-keybindings)
+    - [See Keypressed](#see-keypressed)
 - [OS Shutdown](#os-shutdown)
 - [Crontab](#crontab)
 - [Services](#services)
@@ -101,6 +109,49 @@ chgrp -R group files_or_folder
 chmod -R og+rw files_or_folder
 ```
 
+# OS Details
+
+## Operating System
+
+    lsb_release -a
+    lsb_release -as     # Short Information
+    lsb_release --help
+
+## CPU Info
+
+    nproc               # How many Processing Units
+    cpuid               # Must install cpuid from terminal
+    cat /proc/cpuinfo   # Lots of info
+
+## Memory and Usage Info
+
+    free -h             # Human readable, or do --help for options
+    top or htop         # Must install htop
+    vmstat -s
+    cat /proc/meminfo   # Lots of info
+
+## Disk Space
+
+    df
+    df -B MB    # In Megabtyes,  etc
+
+## GUI Processes
+
+    gnome-system-monitor
+
+# List all Keybindings
+
+    gsettings list-recursively  org.gnome.desktop.wm.keybindings | sort | more
+
+## See Keypressed
+
+    xev
+
+    # Or for a lot of details:
+
+    xev | grep KeyPress
+
+
 ## OS Shutdown
 ```
 shutdown
@@ -167,7 +218,7 @@ Most often in the Linux word you use and create `*.tar.gz` files, it has the mos
 What the flags often stand for:
 - `-c` is create
 - `-f` is file
-- `-k` is for Keep 
+- `-k` is for Keep
     - `gzip` & `bzip2` will remove the original file once compressed
     -  Or they will remove the `.gz` when decompressing is done
 - `-r` is recursive (for gzip and zip)
@@ -320,7 +371,7 @@ mysqldump -u root -p DATABASE_NAME > file.sql
 
 Or Dump all databases on your MySQL server with the `--all-databases` flag:
 ```
-mysqldump -u root -p --all-databases > file.sql 
+mysqldump -u root -p --all-databases > file.sql
 ```
 
 #### Importing SQL Files
@@ -331,12 +382,12 @@ mysql -u root DATABASE_NAME < path/to/file.sql
 
 To continue when there are MySQL Errors use -f or --force below:
 ```
-mysql -u root DATABASE_NAME < path/to/file.sql --force  
+mysql -u root DATABASE_NAME < path/to/file.sql --force
 ```
 
 To use a password, just pass in the -p flag and type it in after running:
 ```
-mysql -u root -p DATABASE_NAME < path/to/file.sql --force  
+mysql -u root -p DATABASE_NAME < path/to/file.sql --force
 ```
 
 Second, you can do it through MySQL once you connect:
