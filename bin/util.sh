@@ -6,6 +6,7 @@ fi
 
 # These are core tools
 sudo apt-get install -y\
+    at\
     unzip\
     bzip2\
     git\
@@ -18,6 +19,7 @@ sudo apt-get install -y\
     terminator\
     tree\
     tmux\
+    whois\
     xclip
 
 # IMPORTANT: Do NOT have a trailing \ on the LAST item!
