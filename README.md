@@ -5,18 +5,10 @@ This is for a __Debian__ based OS, such as: [Ubuntu](http://ubuntu.com/desktop),
 ***
 
 # Table of Contents
-- [Optional Configurations](#optional-configurations)
-    - [Get System Details](#get-system-details)
-    - [List all KeyBindings](#list-all-keybindings)
-    - [Better Local Folder](#better-local-folder)
-    - [Use 32Bit on 64bit](#use-32bit-on-64bit)
-    - [VIM Customization](#vim-customization)
-    - [Networking](#networking)
-    - [Order of Grub](#order-of-grub)
+- [Order of Grub](#order-of-grub)
 - [Installation Packages](#installation-packages)
     - [Dot Files](#dot-files)
     - [SSH Permissions](#ssh-permissions)
-    - [Enable PPA](#enable-ppa)
     - [System Tools](#system-tools)
         - [Utilities](#utilities)
         - [Convert PPK to SSH Key](#convert-ppk-to-ssh-key)
@@ -59,58 +51,6 @@ This is for a __Debian__ based OS, such as: [Ubuntu](http://ubuntu.com/desktop),
 ***
 
 [(Back to top)](#table-of-contents)
-
-# Optional Configurations
-- Some items (`termatinator`, `virtualenvs`) copied from [Dan Sackett](https://github.com/dansackett/dotfiles).
-
-
-## Better Local Folder
-This is less painful when creating a group with rwx permissions for `/usr/local`
-
-    sudo groupadd local
-    sudo usermod -a -G local jesse
-
-    sudo chgrp -R local /usr/local
-    sudo chmod -R g+rwx /usr/local
-
-## Use 32Bit on 64bit
-
-You can use 32Bit applications if you like, sometimes this is useful.
-
-    sudo apt-get update && sudo apt-get install -y unetbootin
-
-## VIM Customization
-
-**Setup VIM**
-
-    git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-
-    $ vim
-    :PluginInstall
-
-**Set Capslock key to Esc**
-
-    $ dconf write /org/gnome/desktop/input-sources/xkb-options "['caps:escape']"
-
-## Networking
-
-To enable Networking, and make it accessible to all computers such as Windows also first install Samba:
-
-    $ sudo apt-get install samba
-
-Then edit the Samba config:
-
-    $ vim /etc/samba/smb.conf
-
-Under `[global]` change the workgroup to what you use, the default is WORKGROUP:
-
-    workgroup = WORKGROUP
-
-Then you will have to reload your Session.
-
-[(Back to top)](#table-of-contents)
-
-***
 
 # Order of Grub
 If you are running Grub as your default boot-loader, you can use this application to make it easier to change the order.
@@ -181,12 +121,6 @@ chmod 700 ~/.ssh
 chmod 644 ~/.ssh/id_rsa.pub
 chmod 600 ~/.ssh/id_rsa
 ```
-
-## Enable PPA
-(This is not needed for later versions of Ubuntu like 14+).
-PPA's are provided within cateogories below, I highly recommend using PPA's or atleast installing this package incase you ever use them.
-
-    sudo apt-get install -y python-software-properties
 
 ## System Tools
 This is for tweaking the UI
@@ -327,6 +261,8 @@ Linux Apache MySQL PHP
 - and Header Files.
 
 ### PHP5
+**PHP7 Ships with Ubuntu 16**
+
 It's important to install **php5-dev** if you want to compile any add-ons later. We also want composer (PHP Package Manager) to be installed globally and accessible via `$ composer`
 
     sudo apt-get install -y php5 php5-dev php5-curl libpcre3-dev
