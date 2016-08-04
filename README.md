@@ -163,6 +163,17 @@ Here are some shortcuts for the dotfiles:
 | ngdisable <name> | disable nginx &lt;name&gt; |
 | h | history |
 
+| Git Alias | Command (See ~/.gitconfig) |
+|----------|--------|
+| git lg | git log --graph --pretty=format:'long-string' |
+| git co | git checkout |
+| git ci | git commit |
+| git aa | git add --all |
+| git st | git status |
+| git di | git diff |
+| git dc | git diff --cached |
+
+
 # SSH Permissions
 These are safe permissions to use for SSH
 ```
