@@ -1,6 +1,14 @@
 # Config Ubuntu
 
-This is for a __Debian__ based OS, such as: [Ubuntu](http://ubuntu.com/desktop), [Mint](http://www.linuxmint.com/), and [Elementary OS](http://elementaryos.org/). I prefer Ubuntu 15 with Gnome 3.
+This is for a [Ubuntu](http://ubuntu.com/desktop), I have run this on `14`, `15`, and `16`
+as a Desktop and a Server.
+
+### Script Files
+There are two main script files:
+
+- `./install-desktop.sh` Options to install desktop items.
+- `./install-server.sh` Options to install server items, you can do this on your desktop too.
+
 
 ***
 
