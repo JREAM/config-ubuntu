@@ -107,6 +107,7 @@ alias vi=vim
 alias ports='netstat -tulanp'
 
 alias update='sudo apt-get update'
+alias upgrade='sudo apt-get upgrade'
 alias updatey='sudo apt-get update && sudo apt-get upgrade'
 
 #################### Various ####################
