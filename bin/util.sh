@@ -14,6 +14,8 @@ sudo apt-get install -y\
     htop\
     gdebi\
     putty-tools\
+    python-software-properties\
+    software-properties-common\
     screen\
     supervisor\
     terminator\
