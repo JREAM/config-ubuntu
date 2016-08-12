@@ -9,6 +9,7 @@ sudo apt-get install -y\
     php7.0\
     php7.0-dev\
     php7.0-cli\
+    php7.0-fpm\
     php7.0-curl\
     php7.0-gd\
     php7.0-intl\
@@ -17,7 +18,9 @@ sudo apt-get install -y\
     php7.0-mysql\
     php7.0-soap\
     php7.0-sqlite\
+    php7.0-tidy\
     php7.0-xmlrpc\
+    php7.0-zip\
     php-codesniffer\
     libapache2-mod-php7.0\
     libpcre3-dev\
