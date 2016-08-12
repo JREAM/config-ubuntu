@@ -1,4 +1,4 @@
-#/bin/bash
+#!/bin/bash
 if [[ ! $INSTALL_SCRIPT ]]; then
     echo "(!) Error: You must use the ./install.sh script."
     exit
@@ -27,6 +27,7 @@ sudo apt-get install -y\
     libpcre3-dev\
     libsqlite3-dev\
     libapache2-mod-php5\
+    libapache2-mod-fastcgi\
     libapache2-mod-wsgi
 
 # IMPORTANT: Do NOT have a trailing \ on the LAST item!

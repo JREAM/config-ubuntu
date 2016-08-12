@@ -39,6 +39,7 @@ cat <<- command_list
     ----------
     dot         Copy Dotfiles (.bashrc, .gitconfig, .gitignore)
     perm        Update /usr/local permissions
+    mysqlwb     Install MySQL Workbench
     security    Install ClamAV, RKHunter (read instructions after install)
     util        Install Utilities
                    git, curl, htop, unzip, terminator, tmux, screen
@@ -90,6 +91,12 @@ read -p "Type a Command: " cmd
             ;;
         hotkeys)
             bash ./bin/desktop/hotkeys.sh
+            echo ""
+            echo "====================================================================="
+            echo ""
+            ;;
+        mysqlwb)
+            bash ./bin/desktop/mysql-workbench.sh
             echo ""
             echo "====================================================================="
             echo ""
