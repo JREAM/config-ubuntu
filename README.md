@@ -16,7 +16,6 @@ There are two main script files:
 - [Order of Grub](#order-of-grub)
 - [Installation Packages](#installation-packages)
     - [Dot Files](#dot-files)
-    - [SSH Permissions](#ssh-permissions)
     - [System Tools](#system-tools)
         - [Utilities](#utilities)
         - [Convert PPK to SSH Key](#convert-ppk-to-ssh-key)
@@ -120,15 +119,6 @@ Here are some shortcuts for the dotfiles:
 | git st | git status |
 | git di | git diff |
 | git dc | git diff --cached |
-
-
-# SSH Permissions
-These are safe permissions to use for SSH
-```
-chmod 700 ~/.ssh
-chmod 644 ~/.ssh/id_rsa.pub
-chmod 600 ~/.ssh/id_rsa
-```
 
 ## System Tools
 This is for tweaking the UI
