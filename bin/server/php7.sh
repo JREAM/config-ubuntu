@@ -21,6 +21,7 @@ sudo apt-get install -y\
     php7.0-tidy\
     php7.0-xmlrpc\
     php7.0-zip\
+    php-redis\
     php-codesniffer\
     libapache2-mod-php7.0\
     libpcre3-dev\
