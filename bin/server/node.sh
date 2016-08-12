@@ -5,7 +5,7 @@ if [[ ! $INSTALL_SCRIPT ]]; then
 fi
 
 sudo apt-get install -y\
-    nodejs
+    nodejs\
     npm
 
 
