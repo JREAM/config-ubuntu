@@ -10,6 +10,9 @@ fi
 sudo add-apt-repository -y ppa:phalcon/stable
 echo "(+) Re-Adding Phalcon PPA."
 
+# Update to get the new repo details
+sudo apt-get update
+
 echo "(+) Installing Phalcon."
 
 sudo apt-get install -y\
