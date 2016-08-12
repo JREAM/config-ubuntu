@@ -35,6 +35,7 @@ This will help you with terminal commands
     - [Upload from local to server](#upload-from-local-to-server)
 - [SSH](#ssh)
     - [Connecting to a server](#connecting-to-a-server)
+    - [SSH Permissions](#ssh-permissions)
     - [Using the Config](#using-the-config)
 - [MySQL](#mysql)
     - [Connecting](#connecting)
@@ -333,6 +334,19 @@ ssh name@server.com  (default port is 22)
 ssh name@server.com -p 8000 (connect to specific port)
 ssh name@server.com -i ~/.ssh/rsa_key.pub (connect with ssh key)
 ```
+
+#### .SSH Permissions
+
+These are safe permissions to use for SSH
+```
+chmod 700 ~/.ssh
+chmod 644 ~/.ssh/id_rsa.pub
+chmod 600 ~/.ssh/id_rsa
+
+# Put your pubkeys (one per line) for SSH login
+chmod 600 ~/.ssh/authorized_keys 
+```
+
 
 #### Using the Config
 You can also create a `~/.ssh/config` file and store entries such as:
