@@ -21,9 +21,9 @@ This will help you with terminal commands
 - [System State](#system-state)
 - [Processes](#processes)
 - [Bash](#bash)
-    - [Path](#path)
+    - [Bash Paths](#bash-paths)
     - [Add to Path](#add-to-path) 
-    - [Bash Completionss](#bash-completionss)
+    - [Bash Completions](#bash-completions)
     - [Fix Broken Bash Completions](#fix-broken-bash-completions)
 - [Reading Files](#reading-files)
 - [Compressing and Uncompressing Files](#compressing-and-uncompressing-files)
@@ -208,13 +208,13 @@ kill -9 <id>        (no brackets)
 ## Bash
 Bash is my shell of choice, which is why I have a `.bashrc` file.
 
-#### Path
+#### Bash Paths
 Executables and commands are automatically in the path, see your path with:
 ```
 echo $PATH
 ```
 
-### Add to Path 
+#### Add to Path 
 ```
 # I suggest editing your ~/.profile
 
@@ -226,7 +226,7 @@ fi
 
 *Note: Order of Linux Reading files: ~/.bash_profile, ~/.bash_login, and ~/.profile, so don't try to use a ~/.profile variable within ~/.bash_profile*
 
-#### Bash Completionss
+##### Bash Completions
 The locations can be found at
 ```
 cd /usr/share/bash-completion/completions.d/
