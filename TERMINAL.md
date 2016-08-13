@@ -20,6 +20,11 @@ This will help you with terminal commands
 - [Services](#services)
 - [System State](#system-state)
 - [Processes](#processes)
+- [Bash](#bash)
+    - [Path](#path)
+    - [Add to Path](#add-to-path) 
+    - [Bash Completionss](#bash-completionss)
+    - [Fix Broken Bash Completions](#fix-broken-bash-completions)
 - [Reading Files](#reading-files)
 - [Compressing and Uncompressing Files](#compressing-and-uncompressing-files)
     - [Compressing Files](#compressing-files)
@@ -198,6 +203,39 @@ ps -efH | more      (current running processes in a tree)
 
 ps -ef | grep vim   (find vim process id)
 kill -9 <id>        (no brackets)
+```
+
+## Bash
+Bash is my shell of choice, which is why I have a `.bashrc` file.
+
+#### Path
+Executables and commands are automatically in the path, see your path with:
+```
+echo $PATH
+```
+
+### Add to Path 
+```
+# I suggest editing your ~/.profile
+
+vim ~/.profile
+if [ -d "/path/to/your/bin" ] ; then
+  PATH="$PATH:/path/to/your/bin"
+fi
+```
+
+*Note: Order of Linux Reading files: ~/.bash_profile, ~/.bash_login, and ~/.profile, so don't try to use a ~/.profile variable within ~/.bash_profile*
+
+#### Bash Completionss
+The locations can be found at
+```
+cd /usr/share/bash-completion/completions.d/
+cd /etc/bash_completions.d/
+```
+
+#### Fix Broken Bash Completions
+```
+sudo apt-get install --reinstall bash-completion
 ```
 
 ## Reading Files
