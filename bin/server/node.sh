@@ -15,7 +15,8 @@ sudo npm install -g n
 sudo n stable
 
 echo "(+) Installing NodeJS Packages."
-sudo npm install bower gulp grunt-cli -g
+sudo npm install -g bower gulp grunt-cli marked node-gyp lodash graceful-fs minimatch
+
 
 # Permissions for local NPM folder
 sudo chown -R $(whoami) ~/.npm
