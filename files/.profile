@@ -24,4 +24,4 @@ fi
 # Include local composer folder if it exists
 if [ -d "$HOME/.composer/vendor/bin" ] ; then
     PATH="$HOME/.composer/vendor/bin:$PATH"
-fi  
+fi

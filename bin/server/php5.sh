@@ -46,11 +46,6 @@ else
     sudo composer self-update
 fi
 
-composer global require "hirak/prestissimo:^0.3"
-composer global require "phpunit/phpunit=5.4.*"
-composer global require "phpunit/php-code-coverage=^4.0"
-composer global require "phpunit/phpunit-mock-objects=^3.2"
-
 # Turn on Short Open Tags
 sudo sed -i 's/short_open_tag = Off/short_open_tag = On/' /etc/php5/apache2/php.ini
 

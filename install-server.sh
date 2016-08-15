@@ -33,26 +33,35 @@ cat <<- command_list
     Languages:
     ----------
     java          Install JRE and JDK (default-jre, not Oracle)
-    mysql         Install MySQL, MySQL-Workbench, common, utils (not the server)
+    mysql         Install MySQL, MySQL-Workbench, common, utils
+                    (not the server)
     node          Install NodeJS (nodejs, npm: n, bower, gulp)
     php5          Installs PHP5 and popular packages
     php7          Installs PHP7 and popular packages
-    py            Install Python (python, bpython, python-dev, pip)
-    rb            Install Ruby
+    py            Install Python packages (pip, bpython,
+                    python-dev, mycli, virtualenvwrapper)
+    rb            Install Ruby (ruby, ruby-dev, gem)
     redis         Install Redis (redis-server)
 
     Frameworks:
     -----------
     php5phalcon   Install Phalcon PHP 5.x Framework (Adds PPA)
     php7phalcon   Install Phalcon PHP 7.x Framework (Adds PPA)
+    phpcomposer   Installs User Global PHP Composer packages such as: 
+                    prestissimo, phpunit, dbunit, code coverage, phing, 
+                    phpcpd, phploc, phpmd, phpdocumentor, etc.
 
     Utilities:
     ----------
     dot           Copy Dotfiles (.bashrc, .gitconfig, .gitignore)
-    perm          Update /usr/local permissions
-    security      Install ClamAV, RKHunter (read instructions after install)
-    util          Install Utilities
-                     git, curl, htop, unzip, terminator, tmux, screen
+    perm          Update /usr/local permissions:
+                    Creates Group "local", adds you to it, sets
+                    /usr/local to that group and adds permissions
+    security      Install ClamAV, RKHunter
+                    (read instructions after install)
+    util          Install Utilities:
+                     git, curl, htop, unzip, terminator,
+                     tmux, screen
     vim           Install Vim (.vimrc and Vundle Plugins)
 
     Quit:
@@ -70,6 +79,12 @@ read -p "Type a Command: " cmd
     case $cmd in
         apache)
             bash ./bin/server/apache.sh
+            echo ""
+            echo "====================================================================="
+            echo ""
+            ;;
+        composerusr)
+            bash ./bin/server/composer-global-user.sh
             echo ""
             echo "====================================================================="
             echo ""
