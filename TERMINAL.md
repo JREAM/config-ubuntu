@@ -5,6 +5,9 @@ This is an assortment of quick references to speed up your Terminal skills!
 - [Users](#users)
 - [Groups](#groups)
 - [Permissions](#permissions)
+    - [Easy Permissions](#easy-permissions)
+    - [Octal Permissions](#octal-permissions)
+    - [Octal Examples](#octal-examples)
 - [OS Details](#os-details)
     - [Operating System](#operating-system)
     - [CPU Info](#cpu-info)
@@ -123,17 +126,20 @@ sudo useradd <group>    (add current user to a group)
 
 cat /etc/group          (list all groups)
 cut -d: -f1 /etc/group  (list all groups, cleaner)
-
 ```
 
 # Permissions
 ***
 [(Back to Top)](#terminal)
 
+There are two ways to manage permissions, one is by text the other is by an octal value.
+
+### Easy Permissions
 ```
 ; Change Mode
-; Options: (O)wner (G)roup (U)sers or (A)ll
+; Options: (O)wner (U)sers (G)roup or (A)ll
 ; File:    Owner: rwx, Group: rwx, User: rwx
+
 chmod g+rw file
 chmod og+rw file.txt
 
@@ -145,6 +151,31 @@ chgrp group files_or_folder
 chown -R user:group files_or_folder
 chgrp -R group files_or_folder
 chmod -R og+rw files_or_folder
+```
+
+### Octal Permissions
+You may have seen this a lot, you can use octal or decimal (begins with a 0) to do the same thing.
+```
+Permissions:
+0 = None
+1 = Execute (e)
+2 = Write (w)
+4 = Read (r)
+```
+
+- There are 3 Permission types (Read, Write, Execute), or 4 if you count "None".
+- There are 3 Sets: Owner/User/Group (In that order)
+- So if you did `chmod 700 file.txt` it would allow the user to Read, Write and Execute
+  - Because `7` is the total of `4 + 2 + 1`
+
+### Octal Examples
+```
+chmod 600 file.txt – Owner Read, Write
+chmod 660 file.txt – Owner Read, Write; User Read, Write
+chmod 770 file.txt – Owner Read, Write, Execute
+chmod 770 file.txt – Owner Read, Write, Execute; User Read, Write, Execute
+chmod 666 file.txt – All Read, Write
+chmod 777 file.txt – All Read, Write, Execute
 ```
 
 # OS Details
