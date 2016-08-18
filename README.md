@@ -9,34 +9,36 @@ There are two main script files:
 - `./install-desktop.sh` Options to install desktop items.
 - `./install-server.sh` Options to install server items, you can do this on your desktop too.
 
+### Command Line Help
+Please view the `TERMINAL.md` file for quick terminal help, it's quite handy!
 
 ***
 
 # Table of Contents
 - [Order of Grub](#order-of-grub)
-- [Installation Packages](#installation-packages)
-    - [Dot Files](#dot-files)
-    - [System Tools](#system-tools)
-        - [Utilities](#utilities)
-        - [Convert PPK to SSH Key](#convert-ppk-to-ssh-key)
-        - [RedShift For Eye Strain](#redshift-for-eye-strain)
-        - [Numix Theme](#numix-theme)
-        - [Wine](#wine)
-        - [USB Maker for Windows ISO on Linux](#usb-maker-for-windows-on-linux)
-    - [LAMP](#lamp)
-        - [PHP5](#php5)
-        - [Apache](#apache)
-        - [Nginx](#nginx)
-        - [MySQL](#mysql)
-        - [MyCLI](#mycli) Terminal MySQL Utility
-        - [Redis](#redis)
-        - [Phalcon](#phalcon)
-        - [Phalcon Dev Tools](#phalcon-dev-tools)
-        - [Secure Permissions](#secure-permissions)
-    - [Python](#python)
-    - [Ruby](#ruby)
-    - [NodeJS](#nodejs)
-    - [Google Chrome](#google-chrome)
+- [Dot Files](#dot-files)
+- [Tweaking the UI](#tweaking-the-ui)
+- [Utilities](#utilities)
+    - [Convert PPK to SSH Key](#convert-ppk-to-ssh-key)
+    - [RedShift For Eye Strain](#redshift-for-eye-strain)
+    - [Numix Theme](#numix-theme)
+    - [Wine](#wine)
+    - [USB Maker for Windows ISO on Linux](#usb-maker-for-windows-on-linux)
+- [LAMP](#lamp)
+    - [PHP5](#php5)
+    - [Apache](#apache)
+    - [Nginx](#nginx)
+    - [MySQL](#mysql)
+    - [MyCLI](#mycli) Terminal MySQL Utility
+    - [Redis](#redis)
+    - [Phalcon](#phalcon)
+    - [Phalcon Dev Tools](#phalcon-dev-tools)
+    - [Secure Permissions](#secure-permissions)
+- [Python](#python)
+- [Ruby](#ruby)
+- [NodeJS](#nodejs)
+- [Java](#java)
+- [Google Chrome](#google-chrome)
 - [Ubuntu Fixes](#ubuntu-fixes)
     - [Sound Indicator Not Showing](#sound-indicator-not-showing)
 - [Install Gnome 3](#install-gnome-3)
@@ -77,18 +79,8 @@ Go to the `General Settings` tab, and you'll see *default entry*.
 
 [(Back to top)](#table-of-contents)
 
-# Installation Packages
-
-Login to your Linux user and go to your **home** directory,
-
-    cd ~
-
-Run these commands and tweak them as needed. The `-y` flag installs without a prompt. Run these commands from the terminal.
-
-    sudo apt-get update && sudo apt-get upgrade
-
-## Dot Files
-Here are some shortcuts for the dotfiles:
+# Dot Files
+Here are some shortcuts for the dotfiles if you use them:
 
 | Shortcut | Action |
 |----------|--------|
@@ -120,7 +112,7 @@ Here are some shortcuts for the dotfiles:
 | git di | git diff |
 | git dc | git diff --cached |
 
-## System Tools
+# Tweaking the UI
 This is for tweaking the UI
 
     sudo apt-get install -y\
@@ -129,10 +121,12 @@ This is for tweaking the UI
         compiz-plugins\
         dconf-editor\
         synaptic
+        
+- The Tweak Tool works great for Applying the Numix theme
+- Compiz is good for customizing everything, make sure to save a profile when you make your UI how you like.
 
-### Utilities
-
-**Install the Utilities:**
+# Utilities
+These are some common items I enjoy using
 
     sudo apt-get install -y\
         vim\
@@ -149,21 +143,7 @@ This is for tweaking the UI
         bleachbit\
         ubuntu-restricted-extras
 
-To setup the git defaults *(Omit the `push.default` if you are using below 2.X)*
-
-    git config --global push.default simple
-    git config --global user.name your name
-    git config --global user.email your@email.com
-
-That will create a `~/.gitconfig` with:
-
-    [user]
-        email = you@email.com
-        name = your name
-    [push]
-        default = simple
-
-### Convert PPK to SSH Key
+## Convert PPK to SSH Key
 Already included in the utils is `putty-tools`. To convert a `*.ppk` (Putty Key) to an SSH or EC2 valid key do the following.
 
 ```
@@ -178,7 +158,7 @@ chmod 600 ~/.ssh/id_dsa
 chmod 644 ~/.ssh/id_dsa.pub
 ```
 
-### RedShift For Eye Strain
+## RedShift For Eye Strain
 
     sudo apt-get install redshift
 
@@ -216,7 +196,7 @@ Append these lines at the bottom:
 A newer version of redshift will install a desktop file so a Geoclue2 warning won't happen
 on newer systems.
 
-### Numix Theme
+## Numix Theme
 
 Use the **Unity Tweak Tool** to set these. *(Apply Icon & Themes)*
 
@@ -224,8 +204,9 @@ Use the **Unity Tweak Tool** to set these. *(Apply Icon & Themes)*
     sudo apt-get update
     sudo apt-get install -y numix-gtk-theme numix-icon-theme numix-icon-theme-circle
 
+Turn it on using **Tweak UI**
 
-### Wine
+## Wine
 To run windows applications Wine is the best option. I often use HeidiSQL with Wine.
 
     sudo add-apt-repository ppa:ubuntu-wine/ppa
@@ -235,7 +216,7 @@ If you need a 32bit installation:
 
     sudo apt-get install -y wine1.7-i386
 
-### USB Maker for Windows ISO on Linux
+## USB Maker for Windows ISO on Linux
 You can easily use `Startup Disk Creator` and `UNetbootin` to create Linux to USB. But if you need Windows to USB from your Linux OS use Win USB:
 
     sudo add-apt-repository ppa:colingille/freshlight
@@ -247,7 +228,7 @@ We replace the sources.list back to saucy in order to get it to work for ubuntu 
 ***
 [(Back to top)](#table-of-contents)
 
-## LAMP
+# LAMP
 Linux Apache MySQL PHP
 
 **- Installation for the following:**
@@ -258,7 +239,7 @@ Linux Apache MySQL PHP
 - Redis
 - and Header Files.
 
-### PHP5
+## PHP5
 **PHP7 Ships with Ubuntu 16**
 
 It's important to install **php5-dev** if you want to compile any add-ons later. We also want composer (PHP Package Manager) to be installed globally and accessible via `$ composer`
@@ -271,7 +252,7 @@ If you are looking for more PHP modules try:
 
     sudo apt-cache search php5-
 
-### Apache
+## Apache
 
     sudo apt-get install -y apache2 libapache2-mod-php5
 
@@ -279,18 +260,20 @@ If you are looking for more Apache modules try:
 
     sudo apt-cache search libapache2-mod
 
-### Nginx
+## Nginx
 Or if you prefer to use nginx
 
     sudo apt-get install -y nginx
 
-### MySQL
+## MySQL
 
     sudo apt-get install -y mysql-server mysql-client php5-mysql
     sudo sed -i 's/bind-address/bind-address = 0.0.0.0#/' /etc/mysql/my.cnf
 
-### MyCLI
-This is a very nice utility [https://github.com/dbcli/mycli](https://github.com/dbcli/mycli)
+The last line simply allows you to connect from outside of the machine. A good example of wanting that is if you had a Vagrant Box.
+
+## MyCLI
+This is a very nice utility in Python [https://github.com/dbcli/mycli](https://github.com/dbcli/mycli)
 
     pip install mycli
 
@@ -299,28 +282,24 @@ Usage (See the documents from the git link above for more example):
     mycli -h localhost -u root
     mycli -h localhost -u root -p
 
-### Redis
+## Redis
 
     sudo apt-get install -y redis-server
 
-### Java Runtime
-
-    sudo apt-get install -y default-jre
-
-### Phalcon
+## Phalcon
 
     sudo apt-add-repository ppa:phalcon/stable
     sudo apt-get update
     sudo apt-get install -y php5-phalcon
 
-### Phalcon Dev Tools
+## Phalcon Dev Tools
 This is an easy to use install script that will cleanup after itself. It can also be used for updating:
 
     sudo bash install_phalcon_devtools.sh
 
 To test it run: `$ phalcon`
 
-### Secure Permissions
+## Secure Permissions
 We will use the Access Control Lists (ACL) or (Filesystem Access Control List). We will use group permissions for folders so you don't have to make the public writable, because `777` is dangerous.
 
     # Make sure you have ACL installed
@@ -333,7 +312,6 @@ Look for your main partition with:
 
 Mine happens to be `dev/root`, yours may be `dev/sda` or something. Make sure to replace that below:
 
-    # T
     sudo /sbin/tune2fs -o +acl /dev/root
 
 To see what file system you are using `ext3`, `ext4`, etc, use the partition:
@@ -377,6 +355,16 @@ Python is installed by default on Ubuntu, version 2.7 is suitable. I strongly re
     sudo apt-get install -y python-dev
     sudo apt-get install -y python-pip
     sudo pip install fabric virtualenv virtualenvwrapper
+    
+If you plan on using SSL or PIL(Pillow) for Image manipulation,  I'd have these dependencies pre-installed:
+
+    sudo apt-get install -y\
+        libssl-dev\
+        libffi-dev\
+        libjpeg8-dev\
+        libjpeg-dev
+
+Note: Some programs use `libffi` (Foreign Functions Interface) and need the dev headers to build from it, as well as the other dev packages, yet FFI just looks funny to read.
 
 ***
 [(Back to top)](#table-of-contents)
@@ -425,6 +413,32 @@ Install latest stable NodeJS version
 Or pick a specific version:
 
     sudo n 0.8.20
+
+***
+[(Back to top)](#table-of-contents)
+
+## Java
+I use the default JRE/JDK, the others are up to you. 
+
+#### To insteall Default JRE/JDK
+
+    sudo apt-get install -y\ 
+        default-jre\ 
+        default-jdk
+
+#### To install OpenJDK (7, 8, or 9)
+
+    sudo apt-get install -y\
+        openjdk-8-jdk
+        openjdk-8-jre
+        
+#### To install Oracle JDK (7, 8, or 9)
+    
+    sudo add-apt-repository ppa:webupd8team/java
+    
+    sudo apt-get install oracle-java7-installer
+    sudo apt-get install oracle-java8-installer
+    sudo apt-get install oracle-java9-installer
 
 ***
 [(Back to top)](#table-of-contents)
