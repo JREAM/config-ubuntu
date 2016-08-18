@@ -24,16 +24,16 @@ This is an assortment of quick references to speed up your Terminal skills!
     - [Bash Completions](#bash-completions)
     - [Fix Broken Bash Completions](#fix-broken-bash-completions)
     - [Log Script from Bash](#log-script-from-bash)
+- [Finding Files](#finding-files)
+- [Find in Files (GREP)](#find-in-files-grep)
+    - [Pipe Grep](#pipe-grep)
 - [Reading Files](#reading-files)
+- [Downloading Files](#downloading-files)
+    - [Using Wget](#using-wget)
+    - [Using cURL](#using-curl)
 - [Compressing and Uncompressing Files](#compressing-and-uncompressing-files)
     - [Compressing Files](#compressing-files)
     - [Decompressing Files](#decompressing-files)
-- [Download Files](#download-files)
-    - [Using Wget](#using-wget)
-    - [Using cURL](#using-curl)
-- [Find](#find)
-- [Grep (Find in Files)](#grep-find-in-files)
-    - [Pipe Grep](#pipe-grep)
 - [SCP](#scp)
     - [Download from server to local](#download-from-server-to-local)
     - [Upload from local to server](#upload-from-local-to-server)
@@ -72,7 +72,7 @@ locate crontab (I like mlocate more)
 which python
 ```
 
-## Listing and Navigating
+# Listing and Navigating
 ***
 [(Back to Top)](#terminal)
 ```
@@ -86,7 +86,7 @@ cd /var/www     (go to absolute path)
 ```
 
 
-## Users
+# Users
 ***
 [(Back to Top)](#terminal)
 
@@ -101,7 +101,7 @@ useradd -m -s /bin/bash username
 usermod -a -G existing_group existing_user
 ```
 
-## Permissions
+# Permissions
 ***
 [(Back to Top)](#terminal)
 
@@ -176,7 +176,7 @@ Get fundamental information about your OS with the following commands, you may h
     xev | grep KeyPress
 
 
-## OS Shutdown
+# OS Shutdown
 ***
 [(Back to Top)](#terminal)
 ```
@@ -187,7 +187,7 @@ shutdown -h +10     (shutdown 10 mins)
 shutdown -r now     (reboot now)
 ```
 
-## Crontab
+# Crontab
 ***
 [(Back to Top)](#terminal)
 ```
@@ -196,7 +196,7 @@ crontab -l              (list crontab for other user)
 crontab -u jesse -l     (see crontabs for specific user)
 ```
 
-## Services
+# Services
 ***
 [(Back to Top)](#terminal)
 ```
@@ -204,7 +204,7 @@ service ssh status      (service status)
 service --status-all    (all services status)
 ```
 
-## System State
+# System State
 ***
 [(Back to Top)](#terminal)
 ```
@@ -222,7 +222,7 @@ free (see memory used)
 free -g (in gigabytes)
 ```
 
-## Processes
+# Processes
 ***
 [(Back to Top)](#terminal)
 ```
@@ -233,14 +233,13 @@ ps -ef | grep vim   (find vim process id)
 kill -9 <id>        (no brackets)
 ```
 
-## Bash
+# Bash
 ***
 [(Back to Top)](#terminal)
 
 Bash is my shell of choice, which is why I have a `.bashrc` file.
 
 ### Bash Paths
-[(Back to Top)](#terminal)
 
 Executables and commands are automatically in the path, see your path with:
 ```
@@ -248,7 +247,6 @@ echo $PATH
 ```
 
 ### Add to Path 
-[(Back to Top)](#terminal)
 
 ```
 # I suggest editing your ~/.profile
@@ -262,23 +260,20 @@ fi
 *Note: Order of Linux Reading files: ~/.bash_profile, ~/.bash_login, and ~/.profile, so don't try to use a ~/.profile variable within ~/.bash_profile*
 
 ### Bash Completions
-[(Back to Top)](#terminal)
 
-The locations can be found at
+The locations for bash completio0ns can be found at:
 ```
 cd /usr/share/bash-completion/completions.d/
 cd /etc/bash_completions.d/
 ```
 
 ### Fix Broken Bash Completions
-[(Back to Top)](#terminal)
+
 ```
 sudo apt-get install --reinstall bash-completion
 ```
 
 ### Log Script from Bash
-[(Back to Top)](#terminal)
-
 At the top of your file, find the executable you are using one of these, eg:
 ```
 which bash     # /usr/bin/bash
@@ -313,6 +308,63 @@ You could even crontab it the same way:
 */10 * * * * app.py >> /output.log 2>&1
 ```
 
+# Finding Files
+***
+[(Back to Top)](#terminal)
+
+Generally the following arguments are as follows:
+- `-type f` file
+- `-type d` directory
+- `-iname` case insensistive (book.txt would the same as BOOK.TXT)
+- `*` is a wildcard to find anything, usually you put it at the start or end of a filename.
+```
+find . -name tecmint.txt
+find /home -name tecmint.txt
+find /home -iname tecmint.txt                        (case ignore)
+find / -type d -name Tecmint                         (directory)
+find . -type f -perm 0777 -print (with perms)
+find / -type f ! -perm 777 (find without)
+find . -type f -name "tecmint.txt" -exec rm -f {} \; (find and remove a file)
+find . -type f -name "*.txt" -exec rm -f {} \;       (find and remove multiple)
+find /tmp -type f -empty                             (Find empty files)
+find /tmp -type d -empty                             (find empty directories)
+find / -size +50M -size -100M (findby swize)
+```
+
+# Find in Files (GREP)
+***
+[(Back to Top)](#terminal)
+
+GREP means: Global Regular Expression Pattern (or Parser)
+
+Some common GREP flags:
+- `-r` is Recursive
+- `-n` is Line Number
+- `-w` Match the whole word
+- `-l` is lowercase only
+- `-c` supresses normal output and counts number of matching lines
+
+```
+grep -rnw /path - "pattern_or_string"
+
+; Output results to File
+grep -rnw /path - "pattern_or_string" > output.txt
+```
+
+More Examples:
+```
+grep "hello" file.txt (if in file)
+grep "hello" files*  (if in many files)
+grep -i "hello"  file.txt  (case insesitive)
+grep -iw "is" file.txt (get full words, case insensitive)
+grep "regex" file.txt
+```
+
+### Pipe Grep
+```
+php -i | grep ini
+```
+
 # Reading Files
 ***
 [(Back to Top)](#terminal)
@@ -325,6 +377,25 @@ tail -n20 file.txt      (view top 20 lines)
 tail -f filetxt         (follow a filename keep updating)
 head file.txt           (view top of file contents)
 head -n20 file.txt      (view top 20 lines)
+```
+
+# Downloading Files
+***
+[(Back to Top)](#terminal)
+
+### Using Wget
+```
+wget http://file.com/something.txt                (Download a file locally)
+wget -O newname.txt http://file.com/something.txt (Download file locally w/new name)
+```
+
+You can also use `SCP`, yet the above are easier for non-SSH connections.
+
+### Using cURL
+```
+curl -O http://file.com/something.txt               (Download a file locally)
+curl -o newname.txt http://file.com/something.txt   (Download file locally w/new name)
+curl -O http://url_1 -O http://url_2                (Download multiple files)
 ```
 
 # Compressing and Uncompressing Files
@@ -365,80 +436,6 @@ bzip2 -d file.txt.bz2
 tar -xvf file.tar
 tar -zxvf file.tar.gz
 unzip test.zip
-```
-
-# Download Files
-***
-[(Back to Top)](#terminal)
-
-### Using Wget
-```
-wget http://file.com/something.txt                (Download a file locally)
-wget -O newname.txt http://file.com/something.txt (Download file locally w/new name)
-```
-
-### Using cURL
-```
-curl -O http://file.com/something.txt               (Download a file locally)
-curl -o newname.txt http://file.com/something.txt   (Download file locally w/new name)
-curl -O http://url_1 -O http://url_2                (Download multiple files)
-```
-
-# Find
-***
-[(Back to Top)](#terminal)
-
-Generally the following arguments are as follows:
-- `-type f` file
-- `-type d` directory
-- `-iname` case insensistive (book.txt would the same as BOOK.TXT)
-- `*` is a wildcard to find anything, usually you put it at the start or end of a filename.
-```
-find . -name tecmint.txt
-find /home -name tecmint.txt
-find /home -iname tecmint.txt                        (case ignore)
-find / -type d -name Tecmint                         (directory)
-find . -type f -perm 0777 -print (with perms)
-find / -type f ! -perm 777 (find without)
-find . -type f -name "tecmint.txt" -exec rm -f {} \; (find and remove a file)
-find . -type f -name "*.txt" -exec rm -f {} \;       (find and remove multiple)
-find /tmp -type f -empty                             (Find empty files)
-find /tmp -type d -empty                             (find empty directories)
-find / -size +50M -size -100M (findby swize)
-```
-
-# Grep (Find in Files)
-***
-[(Back to Top)](#terminal)
-
-GREP means: Global Regular Expression Pattern (or Parser)
-
-Some common GREP flags:
-- `-r` is Recursive
-- `-n` is Line Number
-- `-w` Match the whole word
-- `-l` is lowercase only
-- `-c` supresses normal output and counts number of matching lines
-
-```
-grep -rnw /path - "pattern_or_string"
-
-; Output results to File
-grep -rnw /path - "pattern_or_string" > output.txt
-```
-
-More Examples:
-```
-grep "hello" file.txt (if in file)
-grep "hello" files*  (if in many files)
-grep -i "hello"  file.txt  (case insesitive)
-grep -iw "is" file.txt (get full words, case insensitive)
-grep "regex" file.txt
-```
-
-### Pipe Grep
-```
-php -i | grep ini
 ```
 
 # SCP
