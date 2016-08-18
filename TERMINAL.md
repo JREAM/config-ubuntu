@@ -25,6 +25,7 @@ This will help you with terminal commands
     - [Add to Path](#add-to-path) 
     - [Bash Completions](#bash-completions)
     - [Fix Broken Bash Completions](#fix-broken-bash-completions)
+    - [Log Script from Bash](#log-script-from-bash)
 - [Reading Files](#reading-files)
 - [Compressing and Uncompressing Files](#compressing-and-uncompressing-files)
     - [Compressing Files](#compressing-files)
@@ -236,6 +237,41 @@ cd /etc/bash_completions.d/
 #### Fix Broken Bash Completions
 ```
 sudo apt-get install --reinstall bash-completion
+```
+
+#### Log Script from Bash
+At the top of your file, find the executable you are using one of these, eg:
+```
+which bash     # /usr/bin/bash
+which python   # /usr/bin/python
+which php      # /usr/bin/php
+```
+
+At the top of your [shebang](https://en.wikipedia.org/wiki/Shebang_(Unix)) for the executable file add:
+```
+#!/bin/bash
+#!/usr/bin/php
+#!/usr/bin/python
+```
+
+make sure to `+x` it:
+```
+chmod +x app.sh
+chmod +x app.php
+chmod +x app.py
+```
+
+You can then run the script via Bash:
+```
+/scripts/app.sh >> /scripts/output.log 2>&1
+/scripts/app.php >> /scripts/output.log 2>&1
+/scripts/app.py >> /scripts/output.log 2>&1
+```
+
+You could even crontab it the same way:
+```
+*/10 * * * * app.php >> /output.log 2>&1
+*/10 * * * * app.py >> /output.log 2>&1
 ```
 
 ## Reading Files
