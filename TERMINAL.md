@@ -1,8 +1,5 @@
 # Terminal
-
-This will help you with terminal commands
-
-# Table of Contents
+This is an assortment of quick references to speed up your Terminal skills!
 - [Basics](#basics)
 - [Listing and Navigating](#listing-and-navigating)
 - [Users](#users)
@@ -10,8 +7,9 @@ This will help you with terminal commands
 - [OS Details](#os-details)
     - [Operating System](#operating-system)
     - [CPU Info](#cpu-info)
-    - [Memory and Usage Info](#memory-and-usage-info)
+    - [Usage Info](#usage-info)
     - [Disk Space](#disk-space)
+    - [System Processes](#system-processes)
     - [GUI Processes](#gui-processes)
 - [List all Keybindings](#list-all-keybindings)
     - [See Keypressed](#see-keypressed)
@@ -63,9 +61,9 @@ This will help you with terminal commands
     - [Reset Hard](#reset-hard)
     - [Prune](#prune)
 
----
-
 ## Basics
+***
+[(Back to Top)](#terminal)
 ```
 whereis bash (find absolute location of bash, or any file)
 whatis ls (tells you about the command)
@@ -75,6 +73,8 @@ which python
 ```
 
 ## Listing and Navigating
+***
+[(Back to Top)](#terminal)
 ```
 ls              (list files)
 ls -la          (list all files, permissions, and hidden too)
@@ -87,6 +87,9 @@ cd /var/www     (go to absolute path)
 
 
 ## Users
+***
+[(Back to Top)](#terminal)
+
 ```
 su - username       (switch users)
 sudo su             (switch to root)
@@ -99,6 +102,9 @@ usermod -a -G existing_group existing_user
 ```
 
 ## Permissions
+***
+[(Back to Top)](#terminal)
+
 ```
 ; Change Mode
 ; Options: (O)wner (G)roup (U)sers or (A)ll
@@ -117,40 +123,51 @@ chmod -R og+rw files_or_folder
 ```
 
 # OS Details
+***
+[(Back to Top)](#terminal)
 
-## Operating System
+Get fundamental information about your OS with the following commands, you may have to run them as `sudo`, eg: `sudo lsb_release -a`.
+
+##  Operating System
 
     lsb_release -a
     lsb_release -as     # Short Information
     lsb_release --help
 
-## CPU Info
+### CPU Info
 
     nproc               # How many Processing Units
     cpuid               # Must install cpuid from terminal
     cat /proc/cpuinfo   # Lots of info
 
-## Memory and Usage Info
+### Usage Info
 
     free -h             # Human readable, or do --help for options
-    top or htop         # Must install htop
     vmstat -s
     cat /proc/meminfo   # Lots of info
 
-## Disk Space
+### Disk Space
 
     df
     df -B MB    # In Megabtyes,  etc
 
-## GUI Processes
+### System Processes
+
+    top
+    htop  # If you installed it
+
+### GUI Processes
 
     gnome-system-monitor
 
 # List all Keybindings
+***
+[(Back to Top)](#terminal)
 
     gsettings list-recursively  org.gnome.desktop.wm.keybindings | sort | more
 
-## See Keypressed
+### See Keypressed
+[(Back to Top)](#terminal)
 
     xev
 
@@ -160,6 +177,8 @@ chmod -R og+rw files_or_folder
 
 
 ## OS Shutdown
+***
+[(Back to Top)](#terminal)
 ```
 shutdown
 reboot
@@ -169,6 +188,8 @@ shutdown -r now     (reboot now)
 ```
 
 ## Crontab
+***
+[(Back to Top)](#terminal)
 ```
 crontab -e              (edit crontab for current user)
 crontab -l              (list crontab for other user)
@@ -176,12 +197,16 @@ crontab -u jesse -l     (see crontabs for specific user)
 ```
 
 ## Services
+***
+[(Back to Top)](#terminal)
 ```
 service ssh status      (service status)
 service --status-all    (all services status)
 ```
 
 ## System State
+***
+[(Back to Top)](#terminal)
 ```
 uname -a (get linux info)
 
@@ -198,6 +223,8 @@ free -g (in gigabytes)
 ```
 
 ## Processes
+***
+[(Back to Top)](#terminal)
 ```
 ps -ef | more       (current running processes)
 ps -efH | more      (current running processes in a tree)
@@ -207,15 +234,22 @@ kill -9 <id>        (no brackets)
 ```
 
 ## Bash
+***
+[(Back to Top)](#terminal)
+
 Bash is my shell of choice, which is why I have a `.bashrc` file.
 
-#### Bash Paths
+### Bash Paths
+[(Back to Top)](#terminal)
+
 Executables and commands are automatically in the path, see your path with:
 ```
 echo $PATH
 ```
 
-#### Add to Path 
+### Add to Path 
+[(Back to Top)](#terminal)
+
 ```
 # I suggest editing your ~/.profile
 
@@ -227,19 +261,24 @@ fi
 
 *Note: Order of Linux Reading files: ~/.bash_profile, ~/.bash_login, and ~/.profile, so don't try to use a ~/.profile variable within ~/.bash_profile*
 
-##### Bash Completions
+### Bash Completions
+[(Back to Top)](#terminal)
+
 The locations can be found at
 ```
 cd /usr/share/bash-completion/completions.d/
 cd /etc/bash_completions.d/
 ```
 
-#### Fix Broken Bash Completions
+### Fix Broken Bash Completions
+[(Back to Top)](#terminal)
 ```
 sudo apt-get install --reinstall bash-completion
 ```
 
-#### Log Script from Bash
+### Log Script from Bash
+[(Back to Top)](#terminal)
+
 At the top of your file, find the executable you are using one of these, eg:
 ```
 which bash     # /usr/bin/bash
@@ -274,7 +313,10 @@ You could even crontab it the same way:
 */10 * * * * app.py >> /output.log 2>&1
 ```
 
-## Reading Files
+# Reading Files
+***
+[(Back to Top)](#terminal)
+
 Without having to open a file you can simply read a part of it without `nano`, `pico, `vi`, or `vim`:
 ```
 cat file.txt            (view file contents)
@@ -285,7 +327,10 @@ head file.txt           (view top of file contents)
 head -n20 file.txt      (view top 20 lines)
 ```
 
-## Compressing and Uncompressing Files
+# Compressing and Uncompressing Files
+***
+[(Back to Top)](#terminal)
+
 To Compress a file you can use a variety of tools. You can type `man gzip` to see the full manual and line of commands, and use `esc` + `:x` and `ENTER` to exit from the Manual (It usually uses the Vi editor).
 
 Most often in the Linux word you use and create `*.tar.gz` files, it has the most options. Whatever you prefer is up to you.
@@ -300,7 +345,7 @@ What the flags often stand for:
 - `-v` is verbose (show details of what's happening)
 - `-z` is for tar to gzip as well
 
-#### Compressing Files
+###  Compressing Files
 Note: You can compress more than one file at a time eg: `bzip2 file1.txt file2.txt file3.txt`
 ```
 gzip -vk file.txt                   (Creates file.txt.gz)
@@ -311,7 +356,7 @@ zip filename.zip file.txt           (Creates filename.zip)
 zip -r folder.zip path/to/folder    (Creates  folder.txt.bz2)
 ```
 
-#### Decompressing Files
+### Decompressing Files
 To Uncompress we use similar commands for most of them
 ```
 gunzip -dvk file.txt.gz
@@ -322,22 +367,27 @@ tar -zxvf file.tar.gz
 unzip test.zip
 ```
 
-## Download Files
+# Download Files
+***
+[(Back to Top)](#terminal)
 
-#### Using Wget
+### Using Wget
 ```
 wget http://file.com/something.txt                (Download a file locally)
 wget -O newname.txt http://file.com/something.txt (Download file locally w/new name)
 ```
 
-#### Using cURL
+### Using cURL
 ```
 curl -O http://file.com/something.txt               (Download a file locally)
 curl -o newname.txt http://file.com/something.txt   (Download file locally w/new name)
 curl -O http://url_1 -O http://url_2                (Download multiple files)
 ```
 
-## Find
+# Find
+***
+[(Back to Top)](#terminal)
+
 Generally the following arguments are as follows:
 - `-type f` file
 - `-type d` directory
@@ -357,7 +407,10 @@ find /tmp -type d -empty                             (find empty directories)
 find / -size +50M -size -100M (findby swize)
 ```
 
-## Grep (Find in Files)
+# Grep (Find in Files)
+***
+[(Back to Top)](#terminal)
+
 GREP means: Global Regular Expression Pattern (or Parser)
 
 Some common GREP flags:
@@ -383,33 +436,37 @@ grep -iw "is" file.txt (get full words, case insensitive)
 grep "regex" file.txt
 ```
 
-#### Pipe Grep
+### Pipe Grep
 ```
 php -i | grep ini
 ```
 
-## SCP
+# SCP
+***
+[(Back to Top)](#terminal)
 
-#### Download from server to local
+### Download from server to local
 ```
 scp root@server.com:/path/to/file.txt file.txt
 ```
 
-#### Upload from local to server
+### Upload from local to server
 ```
 scp file.txt root@server.com:/path/to/file.txt
 ```
 
-## SSH
+# SSH
+***
+[(Back to Top)](#terminal)
 
-#### Connecting to a server
+### Connecting to a server
 ```
 ssh name@server.com  (default port is 22)
 ssh name@server.com -p 8000 (connect to specific port)
 ssh name@server.com -i ~/.ssh/rsa_key.pub (connect with ssh key)
 ```
 
-#### .SSH Permissions
+### .SSH Permissions
 
 These are safe permissions to use for SSH
 ```
@@ -422,7 +479,7 @@ chmod 600 ~/.ssh/authorized_keys
 ```
 
 
-#### Using the Config
+### Using the Config
 You can also create a `~/.ssh/config` file and store entries such as:
 ```
 Host aws
@@ -443,15 +500,17 @@ ssh aws
 ssh my-vps
 ```
 
-## MySQL
+# MySQL
+***
+[(Back to Top)](#terminal)
 
-#### Connecting
+### Connecting
 ```
 mysql -u root -p (username, password prompt)
 mysql -u root -p -h localhost (username, password prompt, host)
 ```
 
-#### Exporting Database to SQL
+### Exporting Database to SQL
 You can dump a single database easily:
 ```
 mysqldump -u root -p DATABASE_NAME > file.sql
@@ -462,7 +521,7 @@ Or Dump all databases on your MySQL server with the `--all-databases` flag:
 mysqldump -u root -p --all-databases > file.sql
 ```
 
-#### Importing SQL Files
+### Importing SQL Files
 You can do this through the shell only, or MySQL, first is the shell:
 ```
 mysql -u root DATABASE_NAME < path/to/file.sql
@@ -484,24 +543,25 @@ mysql> use DATABASE_NAME;
 mysql> source path/to/file.sql;
 ```
 
-#### Exporting Compressed Database
+### Exporting Compressed Database
 This will save a lot of space in this one liner:
 ```
 mysqldump -u root -p DATABASE_NAME | tar -cvzf > output.sql.tar.gz
 mysqldump -u root -p DATABASE_NAME | gzip -v > output.sql.gz
 ```
 
-#### Importing Compressed Database
+### Importing Compressed Database
 Here is how you can import with the one liner:
 ```
 mysql -u root -p DATABASE_NAME | tar -xzOf output.sql.tar.gz
 mysql -u root -p DATABASE_NAME | gunzip < output.sql.gz
 ```
 
+# Git
+***
+[(Back to Top)](#terminal)
 
-## Git
-
-#### Populate a Repository
+### Populate a Repository
 You have to first create a repostory, through BitBucket, GitHub, GitLab, etc.
 ```
 git init
@@ -511,13 +571,13 @@ git add .
 git commit -m "Starting with one file"
 git push origin master
 ```
-#### Add or Remove Files
+### Add or Remove Files
 ```
 git add file.txt
 git rm file.txt
 ```
 
-#### Ignoring files
+### Ignoring files
 Create a `.gitignore` file, and place something like this in it:
 ```
 .tmp
@@ -526,7 +586,7 @@ Create a `.gitignore` file, and place something like this in it:
 .DS_Store
 ```
 
-#### Create a Branch
+### Create a Branch
 Branches are used like when you don't want to ruin a main branch with working code.
 
 ```
@@ -534,49 +594,55 @@ git checkout -b develop
 git push origin develop
 ```
 
-#### Switch Branches
+### Switch Branches
 ```
 git checkout master
 git checkout develop
 ```
 
-#### Create a Tag
-Tags are final version numbers or stopping points that will be available as ZIP/TAR GZ files.
+### Create a Tag
+Tags create a snapshots of current code, you may name it as a version such as `1.0.1` and it produces a `tar.gz` and `zip` format for downloads.
 ```
 git tag -a 1.0
 git tag -a 1.0 -m "Optional Message"
 git push --tags
 ```
 
-#### Remove a Tag
+### Remove a Tag
+This will remove a tag from the Git host.
 ```
 git tag -d 1.0
 git push origin :refs/tags/1.0
 ```
 
-#### Clone a Respository
+### Clone a Respository
 ```
 git clone git@github.com/username:your_repo.git
 ```
 
-#### Current Status
+Clone into current directory
+```
+git clone git@github.com/username:your_repo.git .
+```
+### Current Status
 ```
 git status
 ```
 
-#### Commit Log and Show
+### Commit Log and Show
 To see log data and more details use the short or long commit ID.
 ```
 git log
 git show eb7c86a5fbdc6c64df608f4c143c2718a100983b
 ```
 
-#### Reset Hard
+### Reset Hard
+This will reset your repository to the last revision and undo everything, use with caution.
 ```
 git reset --hard HEAD
 ```
 
-#### Prune
+### Prune
 Removes cached items no longer read by git
 ```
 git prune
