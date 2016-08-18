@@ -3,6 +3,7 @@ This is an assortment of quick references to speed up your Terminal skills!
 - [Basics](#basics)
 - [Listing and Navigating](#listing-and-navigating)
 - [Users](#users)
+- [Groups](#groups)
 - [Permissions](#permissions)
 - [OS Details](#os-details)
     - [Operating System](#operating-system)
@@ -106,6 +107,23 @@ passwd username     (change another users password)
 
 useradd -m -s /bin/bash username
 usermod -a -G existing_group existing_user
+```
+
+# Groups
+***
+[(Back to Top)](#terminal)
+Do not delete groups you don't know what they are used for, that's dangerous!
+```
+groups                  (see what groups current user belongs to)
+groupadd name           (create a group)
+groupadd -g 900 name    (create a group with custom GroupID aka gid)
+
+groupdel name           (delete a group)
+sudo useradd <group>    (add current user to a group)
+
+cat /etc/group          (list all groups)
+cut -d: -f1 /etc/group  (list all groups, cleaner)
+
 ```
 
 # Permissions
