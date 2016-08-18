@@ -110,6 +110,19 @@ alias update='sudo apt-get update'
 alias upgrade='sudo apt-get upgrade'
 alias updatey='sudo apt-get update && sudo apt-get upgrade'
 
+#################### Codi ####################
+# Codi
+# Usage: codi [filetype] [filename]
+codi() {
+  vim "$2" -c \
+    "let g:startify_disable_at_vimenter = 1 |\
+    set bt=nofile ls=0 noru nonu nornu |\
+    hi ColorColumn ctermbg=NONE |\
+    hi VertSplit ctermbg=NONE |\
+    hi NonText ctermfg=0 |\
+    Codi ${1:-python}"
+}
+
 #################### Various ####################
 # Make less more friendly for non-text input files, see lesspipe(1)
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
