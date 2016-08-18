@@ -101,6 +101,7 @@ Here are some shortcuts for the dotfiles if you use them:
 | ngenable <name> | enable nginx &lt;name&gt; |
 | ngdisable <name> | disable nginx &lt;name&gt; |
 | h | history |
+| codi python test.py | interactive scratch pad, See: [Codi](https://github.com/metakirby5/codi.vim)  |
 
 | Git Alias | Command (See ~/.gitconfig) |
 |----------|--------|
