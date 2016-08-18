@@ -41,6 +41,13 @@ This is an assortment of quick references to speed up your Terminal skills!
     - [Connecting to a server](#connecting-to-a-server)
     - [SSH Permissions](#ssh-permissions)
     - [Using the Config](#using-the-config)
+- [Firewall](#firewall)
+    - [UFW Status](#ufw-status)
+    - [UFW Enable/Disable](#ufw-enabledisable)
+    - [UFW Example Customization](#ufw-example-customization)
+    - [UFW More Options](#ufw-more-options)
+    - [UFW Deleting Rules](#ufw-deleting-rules)
+    - [UFW Reset Rules](#ufw-reset-rules)
 - [MySQL](#mysql)
     - [Connecting](#connecting)
     - [Exporting Database to SQL](#exporting-database-to-sql)
@@ -495,6 +502,90 @@ You can then simply type:
 ```
 ssh aws
 ssh my-vps
+```
+
+# Firewall
+***
+[(Back to Top)](#terminal)
+
+A firewall prevents unauthorized access to your machine, you should use `UFW` (Uncomplicated Firewall). You must always run this with `sudo`. If you don't have UFW installed, run:
+
+```
+sudo apt-get install ufw
+```
+
+### UFW Status
+To see the Firewall Status run one of these:
+```
+sudo ufw status
+sudo ufw status verbose
+```
+
+### UFW Enable/Disable
+```
+sudo ufw enable
+sudo ufw disable
+```
+
+### UFW Example Customization
+Please do not do this unless you know what you are doing.
+
+You could start out with blocking all incoming connections.
+```
+sudo ufw default deny incoming
+sudo ufw default allow outgoing
+```
+
+Then we allow only what we want
+```
+sudo ufw allow ssh
+sudo ufw allow http
+sudo ufw allow https
+sudo ufw allow ftp
+```
+
+These are the same as:
+```
+sudo ufw allow 22   # same as ssh
+sudo ufw allow 80   # same as http
+sudo ufw allow 443  # same as https
+```
+
+### UFW More Options
+
+If SSH was on port `3333` rather than the default `22` you would do:
+```
+sudo ufw allow 3333/tcp
+```
+
+Some more options:
+
+```
+sudo ufw allow 25 # SMTP
+sudo ufw allow 110 # POP3
+sudo ufw allow 995 # POP3S
+sudo ufw allow 143 # IMAP
+sudo ufw allow 993 # IMAPS
+sudo ufw allow 3306 # MySQL
+sudo ufw allow 5432 # Postgres
+sudo ufw allow from 192.168.255.255 # Custom IP Address
+```
+
+### UFW Deleting Rules
+Easily delete named rules
+```
+sudo ufw delete allow ssh
+```
+
+Delete rules that are numbered
+```
+sudo ufw status numbered
+sudo ufw delete [number]
+```
+
+### UFW Reset Rules
+```
+sudo ufw reset
 ```
 
 # MySQL
