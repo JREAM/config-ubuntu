@@ -9,6 +9,7 @@ cp $PROJECT_FILE_PATH/.gitignore ~
 cp $PROJECT_FILE_PATH/.gitconfig ~
 cp $PROJECT_FILE_PATH/.exports ~
 cp $PROJECT_FILE_PATH/.profile ~
+cp $PROJECT_FILE_PATH/.editorconfig ~
 cp $PROJECT_FILE_PATH/.jscsrc ~
 
 # Reload Bash Config
