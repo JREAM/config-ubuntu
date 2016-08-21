@@ -9,7 +9,7 @@ This is an assortment of quick references to speed up your Terminal skills!
     - [Octal Permissions](#octal-permissions)
     - [Octal Examples](#octal-examples)
 - [OS Details](#os-details)
-    - [Operating System](#operating-system)
+    - [Operating System](#operating-system)g
     - [CPU Info](#cpu-info)
     - [Usage Info](#usage-info)
     - [Disk Space](#disk-space)
@@ -401,10 +401,16 @@ Some common GREP flags:
 - `-c` supresses normal output and counts number of matching lines
 
 ```
-grep -rnw /path - "pattern_or_string"
+grep -rn /path - "pattern_or_string"
 
 ; Output results to File
 grep -rnw /path - "pattern_or_string" > output.txt
+```
+
+Look only in certain filetypes
+```
+; notice I used a regex ^ starts with, you can use a string or regex
+grep --include=*.sh '^mysql' ./ 
 ```
 
 More Examples:
