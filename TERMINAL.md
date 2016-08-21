@@ -477,6 +477,7 @@ What the flags often stand for:
 - `-r` is recursive (for gzip and zip)
 - `-v` is verbose (show details of what's happening)
 - `-z` is for tar to gzip as well
+- `--exclude='file'` is for tar (+gz if needed) to exclude certain files)
 
 ###  Compressing Files
 Note: You can compress more than one file at a time eg: `bzip2 file1.txt file2.txt file3.txt`
@@ -487,6 +488,18 @@ tar -cvf file.tar file.txt          (Creates tar)
 tar -czvf file.tar.gz file.txt      (Creates tar.gz)
 zip filename.zip file.txt           (Creates filename.zip)
 zip -r folder.zip path/to/folder    (Creates  folder.txt.bz2)
+```
+
+Include/Exclude a few files:
+```
+; Exclude certain files
+tar -czvf file.tar.gz <directory>/ --exclude='*.jpg' --exclude='bigfile.sql' 
+
+; Include one file type
+tar -czvf file.tar.gz <directory>/*.sh
+
+; Include multiple files types
+tar -czvf file.tar.gz `find <directory> | grep '.sh\|.py'`
 ```
 
 ### Decompressing Files
@@ -647,10 +660,23 @@ sudo ufw reset
 ***
 [(Back to Top)](#terminal)
 
+- `-u` is for User (default: root)
+- `-p` is for Password 
+- `-h` is for host (default: localhost)
+- `-port or -P` is for a port, default is 3306
+- `-f` will force SQL import and skips errors
+- `-v` will display verbose output
+- In the `mysql>` terminal you can get clean data by doing `\g`:
+    - `mysql> SELECT * FROM users LIMIT 10\g";`
+
 ### Connecting
 ```
 mysql -u root -p (username, password prompt)
 mysql -u root -p -h localhost (username, password prompt, host)
+mysql -u root -p password -h localhost -P 3306
+
+; AWS Example (AWS Defaults to 3306 as most MySQL connections do)
+mysql -u username -p password -h myinstance.123456789012.us-east-1.rds.amazonaws.com
 ```
 
 ### Exporting Database to SQL
@@ -724,7 +750,7 @@ git rm file.txt
 Create a `.gitignore` file, and place something like this in it:
 ```
 .tmp
-.pyc
+.py[co]
 .cache
 .DS_Store
 ```
