@@ -71,6 +71,17 @@ This is an assortment of quick references to speed up your Terminal skills!
     - [Commit Log and Show](#commit-log-and-show)
     - [Reset Hard](#reset-hard)
     - [Prune](#prune)
+- [Docker](#docker)
+    - [Test Box Run](#test-box-run)
+    - [See Running Containers](#see-running-containers)
+    - [Run Container Interactively](#run-container-interactively)
+    - [Remove Container](#remove-container)
+    - [Bulk Remove Containers](#bulk-remove-containers)
+    - [Webserver Test Run](#webserver-test-run)
+    - [Stop Container](#stop-container)
+    - [Get New Docker Image](#get-new-docker-image)
+    - [Create Docker Image](#create-docker-image)
+    - [Pushing Images](#pushing-images)
 
 ## Basics
 ***
@@ -815,4 +826,124 @@ git reset --hard HEAD
 Removes cached items no longer read by git
 ```
 git prune
+```
+
+# Docker
+To install visit [https://docs.docker.com/engine/installation/linux/ubuntulinux/](https://docs.docker.com/engine/installation/linux/ubuntulinux/)
+- **Images**: (Blueprints of an application)
+    - **Image BASE**: No parent Image (An OS)
+    - **Image CHILD**: Builds on a Base Image (Eg: Webserver, MySQL)
+- **Containers**: Created from an IMAGE and run an application.
+- **Docker Daemon**: Background service that builds, runs, and does everything.
+- **Docker Client**: Allows us to interact with the Docker Daemon.
+- **Docker Hub**: A registry of images (Like: npmjs, pip, packagist, bower)
+
+### Test Box Run
+This is a sample box to test once you installed docker
+```
+dock pull busybox
+docker images 
+docker run busybox "Hi from the box"
+```
+
+### See Running Containers
+```
+docker ps (running containers)
+docker ps -a (see all containers that ran)
+```
+
+### Run Container Interactively
+This allows you to get inside the container
+```
+docker run -it busybox sh (interactive)
+```
+
+
+### Remove Container
+Removes a CONTAINER, not an IMAGE
+
+```
+docker ps -a 
+docker rm <CONTAINER ID>
+```
+
+### Bulk Remove Containers
+You can remove containers based on their status in bulk, eg:
+```
+docker rm $(docker ps -a -q -f status=exited)
+docker rm $(docker ps -a -q -f status=created)
+```
+
+### Webserver Test Image
+This will download the IMAGE and run it if it doesn't exist
+```
+docker run prakhar1989/static-site
+```
+
+This doesn't expose ports for us to use, so we do the following:
+```
+docker run -d -P --name static-site prakhar1989/static-site 
+```
+
+- `-d` detaches terminal so we can run commands in our terminal
+- `-P` publishes all exposed ports to random ports
+
+By doing the above command we are given random ports, eg:
+```
+  443/tcp -> 0.0.0.0:32768
+  80/tcp -> 0.0.0.0:32769
+```
+
+Your ports may be different, you can use specific ports with a lowercase `-p`:
+```
+docker run -p 8888:80 prakhar1989/static-site
+```
+
+### Stop Container
+```
+docker stop static-site
+```
+
+### Get New Docker Image
+This would be a docker BASE IMAGE
+```
+docker pull ubuntu:14.04
+```
+
+### Create Docker Image
+This is a flask Example using a Python-3 Base IMAGE
+
+- Create `requirements.txt` and just put `flask`
+- Create an `app.py`
+- Use the following sample code in `app.py`:
+
+```
+from flask import Flask
+app = Flask(__name__)
+
+@app.route('/')
+def hello_world():
+    return 'Hello, World!' 
+```
+
+- Create a docker file, title it `Dockerfile`
+- Enter the following
+
+```
+FROM python:3-onbuild
+EXPOSE 5000
+CMD ["python", "./app.py"]
+```
+
+Now build the image
+
+```
+docker build -t boyus .
+docker images
+```
+
+### Pushing Images
+You need a repository at docker.io to push this, or probably some private hosting.
+```
+docker push boyus 
 ```
