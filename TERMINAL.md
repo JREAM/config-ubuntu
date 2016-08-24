@@ -81,6 +81,7 @@ This is an assortment of quick references to speed up your Terminal skills!
     - [Stop Container](#stop-container)
     - [Get New Docker Image](#get-new-docker-image)
     - [Create Docker Image](#create-docker-image)
+    - [Remove Docker Image](#remove-docker-image)
     - [Pushing Images](#pushing-images)
 
 ## Basics
@@ -941,6 +942,14 @@ Now build the image
 docker build -t boyus .
 docker images
 ```
+
+### Remove Docker Image
+Get a list of images, then just delete by name with `rmi` aka `remove image`:
+```
+docker images
+docker rmi boyus
+```
+
 
 ### Pushing Images
 You need a repository at docker.io to push this, or probably some private hosting.
