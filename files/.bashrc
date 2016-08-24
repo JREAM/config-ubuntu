@@ -1,6 +1,10 @@
 # If not running interactively, don"t do anything
 [ -z "$PS1" ] && return
 
+# Unubtrusive user@name[~/path]:~$ 
+export PS1="\u\[$(tput sgr0)\]\[\033[38;5;250m\]@\[$(tput sgr0)\]\[\033[38;5;15m\]\H[\[$(tput sgr0)\]\[\033[38;5;251m\]\w\[$(tput sgr0)\]\[\033[38;5;15m\]]:~\\$ \[$(tput sgr0)\]"
+
+
 # History Details
 HISTCONTROL=ignoreboth
 HISTSIZE=1000
@@ -18,13 +22,6 @@ fi
 if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
-
-#################################################
-############### PHP Version Toggle ##############
-#################################################
-# Remove the -q to see debugging information if there are problems
-alias enphp7="sudo a2dismod php5.6 -q; sudo a2enmod php7.0 -q; sudo ln -sf /usr/bin/php7.0 /usr/bin/php; sudo service apache2 restart"
-alias enphp5="sudo a2dismod php7.0 -q; sudo a2enmod php5.6 -q; sudo ln -sf /usr/bin/php5.6 /usr/bin/php; sudo service apache2 restart" 
 
 ################################################
 ####################  NGINX  ###################
@@ -49,6 +46,16 @@ alias mkvirtualenv="mkvirtualenv --no-site-packages --distribute"
 
 # Stop python from generating bytecode files
 export PYTHONDONTWRITEBYTECODE=1
+
+#################################################
+############### PHP 5.6 Xenial###################
+#################################################
+
+# Remove the -q to see debugging information if there are problems
+alias enphp7="sudo a2dismod php5.6 -q; sudo a2enmod php7.0 -q; sudo ln -sf /usr/bin/php7.0 /usr/bin/php; sudo service apache2 restart"
+alias enphp5="sudo a2dismod php7.0 -q; sudo a2enmod php5.6 -q; sudo ln -sf /usr/bin/php5.6 /usr/bin/php; sudo service apache2 restart"
+
+
 
 #################################################
 #################### ALIASES ####################
@@ -84,10 +91,8 @@ alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
 # Enable aliases to be sudoed
 alias sudo="sudo "
 
-# Find file in current folder
-alias ffile="find . -name "  
-
-# Find file with contents in current folder
+# Make find a little easier
+alias ffile="find . -name "
 ftext () { grep -rnwi "$1" . ;}
 
 # This gets really annoying!
@@ -95,6 +100,9 @@ alias apt-get="sudo apt-get"
 
 # Mkdir more than one level if needed.
 alias mkdir='mkdir -pv'
+
+# I always do this
+alias catssh='cat ~/.ssh/config'
 
 # Some real Shorties
 alias h='history'
@@ -107,22 +115,11 @@ alias vi=vim
 alias ports='netstat -tulanp'
 
 alias update='sudo apt-get update'
-alias upgrade='sudo apt-get upgrade'
 alias updatey='sudo apt-get update && sudo apt-get upgrade'
-
-#################### Codi ####################
-# Codi
-# Usage: codi [filetype] [filename]
-codi() {
-  vim "$2" -c \
-    "let g:startify_disable_at_vimenter = 1 |\
-    set bt=nofile ls=0 noru nonu nornu |\
-    hi ColorColumn ctermbg=NONE |\
-    hi VertSplit ctermbg=NONE |\
-    hi NonText ctermfg=0 |\
-    Codi ${1:-python}"
-}
 
 #################### Various ####################
 # Make less more friendly for non-text input files, see lesspipe(1)
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
+
+export NVM_DIR="/home/jesse/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
