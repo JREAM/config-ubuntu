@@ -944,10 +944,10 @@ docker images
 ```
 
 ### Remove Docker Image
-Get a list of images, then just delete by name with `rmi` aka `remove image`:
+Get a list of images, then just delete by image id with `rmi` aka `remove image`:
 ```
 docker images
-docker rmi boyus
+docker rmi <IMAGE ID>
 ```
 
 
