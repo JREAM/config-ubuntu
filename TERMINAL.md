@@ -25,7 +25,7 @@ This is an assortment of quick references to speed up your Terminal skills!
 - [Processes](#processes)
 - [Bash](#bash)
     - [Bash Paths](#bash-paths)
-    - [Add to Path](#add-to-path) 
+    - [Add to Path](#add-to-path)
     - [Bash Completions](#bash-completions)
     - [Fix Broken Bash Completions](#fix-broken-bash-completions)
     - [Log Script from Bash](#log-script-from-bash)
@@ -53,6 +53,8 @@ This is an assortment of quick references to speed up your Terminal skills!
     - [UFW More Options](#ufw-more-options)
     - [UFW Deleting Rules](#ufw-deleting-rules)
     - [UFW Reset Rules](#ufw-reset-rules)
+- [Regex](#regex)
+    - [Regex Examples](#regex-examples)
 - [MySQL](#mysql)
     - [Connecting](#connecting)
     - [Exporting Database to SQL](#exporting-database-to-sql)
@@ -227,60 +229,77 @@ Get fundamental information about your OS with the following commands, you may h
 
 ##  Operating System
 
-    lsb_release -a
-    lsb_release -as     # Short Information
-    lsb_release --help
+```
+lsb_release -a
+lsb_release -as     # Short Information
+lsb_release --help
+```
 
 ### CPU Info
 
-    nproc               # How many Processing Units
-    cpuid               # Must install cpuid from terminal
-    cat /proc/cpuinfo   # Lots of info
+```
+nproc               # How many Processing Units
+cpuid               # Must install cpuid from terminal
+cat /proc/cpuinfo   # Lots of info
+```
 
 ### Usage Info
 
-    free -h             # Human readable, or do --help for options
-    vmstat -s
-    cat /proc/meminfo   # Lots of info
+```
+free -h             # Human readable, or do --help for options
+vmstat -s
+cat /proc/meminfo   # Lots of info
+```
 
 ### Disk Space
 
-    df
-    df -B MB    # In Megabtyes,  etc
+```
+df
+df -B MB    (In Megabtyes, KB for Kilobytes, GB for Gigabytes)
+```
 
 ### System Processes
 
-    top
-    htop  # If you installed it
+```
+top
+htop  # If you installed it
+```
 
 ### IP Address
-Your IP is after `inet addr`. If you are connect via ethernet it's under `eth0 (Ethernet)` otherwise, wirelessly it is likely under `wlan0 (Wireless LAN)`. 
+Your IP is after `inet addr`. If you are connect via ethernet it's under `eth0 (Ethernet)` otherwise, wirelessly it is likely under `wlan0 (Wireless LAN)`.
 
-   ifconfig
-   ip
-   ip addr show
-   ip addr show wlan
-   ip addr show eth0
+```
+ifconfig
+ip
+ip addr show
+ip addr show wlan
+ip addr show eth0
+```
 
 ### GUI Processes
 
-    gnome-system-monitor
+```
+gnome-system-monitor
+```
 
 # List all Keybindings
 ***
 [(Back to Top)](#terminal)
 
-    gsettings list-recursively  org.gnome.desktop.wm.keybindings | sort | more
+```
+gsettings list-recursively  org.gnome.desktop.wm.keybindings | sort | more
+```
 
 ### See Keypressed
 [(Back to Top)](#terminal)
 
-    xev
+```
+xev
 
-    # Or for a lot of details:
+; Or for a lot of details:
 
-    xev | grep KeyPress
-
+xev | grep KeyPress
+```
 
 # OS Shutdown
 ***
@@ -352,7 +371,7 @@ Executables and commands are automatically in the path, see your path with:
 echo $PATH
 ```
 
-### Add to Path 
+### Add to Path
 
 ```
 # I suggest editing your ~/.profile
@@ -388,6 +407,7 @@ which php      # /usr/bin/php
 ```
 
 At the top of your [shebang](https://en.wikipedia.org/wiki/Shebang_(Unix)) for the executable file add:
+
 ```
 #!/bin/bash
 #!/usr/bin/php
@@ -460,7 +480,7 @@ grep -rnw /path - "pattern_or_string" > output.txt
 Look only in certain filetypes
 ```
 ; notice I used a regex ^ starts with, you can use a string or regex
-grep --include=*.sh '^mysql' ./ 
+grep --include=*.sh '^mysql' ./
 ```
 
 More Examples:
@@ -531,6 +551,7 @@ What the flags often stand for:
 
 ###  Compressing Files
 Note: You can compress more than one file at a time eg: `bzip2 file1.txt file2.txt file3.txt`
+
 ```
 gzip -vk file.txt                   (Creates file.txt.gz)
 bzip2 file.txt                      (Creates  file.txt.bz2)
@@ -543,7 +564,7 @@ zip -r folder.zip path/to/folder    (Creates  folder.txt.bz2)
 Include/Exclude a few files:
 ```
 ; Exclude certain files
-tar -czvf file.tar.gz <directory>/ --exclude='*.jpg' --exclude='bigfile.sql' 
+tar -czvf file.tar.gz <directory>/ --exclude='*.jpg' --exclude='bigfile.sql'
 
 ; Include one file type
 tar -czvf file.tar.gz <directory>/*.sh
@@ -597,7 +618,7 @@ chmod 644 ~/.ssh/id_rsa.pub
 chmod 600 ~/.ssh/id_rsa
 
 # Put your pubkeys (one per line) for SSH login
-chmod 600 ~/.ssh/authorized_keys 
+chmod 600 ~/.ssh/authorized_keys
 ```
 
 
@@ -706,12 +727,87 @@ sudo ufw delete [number]
 sudo ufw reset
 ```
 
+# Regex
+Regex stands for Regular Expression. It's used for locating or replacing files or
+strings of text. It is used all the time. These can be used in Linux itself and programming
+languages.
+
+```
+; Symbolism
+; ------------------
+()          (captures groups)
+[]          (set)
+{}          (quantifier)
+?           (optional, matches 0 or 1 character)
+*           (matches 0 or more characters)
+.           (match any character)
++           (match one or more character)
+\           (escape character)
+!           (false, is not)
+^           (starts with)
+$           (ends with)
+|           (or statement, eg: (jesse|dan|jenkins) )
+
+; Basic Primer
+; ------------------
+\w          (word)
+\W          (non-word)
+\s          (whitespace)
+\S          (non-whitespace)
+\d          (digit)
+\D          (non-digit)
+[ab]        (character set)
+[^ab]       (negated set)
+[a-m]       (range)
+(hello)     (group)
+(hello)+    (group, more than once)
+
+; Groups
+; ------------------
+(hi)        (gets all "hi" occurances)
+(^hi)       (gets all text starting with "hi")
+(es$)       (gets all text ending with "es")
+(hi)\1      (gets the first occurance of "hi")
+
+; Flags
+; ------------------
+/i          (case insensitive)
+/g          (global)
+/m          (multiline)
+
+; Escaped Characters
+; ------------------
+; Since characters such as ".", "+", etc are actual Regex pattern makers, if you
+; need to check your content for the literal item you must escape them.
+\.          (matches . character)
+\+          (matches + character)
+\?          (matches ? character)
+\*          (matches * character)
+\^          (matches ^ character)
+\$          (matches $ character)
+\[          (matches [ character)
+\(          (matches ( character)
+
+\t          (matches tab character)
+\n          (matches newline)
+\r          (matches return carriage)
+\0          (matches NULL character)
+\\          (matches \ character)
+\/          (matches / character)
+```
+
+### Regex Examples
+```
+Put Examples here, like phones, names, etc..
+
+```
+
 # MySQL
 ***
 [(Back to Top)](#terminal)
 
 - `-u` is for User (default: root)
-- `-p` is for Password 
+- `-p` is for Password
 - `-h` is for host (default: localhost)
 - `-port or -P` is for a port, default is 3306
 - `-f` will force SQL import and skips errors
@@ -881,7 +977,7 @@ To install visit [https://docs.docker.com/engine/installation/linux/ubuntulinux/
 This is a sample box to test once you installed docker
 ```
 dock pull busybox
-docker images 
+docker images
 docker run busybox "Hi from the box"
 ```
 
@@ -902,7 +998,7 @@ docker run -it busybox sh (interactive)
 Removes a CONTAINER, not an IMAGE
 
 ```
-docker ps -a 
+docker ps -a
 docker rm <CONTAINER ID>
 ```
 
@@ -921,7 +1017,7 @@ docker run prakhar1989/static-site
 
 This doesn't expose ports for us to use, so we do the following:
 ```
-docker run -d -P --name static-site prakhar1989/static-site 
+docker run -d -P --name static-site prakhar1989/static-site
 ```
 
 - `-d` detaches terminal so we can run commands in our terminal
@@ -962,7 +1058,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def hello_world():
-    return 'Hello, World!' 
+    return 'Hello, World!'
 ```
 
 - Create a docker file, title it `Dockerfile`
@@ -992,5 +1088,5 @@ docker rmi <IMAGE ID>
 ### Pushing Images
 You need a repository at docker.io to push this, or probably some private hosting.
 ```
-docker push boyus 
+docker push boyus
 ```
