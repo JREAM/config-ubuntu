@@ -14,6 +14,7 @@ This is an assortment of quick references to speed up your Terminal skills!
     - [Usage Info](#usage-info)
     - [Disk Space](#disk-space)
     - [System Processes](#system-processes)
+    - [IP Address](#ip-address)
     - [GUI Processes](#gui-processes)
 - [List all Keybindings](#list-all-keybindings)
     - [See Keypressed](#see-keypressed)
@@ -88,24 +89,49 @@ This is an assortment of quick references to speed up your Terminal skills!
 ***
 [(Back to Top)](#terminal)
 ```
-whereis bash (find absolute location of bash, or any file)
-whatis ls (tells you about the command)
-man ls (manual to give you a list of all command arguments for any command)
-locate crontab (I like mlocate more)
-which python
+:x                  (Anytime you are in VIM, MAN page, LESS, etc, this is how you exit)
+
+whereis bash        (find absolute location of bash, or any file)
+whatis ls           (tells you about the command)
+man ls              (manual to give you a list of all command arguments for any command)
+locate crontab      (I like mlocate more)
+which python        (location of a program)
+clear               (dlears the terminal)
+date                (current datetime)
+echo                (output to terminal)
+env                 (See environment variables)
+hostname            (See your hostname)
 ```
 
 # Listing and Navigating
 ***
 [(Back to Top)](#terminal)
 ```
-ls              (list files)
-ls -la          (list all files, permissions, and hidden too)
-pwd             (print working directory)
-cd ..           (go down a directory)
-cd /            (go to lowest level)
-cd ~            (go to logged in user's home)
-cd /var/www     (go to absolute path)
+ls                  (list files)
+ls -la              (list all files, permissions, and hidden too)
+pwd                 (print working directory)
+cd ..               (go down a directory)
+cd /                (go to lowest level)
+cd ~                (go to logged in user's home)
+cd /var/www         (go to absolute path)
+
+; Manage Files and Folders
+mkdir <dir>         (create a directory)
+rmdir <dir>         (remove an empty directory)
+rm -rf <dir>        (remove a directory with contents)
+touch <file>        (create an empty file)
+mv <file> <loc>     (move file from location to new location)
+cp <file> <loc>     (copy file from location to new location)
+mv <dir> <loc>      (move directory from location to new location)
+cp -R <dir> <loc>   (copy directory from location to new location)
+
+; Reading Files
+cat <file>          (read entire file)
+head <file>         (read top of a file)
+head <file> -n 20   (read top of file 20 lines)
+tail <file>         (read bottom of a file)
+tail <file> -n 20   (read bottom of file 20 lines)
+tail <file> -f      (stream file as it's updated, eg: an error log)
 ```
 
 
@@ -122,6 +148,9 @@ passwd username     (change another users password)
 
 useradd -m -s /bin/bash username
 usermod -a -G existing_group existing_user
+
+who                 (show all logged in users)
+whoami              (show which user you are)
 ```
 
 # Groups
@@ -223,6 +252,15 @@ Get fundamental information about your OS with the following commands, you may h
 
     top
     htop  # If you installed it
+
+### IP Address
+Your IP is after `inet addr`. If you are connect via ethernet it's under `eth0 (Ethernet)` otherwise, wirelessly it is likely under `wlan0 (Wireless LAN)`. 
+
+   ifconfig
+   ip
+   ip addr show
+   ip addr show wlan
+   ip addr show eth0
 
 ### GUI Processes
 
