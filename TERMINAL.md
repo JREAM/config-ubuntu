@@ -75,6 +75,7 @@ This is an assortment of quick references to speed up your Terminal skills!
     - [Reset Hard](#reset-hard)
     - [Prune](#prune)
 - [Docker](#docker)
+    - [Docker Compose](#docker-compose)  
     - [Test Box Run](#test-box-run)
     - [See Running Containers](#see-running-containers)
     - [Run Container Interactively](#run-container-interactively)
@@ -972,6 +973,13 @@ To install visit [https://docs.docker.com/engine/installation/linux/ubuntulinux/
 - **Docker Daemon**: Background service that builds, runs, and does everything.
 - **Docker Client**: Allows us to interact with the Docker Daemon.
 - **Docker Hub**: A registry of images (Like: npmjs, pip, packagist, bower)
+
+### Docker Compose
+This is a great utility that makes managing docker easier from a `docker-compose.yml` file, you should install this after playing around with the below options. See: [https://docs.docker.com/engine/installation/linux/ubuntulinux/](https://docs.docker.com/engine/installation/linux/ubuntulinux/)
+```
+docker-compose up
+open http://localhost:3000
+```
 
 ### Test Box Run
 This is a sample box to test once you installed docker
