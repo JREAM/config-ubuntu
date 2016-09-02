@@ -13,10 +13,13 @@ sudo apt-get install -y\
     curl\
     htop\
     gdebi\
+    netperf\
     putty-tools\
     python-software-properties\
     software-properties-common\
     screen\
+    stress\
+    stress-ng\
     supervisor\
     terminator\
     tree\
