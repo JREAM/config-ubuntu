@@ -58,6 +58,8 @@ cat <<- command_list
     DevOps:
     -------
     docker        Install Docker
+    ansible       Install Ansible Provisioner
+    saltstack     Install SaltStack Provisioner
     consul        Install Hashicorp Consul
     nomad         Install Hashicorp Nomad
     packer        Install Hashicorp Packer
@@ -92,6 +94,12 @@ echo ""
 read -p "Type a Command: " cmd
 
     case $cmd in
+        ansible)
+            bash ./bin/server/ansible.sh
+            echo ""
+            echo "====================================================================="
+            echo ""
+            ;;
         apache)
             bash ./bin/server/apache.sh
             echo ""
@@ -208,6 +216,12 @@ read -p "Type a Command: " cmd
             ;;
         redis)
             bash ./bin/server/redis.sh
+            echo ""
+            echo "====================================================================="
+            echo ""
+            ;;
+        saltstack)
+            bash ./bin/server/saltstack.sh
             echo ""
             echo "====================================================================="
             echo ""
