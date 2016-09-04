@@ -6,8 +6,9 @@ if [[ $USER == "root" ]]; then
 fi
 
 # Temporary Environment Variable.
+export OS_CODENAME=`lsb_release -s -c`
 export INSTALL_SCRIPT=true
-export PROJECT_BIN_PATH= $PWD/bin    # (NO Trailing Slash!)
+export PROJECT_BIN_PATH=$PWD/bin    # (NO Trailing Slash!)
 export PROJECT_FILE_PATH=$PWD/files  # (NO Trailing Slash!)
 export PROJECT_TEMP_PATH=$PWD/tmp    # (NO Trailing Slash!)
 
@@ -30,11 +31,14 @@ cat <<- command_list
     apache        Installs Apache
     nginx         Installs NGINX
 
+    Databases:
+    ----------
+    mysql         Install MySQL, MySQL-Workbench, common, utils
+    mongo         Install MongoDB Community Edition
+
     Languages:
     ----------
     java          Install JRE and JDK (default-jre, not Oracle)
-    mysql         Install MySQL, MySQL-Workbench, common, utils
-                    (not the server)
     node          Install NodeJS (nodejs, npm: n, bower, gulp)
     php5          Installs PHP5 and popular packages
     php7          Installs PHP7 and popular packages
@@ -47,9 +51,20 @@ cat <<- command_list
     -----------
     php5phalcon   Install Phalcon PHP 5.x Framework (Adds PPA)
     php7phalcon   Install Phalcon PHP 7.x Framework (Adds PPA)
-    phpcomposer   Installs User Global PHP Composer packages such as: 
-                    prestissimo, phpunit, dbunit, code coverage, phing, 
+    phpcomposer   Installs User Global PHP Composer packages such as:
+                    prestissimo, phpunit, dbunit, code coverage, phing,
                     phpcpd, phploc, phpmd, phpdocumentor, etc.
+
+    DevOps:
+    -------
+    docker        Install Docker
+    consul        Install Hashicorp Consul
+    nomad         Install Hashicorp Nomad
+    packer        Install Hashicorp Packer
+    serf          Install Hashicorp Serf
+    terraform     Install Hashicorp Terraform
+    vault         Install Hashicorp Vault
+    vagrant       Install Hashicorp Vagrant
 
     Utilities:
     ----------
@@ -61,7 +76,7 @@ cat <<- command_list
                     (read instructions after install)
     util          Install Utilities:
                      git, curl, htop, unzip, terminator,
-                     tmux, screen
+                     tmux, screen)
     vim           Install Vim (.vimrc and Vundle Plugins)
 
     Quit:
@@ -89,14 +104,32 @@ read -p "Type a Command: " cmd
             echo "====================================================================="
             echo ""
             ;;
+        consul)
+            bash ./bin/server/hashicorp/consul.sh
+            echo ""
+            echo "====================================================================="
+            echo ""
+            ;;
         dot)
             bash ./bin/dot.sh
             echo ""
             echo "====================================================================="
             echo ""
             ;;
+        docker)
+            bash ./bin/server/docker.sh
+            echo ""
+            echo "====================================================================="
+            echo ""
+            ;;
         java)
             bash ./bin/server/java.sh
+            echo ""
+            echo "====================================================================="
+            echo ""
+            ;;
+        mongo)
+            bash ./bin/server/mongo.sh
             echo ""
             echo "====================================================================="
             echo ""
@@ -115,6 +148,18 @@ read -p "Type a Command: " cmd
             ;;
         node)
             bash ./bin/server/node.sh
+            echo ""
+            echo "====================================================================="
+            echo ""
+            ;;
+        nomad)
+            bash ./bin/server/hashicorp/nomad.sh
+            echo ""
+            echo "====================================================================="
+            echo ""
+            ;;
+        packer)
+            bash ./bin/server/hashicorp/packer.sh
             echo ""
             echo "====================================================================="
             echo ""
@@ -167,14 +212,38 @@ read -p "Type a Command: " cmd
             echo "====================================================================="
             echo ""
             ;;
+        serf)
+            bash ./bin/server/hashicorp/serf.sh
+            echo ""
+            echo "====================================================================="
+            echo ""
+            ;;
         security)
             bash ./bin/security.sh
             echo ""
             echo "====================================================================="
             echo ""
             ;;
+        terraform)
+            bash ./bin/server/hashicorp/terraform.sh
+            echo ""
+            echo "====================================================================="
+            echo ""
+            ;;
         util)
             bash ./bin/util.sh
+            echo ""
+            echo "====================================================================="
+            echo ""
+            ;;
+        vagrant)
+            bash ./bin/server/hashicorp/vagrant.sh
+            echo ""
+            echo "====================================================================="
+            echo ""
+            ;;
+        vault)
+            bash ./bin/server/hashicorp/vault.sh
             echo ""
             echo "====================================================================="
             echo ""

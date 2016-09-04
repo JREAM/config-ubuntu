@@ -12,4 +12,4 @@ sudo apt-get install -y\
 # IMPORTANT: Do NOT have a trailing \ on the LAST item!
 
 echo "(+) Complete! Installed MySQL Utilities."
-echo "    MySQL Server, Workbench, Client, Utilities"
+echo "    MySQL Server, Client, Utilities"

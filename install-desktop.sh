@@ -6,8 +6,9 @@ if [[ $USER == "root" ]]; then
 fi
 
 # Temporary Environment Variable.
+export OS_CODENAME=`lsb_release -s -c`
 export INSTALL_SCRIPT=true
-export PROJECT_BIN_PATH= $PWD/bin    # (NO Trailing Slash!)
+export PROJECT_BIN_PATH=$PWD/bin    # (NO Trailing Slash!)
 export PROJECT_FILE_PATH=$PWD/files  # (NO Trailing Slash!)
 export PROJECT_TEMP_PATH=$PWD/tmp    # (NO Trailing Slash!)
 
