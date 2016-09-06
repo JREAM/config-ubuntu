@@ -57,16 +57,17 @@ cat <<- command_list
 
     DevOps:
     -------
-    docker        Install Docker
-    ansible       Install Ansible Provisioner
-    saltstack     Install SaltStack Provisioner
-    consul        Install Hashicorp Consul
-    nomad         Install Hashicorp Nomad
-    packer        Install Hashicorp Packer
-    serf          Install Hashicorp Serf
-    terraform     Install Hashicorp Terraform
-    vault         Install Hashicorp Vault
-    vagrant       Install Hashicorp Vagrant
+    docker         Install Docker
+    docker-machine Install Docker Machine
+    ansible        Install Ansible Provisioner
+    saltstack      Install SaltStack Provisioner
+    consul         Install Hashicorp Consul
+    nomad          Install Hashicorp Nomad
+    packer         Install Hashicorp Packer
+    serf           Install Hashicorp Serf
+    terraform      Install Hashicorp Terraform
+    vault          Install Hashicorp Vault
+    vagrant        Install Hashicorp Vagrant
 
     Utilities:
     ----------
@@ -126,6 +127,12 @@ read -p "Type a Command: " cmd
             ;;
         docker)
             bash ./bin/server/docker.sh
+            echo ""
+            echo "====================================================================="
+            echo ""
+            ;;
+        docker-machine)
+            bash ./bin/server/docker-machine.sh
             echo ""
             echo "====================================================================="
             echo ""
