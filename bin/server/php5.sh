@@ -17,13 +17,10 @@ sudo apt-get install -y\
     php5-mcrypt\
     php5-mongo\
     php5-mysql\
-    php5-soap\
     php5-sqlite\
-    php5-twig\
     php5-redis\
     php5-xmlrpc\
     php5-xdebug\
-    php-codesniffer\
     libpcre3-dev\
     libsqlite3-dev\
     libapache2-mod-php5\
