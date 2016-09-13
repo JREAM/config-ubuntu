@@ -59,6 +59,7 @@ cat <<- command_list
     -------
     docker         Install Docker
     docker-machine Install Docker Machine
+    docker-ac      Install Docker Autocomplete CLI
     ansible        Install Ansible Provisioner
     saltstack      Install SaltStack Provisioner
     consul         Install Hashicorp Consul
@@ -127,6 +128,12 @@ read -p "Type a Command: " cmd
             ;;
         docker)
             bash ./bin/server/docker.sh
+            echo ""
+            echo "====================================================================="
+            echo ""
+            ;;
+        docker-ac)
+            bash ./bin/server/docker-ac.sh
             echo ""
             echo "====================================================================="
             echo ""

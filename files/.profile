@@ -14,6 +14,10 @@ if [ -n "$BASH_VERSION" ]; then
     if [ -f "$HOME/.bashrc" ]; then
     . "$HOME/.bashrc"
     fi
+    # include .docker-complete if it exists
+    if [ -f "$HOME/.docker-complete" ]; then
+    . "$HOME/.docker-complete"
+    fi
 fi
 
 # set PATH so it includes user's private bin if it exists
