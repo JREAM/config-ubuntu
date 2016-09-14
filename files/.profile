@@ -29,3 +29,9 @@ fi
 if [ -d "$HOME/.composer/vendor/bin" ] ; then
     PATH="$HOME/.composer/vendor/bin:$PATH"
 fi
+
+# Set private to include Google go if it's installed
+if [ -d "/usr/local/go/bin" ]; then
+    PATH=$PATH:/usr/local/go/bin
+fi
+

@@ -15,27 +15,18 @@ sudo apt-get update
 
 echo "(+) Installing Phalcon."
 
-sudo apt-get install -y\
-    php5-phalcon
-
-echo "(+) Phalcon Installed."
-echo "(+) Installing Phalcon Dev Tools."
-
-# Destination Directory
-DEST_DIR="/usr/local/phalcon_devtools"
-
-# Clear out anything old
-if [ -d $DEST_DIR ]; then
-    sudo rm -rf $DEST_DIR
-fi
-sudo mkdir $DEST_DIR
-
-# See if we need composer (Duplicate in LAMP for now)
-if [ ! -f /usr/local/bin/composer ]; then
-    curl -sS https://getcomposer.org/installer | php && sudo mv composer.phar /usr/local/bin/composer
+if [[ $OS_CODENAME == 'xenial' ]]; then
+    # PHP7 Phalcon
+    sudo apt-get install -y php7.0-phalcon
+    sudo sh -c 'echo "extension=phalcon.so" >> /etc/php/7.0/mods-available/phalcon.ini'
+    sudo phpenmod phalcon
 else
-    sudo composer self-update
+    # PHP5 Phalcon
+    sudo apt-get install -y php5-phalcon
 fi
+
+echo "(+) Installing Phalcon Devtools."
+
 echo $PROJECT_TEMP_PATH
 echo '{"require":{"phalcon/devtools":"dev-master"}}' > $PROJECT_TEMP_PATH/composer.json
 cd $PROJECT_TEMP_PATH
@@ -54,4 +45,4 @@ if [ ! -L /usr/bin/phalcon ]; then
     sudo ln -s $DEST_DIR/phalcon.php /usr/bin/phalcon
 fi
 
-echo "(+) Phalcon Dev Tools Installed, run with $ phalcon."
+echo "(+) Phalcon and Phalcon Tools Installed, use $ phalcon"

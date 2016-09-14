@@ -33,27 +33,28 @@ cat <<- command_list
 
     Databases:
     ----------
-    mysql         Install MySQL, MySQL-Workbench, common, utils
+    mysql         Install MySQL, common, utils
     mongo         Install MongoDB Community Edition
+    postgres      Install Postgres
+    redis         Install Redis (redis-server)
 
     Languages:
     ----------
+    go            Install Google Go
     java          Install JRE and JDK (default-jre, not Oracle)
     node          Install NodeJS (nodejs, npm: n, bower, gulp)
-    php5          Installs PHP5 and popular packages
-    php7          Installs PHP7 and popular packages
+    php           Installs PHP5 (<=15 Wily & Below) or PHP7 (>=17 Xenial)
+                    Global PHP Composer packages such as:
+                    prestissimo, phpunit, dbunit, code coverage, phing,
+                    phpcpd, phploc, phpmd, phpdocumentor, etc.
     py            Install Python packages (pip, bpython,
                     python-dev, mycli, virtualenvwrapper)
     rb            Install Ruby (ruby, ruby-dev, gem)
-    redis         Install Redis (redis-server)
 
     Frameworks:
     -----------
-    php5phalcon   Install Phalcon PHP 5.x Framework (Adds PPA)
-    php7phalcon   Install Phalcon PHP 7.x Framework (Adds PPA)
-    phpcomposer   Installs User Global PHP Composer packages such as:
-                    prestissimo, phpunit, dbunit, code coverage, phing,
-                    phpcpd, phploc, phpmd, phpdocumentor, etc.
+    php-phalcon    Install Phalcon (<=15 Wily & Below) or PHP7 (>=17 Xenial)
+    php-laravel    Install Laravel (Composer global install as current user)
 
     DevOps:
     -------
@@ -144,6 +145,12 @@ read -p "Type a Command: " cmd
             echo "====================================================================="
             echo ""
             ;;
+        go)
+            bash ./bin/server/go.sh
+            echo ""
+            echo "====================================================================="
+            echo ""
+            ;;
         java)
             bash ./bin/server/java.sh
             echo ""
@@ -192,26 +199,26 @@ read -p "Type a Command: " cmd
             echo "====================================================================="
             echo ""
             ;;
-        php5phalcon)
-            bash ./bin/server/php5-phalcon.sh
+        php-laravel)
+            bash ./bin/server/php-laravel.sh
             echo ""
             echo "====================================================================="
             echo ""
             ;;
-        php7phalcon)
-            bash ./bin/server/php7-phalcon.sh
+        php-phalcon)
+            bash ./bin/server/php-phalcon.sh
             echo ""
             echo "====================================================================="
             echo ""
             ;;
-        php5)
-            bash ./bin/server/php5.sh
+        php)
+            bash ./bin/server/php.sh
             echo ""
             echo "====================================================================="
             echo ""
             ;;
-        php7)
-            bash ./bin/server/php7.sh
+        postgres)
+            bash ./bin/server/postgres.sh
             echo ""
             echo "====================================================================="
             echo ""

@@ -6,8 +6,8 @@ as a Desktop and a Server.
 ### Script Files
 There are two main script files:
 
-- `./install-desktop.sh` Options to install desktop items.
-- `./install-server.sh` Options to install server items, you can do this on your desktop too.
+- `./desktop.sh` Options to install desktop items.
+- `./server.sh` Options to install server items, you can do this on your desktop too.
 
 ### Command Line Help
 Please view the `TERMINAL.md` file for quick terminal help, it's quite handy!

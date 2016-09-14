@@ -1,7 +1,7 @@
 # If not running interactively, don"t do anything
 [ -z "$PS1" ] && return
 
-# Unubtrusive user@name[~/path]:~$ 
+# Unubtrusive user@name[~/path]:~$
 export PS1="\u\[$(tput sgr0)\]\[\033[38;5;250m\]@\[$(tput sgr0)\]\[\033[38;5;15m\]\H[\[$(tput sgr0)\]\[\033[38;5;251m\]\w\[$(tput sgr0)\]\[\033[38;5;15m\]]:~\\$ \[$(tput sgr0)\]"
 
 
@@ -36,26 +36,18 @@ function ngdisable { sudo rm /etc/nginx/sites-enabled/$1; }
 #################### PYTHON ####################
 ################################################
 
-# Virtualenv stuff
-export WORKON_HOME=~/.virtualenvs
-export PROJECT_HOME=~/projects
-export PIP_VIRTUALENV_BASE=~/.virtualenvs
-source /usr/local/bin/virtualenvwrapper.sh
+if [ -d "$HOME/.virtualenvs" ] ; then
+    # Virtualenv stuff
+    export WORKON_HOME=~/.virtualenvs
+    export PROJECT_HOME=~/projects
+    export PIP_VIRTUALENV_BASE=~/.virtualenvs
+    source /usr/local/bin/virtualenvwrapper.sh
 
-alias mkvirtualenv="mkvirtualenv --no-site-packages --distribute"
+    alias mkvirtualenv="mkvirtualenv --no-site-packages --distribute"
+fi
 
 # Stop python from generating bytecode files
 export PYTHONDONTWRITEBYTECODE=1
-
-#################################################
-############### PHP 5.6 Xenial###################
-#################################################
-
-# Remove the -q to see debugging information if there are problems
-alias enphp7="sudo a2dismod php5.6 -q; sudo a2enmod php7.0 -q; sudo ln -sf /usr/bin/php7.0 /usr/bin/php; sudo service apache2 restart"
-alias enphp5="sudo a2dismod php7.0 -q; sudo a2enmod php5.6 -q; sudo ln -sf /usr/bin/php5.6 /usr/bin/php; sudo service apache2 restart"
-
-
 
 #################################################
 #################### ALIASES ####################
