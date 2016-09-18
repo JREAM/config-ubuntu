@@ -59,6 +59,7 @@ cat <<- command_list
     DevOps:
     -------
     docker         Install Docker
+    docker-compose Install Docker Compose
     docker-machine Install Docker Machine
     docker-ac      Install Docker Autocomplete CLI
     ansible        Install Ansible Provisioner
@@ -138,6 +139,11 @@ read -p "Type a Command: " cmd
             echo ""
             echo "====================================================================="
             echo ""
+            ;;
+        docker-compose)
+            bash ./bin/server/docker-compose.sh
+            echo ""
+            echo "====================================================================="
             ;;
         docker-machine)
             bash ./bin/server/docker-machine.sh
