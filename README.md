@@ -12,9 +12,6 @@ There are two main script files:
 - `./desktop.sh` Options to install desktop items.
 - `./server.sh` Options to install server items, you can do this on your desktop too.
 
-### Command Line Help
-Please view the `TERMINAL.md` file for quick terminal help, it's quite handy!
-
 ***
 
 # Table of Contents
