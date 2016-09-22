@@ -4,7 +4,7 @@ This is for a [Ubuntu](http://ubuntu.com/desktop), I have run this on `14`, `15`
 as a Desktop and a Server.
 
 
-Terminal Help Has been moved: [Ubuntu Cheatsheet](#https://github.com/JREAM/ubuntu-cheatsheet)
+Terminal Help Has been moved: [https://github.com/JREAM/ubuntu-cheatsheet](https://github.com/JREAM/ubuntu-cheatsheet)
 
 ### Script Files
 There are two main script files:
