@@ -109,6 +109,9 @@ alias ports='netstat -tulanp'
 alias update='sudo apt-get update'
 alias updatey='sudo apt-get update && sudo apt-get upgrade'
 
+# gzip all, like an entire folder and subfolders: Creates foldername.tar.gz
+alias gza='tar -czvf ${PWD##*/}.tar.gz . && chmod 664 ${PWD##*/}.tar.gz && echo "File: ${PWD##*/}.tar.gz"'
+
 #################### Various ####################
 # Make less more friendly for non-text input files, see lesspipe(1)
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
