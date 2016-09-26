@@ -44,7 +44,11 @@ cat <<- command_list
     java          Install JRE and JDK (default-jre, not Oracle)
     node          Install NodeJS (nodejs, npm: n, bower, gulp)
     php           Installs PHP5 (<=15 Wily & Below) or PHP7 (>=17 Xenial)
-    py            Install Python packages (pip, bpython, python-dev, mycli, virtualenvwrapper)
+                    Global PHP Composer packages such as:
+                    prestissimo, phpunit, dbunit, code coverage, phing,
+                    phpcpd, phploc, phpmd, phpdocumentor, etc.
+    py            Install Python packages (pip, bpython,
+                    python-dev, mycli, virtualenvwrapper)
     rb            Install Ruby (ruby, ruby-dev, gem)
 
     Frameworks:
@@ -54,7 +58,6 @@ cat <<- command_list
 
     DevOps:
     -------
-    awscli         Install AWS CLI tools
     docker         Install Docker
     docker-compose Install Docker Compose
     docker-machine Install Docker Machine
@@ -69,19 +72,18 @@ cat <<- command_list
     vault          Install Hashicorp Vault
     vagrant        Install Hashicorp Vagrant
 
-    Benchmarking:
-    -------------
-    iperf          Install iperf CLI util
-    sysbench       Install sysbench CLI util
-    wrk2           Install wrk2 CLI util
-
     Utilities:
     ----------
     dot           Copy Dotfiles (.bashrc, .gitconfig, .gitignore)
-    perm          Update /usr/local permissions to group 'local'
-    security      Install ClamAV, RKHunter (read instructions after install)
-    util          Install Utilities: (git, curl, htop, unzip, terminator, tmux, screen)
-    vim           Install Vim & Plugins (.vimrc and Vundle Plugins)
+    perm          Update /usr/local permissions:
+                    Creates Group "local", adds you to it, sets
+                    /usr/local to that group and adds permissions
+    security      Install ClamAV, RKHunter
+                    (read instructions after install)
+    util          Install Utilities:
+                     git, curl, htop, unzip, terminator,
+                     tmux, screen)
+    vim           Install Vim (.vimrc and Vundle Plugins)
 
     Quit:
     -----
@@ -104,12 +106,6 @@ read -p "Type a Command: " cmd
             ;;
         apache)
             bash ./bin/server/apache.sh
-            echo ""
-            echo "====================================================================="
-            echo ""
-            ;;
-        awscli)
-            bash ./bin/server/awscli.sh
             echo ""
             echo "====================================================================="
             echo ""
@@ -151,12 +147,6 @@ read -p "Type a Command: " cmd
             ;;
         docker-machine)
             bash ./bin/server/docker-machine.sh
-            echo ""
-            echo "====================================================================="
-            echo ""
-            ;;
-        iperf)
-            bash ./bin/server/benchmark/iperf.sh
             echo ""
             echo "====================================================================="
             echo ""
@@ -275,12 +265,6 @@ read -p "Type a Command: " cmd
             echo "====================================================================="
             echo ""
             ;;
-        sysbench)
-            bash ./bin/server/benchmark/sysbench.sh
-            echo ""
-            echo "====================================================================="
-            echo ""
-            ;;
         terraform)
             bash ./bin/server/hashicorp/terraform.sh
             echo ""
@@ -307,12 +291,6 @@ read -p "Type a Command: " cmd
             ;;
         vim)
             bash ./bin/vim.sh
-            echo ""
-            echo "====================================================================="
-            echo ""
-            ;;
-        wrk2)
-            bash ./bin/server/benchmark/wrk2.sh
             echo ""
             echo "====================================================================="
             echo ""
