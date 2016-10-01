@@ -7,6 +7,7 @@ fi
 sudo apt-get install -y vim
 
 cp $PROJECT_FILE_PATH/.vimrc ~
+cp $PROJECT_FILE_PATH/.vim ~
 
 # Install Vundle (For VIM Plugins)
 if [ ! -d ~/.vim/bundle/Vundle.vim ]; then

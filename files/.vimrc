@@ -14,22 +14,35 @@ call vundle#rc()
 " vundle repo
 Bundle 'gmarik/Vundle.vim'
 
-" github repos
+" productivity
 Plugin 'rking/ag.vim'
 Plugin 'tpope/vim-pathogen'
 Plugin 'scrooloose/nerdtree'
 Plugin 'kien/ctrlp.vim'
 Plugin 'flazz/vim-colorschemes'
 Plugin 'benjaminwhite/Benokai'
-Plugin 'hail2u/vim-css3-syntax'
-Plugin 'pangloss/vim-javascript'
-Plugin 'tpope/vim-markdown'
-Plugin 'othree/html5.vim'
-Plugin 'jnwhiteh/vim-golang'
-Plugin 'hdima/python-syntax'
-Plugin 'Glench/Vim-Jinja2-Syntax'
-Plugin 'StanAngeloff/php.vim'
 Plugin 'metakirby5/codi.vim'
+Plugin 'bling/vim-airline'
+Plugin 'ervandew/supertab'
+
+" languages
+Plugin 'hail2u/vim-css3-syntax'
+Plugin 'Glench/Vim-Jinja2-Syntax'
+Plugin 'tpope/vim-markdown'
+Plugin 'jnwhiteh/vim-golang'
+Plugin 'StanAngeloff/php.vim'
+Plugin 'hdima/python-syntax'
+Plugin 'pangloss/vim-javascript'
+Plugin 'othree/html5.vim'
+Plugin 'stephpy/vim-yaml'
+
+" misc
+Bundle "editorconfig/editorconfig-vim"
+Bundle "vim-scripts/gitignore"
+
+" error handling
+Bundle "nvie/vim-flake8"
+Bundle "scrooloose/syntastic"
 
 " For vim-airline
 let g:airline#extensions#tabline#enabled = 1
@@ -46,6 +59,9 @@ let g:ctrlp_custom_ignore = {
 """"""""""""""""""""""""""""""""""""""""
 " General VIM
 """"""""""""""""""""""""""""""""""""""""
+
+" allow backspacing over everything in insert mode
+set backspace=indent,eol,start
 
 " show line numbers
 set number
@@ -67,7 +83,8 @@ set formatoptions+=l
 
 " detect file type, turn on that type's plugins and indent preferences
 " Turned off -- This was annoying when copy/pasting causes indent problems
-" filetype plugin indent on
+filetype plugin on
+filetype plugin indent on
 
 " Show matching brackets when text indicator is over them
 set showmatch
