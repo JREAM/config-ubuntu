@@ -4,9 +4,16 @@ if [[ ! $INSTALL_SCRIPT ]]; then
     exit
 fi
 
+# Install Yarn, It's Faster than NPM
+sudo apt-key adv --keyserver pgp.mit.edu --recv D101F7899D41F3C3
+echo "deb http://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
+sudo apt-get update
+
 sudo apt-get install -y\
     nodejs\
-    npm
+    npm\
+    yarn
+
 
 # Get Permissions for global install
 if [ ! -d "$HOME/.node_modules" ] ; then
