@@ -24,6 +24,8 @@ composer global require --prefer-dist phpmd/phpmd
 composer global require --prefer-dist squizlabs/php_codesniffer
 composer global require --prefer-dist phpdocumentor/phpdocumentor:2.*
 
+sudo chown $SUDO_USER:$SUDO_USER -R /home/$SUDO_USER/.composer
+
 echo "( + ) Done installing composer packages"
 echo '( + ) Ensure your ~/.profile has the following:
 # ---------------------------------------------

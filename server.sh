@@ -44,6 +44,7 @@ cat <<- command_list
     java          Install JRE and JDK (default-jre, not Oracle)
     node          Install NodeJS (nodejs, npm: n, bower, gulp)
     php           Installs PHP5 (<=15 Wily & Below) or PHP7 (>=17 Xenial)
+    php-composer  Install/Update PHP Composer Package
     py            Install Python packages (pip, bpython, python-dev, mycli, virtualenvwrapper)
     rb            Install Ruby (ruby, ruby-dev, gem)
 
@@ -211,6 +212,12 @@ read -p "Type a Command: " cmd
             ;;
         perm)
             bash ./bin/perm.sh
+            echo ""
+            echo "====================================================================="
+            echo ""
+            ;;
+        php-composer)
+            bash ./bin/server/php-composer.sh
             echo ""
             echo "====================================================================="
             echo ""

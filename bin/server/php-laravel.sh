@@ -5,8 +5,11 @@ if [[ ! $INSTALL_SCRIPT ]]; then
 fi
 
 # Make sure permissions to the composer folder are correct
-sudo chown -R $USER:$USER ~/.composer
-sudo chown g+rw ~/.composer
+sudo chown -R $SUDO_USER:$SUDO_USER ~/.composer
+sudo chmod g+rw ~/.composer
+
+# TODO: Check if dir exists
+sudo chmod gu+x ~/.composer/bin
 
 composer global require "laravel/installer"
 
