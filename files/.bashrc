@@ -83,6 +83,9 @@ alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
 # Enable aliases to be sudoed
 alias sudo="sudo "
 
+# Fetch all remote git branches to local in working directory
+alias gitall='git branch -r | grep -v "\->" | while read remote; do git branch --track "${remote#origin/}" "$remote"; done'
+
 # Make find a little easier
 alias ffile="find . -name "
 ftext () { grep -rnwi "$1" . ;}

@@ -8,24 +8,31 @@ fi
 if [[ $OS_CODENAME == 'xenial' ]]; then
     # PHP 7x
     sudo apt-get install -y\
-        php7.0\
-        php7.0-dev\
-        php7.0-cli\
-        php7.0-fpm\
-        php7.0-curl\
-        php7.0-gd\
-        php7.0-intl\
-        php7.0-json\
-        php7.0-mbstring\
-        php7.0-mcrypt\
-        php7.0-mysql\
-        php7.0-soap\
-        php7.0-sqlite\
-        php7.0-tidy\
-        php7.0-xmlrpc\
-        php7.0-zip\
+        php7.1\
+        php7.1-bz2\
+        php7.1-dev\
+        php7.1-cli\
+        php7.1-common\
+        php7.1-curl\
+        php7.1-fpm\
+        php7.1-gd\
+        php7.1-imap\
+        php7.1-intl\
+        php7.1-json\
+        php7.1-mbstring\
+        php7.1-mcrypt\
+        php7.1-mysql\
+        php7.1-odbc\
+        php7.1-opcache\
+        php7.1-readline\
+        php7.1-soap\
+        php7.1-sqlite3\
+        php7.1-tidy\
+        php7.1-xml\
+        php7.1-xmlrpc\
+        php7.1-zip\
         php-redis\
-        libapache2-mod-php7.0
+        libapache2-mod-php7.1
 
         # IMPORTANT: Do NOT have a trailing \ on the LAST item!
         # Turn on Short Open Tags

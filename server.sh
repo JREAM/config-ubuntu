@@ -43,7 +43,8 @@ cat <<- command_list
     go            Install Google Go
     java          Install JRE and JDK (default-jre, not Oracle)
     node          Install NodeJS (nodejs, npm: n, bower, gulp)
-    php           Installs PHP5 (<=15 Wily & Below) or PHP7 (>=17 Xenial)
+    php7.0        Install PHP7 with common modules
+    php7.1        Install PHP7.1 with common modules (Phalcon not ready)
     php-composer  Install/Update PHP Composer Package
     py            Install Python packages (pip, bpython, python-dev, mycli, virtualenvwrapper)
     rb            Install Ruby (ruby, ruby-dev, gem)
@@ -234,8 +235,14 @@ read -p "Type a Command: " cmd
             echo "====================================================================="
             echo ""
             ;;
-        php)
-            bash ./bin/server/php.sh
+        php7.0)
+            bash ./bin/server/php7.0.sh
+            echo ""
+            echo "====================================================================="
+            echo ""
+            ;;
+        php7.1)
+            bash ./bin/server/php7.1.sh
             echo ""
             echo "====================================================================="
             echo ""
