@@ -27,6 +27,16 @@ sudo apt-get install -y\
 
 # IMPORTANT: Do NOT have a trailing \ on the LAST item!
 
+# Ensure the dotfile submodule is installed
+if [ "$(ls -A $PROJECT_DOTFILE_PATH)"  ]; then
+    echo "(+) Dotfiles exists, copying";
+else
+    echo "(!) Error: You must install the submodule(s)."
+    echo "    $ git submodule init && git submodule update"
+    sleep 10
+    exit
+fi
+
 cp $PROJECT_DOTFILE_PATH/.config ~/.config
 echo " (+) Terminator config added."
 

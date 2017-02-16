@@ -6,6 +6,16 @@ fi
 
 sudo apt-get install -y vim
 
+# Ensure the dotfile submodule is installed
+if [ "$(ls -A $PROJECT_DOTFILE_PATH)"  ]; then
+    echo "(+) Dotfiles exists, copying";
+else
+    echo "(!) Error: You must install the submodule(s)."
+    echo "    $ git submodule init && git submodule update"
+    sleep 10
+    exit
+fi
+
 cp $PROJECT_DOTFILE_PATH/.vimrc ~
 cp $PROJECT_DOTFILE_PATH/.vim ~
 

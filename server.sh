@@ -25,6 +25,7 @@ echo ""
 echo "====================================================================="
 echo ""
 
+
 while true; do
 cat <<- command_list
     Servers:

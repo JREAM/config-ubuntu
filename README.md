@@ -6,6 +6,20 @@ as a Desktop and a Server.
 
 Terminal Help Has been moved: [https://github.com/JREAM/ubuntu-cheatsheet](https://github.com/JREAM/ubuntu-cheatsheet)
 
+## Install
+
+Since there is a git submodule, you need to run the following:
+```
+git clone git@github.com:JREAM/config-ubuntu.git
+git submodule init && git submodule update
+```
+
+Or in one line:
+```
+git clone git@github.com:JREAM/config-ubuntu.git && git submodule init && git
+submodule update
+```
+
 ### Script Files
 There are two main script files:
 
@@ -122,7 +136,7 @@ This is for tweaking the UI
         compiz-plugins\
         dconf-editor\
         synaptic
-        
+
 - The Tweak Tool works great for Applying the Numix theme
 - Compiz is good for customizing everything, make sure to save a profile when you make your UI how you like.
 
@@ -356,7 +370,7 @@ Python is installed by default on Ubuntu, version 2.7 is suitable. I strongly re
     sudo apt-get install -y python-dev
     sudo apt-get install -y python-pip
     sudo pip install fabric virtualenv virtualenvwrapper
-    
+
 If you plan on using SSL or PIL(Pillow) for Image manipulation,  I'd have these dependencies pre-installed:
 
     sudo apt-get install -y\
@@ -419,12 +433,12 @@ Or pick a specific version:
 [(Back to top)](#table-of-contents)
 
 ## Java
-I use the default JRE/JDK, the others are up to you. 
+I use the default JRE/JDK, the others are up to you.
 
 #### To insteall Default JRE/JDK
 
-    sudo apt-get install -y\ 
-        default-jre\ 
+    sudo apt-get install -y\
+        default-jre\
         default-jdk
 
 #### To install OpenJDK (7, 8, or 9)
@@ -432,11 +446,11 @@ I use the default JRE/JDK, the others are up to you.
     sudo apt-get install -y\
         openjdk-8-jdk
         openjdk-8-jre
-        
+
 #### To install Oracle JDK (7, 8, or 9)
-    
+
     sudo add-apt-repository ppa:webupd8team/java
-    
+
     sudo apt-get install oracle-java7-installer
     sudo apt-get install oracle-java8-installer
     sudo apt-get install oracle-java9-installer
