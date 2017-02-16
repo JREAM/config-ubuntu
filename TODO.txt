@@ -1,3 +1,0 @@
-- Need to set prompt for User [default: logged in user or root]: to apply to
-  installs, otherwise there are a few bugs when running sudo even as the user it
-seems.

@@ -4,13 +4,13 @@ if [[ ! $INSTALL_SCRIPT ]]; then
     exit
 fi
 
-cp $PROJECT_FILE_PATH/.bashrc ~
-cp $PROJECT_FILE_PATH/.gitignore ~
-cp $PROJECT_FILE_PATH/.gitconfig ~
-cp $PROJECT_FILE_PATH/.exports ~
-cp $PROJECT_FILE_PATH/.profile ~
-cp $PROJECT_FILE_PATH/.editorconfig ~
-cp $PROJECT_FILE_PATH/.jscsrc ~
+cp $PROJECT_DOTFILE_PATH/.bashrc ~
+cp $PROJECT_DOTFILE_PATH/.gitignore ~
+cp $PROJECT_DOTFILE_PATH/.gitconfig ~
+cp $PROJECT_DOTFILE_PATH/.exports ~
+cp $PROJECT_DOTFILE_PATH/.profile ~
+cp $PROJECT_DOTFILE_PATH/.editorconfig ~
+cp $PROJECT_DOTFILE_PATH/.jscsrc ~
 
 # Reload Bash Config
 source ~/.bashrc

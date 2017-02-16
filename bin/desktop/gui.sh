@@ -27,14 +27,14 @@ sudo apt-get install -y\
 
 # IMPORTANT: Do NOT have a trailing \ on the LAST item!
 
-cp $PROJECT_FILE_PATH/.config ~/.config
+cp $PROJECT_DOTFILE_PATH/.config ~/.config
 echo " (+) Terminator config added."
 
-echo $PROJECT_FILE_PATH
+echo $PROJECT_DOTFILE_PATH
 
 if [ -f ~/compizconfig.profile ]; then
     rm ~/compizconfig.profile
 fi
 
-cp $PROJECT_FILE_PATH/compizconfig.profile ~
+cp $PROJECT_DOTFILE_PATH/compizconfig.profile ~
 echo " (+) Make sure to Open Compiz and load the compizconfig.profile in ~"

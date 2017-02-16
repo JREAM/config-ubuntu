@@ -1,0 +1,3 @@
+[submodule "dotfiles"]
+	path = dotfiles
+	url = git@github.com:JREAM/dotfiles.git
