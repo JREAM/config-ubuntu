@@ -11,12 +11,13 @@ Terminal Help Has been moved: [https://github.com/JREAM/ubuntu-cheatsheet](https
 Since there is a git submodule, you need to run the following:
 ```
 git clone https://github.com/JREAM/config-ubuntu.git
+cd config-ubuntu
 git submodule init && git submodule update
 ```
 
 Or in one line:
 ```
-git clone https://github.com/JREAM/config-ubuntu.git && git submodule init && git submodule update
+git clone https://github.com/JREAM/config-ubuntu.git && cd config-ubuntu && git submodule init && git submodule update
 ```
 
 ### Script Files
