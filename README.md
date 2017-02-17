@@ -1,7 +1,7 @@
 # Config Ubuntu
 
-This is for a [Ubuntu](http://ubuntu.com/desktop), I have run this on `14`, `15`, and `16`
-as a Desktop and a Server.
+This is for [Ubuntu](http://ubuntu.com/desktop) 16+ Desktop and/or Server.
+Older versions are no longer supported.
 
 
 Terminal Help Has been moved: [https://github.com/JREAM/ubuntu-cheatsheet](https://github.com/JREAM/ubuntu-cheatsheet)
@@ -21,10 +21,17 @@ git clone https://github.com/JREAM/config-ubuntu.git && cd config-ubuntu && git 
 ```
 
 ### Script Files
-There are two main script files:
+For user specific items such as dotfiles, it will install under the user running
+the `sudo` command. So if i do `jesse@x1> sudo ./server.sh` and run `dot` all
+the dotfiles will be set with my username. (This does not apply to global
+packages.)
 
-- `./desktop.sh` Options to install desktop items.
-- `./server.sh` Options to install server items, you can do this on your desktop too.
+- **Run a main script file**:
+- `sudo ./desktop.sh` Options to install desktop items.
+- `sudo ./server.sh` Options to install server items, you can do this on your desktop also.
+- `sudo ./devops.sh` Options to install devops items, you can do this on your desktop also.
+
+* You must run from a main script otherwise paths and variables would be off. There is a built in check to prevent this also.
 
 ***
 
@@ -706,6 +713,6 @@ Running Windows 8 in Virtualbox has an odd error, run this in `cmd` or `powershe
 
 ***
 
-By [JREAM](http://jream.com) 2014-2015
+By [JREAM](http://jream.com) 2014-2017
 
 [(Back to top)](#table-of-contents)
