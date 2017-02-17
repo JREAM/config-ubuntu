@@ -1,6 +1,6 @@
 #!/bin/bash
 if [[ ! $INSTALL_SCRIPT ]]; then
-    echo "(!) Error: You must use the ./install.sh script."
+    echo "(!) Error: You must use the installer script."
     exit
 fi
 
@@ -12,3 +12,4 @@ sudo apt-get install -y\
 echo "(+) Complete! Installed MySQL Workbench"
 echo "    MySQL Workbench"
 
+sleep 4

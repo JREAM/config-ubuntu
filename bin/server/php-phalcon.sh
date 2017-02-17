@@ -1,6 +1,6 @@
 #!/bin/bash
 if [[ ! $INSTALL_SCRIPT ]]; then
-    echo "(!) Error: You must use the ./install.sh script."
+    echo "(!) Error: You must use the installer script."
     exit
 fi
 
@@ -46,3 +46,5 @@ if [ ! -L /usr/bin/phalcon ]; then
 fi
 
 echo "(+) Phalcon and Phalcon Tools Installed, use $ phalcon"
+
+sleep 4

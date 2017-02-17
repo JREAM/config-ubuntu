@@ -1,6 +1,6 @@
 #!/bin/bash
 if [[ ! $INSTALL_SCRIPT ]]; then
-    echo "(!) Error: You must use the ./install.sh script."
+    echo "(!) Error: You must use the installer script."
     exit
 fi
 
@@ -13,3 +13,5 @@ sudo mv nomad /usr/local/bin
 rm nomad.zip
 
 echo "(+) Complete! Run with $ nomad"
+
+sleep 4

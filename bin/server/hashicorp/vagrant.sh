@@ -1,6 +1,6 @@
 #!/bin/bash
 if [[ ! $INSTALL_SCRIPT ]]; then
-    echo "(!) Error: You must use the ./install.sh script."
+    echo "(!) Error: You must use the installer script."
     exit
 fi
 
@@ -12,3 +12,5 @@ sudo dpkg -i vagrant.deb
 rm vagrant.deb
 
 echo "(+) Complete! Run with $ vagrant"
+
+sleep 4

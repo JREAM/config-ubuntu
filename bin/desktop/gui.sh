@@ -1,6 +1,6 @@
 #!/bin/bash
 if [[ ! $INSTALL_SCRIPT ]]; then
-    echo "(!) Error: You must use the ./install.sh script."
+    echo "(!) Error: You must use the installer script."
     exit
 fi
 
@@ -37,14 +37,16 @@ else
     exit
 fi
 
-cp $PROJECT_DOTFILE_PATH/.config ~/.config
+cp $PROJECT_DOTFILE_PATH/.config $HOME_PATH/.config
 echo " (+) Terminator config added."
 
 echo $PROJECT_DOTFILE_PATH
 
-if [ -f ~/compizconfig.profile ]; then
-    rm ~/compizconfig.profile
+if [ -f $HOME_PATH/compizconfig.profile ]; then
+    rm $HOME_PATH/compizconfig.profile
 fi
 
 cp $PROJECT_DOTFILE_PATH/compizconfig.profile ~
 echo " (+) Make sure to Open Compiz and load the compizconfig.profile in ~"
+
+sleep 4

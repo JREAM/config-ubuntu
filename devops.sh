@@ -13,7 +13,7 @@ source ./bin/_export_user_variables.sh
 
 echo "====================================================================="
 echo ""
-echo "                        JREAM - Ubuntu Desktop                       "
+echo "                        JREAM - Ubuntu Server                        "
 echo ""
 echo " * To exit at anytime press CTRL+C"
 echo " * Installation runs after command is entered."
@@ -23,25 +23,32 @@ echo ""
 
 while true; do
 cat <<- command_list
-    Configure:
-    ----------
-    btnleft     Move Close/Min/Max to Left on Windows
-    btnright    Move Min/Max/Close to Right on Windows (Familiar to Windows OS)
+    DevOps:
+    -------
+    awscli         Install AWS CLI tools
+    docker         Install Docker
+    docker-compose Install Docker Compose
+    docker-machine Install Docker Machine
+    docker-ac      Install Docker Autocomplete CLI
+    ansible        Install Ansible Provisioner
+    saltstack      Install SaltStack Provisioner
+    consul         Install Hashicorp Consul
+    nomad          Install Hashicorp Nomad
+    packer         Install Hashicorp Packer
+    serf           Install Hashicorp Serf
+    terraform      Install Hashicorp Terraform
+    vault          Install Hashicorp Vault
+    vagrant        Install Hashicorp Vagrant
 
-    gnome       Install Gnome 3 GUI Tools (You toggle at login or see README)
-    gui         Install Ubuntu GUI Tools (Compiz, Unity Tweak)
-    hotkeys     Removes Email/WWW hotkeys, adds <Super+e> to Home Folder
-    numix       Install Numix Theme
+    Benchmarking:
+    -------------
+    iperf          Install iperf CLI util
+    sysbench       Install sysbench CLI util
+    wrk2           Install wrk2 CLI util
 
     Utilities:
     ----------
-    dot         Copy Dotfiles (.bashrc, .gitconfig, .gitignore)
-    perm        Update /usr/local permissions
-    mysqlwb     Install MySQL Workbench
-    security    Install ClamAV, RKHunter (read instructions after install)
-    util        Install Utilities
-                   git, curl, htop, unzip, terminator, tmux, screen
-    vim         Install Vim (.vimrc and Vundle Plugins)
+    security      Install ClamAV, RKHunter (read instructions after install)
 
     Quit:
     -----
@@ -55,58 +62,68 @@ echo ""
 
 read -p "Type a Command: " cmd
 
-
     case $cmd in
-        btnleft)
-            bash ./bin/desktop/btn-left.sh
+        awscli)
+            bash ./bin/server/awscli.sh
             echo ""
             echo "====================================================================="
             echo ""
             ;;
-        btnright)
-            bash ./bin/desktop/btn-right.sh
+        consul)
+            bash ./bin/server/hashicorp/consul.sh
             echo ""
             echo "====================================================================="
             echo ""
             ;;
-        dot)
-            bash ./bin/dot.sh
+        docker)
+            bash ./bin/server/docker.sh
             echo ""
             echo "====================================================================="
             echo ""
             ;;
-        gnome)
-            bash ./bin/desktop/gnome.sh
+        docker-ac)
+            bash ./bin/server/docker-ac.sh
             echo ""
             echo "====================================================================="
             echo ""
             ;;
-        gui)
-            bash ./bin/desktop/gui.sh
+        docker-compose)
+            bash ./bin/server/docker-compose.sh
+            echo ""
+            echo "====================================================================="
+            ;;
+        docker-machine)
+            bash ./bin/server/docker-machine.sh
             echo ""
             echo "====================================================================="
             echo ""
             ;;
-        hotkeys)
-            bash ./bin/desktop/hotkeys.sh
+        iperf)
+            bash ./bin/server/benchmark/iperf.sh
             echo ""
             echo "====================================================================="
             echo ""
             ;;
-        mysqlwb)
-            bash ./bin/desktop/mysql-workbench.sh
+        nomad)
+            bash ./bin/server/hashicorp/nomad.sh
             echo ""
             echo "====================================================================="
             echo ""
             ;;
-        numix)
-            bash ./bin/desktop/numix.sh
+        packer)
+            bash ./bin/server/hashicorp/packer.sh
             echo ""
             echo "====================================================================="
             echo ""
             ;;
-        perm)
-            bash ./bin/perm.sh
+        saltstack)
+            bash ./bin/server/saltstack.sh
+            echo ""
+            echo "====================================================================="
+            echo ""
+            ;;
+        serf)
+            bash ./bin/server/hashicorp/serf.sh
             echo ""
             echo "====================================================================="
             echo ""
@@ -117,14 +134,32 @@ read -p "Type a Command: " cmd
             echo "====================================================================="
             echo ""
             ;;
-        util)
-            bash ./bin/util.sh
+        sysbench)
+            bash ./bin/server/benchmark/sysbench.sh
             echo ""
             echo "====================================================================="
             echo ""
             ;;
-        vim)
-            bash ./bin/vim.sh
+        terraform)
+            bash ./bin/server/hashicorp/terraform.sh
+            echo ""
+            echo "====================================================================="
+            echo ""
+            ;;
+        vagrant)
+            bash ./bin/server/hashicorp/vagrant.sh
+            echo ""
+            echo "====================================================================="
+            echo ""
+            ;;
+        vault)
+            bash ./bin/server/hashicorp/vault.sh
+            echo ""
+            echo "====================================================================="
+            echo ""
+            ;;
+        wrk2)
+            bash ./bin/server/benchmark/wrk2.sh
             echo ""
             echo "====================================================================="
             echo ""

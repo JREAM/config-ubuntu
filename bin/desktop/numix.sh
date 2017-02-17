@@ -1,7 +1,7 @@
 #!/bin/bash
 # This should come first for PPA's
 if [[ ! $INSTALL_SCRIPT ]]; then
-    echo "(!) Error: You must use the ./install.sh script."
+    echo "(!) Error: You must use the installer script."
     exit
 fi
 
@@ -26,3 +26,4 @@ sudo apt-get install -y\
     numix-icon-theme\
     numix-icon-theme-circle
 
+sleep 4

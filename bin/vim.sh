@@ -1,6 +1,6 @@
 #!/bin/bash
 if [[ ! $INSTALL_SCRIPT ]]; then
-    echo "(!) Error: You must use the ./install.sh script."
+    echo "(!) Error: You must use the installer script."
     exit
 fi
 
@@ -16,16 +16,25 @@ else
     exit
 fi
 
-cp $PROJECT_DOTFILE_PATH/.vimrc ~
-cp $PROJECT_DOTFILE_PATH/.vim ~
+# vimrc is a file, vim is a folder
+dotfiles=('vimrc')
+for i in "${dotfiles[@]}"
+do
+    src="$PROJECT_DOTFILE_PATH/.$i"
+    dest="$HOME_PATH/"
+
+    # Force Copy Overwrite
+    sudo yes | cp -rf $src $dest
+    sudo chown $USER:$USER "$HOME_PATH/.$i"
+done
 
 # Install Vundle (For VIM Plugins)
-if [ ! -d ~/.vim/bundle/Vundle.vim ]; then
-    git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+if [ ! -d $HOME_PATH/.vim/bundle/Vundle.vim ]; then
+    git clone https://github.com/gmarik/Vundle.vim.git $HOME_PATH/.vim/bundle/Vundle.vim
 fi
 
 vim +PluginInstall +qall
 
 echo "(+) Complete! Run with $ vim"
 
-
+sleep 4

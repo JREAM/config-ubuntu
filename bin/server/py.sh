@@ -1,6 +1,6 @@
 #!/bin/bash
 if [[ ! $INSTALL_SCRIPT ]]; then
-    echo "(!) Error: You must use the ./install.sh script."
+    echo "(!) Error: You must use the installer script."
     exit
 fi
 
@@ -19,3 +19,5 @@ pip install bpython virtualenv virtualenvwrapper fabric mycli --upgrade
 
 echo "(+) Complete! Run with $ python, $ bpython, and $ pip"
 echo "    PIP Packages: bpython, virtualenvwrapper, fabric, mycli"
+
+sleep 4

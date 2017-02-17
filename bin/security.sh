@@ -1,6 +1,6 @@
 #!/bin/bash
 if [[ ! $INSTALL_SCRIPT ]]; then
-    echo "(!) Error: You must use the ./install.sh script."
+    echo "(!) Error: You must use the installer script."
     exit
 fi
 
@@ -23,5 +23,5 @@ echo "-----------------------------------------------------"
 echo "To run ClamAV: $ clamscan (try --help for more, it does not auto scan)"
 echo "To run RKHunter: $ sudo rkhunter -c"
 
-
+sleep 4
 

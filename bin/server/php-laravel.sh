@@ -1,16 +1,18 @@
 #!/bin/bash
 if [[ ! $INSTALL_SCRIPT ]]; then
-    echo "(!) Error: You must use the ./install.sh script."
+    echo "(!) Error: You must use the installer script."
     exit
 fi
 
 # Make sure permissions to the composer folder are correct
-sudo chown -R $SUDO_USER:$SUDO_USER ~/.composer
-sudo chmod g+rw ~/.composer
+sudo chown -R $USER:$USER $HOME_PATH/.composer
+sudo chmod g+rw $HOME_PATH/.composer
 
 # TODO: Check if dir exists
-sudo chmod gu+x ~/.composer/bin
+sudo chmod gu+x $HOME_PATH/.composer/bin
 
 composer global require "laravel/installer"
 
 echo "(+) Complete, run with $ laravel"
+
+sleep 4

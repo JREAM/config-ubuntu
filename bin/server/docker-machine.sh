@@ -1,6 +1,6 @@
 #!/bin/bash
 if [[ ! $INSTALL_SCRIPT ]]; then
-    echo "(!) Error: You must use the ./install.sh script."
+    echo "(!) Error: You must use the installer script."
     exit
 fi
 
@@ -10,3 +10,5 @@ curl -L https://github.com/docker/machine/releases/download/v0.8.2/docker-machin
     chmod +x /usr/local/bin/docker-machine
 
 echo "(+) Complete! Run with $ docker-machine"
+
+sleep 4

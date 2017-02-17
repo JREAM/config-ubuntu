@@ -1,16 +1,27 @@
 #!/bin/bash
 if [[ ! $INSTALL_SCRIPT ]]; then
-    echo "(!) Error: You must use the ./install.sh script."
+    echo "(!) Error: You must use the installer script."
     exit
 fi
 
-# Copy project folder over
+echo "(+) Installing/Updating PHP Composer"
+# See if we need composer (Duplicate in Phalcon for now)
 if [ ! -f /usr/local/bin/composer ]; then
-    echo "(!) Error: Please install composer through the PHP5 or PHP7 command first."
-    exit
+    curl -sS https://getcomposer.org/installer | php && sudo mv composer.phar /usr/local/bin/composer
+
+    # Add permissions to the composer folder
+    sudo chown -R $USER:$USER $HOME_PATH/.composer
+    sudo chmod g+rw $HOME_PATH/.composer
+else
+    echo $USER
+    # Add permissions to the composer & cache folder BEFORE updating
+    sudo chown -R $USER:$USER $HOME_PATH/.composer
+    sudo chmod g+rw $HOME_PATH/.composer
+
+    sudo composer self-update
 fi
 
-echo "(+) Installing composer packages for user"
+echo "(+) Installing/Updating composer packages for $USER"
 
 composer global require --prefer-dist hirak/prestissimo
 composer global require --prefer-dist phpunit/phpunit
@@ -24,19 +35,21 @@ composer global require --prefer-dist phpmd/phpmd
 composer global require --prefer-dist squizlabs/php_codesniffer
 composer global require --prefer-dist phpdocumentor/phpdocumentor:2.*
 
-sudo chown $SUDO_USER:$SUDO_USER -R /home/$SUDO_USER/.composer
+sudo chown $USER:$USER -R $HOME_PATH/.composer
 
 echo "( + ) Done installing composer packages"
-echo '( + ) Ensure your ~/.profile has the following:
+echo '( + ) Ensure your $HOME_PATH/.profile has the following:
 # ---------------------------------------------
 
-if [ -d "$HOME/.composer/vendor/bin" ] ; then
-    PATH="$HOME/.composer/vendor/bin:$PATH"
+if [ -d "$USER/.composer/vendor/bin" ] ; then
+    PATH="$USER/.composer/vendor/bin:$PATH"
 fi
 
 # ---------------------------------------------
 
-Then run $ source ~/.profile
+Then run $ source $HOME_PATH/.profile
 
 # ---------------------------------------------
 '
+
+sleep 4

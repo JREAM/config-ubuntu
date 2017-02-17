@@ -1,6 +1,6 @@
 #!/bin/bash
 if [[ ! $INSTALL_SCRIPT ]]; then
-    echo "(!) Error: You must use the ./install.sh script."
+    echo "(!) Error: You must use the installer script."
     exit
 fi
 
@@ -16,3 +16,5 @@ sudo apt-get install -y salt-api\
 # IMPORTANT: Do NOT have a trailing \ on the LAST item!
 
 echo "(+) Complete! Use with $ salt, salt-cloud, salt-msater, salt-minion, salt-shh, salt-syndic"
+
+sleep 4

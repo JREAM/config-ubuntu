@@ -1,6 +1,6 @@
 #!/bin/bash
 if [[ ! $INSTALL_SCRIPT ]]; then
-    echo "(!) Error: You must use the ./install.sh script."
+    echo "(!) Error: You must use the installer script."
     exit
 fi
 
@@ -20,4 +20,4 @@ echo "Email: disabled"
 echo "WWW: disable"
 echo "Home Folder: <Super>e"
 
-
+sleep 4

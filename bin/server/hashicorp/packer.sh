@@ -1,6 +1,6 @@
 #!/bin/bash
 if [[ ! $INSTALL_SCRIPT ]]; then
-    echo "(!) Error: You must use the ./install.sh script."
+    echo "(!) Error: You must use the installer script."
     exit
 fi
 
@@ -11,3 +11,5 @@ sudo mv packer /usr/local/bin
 rm packer.zip
 
 echo "(+) Complete! Run with $ packer"
+
+sleep 4

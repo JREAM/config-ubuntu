@@ -1,6 +1,6 @@
 #!/bin/bash
 if [[ ! $INSTALL_SCRIPT ]]; then
-    echo "(!) Error: You must use the ./install.sh script."
+    echo "(!) Error: You must use the installer script."
     exit
 fi
 
@@ -42,3 +42,5 @@ sudo usermod -aG docker $USER
 echo "(+) Complete! Run with $ docker"
 echo "    If you are using UFW, please see:"
 echo "    https://docs.docker.com/engine/installation/linux/ubuntulinux/#/enable-ufw-forwarding"
+
+sleep 4

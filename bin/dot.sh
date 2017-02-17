@@ -1,12 +1,12 @@
 #!/bin/bash
 if [[ ! $INSTALL_SCRIPT ]]; then
-    echo "(!) Error: You must use the ./install.sh script."
+    echo "(!) Error: You must use the installer script."
     exit
 fi
 
 # Ensure the dotfile submodule is installed
 if [ "$(ls -A $PROJECT_DOTFILE_PATH)"  ]; then
-    echo "(+) Dotfiles exists, copying";
+    echo "(+) Dotfiles exists, overwriting old.";
 else
     echo "(!) Error: You must install the submodule(s)."
     echo "    $ git submodule init && git submodule update"
@@ -14,16 +14,32 @@ else
     exit
 fi
 
-cp $PROJECT_DOTFILE_PATH/.bashrc ~
-cp $PROJECT_DOTFILE_PATH/.gitignore ~
-cp $PROJECT_DOTFILE_PATH/.gitconfig ~
-cp $PROJECT_DOTFILE_PATH/.exports ~
-cp $PROJECT_DOTFILE_PATH/.profile ~
-cp $PROJECT_DOTFILE_PATH/.editorconfig ~
-cp $PROJECT_DOTFILE_PATH/.jscsrc ~
+dotfiles=(
+    'bashrc'
+    'editorconfig'
+    'exports'
+    'gitconfig'
+    'gitignore'
+    'jscsrc'
+    'jshintrc'
+    'profile'
+    'vimrc'
+)
+
+for i in "${dotfiles[@]}"
+do
+    src="$PROJECT_DOTFILE_PATH/.$i"
+    dest="$HOME_PATH/"
+
+    # Force Copy Overwrite
+    sudo yes | cp -rf $src $dest
+    sudo chown $USER:$USER "$HOME_PATH/.$i"
+done
 
 # Reload Bash Config
-source ~/.bashrc
-source ~/.profile
+source $HOME_PATH/.bashrc
+source $HOME_PATH/.profile
 
-echo "(+) Complete! Make sure to $ source ~/.bashrc && source ~/.profile"
+echo "(+) Complete! Make sure to $ source $HOME_PATH/.bashrc && source $HOME_PATH/.profile"
+
+sleep 4

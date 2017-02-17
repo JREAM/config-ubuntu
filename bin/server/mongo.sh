@@ -1,6 +1,6 @@
 #!/bin/bash
 if [[ ! $INSTALL_SCRIPT ]]; then
-    echo "(!) Error: You must use the ./install.sh script."
+    echo "(!) Error: You must use the installer script."
     exit
 fi
 
@@ -49,3 +49,5 @@ sudo service mongod start
 echo "(+) Complete! Installed Mongo DB Community Edition."
 echo "    use $ sudo service mongod <command>"
 echo "    Consider getting a GUI like mongochef"
+
+sleep 4
