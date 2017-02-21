@@ -50,6 +50,10 @@ else
     echo " (-) Skipping, $HOME_PATH/projects folder already exists"
 fi
 
+echo "(+) Disabling mpm_event and enabling mpm_prefork"
+# For PHP Not Thread Safe
+sudo a2dismod mpm_event
+sudo a2enmod mpm_prefork
 
 # Some Apache Finishing up
 sudo a2enmod rewrite headers
@@ -61,6 +65,7 @@ echo "(+) You can edit /etc/hosts and append 'projects', eg:"
 echo "    127.0.0.1 localhost projects"
 echo ""
 echo "    And you'll be able to access http://projects for your $HOME_PATH/projects folder!"
+echo "    If PHP doesn't parse run sudo a2dismod mpm_prefork && a2enmod mpm_event"
 echo ""
 
 sleep 4
