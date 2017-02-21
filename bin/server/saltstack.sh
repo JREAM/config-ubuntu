@@ -13,6 +13,7 @@ sudo apt-get install -y salt-api\
     salt-minion\
     salt-ssh\
     salt-syndic
+
 # IMPORTANT: Do NOT have a trailing \ on the LAST item!
 
 echo "(+) Complete! Use with $ salt, salt-cloud, salt-msater, salt-minion, salt-shh, salt-syndic"

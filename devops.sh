@@ -64,66 +64,66 @@ read -p "Type a Command: " cmd
 
     case $cmd in
         awscli)
-            bash ./bin/server/awscli.sh
+            bash ./bin/devops/awscli.sh
             echo ""
             echo "====================================================================="
             echo ""
             ;;
         consul)
-            bash ./bin/server/hashicorp/consul.sh
+            bash ./bin/devops/hashicorp/consul.sh
             echo ""
             echo "====================================================================="
             echo ""
             ;;
         docker)
-            bash ./bin/server/docker.sh
+            bash ./bin/devops/docker.sh
             echo ""
             echo "====================================================================="
             echo ""
             ;;
         docker-ac)
-            bash ./bin/server/docker-ac.sh
+            bash ./bin/devops/docker-ac.sh
             echo ""
             echo "====================================================================="
             echo ""
             ;;
         docker-compose)
-            bash ./bin/server/docker-compose.sh
+            bash ./bin/devops/docker-compose.sh
             echo ""
             echo "====================================================================="
             ;;
         docker-machine)
-            bash ./bin/server/docker-machine.sh
+            bash ./bin/devops/docker-machine.sh
             echo ""
             echo "====================================================================="
             echo ""
             ;;
         iperf)
-            bash ./bin/server/benchmark/iperf.sh
+            bash ./bin/devops/benchmark/iperf.sh
             echo ""
             echo "====================================================================="
             echo ""
             ;;
         nomad)
-            bash ./bin/server/hashicorp/nomad.sh
+            bash ./bin/devops/hashicorp/nomad.sh
             echo ""
             echo "====================================================================="
             echo ""
             ;;
         packer)
-            bash ./bin/server/hashicorp/packer.sh
+            bash ./bin/devops/hashicorp/packer.sh
             echo ""
             echo "====================================================================="
             echo ""
             ;;
         saltstack)
-            bash ./bin/server/saltstack.sh
+            bash ./bin/devops/saltstack.sh
             echo ""
             echo "====================================================================="
             echo ""
             ;;
         serf)
-            bash ./bin/server/hashicorp/serf.sh
+            bash ./bin/devops/hashicorp/serf.sh
             echo ""
             echo "====================================================================="
             echo ""
@@ -135,31 +135,31 @@ read -p "Type a Command: " cmd
             echo ""
             ;;
         sysbench)
-            bash ./bin/server/benchmark/sysbench.sh
+            bash ./bin/devops/benchmark/sysbench.sh
             echo ""
             echo "====================================================================="
             echo ""
             ;;
         terraform)
-            bash ./bin/server/hashicorp/terraform.sh
+            bash ./bin/devops/hashicorp/terraform.sh
             echo ""
             echo "====================================================================="
             echo ""
             ;;
         vagrant)
-            bash ./bin/server/hashicorp/vagrant.sh
+            bash ./bin/devops/hashicorp/vagrant.sh
             echo ""
             echo "====================================================================="
             echo ""
             ;;
         vault)
-            bash ./bin/server/hashicorp/vault.sh
+            bash ./bin/devops/hashicorp/vault.sh
             echo ""
             echo "====================================================================="
             echo ""
             ;;
         wrk2)
-            bash ./bin/server/benchmark/wrk2.sh
+            bash ./bin/devops/benchmark/wrk2.sh
             echo ""
             echo "====================================================================="
             echo ""
