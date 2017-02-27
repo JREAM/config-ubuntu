@@ -22,24 +22,23 @@ if [ ! -f /etc/apache2/sites-available/projects.conf ]; then
 
     echo " (+) Creating projects VirtualHost"
 
-    echo "ServerName projects
-    <VirtualHost *:80>
+echo "<VirtualHost *:80>
+    ServerName projects
 
-        # Indexes + Directory Root.
-        DocumentRoot $HOME_PATH/projects
+    # Indexes + Directory Root.
+    DocumentRoot $HOME_PATH/projects
 
-        # Logfiles
-        ErrorLog  $HOME_PATH/projects/error.log
-        CustomLog $HOME_PATH/projects/access.log combined
+    # Logfiles
+    ErrorLog  $HOME_PATH/projects/error.log
+    CustomLog $HOME_PATH/projects/access.log combined
+</VirtualHost>
 
-    </VirtualHost>
-
-    <Directory $HOME_PATH/projects>
-        Header set Access-Control-Allow-Origin '*'
-        Options Indexes Followsymlinks
-        AllowOverride All
-        Require all granted
-    </Directory>" > projects.conf
+<Directory $HOME_PATH/projects>
+    Header set Access-Control-Allow-Origin '*'
+    Options Indexes Followsymlinks
+    AllowOverride All
+    Require all granted
+</Directory>" > projects.conf
 
     sudo mv projects.conf /etc/apache2/sites-available
     sudo a2ensite projects
