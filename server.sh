@@ -34,6 +34,7 @@ cat <<- command_list
     mongo         Install MongoDB Community Edition
     postgres      Install Postgres
     redis         Install Redis (redis-server)
+    elasticsearch Install Elastic Search
 
     Languages:
     ----------
@@ -86,6 +87,12 @@ read -p "Type a Command: " cmd
             ;;
         dot)
             bash ./bin/dot.sh
+            echo ""
+            echo "====================================================================="
+            echo ""
+            ;;
+        elasticsearch)
+            bash ./bin/server/elasticsearch.sh
             echo ""
             echo "====================================================================="
             echo ""
