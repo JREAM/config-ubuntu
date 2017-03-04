@@ -14,7 +14,7 @@ sudo usermod -aG staff $USER
 echo "(+) Changing /usr/local group to: staff"
 sudo chgrp -R staff /usr/local
 
-echo "(+) Changing /usr/local permissions to: g+rwx"
-sudo chmod -R g+rwx /usr/local
+echo "(+) Changing /usr/local permissions to: g+rws"
+sudo chmod -R g+rws /usr/local
 
 sleep 4

@@ -11,12 +11,12 @@ if [ ! -f /usr/local/bin/composer ]; then
 
     # Add permissions to the composer folder
     sudo chown -R $USER:$USER $HOME_PATH/.composer
-    sudo chmod g+rw $HOME_PATH/.composer
+    sudo chmod g+rws $HOME_PATH/.composer
 else
     echo $USER
     # Add permissions to the composer & cache folder BEFORE updating
     sudo chown -R $USER:$USER $HOME_PATH/.composer
-    sudo chmod g+rw $HOME_PATH/.composer
+    sudo chmod g+rws $HOME_PATH/.composer
 
     sudo composer self-update
 fi
