@@ -58,15 +58,11 @@ sudo apt-get install -y\
     libapache2-mod-wsgi
 
 echo "(+) Copying $HOME_PATH/project folder if it doesn't exist"
-# Copy project folder over
-if [ ! -d "$HOME_PATH/projects" ]; then
-    cp -r $PROJECT_FILE_PATH/projects ~
-    sudo chown -R $USER:www-data $HOME_PATH/projects
-    sudo chmod g+rw $HOME_PATH/projects
-else
-    echo " (-) Skipping, $HOME_PATH/projects folder already exists"
-fi
 
+# Copy project folder over
+bin/bash $PROJECT_BIN_PATH/_mkproject_folder.sh
+
+# Handle Composer
 bash ./php-composer.sh
 
 

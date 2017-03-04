@@ -10,12 +10,8 @@ sudo apt-get install -y\
 
 # IMPORTANT: Do NOT have a trailing \ on the LAST item!
 
-# Copy project folder over
-if [ ! -d "$HOME_PATH/projects" ]; then
-    cp -r $PROJECT_FILE_PATH/projects $HOME_PATH/projects
-else
-    echo " (-) Skipping, $HOME_PATH/projects folder already exists"
-fi
+# Handle the project folder
+/bin/bash $PROJECT_BIN_PATH/_mkproject_folder.sh
 
 # Create VHost for the /home/user/projects folder
 if [ ! -f /etc/apache2/sites-available/projects.conf ]; then
