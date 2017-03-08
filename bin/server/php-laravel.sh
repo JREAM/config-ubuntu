@@ -15,4 +15,6 @@ composer global require "laravel/installer"
 
 echo "(+) Complete, run with $ laravel"
 
-sleep 4
+if [ $SKIP_SLEEP == false ]; then
+    sleep 4
+fi

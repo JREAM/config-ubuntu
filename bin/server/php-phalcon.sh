@@ -38,4 +38,6 @@ fi
 
 echo "(+) Phalcon and Phalcon Tools Installed, use $ phalcon"
 
-sleep 4
+if [ $SKIP_SLEEP == false ]; then
+    sleep 4
+fi

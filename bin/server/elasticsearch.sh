@@ -49,4 +49,6 @@ echo "$ curl -X POST 'http://localhost:9200/tutorial/helloworld/1' -d '{ \"messa
 curl -X POST 'http://localhost:9200/tutorial/helloworld/1' -d '{ "message": "Hello World!" }'
 echo ""
 
-sleep 5
+if [ $SKIP_SLEEP == false ]; then
+    sleep 4
+fi

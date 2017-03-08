@@ -12,4 +12,7 @@ rm consul.zip
 
 echo "(+) Complete! Run with $ consul"
 
-sleep 4
+if [ $SKIP_SLEEP == false ]; then
+    sleep 4
+fi
+

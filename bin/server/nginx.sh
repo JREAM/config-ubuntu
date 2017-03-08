@@ -53,4 +53,7 @@ echo "    127.0.0.1 localhost projects"
 echo ""
 echo "    And you'll be able to access http://projects for your $HOME_PATH/projects folder!"
 echo ""
-sleep 4
+
+if [ $SKIP_SLEEP == false ]; then
+    sleep 4
+fi

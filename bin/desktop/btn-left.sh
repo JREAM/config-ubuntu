@@ -6,4 +6,6 @@ fi
 
 gsettings set org.gnome.desktop.wm.preferences button-layout'close,minimize,maximize:'
 
-sleep 2
+if [ $SKIP_SLEEP == false ]; then
+    sleep 4
+fi

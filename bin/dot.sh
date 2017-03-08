@@ -32,7 +32,7 @@ do
     dest="$HOME_PATH/"
 
     # Force Copy Overwrite
-    sudo yes | cp -rf $src $dest
+    sudo yes 2>/dev/null | cp -rf $src $dest
     sudo chown $USER:$USER "$HOME_PATH/.$i"
 done
 
@@ -42,4 +42,6 @@ source $HOME_PATH/.profile
 
 echo "(+) Complete! Make sure to $ source $HOME_PATH/.bashrc && source $HOME_PATH/.profile"
 
-sleep 4
+if [ $SKIP_SLEEP == false ]; then
+    sleep 4
+fi

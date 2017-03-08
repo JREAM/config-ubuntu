@@ -8,4 +8,7 @@ sudo apt-get install sysbench
 
 echo "(+) Complete! Run with $ sysbench --test=cpu --num-threads=4 --cpu-max-prime=9999 run"
 
-sleep 4
+if [ $SKIP_SLEEP == false ]; then
+    sleep 4
+fi
+

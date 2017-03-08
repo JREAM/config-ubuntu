@@ -50,4 +50,6 @@ echo "(+) Complete! Installed Mongo DB Community Edition."
 echo "    use $ sudo service mongod <command>"
 echo "    Consider getting a GUI like mongochef"
 
-sleep 4
+if [ $SKIP_SLEEP == false ]; then
+    sleep 4
+fi

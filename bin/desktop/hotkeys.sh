@@ -20,4 +20,7 @@ echo "Email: disabled"
 echo "WWW: disable"
 echo "Home Folder: <Super>e"
 
-sleep 4
+if [ $SKIP_SLEEP == false ]; then
+    sleep 4
+fi
+

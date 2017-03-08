@@ -5,6 +5,9 @@
 # Flag this as a proper starting point
 export INSTALL_SCRIPT=true
 
+# Allow an install to pause a brief moment after running
+export SKIP_SLEEP=false
+
 # Source Temporary Environment Variables.
 source ./bin/_export_path_variables.sh
 
@@ -31,6 +34,7 @@ cat <<- command_list
     docker-machine Install Docker Machine
     docker-ac      Install Docker Autocomplete CLI
     ansible        Install Ansible Provisioner
+    saltstack      Install Saltstack Provisioner
     saltstack      Install SaltStack Provisioner
     consul         Install Hashicorp Consul
     nomad          Install Hashicorp Nomad
@@ -124,6 +128,12 @@ read -p "Type a Command: " cmd
             ;;
         serf)
             bash ./bin/devops/hashicorp/serf.sh
+            echo ""
+            echo "====================================================================="
+            echo ""
+            ;;
+        saltstack)
+            bash ./bin/devops/saltstack.sh
             echo ""
             echo "====================================================================="
             echo ""

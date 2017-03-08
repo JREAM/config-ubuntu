@@ -29,4 +29,8 @@ sudo apt-get install -y\
 
 # IMPORTANT: Do NOT have a trailing \ on the LAST item!
 
-sleep 4
+echo "(+) Completed install utilities."
+
+if [ $SKIP_SLEEP == false ]; then
+    sleep 4
+fi

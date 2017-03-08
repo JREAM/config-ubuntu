@@ -32,4 +32,6 @@ sudo n stable
 
 echo "(+) Complete! Run with $ node and $ npm."
 
-sleep 4
+if [ $SKIP_SLEEP == false ]; then
+    sleep 4
+fi

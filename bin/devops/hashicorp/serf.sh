@@ -14,4 +14,7 @@ rm serf.zip
 
 echo "(+) Complete! Run with $ serf"
 
-sleep 4
+if [ $SKIP_SLEEP == false ]; then
+    sleep 4
+fi
+

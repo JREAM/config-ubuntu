@@ -33,6 +33,27 @@ packages.)
 
 * You must run from a main script otherwise paths and variables would be off. There is a built in check to prevent this also.
 
+## Instant Install
+Now you can run an instant install with the `instant-install.sh` file.
+
+- Open `autoinstall.sh` in a text editor.
+- Go down to the `autoinstall` array.
+- Remove the `#` before any items you want to install, example:
+    - `# /bin/dot.sh`
+    - becomes:
+    - `/bin/dot.sh`
+
+Once this is set to your like, run the script:
+```
+sudo ./autoinstall.sh
+> You will be prompted to confirm.
+```
+
+There are two protective measures:
+
+- 1) If nothing is uncommented it will not run.
+- 2) You will be prompted once with a list of packages you uncommented, you must confirm once before installing.
+
 ***
 
 # Table of Contents

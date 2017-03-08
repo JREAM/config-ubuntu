@@ -12,4 +12,6 @@ sudo apt-get install -y ansible
 
 echo "(+) Complete! Use with $ ansible"
 
-sleep 4
+if [ $SKIP_SLEEP == false ]; then
+    sleep 4
+fi

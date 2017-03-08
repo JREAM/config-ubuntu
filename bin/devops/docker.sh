@@ -43,4 +43,6 @@ echo "(+) Complete! Run with $ docker"
 echo "    If you are using UFW, please see:"
 echo "    https://docs.docker.com/engine/installation/linux/ubuntulinux/#/enable-ufw-forwarding"
 
-sleep 4
+if [ $SKIP_SLEEP == false ]; then
+    sleep 4
+fi

@@ -49,4 +49,7 @@ fi
 cp $PROJECT_DOTFILE_PATH/compizconfig.profile ~
 echo " (+) Make sure to Open Compiz and load the compizconfig.profile in ~"
 
-sleep 4
+if [ $SKIP_SLEEP == false ]; then
+    sleep 4
+fi
+

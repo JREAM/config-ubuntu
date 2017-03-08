@@ -52,4 +52,6 @@ Then run $ source $HOME_PATH/.profile
 # ---------------------------------------------
 '
 
-sleep 4
+if [ $SKIP_SLEEP == false ]; then
+    sleep 4
+fi

@@ -10,4 +10,7 @@ echo "(+) Complete! Run with: "
 echo "Start Server:      $ iperf -s -p 8080"
 echo "Connect to Server: $  iperf -c 192.168.72.1 -p 8000"
 
-sleep 4
+if [ $SKIP_SLEEP == false ]; then
+    sleep 4
+fi
+

@@ -63,4 +63,6 @@ echo "    And you'll be able to access http://projects for your $HOME_PATH/proje
 echo "    If PHP doesn't parse run sudo a2dismod mpm_prefork && a2enmod mpm_event"
 echo ""
 
-sleep 4
+if [ $SKIP_SLEEP == false ]; then
+    sleep 4
+fi

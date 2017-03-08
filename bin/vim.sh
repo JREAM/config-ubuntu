@@ -37,4 +37,6 @@ vim +PluginInstall +qall
 
 echo "(+) Complete! Run with $ vim"
 
-sleep 4
+if [ $SKIP_SLEEP == false ]; then
+    sleep 4
+fi

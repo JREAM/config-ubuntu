@@ -14,4 +14,7 @@ rm nomad.zip
 
 echo "(+) Complete! Run with $ nomad"
 
-sleep 4
+if [ $SKIP_SLEEP == false ]; then
+    sleep 4
+fi
+

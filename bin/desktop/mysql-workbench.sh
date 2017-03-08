@@ -12,4 +12,7 @@ sudo apt-get install -y\
 echo "(+) Complete! Installed MySQL Workbench"
 echo "    MySQL Workbench"
 
-sleep 4
+if [ $SKIP_SLEEP == false ]; then
+    sleep 4
+fi
+

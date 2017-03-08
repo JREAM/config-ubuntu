@@ -14,4 +14,6 @@ sudo apt-get install -y\
 echo "(+) Complete! Installed MySQL Utilities."
 echo "    MySQL Server, Client, Utilities"
 
-sleep 4
+if [ $SKIP_SLEEP == false ]; then
+    sleep 4
+fi

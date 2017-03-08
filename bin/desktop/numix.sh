@@ -26,4 +26,7 @@ sudo apt-get install -y\
     numix-icon-theme\
     numix-icon-theme-circle
 
-sleep 4
+if [ $SKIP_SLEEP == false ]; then
+    sleep 4
+fi
+

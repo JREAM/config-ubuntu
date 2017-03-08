@@ -9,4 +9,6 @@ sudo apt-get install -y\
 
 echo "(+) Complete! Connect with $ redis-cli"
 
-sleep 4
+if [ $SKIP_SLEEP == false ]; then
+    sleep 4
+fi

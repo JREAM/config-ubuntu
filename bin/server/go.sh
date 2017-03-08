@@ -16,4 +16,7 @@ echo "(+) Complete! Use with $ go"
 echo "(+) Located: /user/local/go/bin"
 echo "(!) If you are not using the provided .profile make sure to export PATH=\$PATH:/usr/local/go/bin"
 
-sleep 4
+if [ $SKIP_SLEEP == false ]; then
+    sleep 4
+fi
+

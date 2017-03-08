@@ -14,4 +14,7 @@ rm vault.zip
 
 echo "(+) Complete! Run with $ vault"
 
-sleep 4
+if [ $SKIP_SLEEP == false ]; then
+    sleep 4
+fi
+

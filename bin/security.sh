@@ -23,5 +23,7 @@ echo "-----------------------------------------------------"
 echo "To run ClamAV: $ clamscan (try --help for more, it does not auto scan)"
 echo "To run RKHunter: $ sudo rkhunter -c"
 
-sleep 4
+if [ $SKIP_SLEEP == false ]; then
+    sleep 4
+fi
 

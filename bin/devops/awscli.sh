@@ -10,4 +10,6 @@ pip install awscli
 
 echo "(+) Complete! Use with $ aws"
 
-sleep 4
+if [ $SKIP_SLEEP == false ]; then
+    sleep 4
+fi

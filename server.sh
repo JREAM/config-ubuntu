@@ -5,6 +5,9 @@
 # Flag this as a proper starting point
 export INSTALL_SCRIPT=true
 
+# Allow an install to pause a brief moment after running
+export SKIP_SLEEP=false
+
 # Source Temporary Environment Variables.
 source ./bin/_export_path_variables.sh
 

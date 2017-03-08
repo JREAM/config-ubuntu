@@ -13,4 +13,6 @@ sudo apt-get install -y\
 
 echo "(+) Complete! Run with $ ruby, and $ gem"
 
-sleep 4
+if [ $SKIP_SLEEP == false ]; then
+    sleep 4
+fi

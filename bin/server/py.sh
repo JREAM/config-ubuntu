@@ -20,4 +20,6 @@ pip install bpython virtualenv virtualenvwrapper fabric mycli --upgrade
 echo "(+) Complete! Run with $ python, $ bpython, and $ pip"
 echo "    PIP Packages: bpython, virtualenvwrapper, fabric, mycli"
 
-sleep 4
+if [ $SKIP_SLEEP == false ]; then
+    sleep 4
+fi

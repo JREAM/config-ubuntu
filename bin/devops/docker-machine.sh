@@ -11,4 +11,6 @@ curl -L https://github.com/docker/machine/releases/download/v0.8.2/docker-machin
 
 echo "(+) Complete! Run with $ docker-machine"
 
-sleep 4
+if [ $SKIP_SLEEP == false ]; then
+    sleep 4
+fi

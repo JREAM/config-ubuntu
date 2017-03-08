@@ -14,4 +14,6 @@ source $HOME_PATH/.docker-complete
 
 echo "(+) Complete! Run with $ docker ps <tab>"
 
-sleep 4
+if [ $SKIP_SLEEP == false ]; then
+    sleep 4
+fi

@@ -74,4 +74,6 @@ sudo usermod -aG www-data $USER
 echo "(+) Complete, use $ php -v"
 echo "    Visit http://localhost"
 
-sleep 4
+if [ $SKIP_SLEEP == false ]; then
+    sleep 4
+fi

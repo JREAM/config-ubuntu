@@ -9,4 +9,6 @@ sudo apt-get install postgresql postgresql-client
 
 echo "(+) Complete, run with $ sudo su - postgres"
 
-sleep 4
+if [ $SKIP_SLEEP == false ]; then
+    sleep 4
+fi

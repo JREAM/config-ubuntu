@@ -17,4 +17,6 @@ sudo chgrp -R staff /usr/local
 echo "(+) Changing /usr/local permissions to: g+rws"
 sudo chmod -R g+rws /usr/local
 
-sleep 4
+if [ $SKIP_SLEEP == false ]; then
+    sleep 4
+fi

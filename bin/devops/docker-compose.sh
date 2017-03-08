@@ -12,4 +12,6 @@ sudo chmod +x /usr/local/bin/docker-compose
 
 echo "(+) Complete! Run with $ docker-compose"
 
-sleep 4
+if [ $SKIP_SLEEP == false ]; then
+    sleep 4
+fi

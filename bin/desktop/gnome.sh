@@ -11,4 +11,7 @@ echo "(+) To re-configure your gdm/lightdm use: sudo dpkg-reconfigure gdm"
 echo "(+) Use Gnome from the Screw Icon at your Login Screen"
 echo "(+) For extensions use Firefox at: https://extensions.gnome.org"
 
-sleep 4
+if [ $SKIP_SLEEP == false ]; then
+    sleep 4
+fi
+

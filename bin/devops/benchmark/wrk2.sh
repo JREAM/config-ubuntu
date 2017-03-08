@@ -16,4 +16,7 @@ sudo cp wrk /usr/local/bin
 
 echo "(+) Complete! Run with $ wrk "
 
-sleep 4
+if [ $SKIP_SLEEP == false ]; then
+    sleep 4
+fi
+

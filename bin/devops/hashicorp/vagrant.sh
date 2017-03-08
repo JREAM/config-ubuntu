@@ -13,4 +13,7 @@ rm vagrant.deb
 
 echo "(+) Complete! Run with $ vagrant"
 
-sleep 4
+if [ $SKIP_SLEEP == false ]; then
+    sleep 4
+fi
+

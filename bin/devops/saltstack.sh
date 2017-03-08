@@ -18,4 +18,6 @@ sudo apt-get install -y salt-api\
 
 echo "(+) Complete! Use with $ salt, salt-cloud, salt-msater, salt-minion, salt-shh, salt-syndic"
 
-sleep 4
+if [ $SKIP_SLEEP == false ]; then
+    sleep 4
+fi

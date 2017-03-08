@@ -14,4 +14,7 @@ rm terraform.zip
 
 echo "(+) Complete! Run with $ terraform"
 
-sleep 4
+if [ $SKIP_SLEEP == false ]; then
+    sleep 4
+fi
+
