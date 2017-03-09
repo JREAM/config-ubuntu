@@ -7,6 +7,7 @@ fi
 # These are core tools
 sudo apt-get install -y\
     at\
+    ack-grep\
     unzip\
     bzip2\
     git\
