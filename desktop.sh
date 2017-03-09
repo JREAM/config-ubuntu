@@ -38,6 +38,8 @@ cat <<- command_list
     hotkeys      Removes Email/WWW hotkeys, adds <Super+e> to Home Folder
     numix        Install Numix Theme
 
+    apport-off   Disable apport error reporting in GUI (The popup windows)
+
     Utilities:
     ----------
     dot          Copy Dotfiles (.bashrc, .gitconfig, .gitignore)
@@ -62,6 +64,12 @@ read -p "Type a Command: " cmd
 
 
     case $cmd in
+        apport-off)
+            bash ./bin/desktop/apport-off.sh
+            echo ""
+            echo "====================================================================="
+            echo ""
+            ;;
         btnleft)
             bash ./bin/desktop/btn-left.sh
             echo ""
