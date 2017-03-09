@@ -1,0 +1,41 @@
+# VIM
+# swap
+[._]*.s[a-v][a-z]
+[._]*.sw[a-p]
+[._]s[a-v][a-z]
+[._]sw[a-p]
+# session
+Session.vim
+# temporary
+.netrwhist
+
+# OSX
+*.DS_Store
+.AppleDouble
+.LSOverride
+
+# OSX Thumbs
+._*
+
+# Log Files
+*.log
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Distribution / packaging
+.Python
+*.egg-info/
+.installed.cfg
+*.egg
+pip-log.txt
+pip-delete-this-directory.txt
+
+# pyenv
+.python-version
+
+# editors
+.vscode
+
