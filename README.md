@@ -92,6 +92,7 @@ There are two protective measures:
 - [Adjust Mouse and Devices](#adjust-mouse-and-devices)
 - [Virtual Machine Related](#virtual-machine-related)
     - [Fix Mouse Side Buttons in VMWare](#fix-mouse-side-buttons-in-vmware)
+    - [Speed up Mouse Wheel](#speed-up-mouse-wheel)
     - [Vagrant VBGuest Fix](#vagrant-vbguest-fix)
     - [Windows 8 VirtualBox Fix](#windows-8-virtualbox-fix)
     - [Install ATI Drivers](#install-ati-drivers)
@@ -659,6 +660,28 @@ Append the following to `yourbox.vmx` with the machine off.
     mouse.vusb.enable = "TRUE"
     mouse.vusb.useBasicMouse = "FALSE"
     usb.generic.allowHID = "TRUE"
+
+## Speed up Mouse Wheel
+If your mouse just won't seem to cooperate no matter what you do a last option is to install this program:
+```
+sudo apt-get install imwheel
+; Create an rc file
+vim ~/.imwheelrc
+
+; Paste the following (This is how many lines to skip at once)
+".*"
+  2 None,      Up,   Button4, 2                                                 
+  3 None,      Down, Button5, 2
+  4 Control_L, Up,   Control_L|Button4
+  5 Control_L, Down, Control_L|Button5
+  6 Shift_L,   Up,   Shift_L|Button4
+  7 Shift_L,   Down, Shift_L|Button5
+
+; Change Button4/Button5 (Back and Forward) to a new value and reload imwheel settings
+imwheel --kill --buttons "4 5"
+
+; Repeat as necessary until you find a comfortable value
+```
 
 ## Vagrant VBGuest Fix:
 
