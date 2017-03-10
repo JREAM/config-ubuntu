@@ -90,7 +90,9 @@ There are two protective measures:
     - [My Gnome Extensions](#my-gnome-extensions)
     - [Reload Gnome Freeze](#reload-gnome-freeze)
 - [Adjust Mouse and Devices](#adjust-mouse-and-devices)
-- [Virtual Machine Related](#virtual-machine-related)
+- [Virtual Machine Related](#virtual-machine-workstation-related)
+    -[Global Configuration Locations](#global-configuration-locations)
+    - [Speed up Guest Machine](#speed-up-guest-machine)
     - [Fix Mouse Side Buttons in VMWare](#fix-mouse-side-buttons-in-vmware)
     - [Speed up Mouse Wheel](#speed-up-mouse-wheel)
     - [Vagrant VBGuest Fix](#vagrant-vbguest-fix)
@@ -650,16 +652,126 @@ Then Add the Bash script the Gnome Session:
 ***
 [(Back to top)](#table-of-contents)
 
-# Virtual Machine Related
+# Virtual Machine Workstation Related
+- My Host is Windows, and my Guests are Linux. 
+    - I don't use OSX since they lock-down and control too much :)
+- These are focused on *VMWare workstation 11+* unless mentioned. Many settings may work in older version!
+- You can edit your `*.vmx` files individually or you can configure a global settings:
 
-This has to do with VirtualBox, not VMWare even though I favor it.
+## Global Configuratioh Locations
+
+- How the Settings work:
+    - **CONFIGURATION**: The Global settings in the GUI preferences. 
+    - **SETTINGS**: Applies to All Virtual Machines `*.vmx` files.
+
+- **Windows**:
+    - **SETTINGS**: (One or the other, I am using the 'Documents and Settings` for Windows 7, I have not tried Windows 10.
+        - `C:\Documents and Settings\All Users\VMware\VMware Workstation\settings.ini` (Used on Win 7)
+        `- C:\ProgramData\VMware\VMware Workstation\settings.ini`
+    - CONFIGURATION: 
+        - `C:\ProgramData\VMware\VMware Workstation\config.ini` (Used on Win 7)
+        - `C:\Users\<user>\AppData\Roaming\VMware\config.ini`
+- **Linux**:
+    - SETTINGS: `/home/vmware/.vmware/preferences `
+    - CONFIGURATION: `/usr/lib/vmware/settings`
+- **OSX**
+    - Note: Do not APPLY VMWare Fusion items here 
+    - /Applications/VMware Fusion.app/Contents/Library/settings
+
+# Speed up Guest Machine
+These are over the counter solutions, not hacks, see: [VMware Performance Enhancing](http://artykul8.com/2012/06/vmware-performance-enhancing/).
+
+I added these settings below to the global `settings.ini`. Again, which is located at:
+
+- Again, these settings will apply to **every** Guest Host unless you only edit the `*.vxm file`.
+- Tips: 
+    - **Important**: Copy/Paste into a editor that will not breka the tabbing.
+    - `Semicolins ;` are used for comments in `*.ini` files.
+
+```
+.encoding = "windows-1252"  ; This is different based on your OS
+printers.enabled = "True"   ; (Default) False
+
+; -------------------------------------------------------
+; Tweak: Disable memory swap files .vmem files
+; -------------------------------------------------------
+mainMem.useNamedFile = "FALSE"
+; Unfortunately this parameter does not work for VMware Player, as it always creates virtual machine’s full memory swap file.
+; For VMware Fusion on Mac and Linux instead of mainMem.useNamedFile you have to set mainMem.backing flag.
+mainMem.backing = "swap"  ; (Disable on: Mac Fusion)
+
+; -------------------------------------------------------
+; Tweak: Choose the right disk controller and specify SSD
+; -------------------------------------------------------
+; Instead of the latest SATA AHCI controller choose LSI Logic SAS controller with SCSI disk for Windows guest OS, or PVSCSI for other types of OS. Unfortunately SATA AHCI on VMware has the lowest performance out of the three controllers and highest CPU overhead (see the references on the topic at the end). In addition to choosing the right controller, if your host disk is SSD you can explicitly specify the disk type as SSD to guest OS.
+; scsi0:0.virtualSSD = 1
+
+; -------------------------------------------------------
+; Tweak: Disable log files for VM
+; -------------------------------------------------------
+; logging = "FALSE"
+; Alternatively you can specify a different location to store the log file, if you ever need them:
+; log.filename = "c:\Windows\Temp\vm1.log"
+
+; -------------------------------------------------------
+; Tweak: Other Disk & Memory I/O Performance Optimization
+; -------------------------------------------------------
+; Disable memory trimming:
+MemTrimRate = "0"
+
+; Disable page sharing:
+sched.mem.pshare.enable = "FALSE"
+
+; Disable scale down of memory allocation:
+MemAllowAutoScaleDown = "FALSE"
+
+; Memory allocation configuration:
+prefvmx.useRecommendedLockedMemSize = "TRUE"
+prefvmx.minVmMemPct = "100"  ; (optional) (Percentage of Allocated Memory to use)
+
+; -------------------------------------------------------
+; Tweak: Disabling Snapshots
+; ------------------------------------------------------- 
+; Unity might be a great feature for running virtual desktops operating systems, but it is not the most useful for virtualizing server OS. An annoying sign of enabled unity is GuestAppsCache or caches folder with a large number of files and subfolders. In order to disable it for your VM add the following lines:
+; snapshot.disabled = "TRUE"
+
+; -------------------------------------------------------
+; Tweak: Disable Unity Mode
+; -------------------------------------------------------
+; If you do not want to share Guest to Host files.
+isolation.tools.unity.disable = "TRUE"
+unity.allowCompositingInGuest = "FALSE"
+unity.enableLaunchMenu = "FALSE"
+unity.showBadges = "FALSE"
+unity.showBorders = "FALSE"
+unity.wasCapable = "FALSE"
+
+; -------------------------------------------------------
+; Tweak: MacBook Retina Display Optimization (OSX Only)
+; -------------------------------------------------------
+; Disable automatic fitting to window:
+; pref.autoFitGuestToWindow = "FALSE"
+
+; Set a different resolution (or in user interface select VM – Settings – Display – uncheck ‘Use full resolution for Retina display’):
+; gui.applyHostDisplayScalingToGuest = "FALSE"
+
+; When in full-screen mode, there is a couple of options to control how guest is rendered:
+; pref.autoFitFullScreen = "stretchGuestToHost" or pref.autoFitFullScreen = "fitHostToGuest"
+```
+
 
 ## Fix Mouse Side Buttons in VMWare
-Append the following to `yourbox.vmx` with the machine off.
+Append the following to `yourbox.vmx` and restart your machine. You can also place this in the global settings.ini to apply
+to every Guast Machine.
 
-    mouse.vusb.enable = "TRUE"
-    mouse.vusb.useBasicMouse = "FALSE"
-    usb.generic.allowHID = "TRUE"
+```
+; -------------------------------------------------------
+; Fix Mouse Left/Right Navigation
+; -------------------------------------------------------
+mouse.vusb.enable = "TRUE"
+mouse.vusb.useBasicMouse = "FALSE"
+usb.generic.allowHID = "TRUE"
+```
 
 ## Speed up Mouse Wheel
 If your mouse just won't seem to cooperate no matter what you do a last option is to install this program:
