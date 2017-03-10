@@ -6,10 +6,10 @@
 export INSTALL_SCRIPT=true
 
 # Allow an install to pause a brief moment after running
-export SKIP_SLEEP=false
+export SKIP_SLEEP=true
 
 # The base script if needed
-export BASE_SCRIPT='desktop'
+export BASE_SCRIPT='gnome-ext'
 
 # Source Temporary Environment Variables.
 source ./bin/_export_path_variables.sh
@@ -20,7 +20,7 @@ source ./bin/_export_user_variables.sh
 
 echo "====================================================================="
 echo ""
-echo "                        JREAM - Ubuntu Desktop                       "
+echo "                    JREAM - Ubuntu Gnome Extensions               "
 echo ""
 echo " * To exit at anytime press CTRL+C"
 echo " * Installation runs after command is entered."
@@ -30,32 +30,31 @@ echo ""
 
 while true; do
 cat <<- command_list
-    Configure:
+    Extensions
     ----------
-    btnleft      Move Close/Min/Max to Left on Windows
-    btnright     Move Min/Max/Close to Right on Windows (Familiar to Windows OS)
+    alt-tab-workspace       Isolate Alt+Tab to Current Workspace
+    battery-percentage      Top Panel Icon
+    connection-manager      Top Panel Drop Down
+    dash-to-dock            Bottom or Side Dock
+    desktop-scroller        Scroll from Several Points
+    force-quit              Top Panel Icon to close apps
+    hardware-sensors        Top Panel Drop Down
+    netspeed                Top Panel Drop Down
+    simpledock              Bottom Dock
+    workspaces-to-dock      Workspace on the Side of Screen
 
-    gnome        Install Gnome 3 GUI (You toggle at login or see README)
-    gnome-chrome Install Chrome Addon to allow installing Gnome Ext from Chrome
-    gui          Install Ubuntu GUI Tools (Compiz, Tweak)
-    hotkeys      Removes Email/WWW hotkeys, adds <Super+e> to Home Folder
-    numix        Install Numix Theme
-
-    apport-off   Disable apport error reporting in GUI (The popup windows)
-
-    Utilities:
-    ----------
-    dot          Copy Dotfiles (.bashrc, .gitconfig, .gitignore)
-    perm         Update /usr/local permissions
-    mysqlwb      Install MySQL Workbench
-    security     Install ClamAV, RKHunter (read instructions after install)
-    util         Install Utilities
-                    git, curl, htop, unzip, terminator, tmux, screen
-    vim          Install Vim (.vimrc and Vundle Plugins)
+    Misc
+    ----
+    gnome-restart           This will restart gnome shell without closing anything
 
     Quit:
     -----
     q             Quit (or CTRL + C)
+
+    Important: You will likely be required to restart gnome after installing.
+               type: gnome-restart
+               Otherwise wait until you reboot.
+
 
 command_list
 
@@ -65,88 +64,69 @@ echo ""
 
 read -p "Type a Command: " cmd
 
-
     case $cmd in
-        apport-off)
-            bash ./bin/desktop/apport-off.sh
+        alt-tab-workspace)
+            bash ./bin/gnome-ext/force-quit.sh
             echo ""
             echo "====================================================================="
             echo ""
             ;;
-        btnleft)
-            bash ./bin/desktop/btn-left.sh
+        battery-percentage)
+            bash ./bin/gnome-ext/force-quit.sh
             echo ""
             echo "====================================================================="
             echo ""
             ;;
-        btnright)
-            bash ./bin/desktop/btn-right.sh
+        connection-manager)
+            bash ./bin/gnome-ext/force-quit.sh
             echo ""
             echo "====================================================================="
             echo ""
             ;;
-        dot)
-            bash ./bin/dot.sh
+        dash-to-dock)
+            bash ./bin/gnome-ext/force-quit.sh
             echo ""
             echo "====================================================================="
             echo ""
             ;;
-        gnome)
-            bash ./bin/desktop/gnome/gnome-desktop.sh
+        desktop-scroller)
+            bash ./bin/gnome-ext/force-quit.sh
             echo ""
             echo "====================================================================="
             echo ""
             ;;
-        gnome-chrome)
-            bash ./bin/desktop/gnome/gnome-chrome.sh
+        force-quit)
+            bash ./bin/gnome-ext/force-quit.sh
             echo ""
             echo "====================================================================="
             echo ""
             ;;
-        gui)
-            bash ./bin/desktop/gui.sh
+        hardware-sensors)
+            bash ./bin/gnome-ext/hardware-sensors.sh
             echo ""
             echo "====================================================================="
             echo ""
             ;;
-        hotkeys)
-            bash ./bin/desktop/hotkeys.sh
+        netspeed)
+            bash ./bin/gnome-ext/netspeed.sh
             echo ""
             echo "====================================================================="
             echo ""
             ;;
-        mysqlwb)
-            bash ./bin/desktop/mysql-workbench.sh
+        simpledock)
+            bash ./bin/gnome-ext/simpledock.sh
             echo ""
             echo "====================================================================="
             echo ""
             ;;
-        numix)
-            bash ./bin/desktop/numix.sh
+        workspaces-to-dock)
+            bash ./bin/gnome-ext/workspaces-to-dock.sh
             echo ""
             echo "====================================================================="
             echo ""
             ;;
-        perm)
-            bash ./bin/perm.sh
-            echo ""
-            echo "====================================================================="
-            echo ""
-            ;;
-        security)
-            bash ./bin/security.sh
-            echo ""
-            echo "====================================================================="
-            echo ""
-            ;;
-        util)
-            bash ./bin/util.sh
-            echo ""
-            echo "====================================================================="
-            echo ""
-            ;;
-        vim)
-            bash ./bin/vim.sh
+        gnome-restart)
+            dbus-send --type=method_call --print-reply --dest=org.gnome.Shell /org/gnome/Shell org.gnome.Shell.Eval string:'global.reexec_self()'
             echo ""
             echo "====================================================================="
             echo ""

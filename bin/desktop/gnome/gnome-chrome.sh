@@ -5,7 +5,7 @@ if [[ ! $INSTALL_SCRIPT ]]; then
 fi
 
 
-sudo apt-get install chrome-gnome-shell
+sudo apt-get install -y chrome-gnome-shell
 
 echo "(+) Complete! Open Chrome and install extensions at:"
 echo "    https://extensions.gnome.org/local/"

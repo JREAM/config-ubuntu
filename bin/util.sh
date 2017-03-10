@@ -13,7 +13,6 @@ sudo apt-get install -y\
     git\
     curl\
     htop\
-    gdebi\
     netperf\
     putty-tools\
     python-software-properties\
@@ -22,13 +21,20 @@ sudo apt-get install -y\
     stress\
     stress-ng\
     supervisor\
-    terminator\
     tree\
     tmux\
     whois\
     xclip
 
+if [ $BASE_SCRIPT == 'desktop' ]; then
+    sudo apt-get install -y\
+        terminator\
+        gdebi
+fi
+
 # IMPORTANT: Do NOT have a trailing \ on the LAST item!
+
+
 
 echo "(+) Completed install utilities."
 

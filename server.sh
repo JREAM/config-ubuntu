@@ -8,6 +8,9 @@ export INSTALL_SCRIPT=true
 # Allow an install to pause a brief moment after running
 export SKIP_SLEEP=false
 
+# The base script if needed
+export BASE_SCRIPT='server'
+
 # Source Temporary Environment Variables.
 source ./bin/_export_path_variables.sh
 
