@@ -51,6 +51,7 @@ cat <<- command_list
     security     Install ClamAV, RKHunter (read instructions after install)
     util         Install Utilities
                     git, curl, htop, unzip, terminator, tmux, screen
+    vmware-tools Install VMWare Tools (When Mounted Only!)
     vim          Install Vim (.vimrc and Vundle Plugins)
 
     Quit:
@@ -141,6 +142,12 @@ read -p "Type a Command: " cmd
             ;;
         util)
             bash ./bin/util.sh
+            echo ""
+            echo "====================================================================="
+            echo ""
+            ;;
+        vmware-tools)
+            bash ./bin/desktop/vmware-tools.sh
             echo ""
             echo "====================================================================="
             echo ""
