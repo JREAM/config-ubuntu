@@ -4,7 +4,8 @@ if [[ ! $INSTALL_SCRIPT ]]; then
     exit
 fi
 
-curl -o consul.zip https://releases.hashicorp.com/consul/0.6.4/consul_0.6.4_linux_amd64.zip
+
+curl -o consul.zip https://releases.hashicorp.com/consul/0.7.5/consul_0.7.5_linux_amd64.zip
 
 unzip consul.zip
 sudo mv consul /usr/local/bin

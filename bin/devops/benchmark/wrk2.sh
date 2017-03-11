@@ -4,7 +4,7 @@ if [[ ! $INSTALL_SCRIPT ]]; then
     exit
 fi
 
-sudo apt-get install build-essential libssl-dev git
+sudo apt-get install -y build-essential libssl-dev git
 git clone https://github.com/giltene/wrk2.git /opt/wrk2
 cd /opt/wrk2
 sudo make

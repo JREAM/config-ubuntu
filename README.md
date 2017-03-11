@@ -206,7 +206,7 @@ chmod 644 ~/.ssh/id_dsa.pub
 
 ## RedShift For Eye Strain
 
-    sudo apt-get install redshift
+    sudo apt-get -y install redshift
 
 Create your configuration file:
 
@@ -349,7 +349,7 @@ To test it run: `$ phalcon`
 We will use the Access Control Lists (ACL) or (Filesystem Access Control List). We will use group permissions for folders so you don't have to make the public writable, because `777` is dangerous.
 
     # Make sure you have ACL installed
-    sudo apt-get install acl
+    sudo apt-get install -y acl
 
 Look for your main partition with:
 
@@ -434,13 +434,8 @@ For Ruby RVM (Version Management)
 ## NodeJS
 I am using a PPA to fix the nodejs path issue(s)
 
-    sudo apt-get install nodejs
+    sudo apt-get install -y nodejs
     sudo chown -R $(whoami) ~/.npm
-    sudo npm install bower gulp grunt-cli -g
-
-If installing coffee-script and typing `$ coffee` produces an error, make sure coffee is not within the $PATH
-
-    echo $PATH
 
 **Upgrade NodeJS**
 
@@ -482,9 +477,9 @@ I use the default JRE/JDK, the others are up to you.
 
     sudo add-apt-repository ppa:webupd8team/java
 
-    sudo apt-get install oracle-java7-installer
-    sudo apt-get install oracle-java8-installer
-    sudo apt-get install oracle-java9-installer
+    sudo apt-get install -y oracle-java7-installer
+    sudo apt-get install y oracle-java8-installer
+    sudo apt-get install y oracle-java9-installer
 
 ***
 [(Back to top)](#table-of-contents)
@@ -517,7 +512,7 @@ This appears in the top-right menu on Unity. Tested in 14/15.
 
 This will also fix Tweak UI if a sound item is missing.
 
-    sudo apt-get install indicator-sound
+    sudo apt-get install -y indicator-sound
 
 For Unity (Default)
 
@@ -530,7 +525,7 @@ For Gnome
 # Install Gnome 3
 If you prefer Gnome 3 over the Unity desktop it's easy to install:
 
-    sudo apt-get install ubuntu-gnome-desktop
+    sudo apt-get install -y ubuntu-gnome-desktop
     sudo service gdm restart (Or a reboot is easier)
 
 Unity uses `lightdm` and Gnome uses `gdm`, it's easiest to stick with lightdm.
@@ -653,7 +648,7 @@ Then Add the Bash script the Gnome Session:
 [(Back to top)](#table-of-contents)
 
 # Virtual Machine Workstation Related
-- My Host is Windows, and my Guests are Linux. 
+- My Host is Windows, and my Guests are Linux.
     - I don't use OSX since they lock-down and control too much :)
 - These are focused on *VMWare workstation 11+* unless mentioned. Many settings may work in older version!
 - You can edit your `*.vmx` files individually or you can configure a global settings:
@@ -661,21 +656,21 @@ Then Add the Bash script the Gnome Session:
 ## Global Configuratioh Locations
 
 - How the Settings work:
-    - **CONFIGURATION**: The Global settings in the GUI preferences. 
+    - **CONFIGURATION**: The Global settings in the GUI preferences.
     - **SETTINGS**: Applies to All Virtual Machines `*.vmx` files.
 
 - **Windows**:
     - **SETTINGS**: (One or the other, I am using the 'Documents and Settings` for Windows 7, I have not tried Windows 10.
         - `C:\Documents and Settings\All Users\VMware\VMware Workstation\settings.ini` (Used on Win 7)
         `- C:\ProgramData\VMware\VMware Workstation\settings.ini`
-    - CONFIGURATION: 
+    - CONFIGURATION:
         - `C:\ProgramData\VMware\VMware Workstation\config.ini` (Used on Win 7)
         - `C:\Users\<user>\AppData\Roaming\VMware\config.ini`
 - **Linux**:
     - SETTINGS: `/home/vmware/.vmware/preferences `
     - CONFIGURATION: `/usr/lib/vmware/settings`
 - **OSX**
-    - Note: Do not APPLY VMWare Fusion items here 
+    - Note: Do not APPLY VMWare Fusion items here
     - /Applications/VMware Fusion.app/Contents/Library/settings
 
 # Speed up Guest Machine
@@ -684,7 +679,7 @@ These are over the counter solutions, not hacks, see: [VMware Performance Enhanc
 I added these settings below to the global `settings.ini`. Again, which is located at:
 
 - Again, these settings will apply to **every** Guest Host unless you only edit the `*.vxm file`.
-- Tips: 
+- Tips:
     - **Important**: Copy/Paste into a editor that will not breka the tabbing.
     - `Semicolins ;` are used for comments in `*.ini` files.
 
@@ -731,7 +726,7 @@ prefvmx.minVmMemPct = "100"  ; (optional) (Percentage of Allocated Memory to use
 
 ; -------------------------------------------------------
 ; Tweak: Disabling Snapshots
-; ------------------------------------------------------- 
+; -------------------------------------------------------
 ; Unity might be a great feature for running virtual desktops operating systems, but it is not the most useful for virtualizing server OS. An annoying sign of enabled unity is GuestAppsCache or caches folder with a large number of files and subfolders. In order to disable it for your VM add the following lines:
 ; snapshot.disabled = "TRUE"
 
@@ -776,13 +771,13 @@ usb.generic.allowHID = "TRUE"
 ## Speed up Mouse Wheel
 If your mouse just won't seem to cooperate no matter what you do a last option is to install this program:
 ```
-sudo apt-get install imwheel
+sudo apt-get install -y imwheel
 ; Create an rc file
 vim ~/.imwheelrc
 
 ; Paste the following (This is how many lines to skip at once)
 ".*"
-  2 None,      Up,   Button4, 2                                                 
+  2 None,      Up,   Button4, 2
   3 None,      Down, Button5, 2
   4 Control_L, Up,   Control_L|Button4
   5 Control_L, Down, Control_L|Button5
@@ -814,9 +809,9 @@ Running Windows 8 in Virtualbox has an odd error, run this in `cmd` or `powershe
     sudo apt-add-repository ppa:xorg-edgers/ppa
     sudo apt-get update
 
-    sudo apt-get install fglrx
+    sudo apt-get install -y fglrx
     sudo amdconfig --initial
-    sudo apt-get install gksu
+    sudo apt-get install -y gksu
 
 **To Edit Catalyst Settings**; Type the following in the Global Launcher *(Super Key/Windows Key)*:
 

@@ -4,7 +4,7 @@ if [[ ! $INSTALL_SCRIPT ]]; then
     exit
 fi
 
-sudo apt-get install iperf
+sudo apt-get install -y iperf
 
 echo "(+) Complete! Run with: "
 echo "Start Server:      $ iperf -s -p 8080"

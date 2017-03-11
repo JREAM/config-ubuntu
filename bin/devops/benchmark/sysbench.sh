@@ -4,7 +4,7 @@ if [[ ! $INSTALL_SCRIPT ]]; then
     exit
 fi
 
-sudo apt-get install sysbench
+sudo apt-get install -y sysbench
 
 echo "(+) Complete! Run with $ sysbench --test=cpu --num-threads=4 --cpu-max-prime=9999 run"
 

@@ -4,11 +4,12 @@ if [[ ! $INSTALL_SCRIPT ]]; then
     exit
 fi
 
-echo "(+) Downloading Google Go 1.7.1"
+echo "(+) Downloading Google Go lang"
 
-curl -o tmp/go1.7.1.tar.gz https://storage.googleapis.com/golang/go1.7.1.linux-amd64.tar.gz
-tar -C /usr/local -xzf tmp/go1.7.1.tar.gz
-rm tmp/go1.7.1.tar.gz
+
+curl -o tmp/golang.tar.gz https://storage.googleapis.com/golang/go1.8.linux-amd64.tar.gz
+tar -C /usr/local -xzf tmp/golang.tar.gz
+rm tmp/golang.tar.gz
 
 # IMPORTANT: Do NOT have a trailing \ on the LAST item!
 

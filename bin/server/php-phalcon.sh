@@ -8,14 +8,8 @@ curl -s https://packagecloud.io/install/repositories/phalcon/stable/script.deb.s
 
 echo "(+) Installing Phalcon."
 
-if [[ $OS_CODENAME == 'xenial' ]]; then
-    # PHP7 Phalcon
-    sudo apt-get install -y php7.0-phalcon
-    sudo phpenmod phalcon
-else
-    # PHP5 Phalcon
-    sudo apt-get install -y php5-phalcon
-fi
+sudo apt-get install -y php7.0-phalcon
+sudo phpenmod phalcon
 
 echo "(+) Installing Phalcon Devtools."
 

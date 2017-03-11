@@ -5,7 +5,7 @@ if [[ ! $INSTALL_SCRIPT ]]; then
 fi
 
 echo "(+) Installing Postgres"
-sudo apt-get install postgresql postgresql-client
+sudo apt-get install -y postgresql postgresql-client
 
 echo "(+) Complete, run with $ sudo su - postgres"
 
