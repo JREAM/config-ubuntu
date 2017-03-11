@@ -57,6 +57,7 @@ cat <<- command_list
     php-composer  Install/Update PHP Composer Package
     php-phalcon   Install Phalcon (<=15 Wily & Below) or PHP7 (>=17 Xenial)
     php-laravel   Install Laravel (Composer global install as current user)
+    php-lumen     Install Lumen ( Composer global install as current user )
 
     Utilities:
     ----------
@@ -153,6 +154,12 @@ read -p "Type a Command: " cmd
             ;;
         php-laravel)
             bash ./bin/server/php-laravel.sh
+            echo ""
+            echo "====================================================================="
+            echo ""
+            ;;
+        php-lumen)
+            bash ./bin/server/php-lumen.sh
             echo ""
             echo "====================================================================="
             echo ""
