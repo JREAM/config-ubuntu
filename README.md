@@ -87,6 +87,7 @@ There are two protective measures:
     - [Easy Window Resize](#easy-window-resize)
     - [Left or Right Close Buttons](#left-or-right-close-buttons)
     - [Fix Gnome Lockscreen](#fix-gnome-lockscreen)
+    - [Fix Touchpad When Typing](#fix-touchpad-when-typing)
     - [My Gnome Extensions](#my-gnome-extensions)
     - [Reload Gnome Freeze](#reload-gnome-freeze)
 - [Adjust Mouse and Devices](#adjust-mouse-and-devices)
@@ -556,6 +557,50 @@ Move to left (terminal)
 In terminal make sure this is false, then try your hotkey `ctrl+alt+l` or if you set it like min `super+l` in the settings:
 
     gsettings set org.gnome.desktop.lockdown disable-lock-screen 'false'
+
+### Fix Touchpad When Typing
+A circulating bug is having two mousedrivers installed. To find out, for a Dell XPS they suggest you may have two mouse drives installed `xinput list` to find out.
+
+On my X1 Carbon 3rd Generation, my problem was resolved with the following.
+
+```
+sudo vim /usr/share/X11/xorg.conf.d/51-synaptics-quirks.conf
+```
+
+> **IMPORTANT**: This will overwrite your speed settings from your GUI mouse settings. Remove items you need.
+
+At the bottom of the file I appended the following:
+
+```
+Section "InputClass"
+    Identifier "x1carbon touchpad catchall"
+    MatchIsTouchpad "on"
+    MatchDevicePath "/dev/input/event*"
+    Driver "synaptics"
+
+    # three fingers for the middle button
+    Option "TapButton3" "2"
+    Option "LockedDrags" "1"
+
+    # Accurate tap-to-click
+    Option "FingerLow" "50"
+    Option "FingerHigh" "55"
+
+    # Prevents too many intentional clicks
+    Option "PalmDetect" "0"
+
+    # "natural" vertical and horizontal scrolling
+    Option "VertTwoFingerScroll" "1"
+    Option "VertScrollDelta" "-75"
+    Option "HorizTwoFingerScroll" "1"
+    Option "HorizScrollDelta" "-75"
+EndSection
+```
+
+Then reload lightdm (or gdm if you are using it):
+```
+sudo service lightdm restart
+```
 
 ### My Gnome Extensions
 You need to use **Firefox** or **IceWeasle** at https://extensions.gnome.org/ to toggle these items. I suggest creating an account so you have a record.
