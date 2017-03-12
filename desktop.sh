@@ -32,27 +32,28 @@ while true; do
 cat <<- command_list
     Configure:
     ----------
-    btnleft      Move Close/Min/Max to Left on Windows
-    btnright     Move Min/Max/Close to Right on Windows (Familiar to Windows OS)
+    btnleft       Move Close/Min/Max to Left on Windows
+    btnright      Move Min/Max/Close to Right on Windows (Familiar to Windows OS)
 
-    gnome        Install Gnome 3 GUI (You toggle at login or see README)
-    gnome-chrome Install Chrome Addon to allow installing Gnome Ext from Chrome
-    gui          Install Ubuntu GUI Tools (Compiz, Tweak)
-    hotkeys      Removes Email/WWW hotkeys, adds <Super+e> to Home Folder
-    numix        Install Numix Theme
+    gnome         Install Gnome 3 GUI (You toggle at login or see README)
+    gnome-chrome  Install Chrome Addon to allow installing Gnome Ext from Chrome
+    gui           Install Ubuntu GUI Tools (Compiz, Tweak)
+    hotkeys       Removes Email/WWW hotkeys, adds <Super+e> to Home Folder
+    numix         Install Numix Theme
 
-    apport-off   Disable apport error reporting in GUI (The popup windows)
+    apport-off    Disable apport error reporting in GUI (The popup windows)
 
     Utilities:
     ----------
-    dot          Copy Dotfiles (.bashrc, .gitconfig, .gitignore)
-    perm         Update /usr/local permissions
-    mysqlwb      Install MySQL Workbench
-    security     Install ClamAV, RKHunter (read instructions after install)
-    util         Install Utilities
+    dot           Copy Dotfiles (.bashrc, .gitconfig, .gitignore)
+    perm          Update /usr/local permissions
+    mysqlwb       Install MySQL Workbench
+    security      Install ClamAV, RKHunter (read instructions after install)
+    touchpad-tool Install touchpad-indicator.
+    util          Install Utilities
                     git, curl, htop, unzip, terminator, tmux, screen
-    vmware-tools Install VMWare Tools (When Mounted Only!)
-    vim          Install Vim (.vimrc and Vundle Plugins)
+    vmware-tools  Install VMWare Tools (When Mounted Only!)
+    vim           Install Vim (.vimrc and Vundle Plugins)
 
     Quit:
     -----
@@ -136,6 +137,12 @@ read -p "Type a Command: " cmd
             ;;
         security)
             bash ./bin/security.sh
+            echo ""
+            echo "====================================================================="
+            echo ""
+            ;;
+        touchpad-tool)
+            bash ./bin/desktop/touchpad-tool.sh
             echo ""
             echo "====================================================================="
             echo ""
