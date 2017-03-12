@@ -40,6 +40,7 @@ cat <<- command_list
     force-quit              Top Panel Icon to close apps
     hardware-sensors        Top Panel Drop Down
     netspeed                Top Panel Drop Down
+    scroll-workspaces       Top Panel Mouse Wheel move workspaces
     simpledock              Bottom Dock
     workspaces-to-dock      Workspace on the Side of Screen
 
@@ -109,6 +110,12 @@ read -p "Type a Command: " cmd
             ;;
         netspeed)
             bash ./bin/gnome-ext/netspeed.sh
+            echo ""
+            echo "====================================================================="
+            echo ""
+            ;;
+        scroll-workspaces)
+            bash ./bin/gnome-ext/scroll-workspaces.sh
             echo ""
             echo "====================================================================="
             echo ""
