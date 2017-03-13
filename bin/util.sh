@@ -24,6 +24,8 @@ sudo apt-get install -y\
     tree\
     tmux\
     whois\
+    pydf\  # df alternative nicer output
+    ncdu\  # du alterntive for browsable terminal ui
     xclip
 
 if [ $BASE_SCRIPT == 'desktop' ]; then
