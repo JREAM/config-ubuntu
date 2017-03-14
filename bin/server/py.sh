@@ -11,13 +11,27 @@ sudo apt-get install -y\
     libjpeg8-dev\
     libjpeg-dev\
     python-pip\
-    python-dev
+    python-dev\
+    python3\
+    python3-dev\
+    python3-pip
 
 # IMPORTANT: Do NOT have a trailing \ on the LAST item!
 
+pip install --upgrade pip
+pip3 install --upgrade pip
+
 pip install bpython virtualenv virtualenvwrapper fabric mycli --upgrade
 
-echo "(+) Complete! Run with $ python, $ bpython, and $ pip"
+echo "(+) Complete!"
+echo "    $ python  (2.X)"
+echo "    $ python3 (3.5)"
+echo "    $ pip"
+echo "    $ pip3"
+echo ""
+echo "    Virtualenv Python3 Example:"
+echo "    $ mkproject -p /usr/bin/python3"
+echo ""
 echo "    PIP Packages: bpython, virtualenvwrapper, fabric, mycli"
 
 if [ $SKIP_SLEEP == false ]; then

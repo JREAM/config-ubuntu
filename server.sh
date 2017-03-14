@@ -49,7 +49,7 @@ cat <<- command_list
     node          Install NodeJS (nodejs, npm: n, bower, gulp)
     php7.0        Install PHP7 with common modules
     php7.1        Install PHP7.1 with common modules (Phalcon not ready)
-    py            Install Python packages (pip, bpython, python-dev, mycli, virtualenvwrapper)
+    py            Install Python2/3 PIP2/3 Devel,(bpython,  mycli, virtualenvwrapper)
     rb            Install Ruby (ruby, ruby-dev, gem)
 
     Frameworks/Util:
