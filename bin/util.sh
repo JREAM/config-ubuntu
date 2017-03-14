@@ -11,6 +11,7 @@ sudo apt-get install -y\
     unzip\
     bzip2\
     git\
+    git-extras\
     curl\
     htop\
     netperf\
