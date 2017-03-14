@@ -25,8 +25,8 @@ sudo apt-get install -y\
     tree\
     tmux\
     whois\
-    pydf\  # df alternative nicer output
-    ncdu\  # du alterntive for browsable terminal ui
+    pydf\
+    ncdu\
     xclip
 
 if [ $BASE_SCRIPT == 'desktop' ]; then
@@ -37,10 +37,20 @@ fi
 
 # IMPORTANT: Do NOT have a trailing \ on the LAST item!
 
+# Git Extras autocomplete
 
+cp "$PROJECT_FILE_PATH/gh_complete.sh" "$HOME_PATH"
 
 echo "(+) Completed install utilities."
+echo ""
+echo "    If you'd like git-extras autocomplete installed,"
+echo "    add this to your ~/.bashrc file:"
+echo ""
+echo 'if [ -f "$HOME/gh_complete.sh" ]; then'
+echo '   source "$HOME/gh_complete.sh"'
+echo 'fi'
+echo ""
 
 if [ $SKIP_SLEEP == false ]; then
-    sleep 4
+    sleep 6
 fi
