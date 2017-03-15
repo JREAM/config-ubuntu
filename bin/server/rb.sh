@@ -11,6 +11,9 @@ sudo apt-get install -y\
 
 # IMPORTANT: Do NOT have a trailing \ on the LAST item!
 
+
+sudo gem install bundler
+
 echo "(+) Complete! Run with $ ruby, and $ gem"
 
 if [ $SKIP_SLEEP == false ]; then
