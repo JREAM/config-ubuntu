@@ -37,6 +37,7 @@ cat <<- command_list
     docker-machine Install Docker Machine
     docker-ac      Install Docker Autocomplete CLI
     ansible        Install Ansible Provisioner
+    logstash       Install LogStash
     saltstack      Install Saltstack Provisioner
     saltstack      Install SaltStack Provisioner
     consul         Install Hashicorp Consul
@@ -107,6 +108,12 @@ read -p "Type a Command: " cmd
             ;;
         iperf)
             bash ./bin/devops/benchmark/iperf.sh
+            echo ""
+            echo "====================================================================="
+            echo ""
+            ;;
+        logstash)
+            bash ./bin/devops/logstash.sh
             echo ""
             echo "====================================================================="
             echo ""
