@@ -36,11 +36,18 @@ autoinstall=(
     # bin/vim
 
     #-----------#
-    #    GUI    #
+    #  Desktop  #
     #-----------#
+    # bin/desktop/apport-off.sh
+    # bin/desktop/btn-left.sh
+    # bin/desktop/btn-right.sh
     # bin/desktop/gui.sh
     # bin/desktop/mysql-workbench.sh
     # bin/desktop/numix.sh
+    # bin/desktop/sublime-text.sh
+    # bin/desktop/vmware-tools.sh
+    # bin/desktop/vscode.sh
+
 
     #----------#
     #  Devops  #
@@ -51,6 +58,7 @@ autoinstall=(
     # bin/devops/docker-ac.sh
     # bin/devops/docker-compose.sh
     # bin/devops/docker-machine.sh
+    # bin/devops/logstash.sh
     # bin/devops/saltstack.sh
     # bin/devops/benchmark/iperf.sh
     # bin/devops/benchmark/sysbench.sh
