@@ -17,7 +17,7 @@ echo ""
 echo "(!) If you are NOT using the provided .profile, add to yours:"
 echo ""
 echo 'if [ -d "/usr/local/go/bin" ]; then'
-echo '    export GOROOT="/usr/bin/'
+echo '    export GOROOT="/usr/bin/"'
 echo '    export GOPATH=$HOME/.go'
 echo 'fi'
 
