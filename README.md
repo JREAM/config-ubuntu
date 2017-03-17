@@ -94,6 +94,7 @@ There are two protective measures:
 - [Virtual Machine Related](#virtual-machine-workstation-related)
     -[Global Configuration Locations](#global-configuration-locations)
     - [Speed up Guest Machine](#speed-up-guest-machine)
+    - [Fix Copy/Paste From Host and Guest](#fix-copy-paste-from-host-and-guest)
     - [Fix Mouse Side Buttons in VMWare](#fix-mouse-side-buttons-in-vmware)
     - [Speed up Mouse Wheel](#speed-up-mouse-wheel)
     - [Vagrant VBGuest Fix](#vagrant-vbguest-fix)
@@ -812,6 +813,17 @@ mouse.vusb.enable = "TRUE"
 mouse.vusb.useBasicMouse = "FALSE"
 usb.generic.allowHID = "TRUE"
 ```
+
+## Fix Copy/Paste From Host and Guest
+On Windows 10 the copy paste from Host to Guess and vice versa does not appear to work no matter what you do.
+The only solution I have found that worked is this.
+
+    - Right click your VirtualMachine
+    - Select Settings
+    - Go to the Options Tab
+    - Go to Shared Folders
+    - Set to Always Enabled
+    - Reboot Guest
 
 ## Speed up Mouse Wheel
 If your mouse just won't seem to cooperate no matter what you do a last option is to install this program:
