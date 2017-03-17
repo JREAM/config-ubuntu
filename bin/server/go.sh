@@ -7,9 +7,7 @@ fi
 echo "(+) Downloading Google Go lang"
 
 
-curl -o tmp/golang.tar.gz https://storage.googleapis.com/golang/go1.8.linux-amd64.tar.gz
-tar -C /usr/local -xzf tmp/golang.tar.gz
-rm tmp/golang.tar.gz
+sudo apt-get install -y golang-go
 
 # IMPORTANT: Do NOT have a trailing \ on the LAST item!
 
@@ -17,8 +15,12 @@ echo "(+) Complete! Use with $ go"
 echo "(+) Located: /user/local/go/bin"
 echo ""
 echo "(!) If you are NOT using the provided .profile, add to yours:"
-echo "    export GOROOT=\$HOME/.go"
-echo "    export PATH=\$PATH:\$GOROOT/bin"
+echo ""
+echo 'if [ -d "/usr/local/go/bin" ]; then'
+echo '    export GOROOT="/usr/bin/'
+echo '    export GOPATH=$HOME/.go'
+echo 'fi'
+
 
 sudo -u $SUDO_USER mkdir "$HOME/.go"
 

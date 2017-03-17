@@ -16,7 +16,7 @@ echo ""
 COMPOSER_HOME=`composer config -g home`
 
 if [ ! -d "$COMPOSER_HOME" ]; then
-    mkdir "$COMPOSER_HOME"
+    sudo -u $SUDO_USER mkdir "$COMPOSER_HOME"
     chmod g+rws "$COMPOSER_HOME"
 fi
 

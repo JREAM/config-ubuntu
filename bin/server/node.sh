@@ -15,15 +15,12 @@ sudo apt-get install -y\
     yarn
 
 
-# Get Permissions for global install
-if [ ! -d "$HOME_PATH/.node_modules" ] ; then
-    mkdir $HOME_PATH/node_modules
+echo "Creating $HOME_PATH/.npm-packages for --global/-g installations."
+if [ ! -d "$HOME_PATH/.npm-packages" ] ; then
+	# Create Folder
+    sudo -u $SUDO_USER mkdir $HOME_PATH/.npm-packages
 fi
 
-# Permissions for local NPM folder
-if [ -d "$HOME_PATH/node_modules" ] ; then
-    sudo chown -R $USER:$USER $HOME_PATH/node_modules
-fi
 
 echo "(+) Installing 'n' for latest stable Node Version."
 sudo npm cache clean -f
@@ -31,6 +28,8 @@ sudo npm install -g n
 sudo n stable
 
 echo "(+) Complete! Run with $ node and $ npm."
+echo "(!) If you cannot install a --global/-g package"
+echo "    run the 'permissions' command."
 
 if [ $SKIP_SLEEP == false ]; then
     sleep 4

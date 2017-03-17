@@ -78,7 +78,7 @@ autoinstall=(
     bin/server/elasticsearch.sh
     # bin/server/go.sh
     bin/server/java.sh
-    # bin/server/mongo.sh
+    bin/server/mongo.sh
     bin/server/mysql.sh
     # bin/server/nginx.sh
     bin/server/node.sh
