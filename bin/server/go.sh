@@ -16,10 +16,11 @@ rm tmp/golang.tar.gz
 echo "(+) Complete! Use with $ go"
 echo "(+) Located: /user/local/go/bin"
 echo ""
-echo "(!) If you are NOT using the provided .profile, add too yours:"
-echo "    (Change the path to your liking instead of $HOME/go if you like"
-echo "    export GOROOT=\$HOME/go"
+echo "(!) If you are NOT using the provided .profile, add to yours:"
+echo "    export GOROOT=\$HOME/.go"
 echo "    export PATH=\$PATH:\$GOROOT/bin"
+
+sudo -u $SUDO_USER mkdir "$HOME/.go"
 
 if [ $SKIP_SLEEP == false ]; then
     sleep 4
