@@ -43,9 +43,15 @@ cat <<- command_list
 
     apport-off    Disable apport error reporting in GUI (The popup windows)
 
+    Code Editors:
+    ----------
+    sublime-text  Installs sublime text 3 (deb package) (x64)
+    vscode        Install Visual Studio Code (apt) (x64)
+
     Utilities:
     ----------
     dot           Copy Dotfiles (.bashrc, .gitconfig, .gitignore)
+    dropbox       Installs Dropbox (x64)
     perm          Update /usr/local permissions
     mysqlwb       Install MySQL Workbench
     security      Install ClamAV, RKHunter (read instructions after install)
@@ -89,6 +95,12 @@ read -p "Type a Command: " cmd
             ;;
         dot)
             bash ./bin/dot.sh
+            echo ""
+            echo "====================================================================="
+            echo ""
+            ;;
+        dropbox)
+            bash ./bin/desktop/dropbox.sh
             echo ""
             echo "====================================================================="
             echo ""
@@ -141,6 +153,12 @@ read -p "Type a Command: " cmd
             echo "====================================================================="
             echo ""
             ;;
+        sublime-text)
+            bash ./bin/desktop/sublime-text.sh
+            echo ""
+            echo "====================================================================="
+            echo ""
+            ;;
         touchpad-tool)
             bash ./bin/desktop/touchpad-tool.sh
             echo ""
@@ -161,6 +179,12 @@ read -p "Type a Command: " cmd
             ;;
         vim)
             bash ./bin/vim.sh
+            echo ""
+            echo "====================================================================="
+            echo ""
+            ;;
+        vscode)
+            bash ./bin/desktop/vscode.sh
             echo ""
             echo "====================================================================="
             echo ""
