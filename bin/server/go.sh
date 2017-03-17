@@ -22,7 +22,8 @@ echo '    export GOPATH=$HOME/.go'
 echo 'fi'
 
 
-sudo -u $SUDO_USER mkdir "$HOME/.go"
+sudo mkdir "$HOME/.go"
+sudo chown $USER:$USER "$HOME_PATH/.go"
 
 if [ $SKIP_SLEEP == false ]; then
     sleep 4

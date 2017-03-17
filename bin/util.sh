@@ -40,6 +40,7 @@ fi
 # Git Extras autocomplete
 
 cp "$PROJECT_FILE_PATH/gh_complete.sh" "$HOME_PATH"
+sudo chown $USER:$USER "$HOME_PATH/gh_complete.sh"
 
 echo "(+) Completed install utilities."
 echo ""
