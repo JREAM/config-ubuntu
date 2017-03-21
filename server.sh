@@ -34,6 +34,10 @@ cat <<- command_list
     apache        Installs Apache
     nginx         Installs NGINX
 
+    SSL:
+    ----
+    letsencrypt   Installs LetsEncrypt 90 day SSL Certs you must renew CRONtab
+
     Databases:
     ----------
     mysql         Install MySQL, common, utils
@@ -112,6 +116,12 @@ read -p "Type a Command: " cmd
             ;;
         java)
             bash ./bin/server/java.sh
+            echo ""
+            echo "====================================================================="
+            echo ""
+            ;;
+        letsencrypt)
+            bash ./bin/server/letsencrypt.sh
             echo ""
             echo "====================================================================="
             echo ""
