@@ -56,8 +56,8 @@ cat <<- command_list
     mysqlwb       Install MySQL Workbench
     security      Install ClamAV, RKHunter (read instructions after install)
     touchpad-tool Install touchpad-indicator.
-    util          Install Utilities
-                    git, curl, htop, unzip, terminator, tmux, screen
+    util          Install Utilities: (git, curl, htop, unzip, terminator, tmux, screen)
+    utilxtra      Intall Bonus CLI Utilities (peco)
     vmware-tools  Install VMWare Tools (When Mounted Only!)
     vim           Install Vim (.vimrc and Vundle Plugins)
 
@@ -167,6 +167,12 @@ read -p "Type a Command: " cmd
             ;;
         util)
             bash ./bin/util.sh
+            echo ""
+            echo "====================================================================="
+            echo ""
+            ;;
+        utilxtra)
+            bash ./bin/utilxtra.sh
             echo ""
             echo "====================================================================="
             echo ""

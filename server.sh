@@ -69,6 +69,7 @@ cat <<- command_list
     perm          Update /usr/local permissions to group 'local'
     security      Install ClamAV, RKHunter (read instructions after install)
     util          Install Utilities: (git, curl, htop, unzip, terminator, tmux, screen)
+    utilxtra      Intall Bonus CLI Utilities (peco)
     vim           Install Vim & Plugins (.vimrc and Vundle Plugins)
 
     Quit:
@@ -224,6 +225,12 @@ read -p "Type a Command: " cmd
             ;;
         util)
             bash ./bin/util.sh
+            echo ""
+            echo "====================================================================="
+            echo ""
+            ;;
+        utilxtra)
+            bash ./bin/utilxtra.sh
             echo ""
             echo "====================================================================="
             echo ""
