@@ -55,6 +55,7 @@ cat <<- command_list
     php7.1        Install PHP7.1 with common modules (Phalcon not ready)
     py            Install Python2/3 PIP2/3 Devel,(bpython,  mycli, virtualenvwrapper)
     rb            Install Ruby (ruby, ruby-dev, gem)
+    rust          Install Rust Language (Installer)
 
     Frameworks/Util:
     -----------
@@ -207,6 +208,12 @@ read -p "Type a Command: " cmd
             ;;
         rb)
             bash ./bin/server/rb.sh
+            echo ""
+            echo "====================================================================="
+            echo ""
+            ;;
+        rust)
+            bash ./bin/server/rust.sh
             echo ""
             echo "====================================================================="
             echo ""
