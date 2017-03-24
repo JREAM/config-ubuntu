@@ -37,6 +37,7 @@ cat <<- command_list
     docker-machine Install Docker Machine
     docker-ac      Install Docker Autocomplete CLI
     ansible        Install Ansible Provisioner
+    hypercontainer Install Hypercontainer (Hypervisor-agnostic Docker Runtime)
     logstash       Install LogStash
     saltstack      Install Saltstack Provisioner
     saltstack      Install SaltStack Provisioner
@@ -102,6 +103,12 @@ read -p "Type a Command: " cmd
             ;;
         docker-machine)
             bash ./bin/devops/docker-machine.sh
+            echo ""
+            echo "====================================================================="
+            echo ""
+            ;;
+        hypercontainer)
+            bash ./bin/devops/hypercontainer.sh
             echo ""
             echo "====================================================================="
             echo ""
