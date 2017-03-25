@@ -44,6 +44,7 @@ cat <<- command_list
     consul         Install Hashicorp Consul
     nomad          Install Hashicorp Nomad
     packer         Install Hashicorp Packer
+    ptrsyslog      Install Hashicorp PaperTrail Syslog2
     serf           Install Hashicorp Serf
     terraform      Install Hashicorp Terraform
     vault          Install Hashicorp Vault
@@ -133,6 +134,12 @@ read -p "Type a Command: " cmd
             ;;
         packer)
             bash ./bin/devops/hashicorp/packer.sh
+            echo ""
+            echo "====================================================================="
+            echo ""
+            ;;
+        ptrsyslog)
+            bash ./bin/devops/papertrail-rsyslog2.sh
             echo ""
             echo "====================================================================="
             echo ""
