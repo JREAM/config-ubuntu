@@ -50,6 +50,10 @@ cat <<- command_list
     vault          Install Hashicorp Vault
     vagrant        Install Hashicorp Vagrant
 
+    Deployment
+    ----------
+    rocketeer      Install PHP Deployment System
+
     Benchmarking:
     -------------
     iperf          Install iperf CLI util
@@ -140,6 +144,13 @@ read -p "Type a Command: " cmd
             ;;
         ptrsyslog)
             bash ./bin/devops/papertrail-rsyslog2.sh
+            echo ""
+            echo "====================================================================="
+            echo ""
+            ;;
+
+        rocketeer)
+            bash ./bin/devops/rocketeer.sh
             echo ""
             echo "====================================================================="
             echo ""
