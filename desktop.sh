@@ -61,6 +61,11 @@ cat <<- command_list
     vmware-tools  Install VMWare Tools (When Mounted Only!)
     vim           Install Vim (.vimrc and Vundle Plugins)
 
+    Browser
+    -------
+    chromium      Install Chromium Browser and FFMPEG Codecs (blue icon)
+
+
     Quit:
     -----
     q             Quit (or CTRL + C)
@@ -89,6 +94,12 @@ read -p "Type a Command: " cmd
             ;;
         btnright)
             bash ./bin/desktop/btn-right.sh
+            echo ""
+            echo "====================================================================="
+            echo ""
+            ;;
+        chromium)
+            bash ./bin/desktop/chromium.sh
             echo ""
             echo "====================================================================="
             echo ""
