@@ -27,6 +27,7 @@ sudo apt-get install -y\
     whois\
     pydf\
     ncdu\
+    colordiff\
     xclip
 
 if [ $BASE_SCRIPT == 'desktop' ]; then
