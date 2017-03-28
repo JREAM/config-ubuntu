@@ -40,8 +40,10 @@ cat <<- command_list
 
     Databases:
     ----------
+    mariadb       Install MariaDB (MySQL Fork)
     mysql         Install MySQL, common, utils
     mongo         Install MongoDB Community Edition
+    perconadb     Install PerconaDB (MySQL Fork)
     postgres      Install Postgres
     redis         Install Redis (redis-server)
     elasticsearch Install Elastic Search
@@ -134,6 +136,12 @@ read -p "Type a Command: " cmd
             echo "====================================================================="
             echo ""
             ;;
+        mariadb)
+            bash ./bin/server/mariadb.sh
+            echo ""
+            echo "====================================================================="
+            echo ""
+            ;;
         mysql)
             bash ./bin/server/mysql.sh
             echo ""
@@ -196,6 +204,12 @@ read -p "Type a Command: " cmd
             ;;
         postgres)
             bash ./bin/server/postgres.sh
+            echo ""
+            echo "====================================================================="
+            echo ""
+            ;;
+        perconadb)
+            bash ./bin/server/perconadb.sh
             echo ""
             echo "====================================================================="
             echo ""
