@@ -609,32 +609,28 @@ You need to use **Firefox** or **IceWeasle** at https://extensions.gnome.org/ to
 You can use **TweakUI** to toggle Extensions when they are installed.
 
 - **Extensions I use**
-- All Windows
-- Alt tab lift first window
-- Alternatetab
-- [Dash to Dock](https://extensions.gnome.org/extension/307/dash-to-dock/)
-- [Force Quit](https://extensions.gnome.org/extension/770/force-quit/)
-- Frippery move clock
-- Gno-menu
-- Lock screen
-- Netspeed
-- [No Topleft Hot Corner](https://extensions.gnome.org/extension/118/no-topleft-hot-corner/)
-- Quick app launcher
-- Workspace Indicator
-- [Workspaces to Dock](https://extensions.gnome.org/extension/427/workspaces-to-dock/)
-- Windownavigator
-- **Nice Extensions**
+- https://extensions.gnome.org/extension/1031/topicons/
+- https://extensions.gnome.org/extension/750/openweather/
+- https://extensions.gnome.org/extension/36/lock-keys/
+- https://extensions.gnome.org/extension/701/top-panel-workspace-scroll/
+- https://extensions.gnome.org/extension/657/shelltile/
+- https://extensions.gnome.org/extension/878/alt-tab-list-first-window/
+- https://extensions.gnome.org/extension/15/alternatetab/
+- https://extensions.gnome.org/extension/906/sound-output-device-chooser/
+- https://extensions.gnome.org/extension/1031/topicons/
+- https://extensions.gnome.org/extension/427/workspaces-to-dock/ (Sidebar Dock)
+- https://extensions.gnome.org/extension/307/dash-to-dock/ (a: This Dock)
+- https://extensions.gnome.org/extension/815/simple-dock/ (a: Or this Dock)
+- https://extensions.gnome.org/extension/932/scroll-panel/
+- https://extensions.gnome.org/extension/104/netspeed/
+- [Toggle Touchpad](https://extensions.gnome.org/extension/935/toggle-touchpad/) (For Laptops)
+- **Decent Extensions**
 - [Applications Menu](https://extensions.gnome.org/extension/6/applications-menu/)
-- [Taskbar](https://extensions.gnome.org/extension/584/taskbar/)
-- [Small Panel Icon](https://extensions.gnome.org/extension/861/small-panel-icon/)
-- [Top Icons](https://extensions.gnome.org/extension/495/topicons/)
 - [MMOD Panel](https://extensions.gnome.org/extension/898/mmod-panel/)
-- [Keyboard Modifiers Status](https://extensions.gnome.org/extension/975/keyboard-modifiers-status/)
-- [Laine](https://extensions.gnome.org/extension/937/laine/)
 - [Disable Workspace Switcher Popup](https://extensions.gnome.org/extension/959/disable-workspace-switcher-popup/)
 - [Refresh Wifi Connections](https://extensions.gnome.org/extension/905/refresh-wifi-connections/)
 - [Disconnect Wifi](https://extensions.gnome.org/extension/904/disconnect-wifi/)
-- [Toggle Touchpad](https://extensions.gnome.org/extension/935/toggle-touchpad/) (For Laptops)
+
 
 ### Reload Gnome Freeze
 This is a rare things for me, it happens much more in unity and requires a lot more "damaging" things. To fix a gnome that seems frozen do the following:
