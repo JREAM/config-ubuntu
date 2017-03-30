@@ -25,7 +25,7 @@ sudo apt-get purge lxc-docker
 apt-cache policy docker-engine
 
 echo "(+) Installing Docker"
-#sudo apt-get install -y linux-image-extra-$(uname -r) linux-image-extra-virtual
+sudo apt-get install -y linux-image-extra-$(uname -r) linux-image-extra-virtual
 sudo apt-get install -y docker-engine
 sudo service docker start
 
