@@ -17,6 +17,8 @@ sudo apt-get install -y\
     netperf\
     putty-tools\
     python-software-properties\
+    pwgen\
+    gpw\
     software-properties-common\
     screen\
     stress\
