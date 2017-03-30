@@ -37,10 +37,10 @@ cat <<- command_list
     docker-machine Install Docker Machine
     docker-ac      Install Docker Autocomplete CLI
     ansible        Install Ansible Provisioner
-    hypercontainer Install Hypercontainer (Hypervisor-agnostic Docker Runtime)
+    hyper          Install Hypercontainer (Hypervisor-agnostic Docker Runtime)
+    hypercli       Install Hyper.sh CLI (PaaS Tool for hyper.sh)
     logstash       Install LogStash
     saltstack      Install Saltstack Provisioner
-    saltstack      Install SaltStack Provisioner
     consul         Install Hashicorp Consul
     nomad          Install Hashicorp Nomad
     packer         Install Hashicorp Packer
@@ -53,6 +53,7 @@ cat <<- command_list
     Deployment
     ----------
     rocketeer      Install PHP Deployment System
+    capistrano     Install Ruby Capistrano
 
     Benchmarking:
     -------------
@@ -112,8 +113,14 @@ read -p "Type a Command: " cmd
             echo "====================================================================="
             echo ""
             ;;
-        hypercontainer)
+        hyper)
             bash ./bin/devops/hypercontainer.sh
+            echo ""
+            echo "====================================================================="
+            echo ""
+            ;;
+        hypersh)
+            bash ./bin/devops/hypersh.sh
             echo ""
             echo "====================================================================="
             echo ""
