@@ -15,6 +15,7 @@ else
 fi
 
 dotfiles=(
+    'bash_aliases'
     'bashrc'
     'editorconfig'
     'exports'
