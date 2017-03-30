@@ -43,6 +43,10 @@ cat <<- command_list
 
     apport-off    Disable apport error reporting in GUI (The popup windows)
 
+    Firewall Personal
+    -----------------
+    ufw           Enable UFW Local: 80 443 3306 1337 2375 9000 8000-02
+
     Code Editors:
     ----------
     sublime-text  Installs sublime text 3 (deb package) (x64)
@@ -172,6 +176,12 @@ read -p "Type a Command: " cmd
             ;;
         touchpad-tool)
             bash ./bin/desktop/touchpad-tool.sh
+            echo ""
+            echo "====================================================================="
+            echo ""
+            ;;
+        ufw)
+            bash ./bin/desktop/ufw.sh
             echo ""
             echo "====================================================================="
             echo ""
