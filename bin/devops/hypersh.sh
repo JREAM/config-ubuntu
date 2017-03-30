@@ -5,11 +5,9 @@ if [[ ! $INSTALL_SCRIPT ]]; then
 fi
 
 # Install Keys
-echo "(+) Downloading Qemu Deendency (fast processor emulator)"
-apt-get install -y qemu
+echo "(+) Downloading Hyper.sh CLI (PaaS)"
+curl -sSL https://hyper.sh/install | bash
 
-echo "(+) Downloading Installer"
-curl -sSL https://hypercontainer.io/install | bash
 
 
 if [ $SKIP_SLEEP == false ]; then
