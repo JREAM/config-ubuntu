@@ -68,6 +68,7 @@ cat <<- command_list
 
     Utilities:
     ----------
+    deploy        Simple Bash Script to deploy to servers, (Git: visionmedia/deply)
     dot           Copy Dotfiles (.bashrc, .gitconfig, .gitignore)
     perm          Update /usr/local permissions to group 'local'
     security      Install ClamAV, RKHunter (read instructions after install)
@@ -96,6 +97,12 @@ read -p "Type a Command: " cmd
             ;;
         apache)
             bash ./bin/server/apache.sh
+            echo ""
+            echo "====================================================================="
+            echo ""
+            ;;
+        deploy)
+            bash ./bin/deploy.sh
             echo ""
             echo "====================================================================="
             echo ""

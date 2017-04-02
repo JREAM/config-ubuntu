@@ -54,6 +54,7 @@ cat <<- command_list
 
     Utilities:
     ----------
+    deploy        Simple Bash Script to deploy to servers, (Git: visionmedia/deply)
     dot           Copy Dotfiles (.bashrc, .gitconfig, .gitignore)
     dropbox       Installs Dropbox (x64)
     perm          Update /usr/local permissions
@@ -104,6 +105,12 @@ read -p "Type a Command: " cmd
             ;;
         chromium)
             bash ./bin/desktop/chromium.sh
+            echo ""
+            echo "====================================================================="
+            echo ""
+            ;;
+        deploy)
+            bash ./bin/deploy.sh
             echo ""
             echo "====================================================================="
             echo ""
