@@ -65,6 +65,8 @@ cat <<- command_list
     php-phalcon   Install Phalcon (<=15 Wily & Below) or PHP7 (>=17 Xenial)
     php-laravel   Install Laravel (Composer global install as current user)
     php-lumen     Install Lumen ( Composer global install as current user )
+    middleman     Installs Middleman (Ruby), middlemanapp.com (More of a local tool)
+
 
     Utilities:
     ----------
@@ -151,6 +153,12 @@ read -p "Type a Command: " cmd
             ;;
         mysql)
             bash ./bin/server/mysql.sh
+            echo ""
+            echo "====================================================================="
+            echo ""
+            ;;
+        middleman)
+            bash ./bin/server/middleman.sh
             echo ""
             echo "====================================================================="
             echo ""
