@@ -51,6 +51,7 @@ cat <<- command_list
     ----------
     sublime-text  Installs sublime text 3 (deb package) (x64)
     vscode        Install Visual Studio Code (apt) (x64)
+    remarkable    Install Remarkable Markdown Editor
 
     Utilities:
     ----------
@@ -165,6 +166,12 @@ read -p "Type a Command: " cmd
             ;;
         perm)
             bash ./bin/perm.sh
+            echo ""
+            echo "====================================================================="
+            echo ""
+            ;;
+        remarkable)
+            bash ./bin/desktop/remarkable.sh
             echo ""
             echo "====================================================================="
             echo ""
