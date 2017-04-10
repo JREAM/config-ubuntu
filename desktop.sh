@@ -53,6 +53,13 @@ cat <<- command_list
     vscode        Install Visual Studio Code (apt) (x64)
     remarkable    Install Remarkable Markdown Editor
 
+    GUI Development:
+    ----------------
+    mono          Install Mono for C# in .NET to build/run applications.
+    pygtk         Install PyGTK Cross Pltfm GUI (GTK2&3, Glade GUI Editor)
+    pyqt5         Install PyQt5 Cross Pltfm GUI (Requires Python 3)
+
+
     Utilities:
     ----------
     deploy        Simple Bash Script to deploy to servers, (Git: visionmedia/deply)
@@ -152,6 +159,12 @@ read -p "Type a Command: " cmd
             echo "====================================================================="
             echo ""
             ;;
+        mono)
+            bash ./bin/desktop/mono.sh
+            echo ""
+            echo "====================================================================="
+            echo ""
+            ;;
         mysqlwb)
             bash ./bin/desktop/mysql-workbench.sh
             echo ""
@@ -166,6 +179,18 @@ read -p "Type a Command: " cmd
             ;;
         perm)
             bash ./bin/perm.sh
+            echo ""
+            echo "====================================================================="
+            echo ""
+            ;;
+        pygtk)
+            bash ./bin/desktop/pygtk.sh
+            echo ""
+            echo "====================================================================="
+            echo ""
+            ;;
+        pyqt5)
+            bash ./bin/desktop/pyqt5.sh
             echo ""
             echo "====================================================================="
             echo ""
