@@ -77,6 +77,7 @@ cat <<- command_list
     Browser
     -------
     chromium      Install Chromium Browser and FFMPEG Codecs (blue icon)
+    chrome        Install Chrome Stable (latest debian file)
 
 
     Quit:
@@ -107,6 +108,12 @@ read -p "Type a Command: " cmd
             ;;
         btnright)
             bash ./bin/desktop/btn-right.sh
+            echo ""
+            echo "====================================================================="
+            echo ""
+            ;;
+        chrome)
+            bash ./bin/desktop/chrome.sh
             echo ""
             echo "====================================================================="
             echo ""
