@@ -59,6 +59,9 @@ cat <<- command_list
     pygtk         Install PyGTK Cross Pltfm GUI (GTK2&3, Glade GUI Editor)
     pyqt5         Install PyQt5 Cross Pltfm GUI (Requires Python 3)
 
+    Static Site Generators:
+    -----------------------
+    hugo          Install Hugo .deb written in Go
 
     Utilities:
     ----------
@@ -162,6 +165,12 @@ read -p "Type a Command: " cmd
             ;;
         hotkeys)
             bash ./bin/desktop/hotkeys.sh
+            echo ""
+            echo "====================================================================="
+            echo ""
+            ;;
+        hugo)
+            bash ./bin/desktop/hugo.sh
             echo ""
             echo "====================================================================="
             echo ""
