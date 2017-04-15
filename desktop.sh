@@ -34,6 +34,7 @@ cat <<- command_list
     ----------
     btnleft       Move Close/Min/Max to Left on Windows
     btnright      Move Min/Max/Close to Right on Windows (Familiar to Windows OS)
+    dismm         Disable MiddleMouse Copy/Paste (Scroll Works), makes Backup file.
 
     gnome         Install Gnome 3 GUI (You toggle at login or see README)
     gnome-chrome  Install Chrome Addon to allow installing Gnome Ext from Chrome
@@ -93,7 +94,7 @@ echo ""
 echo "====================================================================="
 echo ""
 
-read -p "Type a Command: " cmd
+read -e -p "Type a Command: " cmd
 
 
     case $cmd in
@@ -129,6 +130,12 @@ read -p "Type a Command: " cmd
             ;;
         deploy)
             bash ./bin/deploy.sh
+            echo ""
+            echo "====================================================================="
+            echo ""
+            ;;
+        dismm)
+            bash ./bin/desktop/disable-middle-mouse.sh
             echo ""
             echo "====================================================================="
             echo ""
