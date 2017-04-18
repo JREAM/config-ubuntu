@@ -53,6 +53,7 @@ cat <<- command_list
     sublime-text  Installs sublime text 3 (deb package) (x64)
     vscode        Install Visual Studio Code (apt) (x64)
     remarkable    Install Remarkable Markdown Editor
+    postman       The popular Postman Client for API testing
 
     GUI Development:
     ----------------
@@ -202,6 +203,12 @@ read -e -p "Type a Command: " cmd
             ;;
         perm)
             bash ./bin/perm.sh
+            echo ""
+            echo "====================================================================="
+            echo ""
+            ;;
+        postman)
+            bash ./bin/desktop/postman.sh
             echo ""
             echo "====================================================================="
             echo ""
