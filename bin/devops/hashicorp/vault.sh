@@ -6,8 +6,8 @@ fi
 
 echo "(+) Downloading Hashicorp Vault"
 
+curl -o vault.zip https://releases.hashicorp.com/vault/0.7.0/vault_0.7.0_linux_amd64.zip
 
-curl -o vault.zip https://releases.hashicorp.com/vault/0.6.5/vault_0.6.5_linux_amd64.zip
 
 unzip vault.zip
 sudo mv vault /usr/local/bin
