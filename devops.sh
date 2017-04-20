@@ -40,6 +40,7 @@ cat <<- command_list
     hyper          Install Hypercontainer (Hypervisor-agnostic Docker Runtime)
     hypercli       Install Hyper.sh CLI (PaaS Tool for hyper.sh)
     logstash       Install LogStash
+    now            Install Zeit.co Now Binary
     saltstack      Install Saltstack Provisioner
     consul         Install Hashicorp Consul
     nomad          Install Hashicorp Nomad
@@ -133,6 +134,12 @@ read -p "Type a Command: " cmd
             ;;
         logstash)
             bash ./bin/devops/logstash.sh
+            echo ""
+            echo "====================================================================="
+            echo ""
+            ;;
+        now)
+            bash ./bin/devops/now.sh
             echo ""
             echo "====================================================================="
             echo ""
