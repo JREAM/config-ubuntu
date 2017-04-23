@@ -44,6 +44,12 @@ cat <<- command_list
 
     apport-off    Disable apport error reporting in GUI (The popup windows)
 
+    FTP/Cloud
+    ---------
+    crossftp      (Only Good one for S3/Glacier on Linux I could find)
+                  30 Day Trial, Works with S3 and Glacier
+    filezilla     FTP/FTPS Client
+
     Firewall Personal
     -----------------
     ufw           Enable UFW Local: 80 443 3306 1337 2375 9000 8000-02
@@ -129,6 +135,12 @@ read -e -p "Type a Command: " cmd
             echo "====================================================================="
             echo ""
             ;;
+        crossftp)
+            bash ./bin/desktop/crossftp.sh
+            echo ""
+            echo "====================================================================="
+            echo ""
+            ;;
         deploy)
             bash ./bin/deploy.sh
             echo ""
@@ -149,6 +161,12 @@ read -e -p "Type a Command: " cmd
             ;;
         dropbox)
             bash ./bin/desktop/dropbox.sh
+            echo ""
+            echo "====================================================================="
+            echo ""
+            ;;
+        filezilla)
+            bash ./bin/desktop/filezilla.sh
             echo ""
             echo "====================================================================="
             echo ""
