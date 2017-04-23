@@ -15,6 +15,7 @@ else
 fi
 
 dotfiles=(
+    'aws'
     'bash_aliases'
     'bashrc'
     'editorconfig'
