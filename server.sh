@@ -58,6 +58,7 @@ cat <<- command_list
     py            Install Python2/3 PIP2/3 Devel,(bpython,  mycli, virtualenvwrapper)
     rb            Install Ruby (ruby, ruby-dev, gem)
     rust          Install Rust Language (Installer)
+    swift         Install Swift Language (OSX/Ubuntu Only)
 
     Frameworks/Util:
     -----------
@@ -255,6 +256,12 @@ read -p "Type a Command: " cmd
             ;;
         security)
             bash ./bin/security.sh
+            echo ""
+            echo "====================================================================="
+            echo ""
+            ;;
+        swift)
+            bash ./bin/server/swift.sh
             echo ""
             echo "====================================================================="
             echo ""
