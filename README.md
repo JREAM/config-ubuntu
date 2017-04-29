@@ -606,31 +606,34 @@ sudo service lightdm restart
 ### My Gnome Extensions
 You need to use **Firefox** or **IceWeasle** at https://extensions.gnome.org/ to toggle these items. I suggest creating an account so you have a record.
 
-You can use **TweakUI** to toggle Extensions when they are installed.
+You can use **TweakUI** (Tweak in Navigation) to toggle Extensions when they are installed.
 
 - **Extensions I use**
-- https://extensions.gnome.org/extension/1031/topicons/
-- https://extensions.gnome.org/extension/750/openweather/
-- https://extensions.gnome.org/extension/36/lock-keys/
-- https://extensions.gnome.org/extension/701/top-panel-workspace-scroll/
-- https://extensions.gnome.org/extension/657/shelltile/
-- https://extensions.gnome.org/extension/878/alt-tab-list-first-window/
-- https://extensions.gnome.org/extension/15/alternatetab/
-- https://extensions.gnome.org/extension/906/sound-output-device-chooser/
-- https://extensions.gnome.org/extension/1031/topicons/
-- https://extensions.gnome.org/extension/427/workspaces-to-dock/ (Sidebar Dock)
-- https://extensions.gnome.org/extension/307/dash-to-dock/ (a: This Dock)
-- https://extensions.gnome.org/extension/815/simple-dock/ (a: Or this Dock)
-- https://extensions.gnome.org/extension/932/scroll-panel/
-- https://extensions.gnome.org/extension/104/netspeed/
+- https://extensions.gnome.org/extension/770/force-quit/ Force Quit (Icon in Top Bar, must have)
+- https://extensions.gnome.org/extension/750/openweather/ (Show your Weather, It's neat)
+- https://extensions.gnome.org/extension/36/lock-keys/ (Turn off Numlock, Capslock and Notifications if you want.
+- https://extensions.gnome.org/extension/701/top-panel-workspace-scroll/ (Mouse wheel or touchpad two fingers to move workspaces)
+- https://extensions.gnome.org/extension/657/shelltile/ Hold CTRL for move/grouping windows much easier
+- https://extensions.gnome.org/extension/878/alt-tab-list-first-window/ Alt+Tab lifts next window not starting at current. 
+- https://extensions.gnome.org/extension/15/alternatetab/ Alt+Tab does not group by applications, more classic - I prefeer it
+- Top Icons (Remove the bottom left slide out bar and put icons at top
+    - https://extensions.gnome.org/extension/1031/topicons/
+    - OR https://extensions.gnome.org/extension/1031/topicons/ 
+- https://extensions.gnome.org/extension/427/workspaces-to-dock/ Sidebar Dock
+- Favorites Dock (Like Cairo and Elementary)
+    - https://extensions.gnome.org/extension/307/dash-to-dock/ Dash to Dock - More Features
+    - https://extensions.gnome.org/extension/815/simple-dock/ Simple Dock
+- https://extensions.gnome.org/extension/104/netspeed/ Display netspead in topbar (love this)
 - [Toggle Touchpad](https://extensions.gnome.org/extension/935/toggle-touchpad/) (For Laptops)
-- **Decent Extensions**
-- [Applications Menu](https://extensions.gnome.org/extension/6/applications-menu/)
-- [MMOD Panel](https://extensions.gnome.org/extension/898/mmod-panel/)
-- [Disable Workspace Switcher Popup](https://extensions.gnome.org/extension/959/disable-workspace-switcher-popup/)
-- [Refresh Wifi Connections](https://extensions.gnome.org/extension/905/refresh-wifi-connections/)
-- [Disconnect Wifi](https://extensions.gnome.org/extension/904/disconnect-wifi/)
 
+- **Good Extensions**
+- https://extensions.gnome.org/extension/906/sound-output-device-chooser/ Top menu drop drop for selecting Audio Devices
+
+- **Other Extensions**
+- [Applications Menu](https://extensions.gnome.org/extension/6/applications-menu/) - Display application menu top left bar instead of full screen menu window w/`Super`
+- [Disable Workspace Switcher Popup](https://extensions.gnome.org/extension/959/disable-workspace-switcher-popup/) Dont show gray box when moving workspaces
+- [Refresh Wifi Connections](https://extensions.gnome.org/extension/905/refresh-wifi-connections/) - Refresh Wifi Easily
+- [Disconnect Wifi](https://extensions.gnome.org/extension/904/disconnect-wifi/) - Turn off Wifi
 
 ### Reload Gnome Freeze
 This is a rare things for me, it happens much more in unity and requires a lot more "damaging" things. To fix a gnome that seems frozen do the following:
