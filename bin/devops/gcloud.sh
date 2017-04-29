@@ -10,7 +10,7 @@ export CLOUD_SDK_REPO="cloud-sdk-$(lsb_release -c -s)"
 
 # Renove existing apt sources so it doesn't overwrite or duplicate if this is run again.
 if [[ -f "/etc/apt/sources.list.d/google-cloud-sdk.list" ]]; then
-    rm /etc/apt/sources.list.d/google-cloud-sdk.list*
+    sudo rm /etc/apt/sources.list.d/google-cloud-sdk.list*
 fi
 
 echo "deb https://packages.cloud.google.com/apt $CLOUD_SDK_REPO main" | sudo tee -a /etc/apt/sources.list.d/google-cloud-sdk.list
