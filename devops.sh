@@ -32,6 +32,7 @@ cat <<- command_list
     DevOps:
     -------
     awscli         Install AWS CLI tools
+    azurecli       Install Microsoft Azure CLI tools
     gcloud         Install Google Cloud CLI tools
 
     docker         Install Docker
@@ -83,6 +84,12 @@ read -p "Type a Command: " cmd
     case $cmd in
         awscli)
             bash ./bin/devops/awscli.sh
+            echo ""
+            echo "====================================================================="
+            echo ""
+            ;;
+        azurecli)
+            bash ./bin/devops/azurecli.sh
             echo ""
             echo "====================================================================="
             echo ""
