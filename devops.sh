@@ -32,6 +32,8 @@ cat <<- command_list
     DevOps:
     -------
     awscli         Install AWS CLI tools
+    gcloud         Install Google Cloud CLI tools
+
     docker         Install Docker
     docker-compose Install Docker Compose
     docker-machine Install Docker Machine
@@ -110,6 +112,12 @@ read -p "Type a Command: " cmd
             ;;
         docker-machine)
             bash ./bin/devops/docker-machine.sh
+            echo ""
+            echo "====================================================================="
+            echo ""
+            ;;
+        gcloud)
+            bash ./bin/devops/gcloud.sh
             echo ""
             echo "====================================================================="
             echo ""
