@@ -20,6 +20,9 @@ sudo npm install -g n
 sudo n stable
 
 echo "(+) Installing 'nvm'"
+mkdir $HOME_PATH/.nvm
+sudo chown -R $USER:$USER/.nvm
+
 curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.1/install.sh | bash
 
 
