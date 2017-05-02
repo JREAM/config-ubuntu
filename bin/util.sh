@@ -29,6 +29,7 @@ sudo apt-get install -y\
     whois\
     pydf\
     ncdu\
+    super\
     colordiff\
     xclip
 
