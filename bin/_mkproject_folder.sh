@@ -6,13 +6,35 @@ fi
 
 CREATE="${HOME_PATH}/projects"
 
-function facl() {
-    echo "(+) Setting ACL -R & -Rd for $USER and www-data"
-    sudo setfacl -R -m u:$USER:rw $CREATE
-    sudo setfacl -Rd -m u:$USER:rw $CREATE
-    sudo setfacl -R -m g:www-data:rw $CREATE
-    sudo setfacl -Rd -m g:www-data:rw $CREATE
-    echo "(+) Done"
+function facl_file() {
+    echo "(+) Set ACL for $USER:www-data rw [Files Only, Persist]"
+
+    # Files cannot have defaults -d permissions
+    while IFS= read -r -d $'\0' file; do
+        echo "  Setting $file"
+        # Default Mode: RW
+        mode="rw"
+
+        # If Executable, Add RWX
+        if [[ -x "$file" ]]; then
+            mode="rwx"
+        fi
+        sudo setfacl  -m u:$USER:$mode $file
+        sudo setfacl  -m g:www-data:$mode $file
+    done < <(find $CREATE -type f -print0)
+    echo "(+) Done with Files"
+}
+
+function facl_dir() {
+    echo "(+) Set ACL for $USER:www-data rwx [Directories Only, Persist]"
+    while IFS= read -r -d $'\0' dir; do
+        echo "  Setting $dir"
+        sudo setfacl  -m u:$USER:rwx $dir
+        sudo setfacl -dm u:$USER:rwx $dir
+        sudo setfacl  -m g:www-data:rwx $dir
+        sudo setfacl -dm g:www-data:rwx $dir
+    done < <(find $CREATE -type d -print0)
+    echo "(+) Done with Directories"
 }
 
 # Copy project folder over
@@ -27,10 +49,12 @@ if [ ! -d $CREATE ]; then
     sudo chown -R $USER:www-data $CREATE
     sudo chmod g+rw -R $PROJECT_FILE_PATH/projects
     # Set Perms
-    facl
+    facl_file
+    facl_dir
 else
     # Set Perms
-    facl
+    facl_file
+    facl_dir
     echo " (-) Skipping, $CREATE folder already exists"
 fi
 
