@@ -7,8 +7,8 @@ fi
 curl -s https://packagecloud.io/install/repositories/phalcon/stable/script.deb.sh | sudo bash
 
 echo "(+) Installing Phalcon."
-
-sudo apt-get install -y php7.0-phalcon
+sudo apt update
+sudo apt  install -y php7.0-phalcon
 sudo phpenmod phalcon
 
 echo "(+) Installing Phalcon Devtools."
