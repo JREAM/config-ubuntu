@@ -47,10 +47,22 @@ if [ ! -d $CREATE ]; then
 
     echo "(+) Setting permissions to www-data:www-data and g+rwx"
     sudo chown -R $USER:www-data $CREATE
-    sudo chmod g+rw -R $PROJECT_FILE_PATH/projects
-    # Set Perms
-    facl_file
-    facl_dir
+
+    echo "(+) Ensuring $USER is in www-data group"
+    sudo usermod -aG www-data $USER
+
+    echo "(+) Setting ACL and Persistent ACL for: $USER:www-data"
+    sudo setfacl -Rdm d:g:www-data:rwx $CREATE,g:www-data:rwx $CREATE
+    sudo setfacl -Rm d:u:$USER:rwx $CREATE,u:$USER:rwx $CREATE
+
+    echo "(+) Returning default files to -x (For new setup only)"
+    while IFS= read -r -d $'\0' file; do
+        sudo chmod -x $file
+    done < <(find $CREATE -type f -print0)
+
+    echo -e "--- \$getfacl $CREATE records are ---\n"
+    sudo getfacl $CREATE
+
 else
     # Set Perms
     facl_file
