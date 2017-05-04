@@ -13,6 +13,7 @@ sudo apt-get install -y\
     git\
     git-extras\
     curl\
+    elinks\
     htop\
     netperf\
     putty-tools\
