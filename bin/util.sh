@@ -9,6 +9,7 @@ sudo apt-get install -y\
     at\
     ack-grep\
     unzip\
+    bridge-utils\
     bzip2\
     git\
     git-extras\
