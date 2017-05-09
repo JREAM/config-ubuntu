@@ -10,6 +10,7 @@ sudo apt-get install -y socat jq
 
 echo "(+) Copying Docker Complete Source"
 curl -o $HOME_PATH/.docker-complete https://raw.githubusercontent.com/nicferrier/docker-bash-completion/master/docker-complete
+sudo chown $USER:$USER $HOME_PATH/.docker-complete
 source $HOME_PATH/.docker-complete
 
 echo "(+) Complete! Run with $ docker ps <tab>"

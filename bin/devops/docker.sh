@@ -4,31 +4,33 @@ if [[ ! $INSTALL_SCRIPT ]]; then
     exit
 fi
 
+echo "(+) Installing Docker CE"
+# For 14 but perhaps I have a bug?
+sudo apt-get install \
+    linux-image-extra-$(uname -r) \
+    linux-image-extra-virtual\
+    apt-transport-https \
+    ca-certificates \
+    curl \
+    software-properties-common
+
 # Install Keys
-echo "(+) Installing Docker Apt-Key"
-sudo apt-get install -y apt-transport-https ca-certificates
-sudo apt-key adv --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys 58118E89F3A912897C070ADBF76221572C52609D
+echo "(+) Installing Docker GPG Key"
+sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+sudo apt-key fingerprint 0EBFCD88
 
 
 echo "(+) Adding the Apt File"
+sudo add-apt-repository \
+   "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
+   $(lsb_release -cs) \
+   stable"
 
-if [[ $OS_CODENAME == 'xenial' ]]; then
-    sudo add-apt-repository "deb https://apt.dockerproject.org/repo ubuntu-xenial main"
-fi
-
-echo "(+) Updating the Apt Cache"
+echo "(+) Updating the Apt Cache & Installing Docker"
 sudo apt-get update
+sudo apt-get install docker-ce
 
-# Remove any old docker items
-echo "(+) Purging any old docker"
-sudo apt-get purge lxc-docker
-apt-cache policy docker-engine
-
-echo "(+) Installing Docker"
-#sudo apt-get install -y linux-image-extra-$(uname -r) linux-image-extra-virtual
-sudo apt-get install -y docker-engine
-sudo service docker start
-
+echo "(+) Adding user to docker group"
 # Create a docker group, add our user to it
 sudo groupadd docker
 sudo usermod -aG docker $USER

@@ -43,6 +43,7 @@ cat <<- command_list
     numix         Install Numix Theme
 
     apport-off    Disable apport error reporting in GUI (The popup windows)
+    projects      Create/Update ~/projects folder with www-data:www-data and setfacl for user/group
 
     FTP/Cloud
     ---------
@@ -227,6 +228,12 @@ read -e -p "Type a Command: " cmd
             ;;
         postman)
             bash ./bin/desktop/postman.sh
+            echo ""
+            echo "====================================================================="
+            echo ""
+            ;;
+        projects)
+            bash ./bin/_mkproject_folder.sh
             echo ""
             echo "====================================================================="
             echo ""
