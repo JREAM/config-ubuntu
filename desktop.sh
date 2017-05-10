@@ -41,6 +41,7 @@ cat <<- command_list
     gui           Install Ubuntu GUI Tools (Compiz, Tweak)
     hotkeys       Removes Email/WWW hotkeys, adds <Super+e> to Home Folder
     numix         Install Numix Theme
+    papirus       Install Papirus Icon Theme
 
     apport-off    Disable apport error reporting in GUI (The popup windows)
     projects      Create/Update ~/projects folder with www-data:www-data and setfacl for user/group
@@ -216,6 +217,12 @@ read -e -p "Type a Command: " cmd
             ;;
         numix)
             bash ./bin/desktop/numix.sh
+            echo ""
+            echo "====================================================================="
+            echo ""
+            ;;
+        papirus)
+            bash ./bin/desktop/papirus.sh
             echo ""
             echo "====================================================================="
             echo ""
