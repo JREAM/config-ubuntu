@@ -6,7 +6,7 @@ fi
 
 # Install Keys
 echo "(+) Installing Docker Machine"
-curl -L https://github.com/docker/machine/releases/download/v0.10.0/docker-machine-`uname -s`-`uname -m` > /usr/local/bin/docker-machine && \
+curl -L https://github.com/docker/machine/releases/download/v0.11.0/docker-machine-`uname -s`-`uname -m` > /usr/local/bin/docker-machine && \
     chmod +x /usr/local/bin/docker-machine
 
 echo "(+) Complete! Run with $ docker-machine"
