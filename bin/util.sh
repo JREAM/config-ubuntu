@@ -35,26 +35,29 @@ sudo apt-get install -y\
     colordiff\
     xclip
 
+# For Additional Bash Scripts
+mkdir ~/.bash
+
 if [ $BASE_SCRIPT == 'desktop' ]; then
     sudo apt-get install -y\
         terminator\
+        powertop\
         gdebi
 fi
 
 # IMPORTANT: Do NOT have a trailing \ on the LAST item!
 
-# Git Extras autocomplete
-
-cp "$PROJECT_FILE_PATH/gh_complete.sh" "$HOME_PATH"
-sudo chown $USER:$USER "$HOME_PATH/gh_complete.sh"
+# Git Extras Autocomplete
+cp "$PROJECT_FILE_PATH/gh_complete.sh" "$HOME_PATH/.bash/"
+sudo chown $USER:$USER "$HOME_PATH/.bash/gh_complete.sh"
 
 echo "(+) Completed install utilities."
 echo ""
 echo "    If you'd like git-extras autocomplete installed,"
 echo "    add this to your ~/.bashrc file:"
 echo ""
-echo 'if [ -f "$HOME/gh_complete.sh" ]; then'
-echo '   source "$HOME/gh_complete.sh"'
+echo 'if [ -f "$HOME/.bash/gh_complete.sh" ]; then'
+echo '   source "$HOME/.bash/gh_complete.sh"'
 echo 'fi'
 echo ""
 
