@@ -1,5 +1,8 @@
 #!/bin/bash
-#
+
+# @Install:
+#  sudo apt-get install xserver-xorg-input-synaptics
+
 # @documentation:
 # ftp://www.x.org/pub/X11R7.5/doc/man/man4/synaptics.4.html
 #

@@ -35,15 +35,9 @@ cat <<- command_list
     azurecli       Install Microsoft Azure CLI tools
     gcloud         Install Google Cloud CLI tools
 
-    docker         Install Docker
-    docker-compose Install Docker Compose
-    docker-machine Install Docker Machine
-    docker-ac      Install Docker Autocomplete CLI
+    docker         Install Docker, Compose, Machine & bash-autocomplete
     ansible        Install Ansible Provisioner
-    hyper          Install Hypercontainer (Hypervisor-agnostic Docker Runtime)
-    hypercli       Install Hyper.sh CLI (PaaS Tool for hyper.sh)
     logstash       Install LogStash
-    now            Install Zeit.co Now Binary
     saltstack      Install Saltstack Provisioner
     consul         Install Hashicorp Consul
     nomad          Install Hashicorp Nomad
@@ -106,37 +100,8 @@ read -p "Type a Command: " cmd
             echo "====================================================================="
             echo ""
             ;;
-        docker-ac)
-            bash ./bin/devops/docker-ac.sh
-            echo ""
-            echo "====================================================================="
-            echo ""
-            ;;
-        docker-compose)
-            bash ./bin/devops/docker-compose.sh
-            echo ""
-            echo "====================================================================="
-            ;;
-        docker-machine)
-            bash ./bin/devops/docker-machine.sh
-            echo ""
-            echo "====================================================================="
-            echo ""
-            ;;
         gcloud)
             bash ./bin/devops/gcloud.sh
-            echo ""
-            echo "====================================================================="
-            echo ""
-            ;;
-        hyper)
-            bash ./bin/devops/hypercontainer.sh
-            echo ""
-            echo "====================================================================="
-            echo ""
-            ;;
-        hypersh)
-            bash ./bin/devops/hypersh.sh
             echo ""
             echo "====================================================================="
             echo ""
@@ -149,12 +114,6 @@ read -p "Type a Command: " cmd
             ;;
         logstash)
             bash ./bin/devops/logstash.sh
-            echo ""
-            echo "====================================================================="
-            echo ""
-            ;;
-        now)
-            bash ./bin/devops/now.sh
             echo ""
             echo "====================================================================="
             echo ""
