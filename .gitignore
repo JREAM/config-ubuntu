@@ -13,6 +13,7 @@ Session.vim
 *.DS_Store
 .AppleDouble
 .LSOverride
+.idea
 
 # OSX Thumbs
 ._*

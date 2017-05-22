@@ -31,6 +31,9 @@ sudo apt-get install -y\
     php7.0-xmlrpc\
     php7.0-zip\
     php-redis\
+    php-memcached\ # There is memcache also, but this ones used more
+    memcached\
+    memcachedb\
     libapache2-mod-php7.0
 
     # IMPORTANT: Do NOT have a trailing \ on the LAST item!

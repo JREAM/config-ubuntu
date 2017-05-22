@@ -53,8 +53,8 @@ cat <<- command_list
     go            Install Google Go
     java          Install JRE and JDK (default-jre, not Oracle)
     node          Install NodeJS (nodejs, npm: n, bower, gulp)
-    php7.0        Install PHP7 with common modules
-    php7.1        Install PHP7.1 with common modules (Phalcon not ready)
+    php70         Install PHP7.0 with common modules
+    php71         Install PHP7.1 with common modules (Phalcon not ready)
     py            Install Python2/3 PIP2/3 Devel,(bpython,  mycli, virtualenvwrapper)
     rb            Install Ruby (ruby, ruby-dev, gem)
     rust          Install Rust Language (Installer)
@@ -206,14 +206,14 @@ read -p "Type a Command: " cmd
             echo "====================================================================="
             echo ""
             ;;
-        php7.0)
-            bash ./bin/server/php7.0.sh
+        php70)
+            bash ./bin/server/php70.sh
             echo ""
             echo "====================================================================="
             echo ""
             ;;
-        php7.1)
-            bash ./bin/server/php7.1.sh
+        php71)
+            bash ./bin/server/php71.sh
             echo ""
             echo "====================================================================="
             echo ""
