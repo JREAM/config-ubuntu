@@ -32,6 +32,7 @@ sudo apt-get install -y\
     pydf\
     ncdu\
     super\
+    dotenv\
     colordiff\
     xclip
 
