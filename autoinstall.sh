@@ -32,29 +32,30 @@ autoinstall=(
     # bin/dot.sh
     # bin/perm.sh
     # bin/security.sh
-    # bin/util.sh
+    bin/util.sh
     # bin/vim
 
     #-----------#
     #  Desktop  #
     #-----------#
-    # bin/desktop/apport-off.sh
+    bin/desktop/apport-off.sh
     # bin/desktop/btn-left.sh
     # bin/desktop/btn-right.sh
-    # bin/desktop/gui.sh
-    # bin/desktop/mysql-workbench.sh
-    # bin/desktop/numix.sh
-    # bin/desktop/sublime-text.sh
-    # bin/desktop/vmware-tools.sh
-    # bin/desktop/vscode.sh
+    bin/desktop/gui.sh
+    bin/desktop/mysql-workbench.sh
+    bin/desktop/numix.sh
+    bin/desktop/sublime-text.sh
+    #bin/desktop/vmware-tools.sh
+    bin/desktop/vscode.sh
 
 
     #----------#
     #  Devops  #
     #----------#
-    # bin/devops/ansible.sh
-    # bin/devops/awscli.sh
-    # bin/devops/docker.sh
+    bin/devops/ansible.sh
+    bin/devops/awscli.sh
+    bin/devops/gcloud.sh
+    bin/devops/docker.sh
     # bin/devops/docker-ac.sh
     # bin/devops/docker-compose.sh
     # bin/devops/docker-machine.sh
@@ -68,29 +69,29 @@ autoinstall=(
     # bin/devops/hasicorp/packer.sh
     # bin/devops/hasicorp/serf.sh
     # bin/devops/hasicorp/terraform.sh
-    # bin/devops/hasicorp/vagrant.sh
+    bin/devops/hasicorp/vagrant.sh
     # bin/devops/hasicorp/vault.sh
 
     #----------#
     #  Server  #
     #----------#
-    # bin/server/apache.sh
+    bin/server/apache.sh
     # bin/server/elasticsearch.sh
     # bin/server/go.sh
-    # bin/server/java.sh
+    bin/server/java.sh
     # bin/server/mongo.sh
     # bin/server/mysql.sh
     # bin/server/nginx.sh
-    # bin/server/node.sh
-    # bin/server/php-7.0.sh
+    bin/server/node.sh
+    bin/server/php-7.0.sh
     # bin/server/php-7.1.sh
-    # bin/server/php-composer.sh
-    # bin/server/php-laravel.sh
-    # bin/server/php-phalcon.sh
+    bin/server/php-composer.sh
+    bin/server/php-laravel.sh
+    bin/server/php-phalcon.sh
     # bin/server/postgres.sh
-    # bin/server/py.sh
-    # bin/server/rb.sh
-    # bin/server/redis.sh
+    bin/server/py.sh
+    bin/server/rb.sh
+    bin/server/redis.sh
 )
 
 # Make sure something will run!

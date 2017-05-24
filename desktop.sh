@@ -45,6 +45,7 @@ cat <<- command_list
 
     apport-off    Disable apport error reporting in GUI (The popup windows)
     projects      Create/Update ~/projects folder with www-data:www-data and setfacl for user/group
+    shutter       Best Screenshot Tool (Instructions to overwrite PrintScreen after install)
 
     FTP/Cloud
     ---------
@@ -265,6 +266,12 @@ read -e -p "Type a Command: " cmd
             ;;
         security)
             bash ./bin/security.sh
+            echo ""
+            echo "====================================================================="
+            echo ""
+            ;;
+        shutter)
+            bash ./bin/desktop/shutter.sh
             echo ""
             echo "====================================================================="
             echo ""
