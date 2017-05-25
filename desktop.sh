@@ -38,6 +38,7 @@ cat <<- command_list
 
     gnome         Install Gnome 3 GUI (You toggle at login or see README)
     gnome-chrome  Install Chrome Addon to allow installing Gnome Ext from Chrome
+    gnome-vpn     Install OpenVPN items for Gnome
     gui           Install Ubuntu GUI Tools (Compiz, Tweak)
     hotkeys       Removes Email/WWW hotkeys, adds <Super+e> to Home Folder
     numix         Install Numix Theme
@@ -182,6 +183,12 @@ read -e -p "Type a Command: " cmd
             ;;
         gnome-chrome)
             bash ./bin/desktop/gnome/gnome-chrome.sh
+            echo ""
+            echo "====================================================================="
+            echo ""
+            ;;
+        gnome-vpn)
+            bash ./bin/desktop/gnome/gnome-vpn.sh
             echo ""
             echo "====================================================================="
             echo ""
