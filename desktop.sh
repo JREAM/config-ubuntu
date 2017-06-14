@@ -38,6 +38,7 @@ cat <<- command_list
 
     gnome         Install Gnome 3 GUI (You toggle at login or see README)
     gnome-chrome  Install Chrome Addon to allow installing Gnome Ext from Chrome
+    gnome-vpn     Install OpenVPN items for Gnome
     gui           Install Ubuntu GUI Tools (Compiz, Tweak)
     hotkeys       Removes Email/WWW hotkeys, adds <Super+e> to Home Folder
     numix         Install Numix Theme
@@ -45,6 +46,7 @@ cat <<- command_list
 
     apport-off    Disable apport error reporting in GUI (The popup windows)
     projects      Create/Update ~/projects folder with www-data:www-data and setfacl for user/group
+    shutter       Best Screenshot Tool (Instructions to overwrite PrintScreen after install)
 
     FTP/Cloud
     ---------
@@ -185,6 +187,12 @@ read -e -p "Type a Command: " cmd
             echo "====================================================================="
             echo ""
             ;;
+        gnome-vpn)
+            bash ./bin/desktop/gnome/gnome-vpn.sh
+            echo ""
+            echo "====================================================================="
+            echo ""
+            ;;
         gui)
             bash ./bin/desktop/gui.sh
             echo ""
@@ -265,6 +273,12 @@ read -e -p "Type a Command: " cmd
             ;;
         security)
             bash ./bin/security.sh
+            echo ""
+            echo "====================================================================="
+            echo ""
+            ;;
+        shutter)
+            bash ./bin/desktop/shutter.sh
             echo ""
             echo "====================================================================="
             echo ""
