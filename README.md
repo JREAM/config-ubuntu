@@ -103,6 +103,8 @@ There are two protective measures:
     - [Remove ATI Drivers](#remove-ati-drivers)
 - [Chrome Addons](#chrome-addons)
 - [Other Applications](#other-applications)
+- [Fix](#fix)
+    - [Bad Superblock to Busybox initramfs](#bad-superblock-to-busybox-initramfs)
 
 ***
 
@@ -917,6 +919,25 @@ Running Windows 8 in Virtualbox has an odd error, run this in `cmd` or `powershe
     - fabric
     - virtualenv
     - virtualenvwrapper
+
+# Fix
+
+Fix Stuff when it goes bad.
+
+## Bad Superblock to Busybox initramfs
+
+You should see a terminal mentioning `BusyBox` and your Partion that is bad. To fix, first exit.
+
+```
+(initramfs) exit
+```
+
+You'll be taken to more console commands, now run fsck on the bad partition and it should fix it in about 20 seconds. Mine happened to be `/dev/sda1`.
+
+```
+fsck /dev/sda1  -y
+```
+
 
 ***
 
