@@ -5,6 +5,12 @@ if [[ ! $INSTALL_SCRIPT ]]; then
     exit
 fi
 
+
+# This PPA Is Great
+sudo LC_ALL=C.UTF-8 add-apt-repository ppa:ondrej/php -y
+sudo apt-get apt update
+
+
 # PHP 7.1
 sudo apt-get install -y\
     php7.1\
@@ -63,10 +69,10 @@ sudo apt-get install -y\
 echo "(+) Copying $HOME_PATH/project folder if it doesn't exist"
 
 # Copy project folder over
-bin/bash $PROJECT_BIN_PATH/_mkproject_folder.sh
+. $PROJECT_BIN_PATH/_mkproject_folder.sh
 
 # Handle Composer
-bash ./php-composer.sh
+. ./php-composer.sh
 
 
 echo "Adding current user to www-data group and setting permissions"

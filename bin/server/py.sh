@@ -26,7 +26,11 @@ pip3 install --upgrade pip
 
 echo "(+) Installing pyenv and pyenv virtualenv"
 git clone https://github.com/pyenv/pyenv.git ~/.pyenv
-git clone https://github.com/pyenv/pyenv-virtualenv.git $(pyenv root)/plugins/pyenv-virtualenv
+
+git clone https://github.com/pyenv/pyenv-virtualenv.git $HOME/.pyenv/plugins/pyenv-virtualenv
+
+# Ensure Permissions are right if run as sudo
+sudo chmown -R $USER:$USER ~/.pyenv
 
 echo "(+) Installing MyCLI (MySQL CLI), BPython, VirtualEnvWrapper"
 pip install bpython virtualenv virtualenvwrapper fabric mycli --upgrade

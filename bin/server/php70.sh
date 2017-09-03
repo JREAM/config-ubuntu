@@ -5,6 +5,11 @@ if [[ ! $INSTALL_SCRIPT ]]; then
     exit
 fi
 
+# This PPA Is Great
+sudo LC_ALL=C.UTF-8 add-apt-repository ppa:ondrej/php -y
+sudo apt-get apt update
+
+
 # PHP 7.0
 sudo apt-get install -y\
     php7.0\
