@@ -4,6 +4,9 @@ if [[ ! $INSTALL_SCRIPT ]]; then
     exit
 fi
 
+
+echo "(+) Installing python2-dev, and python-3"
+
 sudo apt-get install -y\
     libssl-dev\
     python-dev\
@@ -17,10 +20,15 @@ sudo apt-get install -y\
     python3-pip
 
 # IMPORTANT: Do NOT have a trailing \ on the LAST item!
-
+echo "(+) Upgrading PIP"
 pip install --upgrade pip
 pip3 install --upgrade pip
 
+echo "(+) Installing pyenv and pyenv virtualenv"
+git clone https://github.com/pyenv/pyenv.git ~/.pyenv
+git clone https://github.com/pyenv/pyenv-virtualenv.git $(pyenv root)/plugins/pyenv-virtualenv
+
+echo "(+) Installing MyCLI (MySQL CLI), BPython, VirtualEnvWrapper"
 pip install bpython virtualenv virtualenvwrapper fabric mycli --upgrade
 
 echo "(+) Complete!"
@@ -33,6 +41,8 @@ echo "    Virtualenv Python3 Example:"
 echo "    $ mkproject -p /usr/bin/python3"
 echo ""
 echo "    PIP Packages: bpython, virtualenvwrapper, fabric, mycli"
+
+echo " For PyEnv setup, please see the .bashrc file"
 
 if [ $SKIP_SLEEP == false ]; then
     sleep 4

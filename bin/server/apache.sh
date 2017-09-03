@@ -25,8 +25,8 @@ echo "<VirtualHost *:80>
     DocumentRoot $HOME_PATH/projects
 
     # Logfiles
-    ErrorLog  $HOME_PATH/projects/error.log
-    CustomLog $HOME_PATH/projects/access.log combined
+    ErrorLog  $HOME_PATH/projects/logs/error.log
+    CustomLog $HOME_PATH/projects/logs/access.log combined
 </VirtualHost>
 
 <Directory $HOME_PATH/projects>
