@@ -6,7 +6,7 @@ fi
 
 echo "(+) Downloading Hashicorp Terraform"
 
-curl -o terraform.zip https://releases.hashicorp.com/terraform/0.9.3/terraform_0.9.3_linux_amd64.zip
+curl -o terraform.zip https://releases.hashicorp.com/terraform/0.10.4/terraform_0.10.4_linux_amd64.zip
 
 unzip terraform.zip
 sudo mv terraform /usr/local/bin

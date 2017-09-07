@@ -80,6 +80,7 @@ cat <<- command_list
     deploy        Simple Bash Script to deploy to servers, (Git: visionmedia/deply)
     dot           Copy Dotfiles (.bashrc, .gitconfig, .gitignore)
     dropbox       Installs Dropbox (x64)
+    ffmpeg        ffmpeg cli converter
     perm          Update /usr/local permissions
     mysqlwb       Install MySQL Workbench
     security      Install ClamAV, RKHunter (read instructions after install)
@@ -165,6 +166,12 @@ read -e -p "Type a Command: " cmd
             ;;
         dropbox)
             bash ./bin/desktop/dropbox.sh
+            echo ""
+            echo "====================================================================="
+            echo ""
+            ;;
+        ffmpeg)
+          bash ./bin/desktop/ffmpeg.sh
             echo ""
             echo "====================================================================="
             echo ""

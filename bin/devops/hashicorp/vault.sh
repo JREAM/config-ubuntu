@@ -6,7 +6,7 @@ fi
 
 echo "(+) Downloading Hashicorp Vault"
 
-curl -o vault.zip https://releases.hashicorp.com/vault/0.7.0/vault_0.7.0_linux_amd64.zip
+curl -o vault.zip https://releases.hashicorp.com/vault/0.8.2/vault_0.8.2_linux_amd64.zip
 
 
 unzip vault.zip
