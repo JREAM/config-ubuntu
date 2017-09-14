@@ -53,6 +53,7 @@ cat <<- command_list
     crossftp      (Only Good one for S3/Glacier on Linux I could find)
                   30 Day Trial, Works with S3 and Glacier
     filezilla     FTP/FTPS Client
+    fz                          (alias: filezilla)
 
     Firewall Personal
     -----------------
@@ -61,6 +62,7 @@ cat <<- command_list
     Code Editors:
     ----------
     sublime-text  Installs sublime text 3 (deb package) (x64)
+    st3                         (alias: sublime text 3)
     vscode        Install Visual Studio Code (apt) (x64)
     remarkable    Install Remarkable Markdown Editor
     postman       The popular Postman Client for API testing
@@ -176,7 +178,7 @@ read -e -p "Type a Command: " cmd
             echo "====================================================================="
             echo ""
             ;;
-        filezilla)
+        fz|filezilla)
             bash ./bin/desktop/filezilla.sh
             echo ""
             echo "====================================================================="
@@ -290,7 +292,7 @@ read -e -p "Type a Command: " cmd
             echo "====================================================================="
             echo ""
             ;;
-        sublime-text)
+        st3|sublime-text)
             bash ./bin/desktop/sublime-text.sh
             echo ""
             echo "====================================================================="

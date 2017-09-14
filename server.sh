@@ -47,6 +47,7 @@ cat <<- command_list
     postgres      Install Postgres
     redis         Install Redis (redis-server)
     elasticsearch Install Elastic Search
+    es                          (alias: elastic search)
 
     Languages:
     ----------
@@ -63,8 +64,11 @@ cat <<- command_list
     Frameworks/Util:
     -----------
     php-composer  Install/Update PHP Composer Package
+        composer                (alias: php-composer)
     php-phalcon   Install Phalcon (<=15 Wily & Below) or PHP7 (>=17 Xenial)
+        phalcon                 (alias: php-phalcon)
     php-laravel   Install Laravel (Composer global install as current user)
+        laravel                 (alias: laravel)
     php-lumen     Install Lumen ( Composer global install as current user )
     middleman     Installs Middleman (Ruby), middlemanapp.com (More of a local tool)
 
@@ -116,7 +120,7 @@ read -p "Type a Command: " cmd
             echo "====================================================================="
             echo ""
             ;;
-        elasticsearch)
+        es|elasticsearch)
             bash ./bin/server/elasticsearch.sh
             echo ""
             echo "====================================================================="
@@ -182,13 +186,13 @@ read -p "Type a Command: " cmd
             echo "====================================================================="
             echo ""
             ;;
-        php-composer)
+        composer|php-composer)
             bash ./bin/server/php-composer.sh
             echo ""
             echo "====================================================================="
             echo ""
             ;;
-        php-laravel)
+        laravel|php-laravel)
             bash ./bin/server/php-laravel.sh
             echo ""
             echo "====================================================================="
@@ -200,7 +204,7 @@ read -p "Type a Command: " cmd
             echo "====================================================================="
             echo ""
             ;;
-        php-phalcon)
+        phalcon|php-phalcon)
             bash ./bin/server/php-phalcon.sh
             echo ""
             echo "====================================================================="
