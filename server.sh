@@ -53,7 +53,7 @@ cat <<- command_list
     ----------
     go            Install Google Go
     java          Install JRE and JDK (default-jre, not Oracle)
-    node          Install NodeJS (nodejs, npm: n, bower, gulp)
+    node          Install NodeJS v8.X via Repo 
     php70         Install PHP7.0 with common modules
     php71         Install PHP7.1 with common modules (Phalcon not ready)
     py            Install Python2/3 PIP2/3 Devel,(bpython,  mycli, virtualenvwrapper)
