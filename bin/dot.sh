@@ -26,6 +26,7 @@ dotfiles=(
     'jshintrc'
     'profile'
     'vimrc'
+    'virtualenvs'
 )
 
 for i in "${dotfiles[@]}"
