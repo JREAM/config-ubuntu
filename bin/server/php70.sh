@@ -45,30 +45,24 @@ sudo apt-get install -y\
 
 # Configure PHP Options
 # ------------------------
+
+
+# IMPORTANT: Do NOT have a trailing \ on the LAST item!
 # Turn on Short Open Tags
-sudo sed -i 's/short_open_tag.*$/short_open_tag = On/' /etc/php/7.0/fpm/php.ini
-sudo sed -i 's/short_open_tag.*$/short_open_tag = On/' /etc/php/7.0/apache2/php.ini
-sudo sed -i 's/short_open_tag.*$/short_open_tag = On/' /etc/php/7.0/cli/php.ini
+#
+sudo sed -i 's/short_open_tag*/short_open_tag = On/' /etc/php/7.1/{apache2,fpm,cli}/php.ini
 
 # Turn Error Reporting On
-sudo sed -i 's/error_reporting.*$/error_reporting = E_COMPILE_ERROR | E_RECOVERABLE_ERROR | E_ERROR | E_CORE_ERROR/' /etc/php/7.0/fpm/php.ini
-sudo sed -i 's/error_reporting.*$/error_reporting = E_COMPILE_ERROR | E_RECOVERABLE_ERROR | E_ERROR | E_CORE_ERROR/' /etc/php/7.0/apache2/php.ini
-sudo sed -i 's/error_reporting.*$/error_reporting = E_COMPILE_ERROR | E_RECOVERABLE_ERROR | E_ERROR | E_CORE_ERROR/' /etc/php/7.0/cli/php.ini
+sudo sed -i 's/error_reporting = E_ALL &*/error_reporting = E_ALL/' /etc/php/7.1/{apache2,cli,fpm}/php.ini
 
 # Turn Display Errors On
-sudo sed -i 's/display_errors.*$/display_errors = On/' /etc/php/7.0/fpm/php.ini
-sudo sed -i 's/display_errors.*$/display_errors = On/' /etc/php/7.0/apache2/php.ini
-sudo sed -i 's/display_errors.*$/display_errors = On/' /etc/php/7.0/cli/php.ini
+sudo sed -i 's/display_errors =*/display_errors = On/' /etc/php/7.1/{apache2,cli,fpm}/php.ini
 
 # Setup the Log file to /var/log/php/error.log
-sudo sed -i 's/;error_log.*$/error_log = /var/log/php/error.log/'  /etc/php/7.0/fpm/php.ini
-sudo sed -i 's/;error_log.*$/error_log = /var/log/php/error.log/'  /etc/php/7.0/apache2/php.ini
-sudo sed -i 's/;error_log.*$/error_log = /var/log/php/error.log/' /etc/php/7.0/cli/php.ini
+sudo sed -i 's/;error_log.*$/error_log = /var/log/php/error.log/'  /etc/php/7.0/{apache2,cli,fpm}/php.ini
 
 # Turn down from 60
-sudo sed -i 's/;max_execution_time.*$/max_execution_time = 30/' /etc/php/7.0/fpm/php.ini
-sudo sed -i 's/;max_execution_time.*$/max_execution_time = 30/' /etc/php/7.0/apache2/php.ini
-sudo sed -i 's/;max_execution_time.*$/max_execution_time = 30/' /etc/php/7.0/cli/php.ini
+sudo sed -i 's/;max_execution_time.*$/max_execution_time = 30/' /etc/php/7.0/{apache2,cli,fpm}/php.ini
 
 # Create folder for the logs
 sudo mkdir -p /var/www/php

@@ -45,16 +45,21 @@ sudo apt-get install -y\
     # IMPORTANT: Do NOT have a trailing \ on the LAST item!
     # Turn on Short Open Tags
     #
-    sudo sed -i 's/short_open_tag = Off/short_open_tag = On/' /etc/php/7.0/fpm/php.ini
-    sudo sed -i 's/short_open_tag = Off/short_open_tag = On/' /etc/php/7.0/cli/php.ini
+    sudo sed -i 's/short_open_tag*/short_open_tag = On/' /etc/php/7.1/{apache2,fpm,cli}/php.ini
 
     # Turn Error Reporting On
-    sudo sed -i 's/error_reporting = E_ALL & ~E_DEPRECATED & ~E_STRICT/error_reporting = E_ALL/' /etc/php/7.0/fpm/php.ini
-    sudo sed -i 's/error_reporting = E_ALL & ~E_DEPRECATED & ~E_STRICT/error_reporting = E_ALL/' /etc/php/7.0/cli/php.ini
+    sudo sed -i 's/error_reporting = E_ALL &*/error_reporting = E_ALL/' /etc/php/7.1/{apache2,cli,fpm}/php.ini
 
     # Turn Display Errors On
-    sudo sed -i 's/display_errors = Off/display_errors = On/' /etc/php/7.0/fpm/php.ini
-    sudo sed -i 's/display_errors = Off/display_errors = On/' /etc/php/7.0/cli/php.ini
+    sudo sed -i 's/display_errors =*/display_errors = On/' /etc/php/7.1/{apache2,cli,fpm}/php.ini
+
+
+  # Setup the Log file to /var/log/php/error.log
+  sudo sed -i 's/;error_log.*$/error_log = /var/log/php/error.log/'  /etc/php/7.1/{apache2,cli,fpm}/php.ini
+
+  # Turn down from 60
+  sudo sed -i 's/;max_execution_time.*$/max_execution_time = 30/' /etc/php/7.1/{apache2,cli,fpm}/php.ini
+
 
     echo "(+) PHP7 Installed"
 
