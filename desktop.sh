@@ -87,6 +87,7 @@ cat <<- command_list
     mysqlwb       Install MySQL Workbench
     security      Install ClamAV, RKHunter (read instructions after install)
     touchpad-tool Install touchpad-indicator.
+    typora        Distraction Free Markdown Editor (X-Platform), very nice!
     util          Install Utilities: (git, curl, htop, unzip, terminator, tmux, screen)
     utilxtra      Intall Bonus CLI Utilities (peco)
     vmware-tools  Install VMWare Tools (When Mounted Only!)
@@ -304,6 +305,12 @@ read -e -p "Type a Command: " cmd
             echo "====================================================================="
             echo ""
             ;;
+        typora)
+          bash ./bin/desktop/typora.sh
+          echo ""
+          echo "====================================================================="
+          echo ""
+          ;;
         ufw)
             bash ./bin/desktop/ufw.sh
             echo ""
