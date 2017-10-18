@@ -16,17 +16,23 @@ fi
 
 dotfiles=(
     'aws'
-    'bash_aliases'
+    'bashalias'
     'bashrc'
+    'curlrc'
     'editorconfig'
     'exports'
+    'gemrc'
     'gitconfig'
     'gitignore'
+    'grc'
     'jscsrc'
     'jshintrc'
     'profile'
+    'pylintrc'
+    'tmux.conf'
     'vimrc'
     'virtualenvs'
+    'wgetrc'
 )
 
 for i in "${dotfiles[@]}"
