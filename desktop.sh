@@ -82,6 +82,7 @@ cat <<- command_list
     deploy        Simple Bash Script to deploy to servers, (Git: visionmedia/deply)
     dot           Copy Dotfiles (.bashrc, .gitconfig, .gitignore)
     dropbox       Installs Dropbox (x64)
+    hub           Official GitHub CLI tool $ hub
     ffmpeg        ffmpeg cli converter
     perm          Update /usr/local permissions
     mysqlwb       Install MySQL Workbench
@@ -169,6 +170,12 @@ read -e -p "Type a Command: " cmd
             ;;
         dropbox)
             bash ./bin/desktop/dropbox.sh
+            echo ""
+            echo "====================================================================="
+            echo ""
+            ;;
+        hub)
+            bash ./bin/misc/hub-cli.sh
             echo ""
             echo "====================================================================="
             echo ""
