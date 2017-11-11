@@ -77,6 +77,10 @@ cat <<- command_list
     -----------------------
     hugo          Install Hugo .deb written in Go
 
+    IRC:
+    -----------------------
+    irssi         Terminal based IRC client (issrie.org)
+
     Utilities:
     ----------
     deploy        Simple Bash Script to deploy to servers, (Git: visionmedia/deply)
@@ -224,6 +228,12 @@ read -e -p "Type a Command: " cmd
             ;;
         hugo)
             bash ./bin/desktop/hugo.sh
+            echo ""
+            echo "====================================================================="
+            echo ""
+            ;;
+        irssi)
+            bash ./bin/desktop/irssi.sh
             echo ""
             echo "====================================================================="
             echo ""
