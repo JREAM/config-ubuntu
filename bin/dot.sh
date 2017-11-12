@@ -15,24 +15,27 @@ else
 fi
 
 dotfiles=(
-    'aws'
-    'bashalias'
-    'bashrc'
-    'curlrc'
-    'editorconfig'
-    'exports'
-    'gemrc'
-    'gitconfig'
-    'gitignore'
-    'grc'
-    'jscsrc'
-    'jshintrc'
-    'profile'
-    'pylintrc'
-    'tmux.conf'
-    'vimrc'
-    'virtualenvs'
-    'wgetrc'
+    aws
+    bash_vars
+    bash_aliases
+    bash_vendors
+    bashrc
+    curlrc
+    dockerrc
+    editorconfig
+    exports
+    gemrc
+    gitconfig
+    gitignore
+    grc
+    jscsrc
+    jshintrc
+    profile
+    pylintrc
+    tmux.conf
+    vimrc
+    virtualenvs
+    wgetrc
 )
 
 for i in "${dotfiles[@]}"
