@@ -53,22 +53,28 @@ cat <<- command_list
     ----------
     go            Install Google Go
     java          Install JRE and JDK (default-jre, not Oracle)
-    node          Install NodeJS v8.X via Repo 
+    node          Install NodeJS v8.X via Repo
     php70         Install PHP7.0 with common modules
     php71         Install PHP7.1 with common modules (Phalcon not ready)
-    py            Install Python2/3 PIP2/3 Devel,(bpython,  mycli, virtualenvwrapper)
+    py            Install Python2/3 PIP2/3 Devel,(bpython, mycli, virtualenvwrapper)
     rb            Install Ruby (ruby, ruby-dev, gem)
     rust          Install Rust Language (Installer)
     swift         Install Swift Language (OSX/Ubuntu Only)
 
+    Languages Version Managers:
+    ----------
+    gvm           Install Golang Version Manager
+    nvm           Install Node Version Manager
+    pipenv        Install Python Pipenv
+
     Frameworks/Util:
     -----------
     php-composer  Install/Update PHP Composer Package
-        composer                (alias: php-composer)
+      composer                (alias: php-composer)
     php-phalcon   Install Phalcon (<=15 Wily & Below) or PHP7 (>=17 Xenial)
-        phalcon                 (alias: php-phalcon)
+      phalcon                 (alias: php-phalcon)
     php-laravel   Install Laravel (Composer global install as current user)
-        laravel                 (alias: laravel)
+      laravel                 (alias: laravel)
     php-lumen     Install Lumen ( Composer global install as current user )
     middleman     Installs Middleman (Ruby), middlemanapp.com (More of a local tool)
 
@@ -132,6 +138,12 @@ read -p "Type a Command: " cmd
             echo "====================================================================="
             echo ""
             ;;
+        gvm)
+            bash ./bin/server/gvm.sh
+            echo ""
+            echo "====================================================================="
+            echo ""
+            ;;
         java)
             bash ./bin/server/java.sh
             echo ""
@@ -180,8 +192,20 @@ read -p "Type a Command: " cmd
             echo "====================================================================="
             echo ""
             ;;
+        nvm)
+            bash ./bin/server/nvm.sh
+            echo ""
+            echo "====================================================================="
+            echo ""
+            ;;
         perm)
             bash ./bin/perm.sh
+            echo ""
+            echo "====================================================================="
+            echo ""
+            ;;
+        pipenv)
+            bash ./bin/server/pipenv.sh
             echo ""
             echo "====================================================================="
             echo ""
