@@ -5,7 +5,8 @@ if [[ ! $INSTALL_SCRIPT ]]; then
 fi
 
 echo "Installing GVM (Google Version Manager)"
-sudo apt install bison
+
+sudo apt install -y bison
 bash < <(curl -s -S -L https://raw.githubusercontent.com/moovweb/gvm/master/binscripts/gvm-installer)
 
 echo "(+) Complete! Run with $ gvm listall"
