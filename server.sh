@@ -54,7 +54,6 @@ cat <<- command_list
     go            Install Google Go
     java          Install JRE and JDK (default-jre, not Oracle)
     node          Install NodeJS v8.X via Repo
-    php70         Install PHP7.0 with common modules
     php71         Install PHP7.1 with common modules (Phalcon not ready)
     py            Install Python2/3 PIP2/3 Devel,(bpython, mycli, virtualenvwrapper)
     rb            Install Ruby (ruby, ruby-dev, gem)
@@ -230,12 +229,6 @@ read -p "Type a Command: " cmd
             ;;
         phalcon|php-phalcon)
             bash ./bin/server/php-phalcon.sh
-            echo ""
-            echo "====================================================================="
-            echo ""
-            ;;
-        php70)
-            bash ./bin/server/php70.sh
             echo ""
             echo "====================================================================="
             echo ""

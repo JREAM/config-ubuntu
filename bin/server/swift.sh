@@ -11,7 +11,7 @@ echo "Adding Xenial Source List"
 echo "deb http://iachievedit-repos.s3.amazonaws.com/ xenial main" | sudo tee --append /etc/apt/sources.list
 
 sudo apt update
-sudo apt install -y swift-3.0
+sudo apt install -y swift-4.2
 
 echo "(+) Complete! Update your .bashrc with:"
 echo "    export PATH=/opt/swift/swift-3.0/usr/bin:$PATH"

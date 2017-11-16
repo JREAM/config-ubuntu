@@ -6,7 +6,7 @@ fi
 
 echo "(+) Downloading Hashicorp Nomad"
 
-curl -o nomad.zip https://releases.hashicorp.com/nomad/0.6.2/nomad_0.6.2_linux_amd64.zip
+curl -o nomad.zip https://releases.hashicorp.com/nomad/0.7.0/nomad_0.7.0_linux_amd64-lxc.zip
 
 unzip nomad.zip
 sudo mv nomad /usr/local/bin

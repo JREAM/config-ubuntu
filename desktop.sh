@@ -40,7 +40,6 @@ cat <<- command_list
     gnome-chrome  Install Chrome Addon to allow installing Gnome Ext from Chrome
     gnome-vpn     Install OpenVPN items for Gnome
     gui           Install Ubuntu GUI Tools (Compiz, Tweak)
-    hotkeys       Removes Email/WWW hotkeys, adds <Super+e> to Home Folder
     numix         Install Numix Theme
     papirus       Install Papirus Icon Theme
 
@@ -64,7 +63,6 @@ cat <<- command_list
     sublime-text  Installs sublime text 3 (deb package) (x64)
     st3                         (alias: sublime text 3)
     vscode        Install Visual Studio Code (apt) (x64)
-    remarkable    Install Remarkable Markdown Editor
     postman       The popular Postman Client for API testing
 
     GUI Development:
@@ -73,17 +71,13 @@ cat <<- command_list
     pygtk         Install PyGTK Cross Pltfm GUI (GTK2&3, Glade GUI Editor)
     pyqt5         Install PyQt5 Cross Pltfm GUI (Requires Python 3)
 
-    Static Site Generators:
-    -----------------------
-    hugo          Install Hugo .deb written in Go
-
     IRC:
     -----------------------
     irssi         Terminal based IRC client (issrie.org)
 
     Utilities:
     ----------
-    deploy        Simple Bash Script to deploy to servers, (Git: visionmedia/deply)
+    arronax       Easily Create Launchers for any Linux Environment
     dot           Copy Dotfiles (.bashrc, .gitconfig, .gitignore)
     dropbox       Installs Dropbox (x64)
     hub           Official GitHub CLI tool $ hub
@@ -95,7 +89,6 @@ cat <<- command_list
     typora        Distraction Free Markdown Editor (X-Platform), very nice!
     util          Install Utilities: (git, curl, htop, unzip, terminator, tmux, screen)
     utilxtra      Intall Bonus CLI Utilities (peco)
-    vmware-tools  Install VMWare Tools (When Mounted Only!)
     vim           Install Vim (.vimrc and Vundle Plugins)
 
     Browser
@@ -120,6 +113,12 @@ read -e -p "Type a Command: " cmd
     case $cmd in
         apport-off)
             bash ./bin/desktop/apport-off.sh
+            echo ""
+            echo "====================================================================="
+            echo ""
+            ;;
+        arronax)
+            bash ./bin/desktop/arronax.sh
             echo ""
             echo "====================================================================="
             echo ""
@@ -150,12 +149,6 @@ read -e -p "Type a Command: " cmd
             ;;
         crossftp)
             bash ./bin/desktop/crossftp.sh
-            echo ""
-            echo "====================================================================="
-            echo ""
-            ;;
-        deploy)
-            bash ./bin/deploy.sh
             echo ""
             echo "====================================================================="
             echo ""
@@ -220,18 +213,6 @@ read -e -p "Type a Command: " cmd
             echo "====================================================================="
             echo ""
             ;;
-        hotkeys)
-            bash ./bin/desktop/hotkeys.sh
-            echo ""
-            echo "====================================================================="
-            echo ""
-            ;;
-        hugo)
-            bash ./bin/desktop/hugo.sh
-            echo ""
-            echo "====================================================================="
-            echo ""
-            ;;
         irssi)
             bash ./bin/desktop/irssi.sh
             echo ""
@@ -292,12 +273,6 @@ read -e -p "Type a Command: " cmd
             echo "====================================================================="
             echo ""
             ;;
-        remarkable)
-            bash ./bin/desktop/remarkable.sh
-            echo ""
-            echo "====================================================================="
-            echo ""
-            ;;
         security)
             bash ./bin/security.sh
             echo ""
@@ -342,12 +317,6 @@ read -e -p "Type a Command: " cmd
             ;;
         utilxtra)
             bash ./bin/utilxtra.sh
-            echo ""
-            echo "====================================================================="
-            echo ""
-            ;;
-        vmware-tools)
-            bash ./bin/desktop/vmware-tools.sh
             echo ""
             echo "====================================================================="
             echo ""

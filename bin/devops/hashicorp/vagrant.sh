@@ -6,7 +6,7 @@ fi
 
 echo "(+) Downloading Hashicorp Vagrant"
 
-curl -o vagrant.deb https://releases.hashicorp.com/vagrant/2.0.0/vagrant_2.0.0_x86_64.deb
+curl -o vagrant.deb https://releases.hashicorp.com/vagrant/2.0.1/vagrant_2.0.1_x86_64.deb
 sudo dpkg -i vagrant.deb
 
 rm vagrant.deb

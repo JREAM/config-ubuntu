@@ -10,13 +10,13 @@ if [[ -d "/usr/local/go" ]]; then
     exit
 fi
 
-echo "(+) Downloading Google Golang 1.8.1 for Linux AMD64"
+echo "(+) Downloading Google Golang 1.9.2 for Linux AMD64"
 
 # Clear any existing tmp GO files
 rm $PROJECT_TEMP_PATH/go1*
 
 # Download Time!
-wget https://storage.googleapis.com/golang/go1.8.1.linux-amd64.tar.gz -P $PROJECT_TEMP_PATH
+wget hhttps://redirector.gvt1.com/edgedl/go/go1.9.2.linux-amd64.tar.gz -P $PROJECT_TEMP_PATH
 
 cd $PROJECT_TEMP_PATH
 

@@ -5,12 +5,10 @@ if [[ ! $INSTALL_SCRIPT ]]; then
 fi
 
 # Install Keys
-echo "(+) Installing Rocketeer"
-wget http://rocketeer.autopergamene.eu/versions/rocketeer.phar
-sudo chmod +x rocketeer.phar
-sudo mv rocketeer.phar /usr/local/bin/rocketeer
+echo "(+) Installing Capistrano"
+sudo gem install capistrano
 
-echo "(+) Complete! Run with $ rocketeer"
+echo "(+) Complete! Run with $ capistrano"
 
 if [ $SKIP_SLEEP == false ]; then
     sleep 4

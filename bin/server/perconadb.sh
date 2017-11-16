@@ -5,11 +5,11 @@ if [[ ! $INSTALL_SCRIPT ]]; then
 fi
 
 echo "Downloading and installing Percona DB"
-wget https://repo.percona.com/apt/percona-release_0.1-4.$(lsb_release -sc)_all.deb -O $PROJECT_TEMP_PATH/percona.deb
+wget https://repo.percona.com/apt/percona-release_0.1-4.$(lsb_release -sc)_all.deb
+sudo dpkg -i percona-release_0.1-4.$(lsb_release -sc)_all.deb
 
 sudo apt-get update
-
-sudo apt-get -y install percona-server-server
+sudo apt-get install percona-server-server-5.7
 
 
 rm $PROJECT_TEMP_PATH/percona*

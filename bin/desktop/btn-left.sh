@@ -4,7 +4,8 @@ if [[ ! $INSTALL_SCRIPT ]]; then
     exit
 fi
 
-gsettings set org.gnome.desktop.wm.preferences button-layout 'close,minimize,maximize:'
+echo -e "(+) Just Run this in terminal:\n"
+echo "gsettings set org.gnome.desktop.wm.preferences button-layout 'close,minimize,maximize:'"
 
 if [ $SKIP_SLEEP == false ]; then
     sleep 4

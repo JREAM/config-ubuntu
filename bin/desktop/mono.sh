@@ -4,8 +4,6 @@ if [[ ! $INSTALL_SCRIPT ]]; then
     exit
 fi
 
-
-
 echo "(+) Installing Mono Complete for .NET / C#."
 
 sudo apt install -y\

@@ -5,7 +5,7 @@ if [[ ! $INSTALL_SCRIPT ]]; then
 fi
 
 echo "(+) Downloading elasticsearch .deb File"
-wget https://download.elastic.co/elasticsearch/release/org/elasticsearch/distribution/deb/elasticsearch/2.3.1/elasticsearch-2.3.1.deb
+wget https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-6.0.0.deb
 mv elasticsearch-2.3.1.deb $PROJECT_TEMP_PATH
 
 echo "(+) Installing elasticsearch"

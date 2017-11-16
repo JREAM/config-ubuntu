@@ -22,7 +22,7 @@ sudo apt-get install zookeeperd
 
 
 echo "(+) Downloading Kafka"
-wget "http://mirrors.ocf.berkeley.edu/apache/kafka/0.11.0.0/kafka_2.11-0.11.0.0.tgz" -O ~/Downloads/kafka.tgz
+wget "https://www.apache.org/dyn/closer.cgi?path=/kafka/1.0.0/kafka-1.0.0-src.tg" -O ~/Downloads/kafka.tgz
 
 # WHERE  TO INSTALL KAFKA?
 mkdir -p ~/kafka && cd ~/kafka # <-- dont like that!

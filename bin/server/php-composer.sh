@@ -42,7 +42,6 @@ if [ ! -f /usr/local/bin/composer ]; then
     composer global require --prefer-dist phing/phing
     composer global require --prefer-dist sebastian/phpcpd
     composer global require --prefer-dist phploc/phploc
-    composer global require --prefer-dist phpmd/phpmd
     composer global require --prefer-dist squizlabs/php_codesniffer
     composer global require --prefer-dist phpdocumentor/phpdocumentor:2.*
     echo "( + ) Done installing composer packages"
