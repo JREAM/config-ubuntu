@@ -7,7 +7,7 @@ fi
 sudo apt-get install -y\
     ubuntu-restricted-addons\
     ubuntu-restricted-extras\
-    unity-tweak-tool\
+    tweak-tool\
     compizconfig-settings-manager \
     compiz-plugins\
     dconf-editor\
