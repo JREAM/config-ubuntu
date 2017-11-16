@@ -7,9 +7,7 @@ fi
 sudo apt-get install -y\
     ubuntu-restricted-addons\
     ubuntu-restricted-extras\
-    tweak-tool\
-    compizconfig-settings-manager \
-    compiz-plugins\
+    gnome-tweak-tool\
     dconf-editor\
     synaptic\
     gparted\
