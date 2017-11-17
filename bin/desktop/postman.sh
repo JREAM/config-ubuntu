@@ -4,32 +4,31 @@ if [[ ! $INSTALL_SCRIPT ]]; then
     exit
 fi
 
-
 echo "(+) Downloading Postman"
-curl -L https://dl.pstmn.io/download/latest/linux64 -o $PROJECT_TEMP_PATH/Postman.tar.gz
+wget https://dl.pstmn.io/download/latest/linux64 -O $PROJECT_TEMP_PATH/postman.tar.gz
 cd $PROJECT_TEMP_PATH
 
-ls
-
-tar -zxvf Postman.tar.gz
-
 echo "(+) Moving Postman to /opt/Postman"
-sudo mv Postman /opt
+sudo tar -xvf $PROJECT_TEMP_PATH/postman.tar.gz -C /opt
+rm $PROJECT_TEMP_PATH/postman.tar.gz
 
-rm Postman.tar.gz
+if [ ! -s /usr/bin/postman ]; then
+  echo "(+) Symlink in /usr/bin/postman"
+  sudo ln -s /opt/Postman/Postman /usr/bin/postman
+fi
 
 echo "(+) Creating Desktop Entry $HOME_PATH/.local/share/applications/postman.desktop"
 
-echo "#!/usr/bin/env xdg-open
-
+cat > $HOME_PATH/.local/share/applications/postman.desktop << EOF
 [Desktop Entry]
 Version=1.0
+Name=Postman
+Exec=postman
 Type=Application
 Terminal=false
-Exec=/opt/Postman/Postman
-Name=Postman
 Icon=/opt/Postman/resources/app/assets/icon.png
-Categories=Development" > "$HOME_PATH/.local/share/applications/postman.desktop"
+Categories=Development;
+EOF
 
 echo "(+) Complete! Look for Postman in your application menu."
 
