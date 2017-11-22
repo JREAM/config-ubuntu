@@ -34,7 +34,6 @@ dotfiles=(
     pylintrc
     tmux.conf
     vimrc
-    virtualenvs
     wgetrc
 )
 
