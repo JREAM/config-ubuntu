@@ -36,6 +36,8 @@ cat <<- command_list
     gcloud         Install Google Cloud CLI tools
 
     docker         Install Docker, Compose, Machine & bash-autocomplete
+    docker-mint    Install Docker on Linux Mint 18.2
+
     ansible        Install Ansible Provisioner
     logstash       Install LogStash
     saltstack      Install Saltstack Provisioner
@@ -96,6 +98,12 @@ read -p "Type a Command: " cmd
             ;;
         docker)
             bash ./bin/devops/docker.sh
+            echo ""
+            echo "====================================================================="
+            echo ""
+            ;;
+        docker-mint)
+            bash ./bin/devops/docker-mint.sh
             echo ""
             echo "====================================================================="
             echo ""
