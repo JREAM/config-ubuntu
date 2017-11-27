@@ -96,6 +96,9 @@ cat <<- command_list
     chromium      Install Chromium Browser and FFMPEG Codecs (blue icon)
     chrome        Install Chrome Stable (latest debian file)
 
+    GUI
+    -------
+    cinnamon      Install Cinnamon GUI + Muffin + OpenGL
 
     Quit:
     -----
@@ -137,6 +140,12 @@ read -e -p "Type a Command: " cmd
             ;;
         chrome)
             bash ./bin/desktop/chrome.sh
+            echo ""
+            echo "====================================================================="
+            echo ""
+            ;;
+        cinnamon)
+            bash ./bin/desktop/cinnamon.sh
             echo ""
             echo "====================================================================="
             echo ""
