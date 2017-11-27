@@ -1,0 +1,6 @@
+[Desktop Entry]
+Type=Application
+Terminal=false
+Name=Mongo Studio 3T
+Icon=~/apps/studio-3t/icon.png
+Exec=~/.local/share/icons/studio-3t.sh
