@@ -65,6 +65,7 @@ cat <<- command_list
     gvm           Install Golang Version Manager
     nvm           Install Node Version Manager
     pipenv        Install Python Pipenv
+    pyenv         Install Pyenv (Alternative to Pipenv)
 
     Frameworks/Util:
     -----------
@@ -253,6 +254,12 @@ read -p "Type a Command: " cmd
             ;;
         py)
             bash ./bin/server/py.sh
+            echo ""
+            echo "====================================================================="
+            echo ""
+            ;;
+        pyenv)
+            bash ./bin/server/pyenv.sh
             echo ""
             echo "====================================================================="
             echo ""
