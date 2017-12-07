@@ -4,6 +4,8 @@ if [[ ! $INSTALL_SCRIPT ]]; then
     exit
 fi
 
+DEST_DIR=/opt/phalcon-devtools/
+
 curl -s https://packagecloud.io/install/repositories/phalcon/stable/script.deb.sh | sudo bash
 
 echo "(+) Installing Phalcon."

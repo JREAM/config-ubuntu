@@ -9,7 +9,9 @@ sudo chown -R $USER:$USER $HOME_PATH/.composer
 sudo chmod g+rw $HOME_PATH/.composer
 
 # TODO: Check if dir exists
-sudo chmod gu+x $HOME_PATH/.composer/bin
+if [[ -d $HOME_PATH/.composer/vendor/bin ]]; then
+  sudo chmod gu+x $HOME_PATH/.composer/vendor/bin
+fi
 
 composer global require "laravel/installer"
 
