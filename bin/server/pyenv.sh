@@ -8,6 +8,11 @@ fi
 echo "(+) Installing Pyenv"
 
 if hash git 2> /dev/null; then
+  echo "(+) Installing Dependencies to build Python"
+  sudo apt-get install -y make build-essential libssl-dev zlib1g-dev libbz2-dev \
+    libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev libncursesw5-dev \
+    xz-utils tk-dev
+
   git clone https://github.com/pyenv/pyenv.git $HOME_PATH/.pyenv
 else
   print "Error: Git is required, please install 'utils'"
