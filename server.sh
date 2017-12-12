@@ -66,6 +66,7 @@ cat <<- command_list
     nvm           Install Node Version Manager
     pipenv        Install Python Pipenv
     pyenv         Install Pyenv (Alternative to Pipenv)
+    yarn          Install Yarn (NPM Alternative for NodeJS)
 
     Frameworks/Util:
     -----------
@@ -308,6 +309,12 @@ read -p "Type a Command: " cmd
             ;;
         vault)
             bash ./bin/server/hashicorp/vault.sh
+            echo ""
+            echo "====================================================================="
+            echo ""
+            ;;
+        yarn)
+            bash ./bin/server/yarn.sh
             echo ""
             echo "====================================================================="
             echo ""

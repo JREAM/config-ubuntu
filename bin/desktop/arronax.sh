@@ -9,7 +9,7 @@ echo "(+) Installing Arronax"
 
 sudo add-apt-repository ppa:diesch/testing
 sudo apt-get update
-sudo apt-get install arronax
+sudo apt-get install -y arronax
 nautilus -q
 
 # If error messages pop up after running the command

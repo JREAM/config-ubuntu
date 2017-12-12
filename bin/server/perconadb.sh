@@ -9,7 +9,7 @@ wget https://repo.percona.com/apt/percona-release_0.1-4.$(lsb_release -sc)_all.d
 sudo dpkg -i percona-release_0.1-4.$(lsb_release -sc)_all.deb
 
 sudo apt-get update
-sudo apt-get install percona-server-server-5.7
+sudo apt-get install -y percona-server-server-5.7
 
 
 rm $PROJECT_TEMP_PATH/percona*

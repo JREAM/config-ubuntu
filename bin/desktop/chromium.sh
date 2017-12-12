@@ -7,7 +7,7 @@ fi
 
 echo "(+) Installing Chromium Browser, codecs, and driver"
 
-sudo apt-get install chromium-browser\
+sudo apt-get install -y chromium-browser\
     chromium-codecs-ffmpeg\
     chromium-chromedriver
 

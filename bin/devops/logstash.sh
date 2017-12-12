@@ -17,7 +17,7 @@ echo "(+) Adding the dependency to /etc/apt/sources.list.d"
 echo "deb https://artifacts.elastic.co/packages/5.x/apt stable main" | sudo tee -a /etc/apt/sources.list.d/elastic-5.x.list
 
 sudo apt-get update
-sudo apt-get install logstash
+sudo apt-get install -y logstash
 
 echo "(+) Complete! Test LogStash with:"
 echo "bin/logstash -e 'input { stdin { } } output { stdout {} }'"

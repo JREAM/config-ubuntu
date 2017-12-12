@@ -7,7 +7,7 @@ fi
 
 echo "(+) Installing PyQt5-Dev-Tools"
 
-sudo apt-get install pyqt5-dev-tools
+sudo apt-get install -y pyqt5-dev-tools
 
 echo "(+) Complete!"
 

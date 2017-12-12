@@ -18,7 +18,7 @@ su - kafka
 # Java is Required, Ill assume its installed till i do a rewrite
 
 echo "(+) Installing ZooKeeperD"
-sudo apt-get install zookeeperd
+sudo apt-get install -y zookeeperd
 
 
 echo "(+) Downloading Kafka"
@@ -29,7 +29,7 @@ mkdir -p ~/kafka && cd ~/kafka # <-- dont like that!
 
 tar -xvzf ~/Downloads/kafka.tgz --strip 1
 
-sudo sed -i "s/delete.topic.enable/delete.topic.enable = true/" /kafka/config/server.properties # @TODO FIX LOCATION WHEN I KNOW
+sudo sed -i "s/delete.topic.eaptnable/delete.topic.enable = true/" /kafka/config/server.properties # @TODO FIX LOCATION WHEN I KNOW
 
 # START SERVER, BUT ITS BETTER TO USER SYSTEMV than this CRAP
 nohup ~/kafka/bin/kafka-server-start.sh ~/kafka/config/server.properties > ~/kafka/kafka.log 2>&1 &

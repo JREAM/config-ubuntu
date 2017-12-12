@@ -14,7 +14,7 @@ sudo sh -c 'echo "deb [arch=amd64] http://packages.microsoft.com/repos/vscode st
 
 echo "(+) Updating Sources and installing: code"
 sudo apt-get update
-sudo apt-get install code 
+sudo apt-get install -y code 
 
 echo "(+) Complete! Run with $ code (or check your apps menu)"
 

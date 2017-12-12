@@ -8,7 +8,7 @@ fi
 echo "(+) Installing ffmpeg CLI Tool"
 
 sudo apt update
-sudo apt install ffmpeg libav-tools x264 x265
+sudo apt install -y ffmpeg libav-tools x264 x265
 
 # If error messages pop up after running the command
 # sudo dpkg -i google-chrome*.deb then run the command
