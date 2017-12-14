@@ -65,6 +65,7 @@ cat <<- command_list
     gvm           Install Golang Version Manager
     nvm           Install Node Version Manager
     pipenv        Install Python Pipenv
+    phpenv        Install PHP Env Manager
     pyenv         Install Pyenv (Alternative to Pipenv)
     yarn          Install Yarn (NPM Alternative for NodeJS)
 
@@ -237,6 +238,12 @@ read -p "Type a Command: " cmd
             ;;
         php71)
             bash ./bin/server/php71.sh
+            echo ""
+            echo "====================================================================="
+            echo ""
+            ;;
+        phpenv)
+            bash ./bin/server/phpenv.sh
             echo ""
             echo "====================================================================="
             echo ""

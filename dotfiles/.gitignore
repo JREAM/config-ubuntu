@@ -1,0 +1,53 @@
+# Generic Colorizer Git Clone
+grc
+
+# General
+.exports-private
+.exports_private
+.private_exports
+.private-exports
+
+.bash_history
+.bash_logout
+
+# Apple
+.DS_Store
+.AppleDouble
+.LSOverride
+# Thumbnails
+._*
+
+# Linux
+*~
+.directory
+.Trash-*
+Session.vim
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+*.lnk
+
+# Sublime Text
+*.tmlanguage.cache
+*.tmPreferences.cache
+*.stTheme.cache
+*.sublime-workspace
+
+# Sass
+.sass-cache
+
+# NodeJS
+node_modules/
+node-debug.txt
+npm-debug.txt
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+*.egg
+
+# Vagrant
+.vagrant/

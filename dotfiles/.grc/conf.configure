@@ -1,0 +1,27 @@
+# cache functions
+regexp=\b(loading|updating|creating) cache\b
+colours=yellow bold
+.........
+# checking
+regexp=\bchecking\s*(for|if|whether|command|how|that)?(\s*to)?\b
+colours=bold blue
+.........
+# result is complex
+regexp=\.\.\. .*$
+colours=bold yellow
+.........
+# check succeeded
+regexp=\.\.\.( \(cached\))? yes$
+colours=bold cyan
+.........
+# check did not succeed
+regexp=\.\.\.( \(cached\))? no$
+colours=bold red
+.........
+# ... should be normal
+regexp=\.\.\.
+colours=default
+.........
+# creating stuff
+regexp=\bcreating\b
+colours=green

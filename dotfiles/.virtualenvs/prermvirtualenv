@@ -1,0 +1,33 @@
+#!/bin/bash
+# This hook is run before a virtualenv is deleted.
+# argument: full path to environment directory
+
+
+# Contains the absolute path to Project
+# -------------------------------------
+virtualenv_project_dotfile="$VIRTUALENVWRAPPER_HOOK_DIR/$@/.project"
+
+
+# If the Project file exists
+# --------------------------
+if [ -f $virtualenv_project_dotfile ]; then
+
+
+    # Get the absolute path
+    # ---------------------
+    this_project_path=$(cat $virtualenv_project_dotfile)
+
+
+    # Prompt for removing the project as well
+    # ---------------------------------------
+    read -p "Remove project directory [$this_project_path] [y/N]: " confirm
+
+
+    # Remove if "y" is entered
+    # -------------------------------------
+    if [[ $confirm == "y" ]]; then
+        rm -r $this_project_path
+    fi
+
+
+fi

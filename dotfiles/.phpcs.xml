@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<ruleset name="JREAM - App">
+    <!-- Put this in a projects folder -->
+    <description>JREAM - Code Standards for App</description>
+
+    <!-- Show colors in console -->
+    <arg value="-colors"/>
+
+    <!-- Show sniff codes in all reports -->
+    <arg value="s"/>
+
+    <!-- Use PSR-2 as a base -->
+    <rule ref="PSR2"/>
+
+<!-- Example to apply PSR2 to: --> <!--
+    <file>app/controllers</file>
+    <file>app/forms</file>
+    <file>app/library</file>
+    <file>app/middleware</file>
+    <file>app/models</file>
+    <file>app/plugins</file>
+    <file>app/tasks</file>
+    <file>config/</file>
+-->
+</ruleset>

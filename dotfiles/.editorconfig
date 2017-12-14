@@ -1,0 +1,102 @@
+# http://editorconfig.org
+root = true
+
+## Jesse's EditorConfig,
+## > Favor 4 Tabs for Language Code
+## > Favor 2 Tabs for Everything Else
+
+[*]
+indent_style = space
+indent_size = 4
+end_of_line = lf
+charset = utf-8
+trim_trailing_whitespace = true
+insert_final_newline = true
+
+## ------------------------------------------- ##
+## Language
+## ------------------------------------------- ##
+[*.{py,php,json}]
+max_line_length = 120
+
+[*.{rb,py}]
+indent_size=2
+
+
+## ------------------------------------------- ##
+## Stylesheets
+## ------------------------------------------- ##
+[*.{css,sass,scss,less}]
+indent_size = 2
+
+
+## ------------------------------------------- ##
+## JavaScripts
+## ------------------------------------------- ##
+[*.{cs,coffee,es,es6,ls,js,jsx,ts,vue}]
+indent_style = space
+indent_size = 2
+
+
+## ------------------------------------------- ##
+## Templates
+## ------------------------------------------- ##
+[*.{ejs,handlebars,hbs,jade,mustache}]
+indent_style = space
+indent_size = 2
+
+[*.{htm,html,j2,jinj{a,a2},]
+indent_style = space
+indent_size = 2
+
+[**.blade.php]
+indent_size = 2
+[**.twig.php]
+indent_size = 2
+[**.volt.php,*.volt]
+
+## ------------------------------------------- ##
+## Dotfiles
+## ------------------------------------------- ##
+[*.{babelrc,bashrc,bash_profile,bash{_}alias{es},env,env.{example,sample},envrc,exports,gitconfig,nvmrc,profile,vimrc}]
+indent_size = 2
+insert_final_newline = ignore
+
+
+## ------------------------------------------- ##
+## Configs
+## ------------------------------------------- ##
+[*.{conf,htaccess,ini}]
+indent_size = 2
+
+[*.{md,txt,yaml,yml}]
+indent_size = 2
+trim_trailing_whitespace = false
+
+
+## ------------------------------------------- ##
+## (Ignore) Minified JS/CSS
+## ------------------------------------------- ##
+[*.{min.js,.min.css,scssc}]
+indent_style = ignore
+insert_final_newline = ignore
+
+
+## ------------------------------------------- ##
+## Makefiles always use tabs for indentation
+## ------------------------------------------- ##
+[Makefile]
+indent_style = tab
+
+
+## ------------------------------------------- ##
+## Bash/Bat Files
+## ------------------------------------------- ##
+[*.bat]
+indent_style = tab  # These always use tabs (Windows)
+
+[*.{bash,sh,zsh}]
+indent_size = 2
+trim_trailing_whitespace = true
+insert_final_newline = ignore
+

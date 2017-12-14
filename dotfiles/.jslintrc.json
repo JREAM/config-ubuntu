@@ -1,0 +1,15 @@
+{
+    "browser": true,
+    "devel": true,
+    "white": true,
+    "forin": true,
+    "nomen": true,
+    "plusplus": true,
+    "regexp": true,
+    "unparam": false,
+    "sloppy": true,
+    "todo": true,
+    "vars": true,
+    "indent": 2,
+    "maxerr": 100
+}
