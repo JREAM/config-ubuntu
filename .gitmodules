@@ -1,5 +1,5 @@
 [submodule "dotfiles"]
 	path = dotfiles
-	url = https://github.com/JREAM/dotfiles.git
+	url = https://github.com/jream/dotfiles.git
 
 
