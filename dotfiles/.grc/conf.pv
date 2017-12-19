@@ -1,8 +1,0 @@
-# size
-regexp=(\s|^)\d+([.,]\d+)?\s?([kKMG][bB]|[bB]|[kKMG])(?=[\s,]|$)
-colours=yellow
-=======
-# 
-regexp=<=>
-colours=yellow
-
