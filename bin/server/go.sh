@@ -13,20 +13,21 @@ fi
 echo "(+) Downloading Google Golang 1.9.2 for Linux AMD64"
 
 # Clear any existing tmp GO files
-rm $PROJECT_TEMP_PATH/go1*
+if [[ -d "${PROJECT_TEMP_PATH}/go1*" ]]; then
+  rm -rf $PROJECT_TEMP_PATH/go1*
+fi
 
 # Download Time!
-wget hhttps://redirector.gvt1.com/edgedl/go/go1.9.2.linux-amd64.tar.gz -P $PROJECT_TEMP_PATH
-
+curl -O https://storage.googleapis.com/golang/go1.9.2.linux-amd64.tar.gz $PROJECT_TEMP_PATH
 cd $PROJECT_TEMP_PATH
 
-tar xvf go1.8*.tar.gz
-rm go1.8*
+tar xvf $PROJECT_TEMP_PATH/go1.*.tar.gz
+rm $PROJECT_TEMP_PATH/go1.*.tar.gz
 
 echo "(+) Moving $PROJECT_TEMP_PATH/go to /usr/local with permissions: root:root"
 
-sudo chown -R root:root ./go
-sudo mv go /usr/local
+sudo chown -R root:root $PROJECT_TEMP_PATH/go
+sudo mv $PROJECT_TEMP_PATH/go /usr/local
 
 
 echo "(+) Creating a local ~/go folder for your code. Setting your user permissions."
