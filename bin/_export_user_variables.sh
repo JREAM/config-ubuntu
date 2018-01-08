@@ -20,6 +20,6 @@ fi
 
 # Just a friendly warning, but not required -- as you may want dotfiles for root also.
 if [[ $USER == "root" ]]; then
-    "It's not recommended run as the root user, this configures many local user files."
+    echo -e "(!) It's not recommended run as the root user, this configures many local user files."
     sleep 2
 fi
