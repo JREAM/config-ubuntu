@@ -20,6 +20,8 @@ UTILS=(
   putty-tools
   python-software-properties
   pwgen
+  gnupg2
+  gpa
   gpw
   software-properties-common
   screen
