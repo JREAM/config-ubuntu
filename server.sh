@@ -38,6 +38,10 @@ cat <<- command_list
     ----
     letsencrypt   Installs LetsEncrypt 90 day SSL Certs you must renew CRONtab
 
+    Git:
+    ----
+    gitflow       The Gitflow model (with autocomplete)
+
     Databases:
     ----------
     mariadb       Install MariaDB (MySQL Fork)
@@ -131,6 +135,12 @@ read -p "Type a Command: " cmd
             ;;
         es|elasticsearch)
             bash ./bin/server/elasticsearch.sh
+            echo ""
+            echo "====================================================================="
+            echo ""
+            ;;
+        gitflow)
+            bash ./bin/server/gitflow.sh
             echo ""
             echo "====================================================================="
             echo ""
