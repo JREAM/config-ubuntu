@@ -82,11 +82,11 @@ cat <<- command_list
     dropbox       Installs Dropbox (x64)
     hub           Official GitHub CLI tool $ hub
     ffmpeg        ffmpeg cli converter
+    flux          f.lux for eye strain, GUI app
     perm          Update /usr/local permissions
     mysqlwb       Install MySQL Workbench
     security      Install ClamAV, RKHunter (read instructions after install)
     touchpad-tool Install touchpad-indicator.
-    typora        Distraction Free Markdown Editor (X-Platform), very nice!
     util          Install Utilities: (git, curl, htop, unzip, terminator, tmux, screen)
     utilxtra      Intall Bonus CLI Utilities (peco)
     vim           Install Vim (.vimrc and Vundle Plugins)
@@ -188,6 +188,12 @@ read -e -p "Type a Command: " cmd
             ;;
         ffmpeg)
           bash ./bin/desktop/ffmpeg.sh
+            echo ""
+            echo "====================================================================="
+            echo ""
+            ;;
+        flux)
+          bash ./bin/desktop/flux.sh
             echo ""
             echo "====================================================================="
             echo ""
@@ -306,12 +312,6 @@ read -e -p "Type a Command: " cmd
             echo "====================================================================="
             echo ""
             ;;
-        typora)
-          bash ./bin/desktop/typora.sh
-          echo ""
-          echo "====================================================================="
-          echo ""
-          ;;
         ufw)
             bash ./bin/desktop/ufw.sh
             echo ""
