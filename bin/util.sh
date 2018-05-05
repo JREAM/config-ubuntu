@@ -9,6 +9,7 @@ UTILS=(
   at
   ack-grep
   unzip
+  bashdb
   bridge-utils
   bzip2
   git
