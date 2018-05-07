@@ -5,9 +5,10 @@ if [[ ! $INSTALL_SCRIPT ]]; then
 fi
 
 echo "(+) Adding GPG Key"
-sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv EA312927
+sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 2930ADAE8CAF5059EE73BB4B58712A2291FA4AD5
 
-echo "deb [ arch=amd64,arm64 ] http://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.4 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.4.list
+
+echo "deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.6 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.6.list
 
 sudo echo "[Unit]
 Description=High-performance, schema-free document-oriented database
@@ -38,7 +39,9 @@ sudo service mongod start
 
 echo "(+) Complete! Installed Mongo DB Community Edition."
 echo "    use $ sudo service mongod <command>"
-echo "    Consider getting a GUI like mongochef"
+echo "    Consider getting a GUI like Mongo Studio 3T"
+echo ""
+echo "    Default Storage: /var/lib/mongodb"
 
 if [ $SKIP_SLEEP == false ]; then
     sleep 4
