@@ -14,6 +14,9 @@ if hash git 2> /dev/null; then
     xz-utils tk-dev
 
   git clone https://github.com/pyenv/pyenv.git $HOME_PATH/.pyenv
+
+  # Set Permissions to local user
+  sudo chown -R $USER:$USER /home/$USER/.pyenv/
 else
   print "Error: Git is required, please install 'utils'"
   exit 1
