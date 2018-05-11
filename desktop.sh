@@ -42,6 +42,7 @@ cat <<- command_list
     gui           Install Ubuntu GUI Tools (Compiz, Tweak)
     numix         Install Numix Theme
     papirus       Install Papirus Icon Theme
+    xenlism       Install Xenlism Theme, Icons, Wallpaper
 
     apport-off    Disable apport error reporting in GUI (The popup windows)
     projects      Create/Update ~/projects folder with www-data:www-data and setfacl for user/group
@@ -338,6 +339,12 @@ read -e -p "Type a Command: " cmd
             ;;
         vscode)
             bash ./bin/desktop/vscode.sh
+            echo ""
+            echo "====================================================================="
+            echo ""
+            ;;
+        xenlism)
+            bash ./bin/desktop/xenlism.sh
             echo ""
             echo "====================================================================="
             echo ""
