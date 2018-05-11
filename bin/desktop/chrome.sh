@@ -5,16 +5,12 @@ if [[ ! $INSTALL_SCRIPT ]]; then
 fi
 
 
-echo "(+) Installing Chrome"
+echo "(+) Installing Chrome via PPA"
 
-sudo apt-get install -y libxss1 libappindicator1 libindicator7
-wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb -P $PROJECT_TEMP_PATH
-sudo dpkg -i google-chrome*.deb
-sudo rm google-chrome*.deb
-
-# If error messages pop up after running the command
-# sudo dpkg -i google-chrome*.deb then run the command
-# sudo apt-get install -f
+wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
+sudo sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google-chrome.list'
+sudo apt-get update
+sudo apt-get install google-chrome-stable
 
 echo "(+) Complete! Check your apps menu. From Terminal, $ google-chrome"
 

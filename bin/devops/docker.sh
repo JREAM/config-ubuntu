@@ -19,8 +19,11 @@ curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 echo "(+) Adding the Apt File [AMD64]"
 sudo add-apt-repository -y \
    "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
-   $(lsb_release -cs) \
-   stable"
+   xenial stable
+
+# No release beyond xenial yet.
+#$(lsb_release -cs) \
+#stable"
 
 echo "(+) Updating the Apt Cache & Installing Docker"
 sudo apt-get update
@@ -32,19 +35,15 @@ sudo groupadd docker
 sudo usermod -aG docker $USER
 sudo usermod -aG docker root
 
-echo  "(+) Adding Docker Machine"
-curl -L https://github.com/docker/machine/releases/download/v0.11.0/docker-machine-`uname -s`-`uname -m` > /usr/local/bin/docker-machine && \
-    chmod +x /usr/local/bin/docker-machine
-
 echo "(+) Installing: Compose"
-curl -L https://github.com/docker/compose/releases/download/1.13.0/docker-compose-`uname -s`-`uname -m` > /usr/local/bin/docker-compose && \
+curl -L https://github.com/docker/compose/releases/download/1.21.0/docker-compose-`uname -s`-`uname -m` > /usr/local/bin/docker-compose && \
     chmod +x /usr/local/bin/docker-compose
 
 echo "(+) Adding: bash-completion for docker-compose"
 sudo url -L https://raw.githubusercontent.com/docker/compose/$(docker-compose version --short)/contrib/completion/bash/docker-compose -o /etc/bash_completion.d/docker-compose
 
 
-echo "(+) Complete! Run with $ docker / docker-machine / docker-compose"
+echo "(+) Complete! Run with $ docker / docker-compose"
 echo ""
 echo "    If you are using UFW, please see:"
 echo "    https://docs.docker.com/engine/installation/linux/ubuntulinux/#/enable-ufw-forwarding"

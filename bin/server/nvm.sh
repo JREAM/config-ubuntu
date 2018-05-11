@@ -13,6 +13,8 @@ else
   wget -qO- $URL | bash
 fi
 
+sudo chown -R $USER:$USER $HOME_PATH/.nvm
+
 echo "(+) Complete! Run with $ nvm ls-remote"
 echo "If not using my dotfiles ensure this is in .bashrc:"
 echo ""
