@@ -71,7 +71,7 @@ cat <<- command_list
     pipenv        Install Python Pipenv
     phpenv        Install PHP Env Manager
     pyenv         Install Pyenv (Alternative to Pipenv)
-    rvm           Install Ruby Version Manager
+    rbenv         Install RVM (Ruby Version Manager)
     yarn          Install Yarn (NPM Alternative for NodeJS)
 
     Frameworks/Util:
@@ -285,6 +285,12 @@ read -p "Type a Command: " cmd
             ;;
         rb)
             bash ./bin/server/rb.sh
+            echo ""
+            echo "====================================================================="
+            echo ""
+            ;;
+        rbenv)
+            bash ./bin/server/rbenv.sh
             echo ""
             echo "====================================================================="
             echo ""

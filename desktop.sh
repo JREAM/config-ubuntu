@@ -36,16 +36,15 @@ cat <<- command_list
     btnright      Move Min/Max/Close to Right on Windows (Familiar to Windows OS)
     dismm         Disable MiddleMouse Copy/Paste (Scroll Works), makes Backup file.
 
-    gnome         Install Gnome 3 GUI (You toggle at login or see README)
+    gnome         Install Gnome 3 GUI + Tweak Tool (You toggle at login or see README)
     gnome-chrome  Install Chrome Addon to allow installing Gnome Ext from Chrome
     gnome-vpn     Install OpenVPN items for Gnome
-    gui           Install Ubuntu GUI Tools (Compiz, Tweak)
     numix         Install Numix Theme
     papirus       Install Papirus Icon Theme
     xenlism       Install Xenlism Theme, Icons, Wallpaper
 
     apport-off    Disable apport error reporting in GUI (The popup windows)
-    projects      Create/Update ~/projects folder with www-data:www-data and setfacl for user/group
+    projects      Creates ~/projects folder with www-data:www-data user/group
     shutter       Best Screenshot Tool (Instructions to overwrite PrintScreen after install)
 
     FTP/Cloud
@@ -65,12 +64,7 @@ cat <<- command_list
     st3                         (alias: sublime text 3)
     vscode        Install Visual Studio Code (apt) (x64)
     postman       The popular Postman Client for API testing
-
-    GUI Development:
-    ----------------
-    mono          Install Mono for C# in .NET to build/run applications.
-    pygtk         Install PyGTK Cross Pltfm GUI (GTK2&3, Glade GUI Editor)
-    pyqt5         Install PyQt5 Cross Pltfm GUI (Requires Python 3)
+    jekyll        Install Jekyll Docgen
 
     IRC:
     -----------------------
@@ -187,6 +181,12 @@ read -e -p "Type a Command: " cmd
             echo "====================================================================="
             echo ""
             ;;
+        jekyll)
+            bash ./bin/desktop/jekyll.sh
+            echo ""
+            echo "====================================================================="
+            echo ""
+            ;;
         ffmpeg)
           bash ./bin/desktop/ffmpeg.sh
             echo ""
@@ -235,12 +235,6 @@ read -e -p "Type a Command: " cmd
             echo "====================================================================="
             echo ""
             ;;
-        mono)
-            bash ./bin/desktop/mono.sh
-            echo ""
-            echo "====================================================================="
-            echo ""
-            ;;
         mysqlwb)
             bash ./bin/desktop/mysql-workbench.sh
             echo ""
@@ -273,18 +267,6 @@ read -e -p "Type a Command: " cmd
             ;;
         projects)
             bash ./bin/_mkproject_folder.sh
-            echo ""
-            echo "====================================================================="
-            echo ""
-            ;;
-        pygtk)
-            bash ./bin/desktop/pygtk.sh
-            echo ""
-            echo "====================================================================="
-            echo ""
-            ;;
-        pyqt5)
-            bash ./bin/desktop/pyqt5.sh
             echo ""
             echo "====================================================================="
             echo ""

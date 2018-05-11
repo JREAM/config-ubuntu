@@ -4,7 +4,10 @@ if [[ ! $INSTALL_SCRIPT ]]; then
     exit
 fi
 
-sudo apt-get install -y ubuntu-gnome-desktop gnome-session gnome-common
+sudo apt-get install -y\
+  ubuntu-gnome-desktop\
+  gnome-session\
+  gnome-tweak-tool
 
 echo "(+) Gnome Complete! (You need to reboot)"
 echo "(+) To re-configure your gdm/lightdm use: sudo dpkg-reconfigure gdm"

@@ -6,36 +6,45 @@ fi
 
 # These are core tools
 UTILS=(
-  at
   ack-grep
-  unzip
+  at
   bashdb
+  bleachbit
   bridge-utils
   bzip2
+  colordiff
+  curl
+  dconf-editor
+  elinks
+  gdebi
   git
   git-extras
-  curl
-  elinks
-  htop
-  netperf
-  putty-tools
-  python-software-properties
-  pwgen
   gnupg2
   gpa
+  gparted
   gpw
-  software-properties-common
+  htop
+  ncdu
+  netperf
+  preload
+  putty-tools
+  pwgen
+  pydf
+  python-software-properties
   screen
+  software-properties-common
   stress
   stress-ng
-  supervisor
-  tree
-  tmux
-  whois
-  pydf
-  ncdu
   super
-  colordiff
+  supervisor
+  synaptic
+  tmux
+  tree
+  ubuntu-restricted-addons
+  ubuntu-restricted-extras
+  unetbootin
+  unzip
+  whois
   xclip
 )
 for util in "${UTILS[@]}"; do
