@@ -4,9 +4,11 @@ if [[ ! $INSTALL_SCRIPT ]]; then
     exit
 fi
 
-echo "(+) Downloading Hashicorp Terraform"
+ver="0.11.7"
 
-curl -o terraform.zip https://releases.hashicorp.com/terraform/0.10.8/terraform_0.10.8_linux_amd64.zip
+echo "(+) Downloading Hashicorp Terraform v$ver"
+
+curl -o terraform.zip "https://releases.hashicorp.com/terraform/$ver/terraform_${ver}_linux_amd64.zip"
 
 unzip terraform.zip
 sudo mv terraform /usr/local/bin

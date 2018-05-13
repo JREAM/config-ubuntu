@@ -4,9 +4,11 @@ if [[ ! $INSTALL_SCRIPT ]]; then
     exit
 fi
 
-echo "(+) Downloading Hashicorp Vagrant"
+ver="2.1.1"
+echo "(+) Downloading Hashicorp Vagrant v$ver"
 
-curl -o vagrant.deb https://releases.hashicorp.com/vagrant/2.0.1/vagrant_2.0.1_x86_64.deb
+
+curl -o vagrant.deb "https://releases.hashicorp.com/vagrant/$ver/vagrant_${ver}_x86_64.deb"
 sudo dpkg -i vagrant.deb
 
 rm vagrant.deb

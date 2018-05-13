@@ -4,9 +4,10 @@ if [[ ! $INSTALL_SCRIPT ]]; then
     exit
 fi
 
-echo "(+) Downloading Hashicorp Vault"
+ver="0.10.1"
+echo "(+) Downloading Hashicorp Vault v$ver"
 
-curl -o vault.zip https://releases.hashicorp.com/vault/0.9.0/vault_0.9.0_linux_amd64.zip
+curl -o vault.zip "https://releases.hashicorp.com/vault/$ver/vault_${ver}_linux_amd64.zip"
 
 
 unzip vault.zip

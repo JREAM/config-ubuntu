@@ -39,29 +39,32 @@ sudo apt-get install -y\
     php-redis\
     php-memcached\ # There is memcache also, but this ones used more
     memcached\
-    memcachedb\
-    libapache2-mod-php7.1
+    memcachedb
 
-    # IMPORTANT: Do NOT have a trailing \ on the LAST item!
-    # Turn on Short Open Tags
-    #
-    sudo sed -i 's/short_open_tag*/short_open_tag = On/' /etc/php/7.1/{apache2,fpm,cli}/php.ini
+if hash apache2>/dev/null then;
+  sudo apt install libapache2-mod-php7.1
+fi
 
-    # Turn Error Reporting On
-    sudo sed -i 's/error_reporting = E_ALL &*/error_reporting = E_ALL/' /etc/php/7.1/{apache2,cli,fpm}/php.ini
+# IMPORTANT: Do NOT have a trailing \ on the LAST item!
+# Turn on Short Open Tags
+#
+sudo sed -i 's/short_open_tag*/short_open_tag = On/' /etc/php/7.1/{apache2,fpm,cli}/php.ini
 
-    # Turn Display Errors On
-    sudo sed -i 's/display_errors =*/display_errors = On/' /etc/php/7.1/{apache2,cli,fpm}/php.ini
+# Turn Error Reporting On
+sudo sed -i 's/error_reporting = E_ALL &*/error_reporting = E_ALL/' /etc/php/7.1/{apache2,cli,fpm}/php.ini
 
-
-  # Setup the Log file to /var/log/php/error.log
-  sudo sed -i 's/;error_log.*$/error_log = /var/log/php/error.log/'  /etc/php/7.1/{apache2,cli,fpm}/php.ini
-
-  # Turn down from 60
-  sudo sed -i 's/;max_execution_time.*$/max_execution_time = 30/' /etc/php/7.1/{apache2,cli,fpm}/php.ini
+# Turn Display Errors On
+sudo sed -i 's/display_errors =*/display_errors = On/' /etc/php/7.1/{apache2,cli,fpm}/php.ini
 
 
-    echo "(+) PHP7 Installed"
+# Setup the Log file to /var/log/php/error.log
+sudo sed -i 's/;error_log.*$/error_log = /var/log/php/error.log/'  /etc/php/7.1/{apache2,cli,fpm}/php.ini
+
+# Turn down from 60
+sudo sed -i 's/;max_execution_time.*$/max_execution_time = 30/' /etc/php/7.1/{apache2,cli,fpm}/php.ini
+
+
+echo "(+) PHP7 Installed"
 
 # Shared Libraries
 echo "(+) Installing Library Dependencies"
@@ -69,7 +72,7 @@ sudo apt-get install -y\
     libpcre3-dev\
     libsqlite3-dev\
     libapache2-mod-fastcgi\
-    libapache2-mod-wsgi
+    libapache2-mod-wsgi # for Django/Flask if needed
 
 echo "(+) Copying $HOME_PATH/project folder if it doesn't exist"
 

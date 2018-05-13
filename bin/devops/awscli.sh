@@ -4,7 +4,12 @@ if [[ ! $INSTALL_SCRIPT ]]; then
     exit
 fi
 
-pip install awscli
+if hash pip3 2>/dev/null; then
+  pip3 install awscli
+else
+  echo "You need Python 3 installed for awscli tools"
+  exit 1
+fi
 
 # IMPORTANT: Do NOT have a trailing \ on the LAST item!
 

@@ -82,8 +82,6 @@ cat <<- command_list
       phalcon                 (alias: php-phalcon)
     php-laravel   Install Laravel (Composer global install as current user)
       laravel                 (alias: laravel)
-    php-lumen     Install Lumen ( Composer global install as current user )
-    middleman     Installs Middleman (Ruby), middlemanapp.com (More of a local tool)
 
 
     Utilities:
@@ -187,12 +185,6 @@ read -p "Type a Command: " cmd
             echo "====================================================================="
             echo ""
             ;;
-        middleman)
-            bash ./bin/server/middleman.sh
-            echo ""
-            echo "====================================================================="
-            echo ""
-            ;;
         nginx)
             bash ./bin/server/nginx.sh
             echo ""
@@ -231,12 +223,6 @@ read -p "Type a Command: " cmd
             ;;
         laravel|php-laravel)
             bash ./bin/server/php-laravel.sh
-            echo ""
-            echo "====================================================================="
-            echo ""
-            ;;
-        php-lumen)
-            bash ./bin/server/php-lumen.sh
             echo ""
             echo "====================================================================="
             echo ""
