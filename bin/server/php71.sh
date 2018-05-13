@@ -41,7 +41,7 @@ sudo apt-get install -y\
     memcached\
     memcachedb
 
-if hash apache2>/dev/null then;
+if hash apache2 2>/dev/null; then
   sudo apt install libapache2-mod-php7.1
 fi
 
