@@ -74,6 +74,9 @@ cat <<- command_list
     rbenv         Install RVM (Ruby Version Manager)
     yarn          Install Yarn (NPM Alternative for NodeJS)
 
+    pipauto       Install PIP Bash Auto Complete (Python, Globally)
+                  Alias: pipac
+
     Frameworks/Util:
     -----------
     php-composer  Install/Update PHP Composer Package
@@ -235,6 +238,12 @@ read -p "Type a Command: " cmd
             ;;
         php71)
             bash ./bin/server/php71.sh
+            echo ""
+            echo "====================================================================="
+            echo ""
+            ;;
+        pipauto|pipac)
+            bash ./bin/server/pipauto.sh
             echo ""
             echo "====================================================================="
             echo ""
