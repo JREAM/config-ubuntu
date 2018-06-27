@@ -6,10 +6,6 @@ fi
 
 sudo apt-get install -y vim
 
-if [ $BASE_SCRIPT == 'desktop' ]; then
-  sudo apt-get install -y gvim
-fi
-
 # Ensure the dotfile submodule is installed
 if [ "$(ls -A $PROJECT_DOTFILE_PATH)"  ]; then
     echo "(+) Dotfiles exists, copying";
