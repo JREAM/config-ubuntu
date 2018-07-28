@@ -4,7 +4,7 @@ if [[ ! $INSTALL_SCRIPT ]]; then
     exit
 fi
 
-ver="2.1.1"
+ver="2.1.2"
 echo "(+) Downloading Hashicorp Vagrant v$ver"
 
 

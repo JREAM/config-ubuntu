@@ -4,7 +4,7 @@ if [[ ! $INSTALL_SCRIPT ]]; then
     exit
 fi
 
-ver="1.2.3"
+ver="1.2.5"
 
 curl -o packer.zip "https://releases.hashicorp.com/packer/$ver/packer_${ver}_linux_amd64.zip"
 

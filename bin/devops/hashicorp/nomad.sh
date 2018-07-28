@@ -4,7 +4,7 @@ if [[ ! $INSTALL_SCRIPT ]]; then
     exit
 fi
 
-ver="0.8.3"
+ver="0.8.4"
 
 echo "(+) Downloading Hashicorp Nomad"
 

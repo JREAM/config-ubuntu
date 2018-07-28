@@ -4,7 +4,7 @@ if [[ ! $INSTALL_SCRIPT ]]; then
     exit
 fi
 
-ver="1.1.0"
+ver="1.2.1"
 
 echo "Installing Hashicorp Consul v$ver"
 
