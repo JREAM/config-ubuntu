@@ -6,19 +6,11 @@ fi
 
 echo "(+) Adding Apt Repo for: Google Cloud SDK (gcloud)"
 
-export CLOUD_SDK_REPO="cloud-sdk-$(lsb_release -c -s)"
+VERSION="207.0.0"
 
-# Renove existing apt sources so it doesn't overwrite or duplicate if this is run again.
-if [[ -f "/etc/apt/sources.list.d/google-cloud-sdk.list" ]]; then
-    sudo rm /etc/apt/sources.list.d/google-cloud-sdk.list*
-fi
-
-echo "deb https://packages.cloud.google.com/apt $CLOUD_SDK_REPO main" | sudo tee -a /etc/apt/sources.list.d/google-cloud-sdk.list
-curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
-
-echo "(+) Updating Sources & Installing"
-sudo apt-get update && sudo apt-get install -y google-cloud-sdk
-
+wget https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-sdk-$VERSION-linux-x86_64.tar.gz
+tar -zxvf google-cloud-sdk-$VERSION-linux-x86_64.tar.gz
+./google-cloud-sdk/install.sh
 
 cat << EOF
 (+) Complete! To get started with google-cloud-sdk run:

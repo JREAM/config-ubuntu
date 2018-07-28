@@ -46,6 +46,9 @@ UTILS=(
   unzip
   whois
   xclip
+  # For cht.sh (xsel is good despite cht.sh also)
+  rlwrap
+  xsel
 )
 for util in "${UTILS[@]}"; do
   sudo apt-get install $util -y

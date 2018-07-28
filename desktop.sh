@@ -85,6 +85,7 @@ cat <<- command_list
     util          Install Utilities: (git, curl, htop, unzip, terminator, tmux, screen)
     utilxtra      Intall Bonus CLI Utilities (peco)
     vim           Install Vim (.vimrc and Vundle Plugins)
+    vimycm        Install/Compile Vim YCM (You Compelete Me)
 
     Browser
     -------
@@ -315,6 +316,12 @@ read -e -p "Type a Command: " cmd
             ;;
         vim)
             bash ./bin/vim.sh
+            echo ""
+            echo "====================================================================="
+            echo ""
+            ;;
+        vimycm)
+            bash ./bin/vimycm.sh
             echo ""
             echo "====================================================================="
             echo ""
