@@ -25,6 +25,7 @@ UTILS=(
   gpw
   htop
   ncdu
+  net-tools
   netperf
   preload
   putty-tools
@@ -40,6 +41,7 @@ UTILS=(
   synaptic
   tmux
   tree
+  libkrb5-dev # Fornnode-gym rebuild (rm -rf ~/.node-gyp && npm i -g update
   ubuntu-restricted-addons
   ubuntu-restricted-extras
   unetbootin
