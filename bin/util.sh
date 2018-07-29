@@ -24,6 +24,7 @@ UTILS=(
   gparted
   gpw
   htop
+  lsb-core # For lsb_release when missing
   ncdu
   net-tools
   netperf

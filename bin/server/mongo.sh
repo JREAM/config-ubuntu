@@ -4,6 +4,15 @@ if [[ ! $INSTALL_SCRIPT ]]; then
     exit
 fi
 
+OS_VERSION=$(lsb_release -cs)
+
+if [[ $OS_VERSION == 'bionic' ]]; then
+  sudo apt update && sudo apt install mongodb -y
+  sudo systemctl start mongodb
+  sudo systemctl enable mongodb
+  exit 1;
+fi
+
 echo "(+) Adding GPG Key"
 sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 2930ADAE8CAF5059EE73BB4B58712A2291FA4AD5
 
