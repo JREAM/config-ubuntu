@@ -8,6 +8,7 @@ if hash pip3 2>/dev/null; then
   pip3 install awscli
 else
   echo "You need Python 3 installed for awscli tools"
+  echo "If you are using Pyenv with Pip alrady, run: $ pip3 install awscli"
   exit 1
 fi
 

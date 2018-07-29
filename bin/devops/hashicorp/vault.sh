@@ -9,10 +9,8 @@ echo "(+) Downloading Hashicorp Vault v$ver"
 
 curl -o vault.zip "https://releases.hashicorp.com/vault/$ver/vault_${ver}_linux_amd64.zip"
 
-
-unzip vault.zip
-sudo mv vault /usr/local/bin
-rm vault.zip
+unzip vault.zip && rm vault.zip
+sudo chmod +x vault && sudo mv vault /usr/local/bin
 
 echo "(+) Complete! Run with $ vault"
 

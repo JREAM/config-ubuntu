@@ -13,6 +13,11 @@ else
   wget -qO- $URL | bash
 fi
 
+echo "(+) Adding Bash Autocompletions"
+sudo curl -o /etc/bash_completion.d/npm https://raw.githubusercontent.com/Bash-it/bash-it/master/completion/available/npm.completion.bash
+sudo curl -o /etc/bash_completion.d/nvm https://raw.githubusercontent.com/Bash-it/bash-it/master/completion/available/nvm.completion.bash
+
+
 sudo chown -R $USER:$USER $HOME_PATH/.nvm
 
 echo "(+) Complete! Run with $ nvm ls-remote"

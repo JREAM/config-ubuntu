@@ -10,9 +10,8 @@ echo "(+) Downloading Hashicorp Serf v$ver"
 
 curl -o serf.zip https://releases.hashicorp.com/serf/$ver/serf_${ver}_linux_amd64.zip
 
-unzip serf.zip
-sudo mv serf /usr/local/bin
-rm serf.zip
+unzip serf.zip && rm serf.zip
+sudo chmod +x serf && sudo mv serf /usr/local/bin
 
 echo "(+) Complete! Run with $ serf"
 

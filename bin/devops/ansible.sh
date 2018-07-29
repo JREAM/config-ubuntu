@@ -5,10 +5,7 @@ if [[ ! $INSTALL_SCRIPT ]]; then
 fi
 
 sudo apt-add-repository ppa:ansible/ansible
-sudo apt-get update
-sudo apt-get install -y ansible
-
-# IMPORTANT: Do NOT have a trailing \ on the LAST item!
+sudo apt-get update && sudo apt-get install -y ansible
 
 echo "(+) Complete! Use with $ ansible"
 

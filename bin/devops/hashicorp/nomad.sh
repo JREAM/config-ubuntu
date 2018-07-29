@@ -10,9 +10,9 @@ echo "(+) Downloading Hashicorp Nomad"
 
 curl -o nomad.zip "https://releases.hashicorp.com/nomad/$ver/nomad_${ver}_linux_amd64-lxc.zip"
 
-unzip nomad.zip
-sudo mv nomad /usr/local/bin
-rm nomad.zip
+unzip nomad.zip && rm nomad.zip
+sudo chmod +x nomad && sudo mv nomad /usr/local/bin
+
 
 echo "(+) Complete! Run with $ nomad"
 
