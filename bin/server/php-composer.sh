@@ -12,8 +12,8 @@ COMPOSER_PATH=$HOME_PATH/.composer
 
 if [ ! -d "$COMPOSER_PATH" ]; then
     mkdir -p $COMPOSER_PATH
-    sudo chown $USER:$USER $COMPOSER_PATH
-    chmod g+rws "$COMPOSER_PATH"
+    sudo chown -R $USER:$USER $COMPOSER_PATH
+    chmod g+rws -R "$COMPOSER_PATH"
 fi
 
 # See if we need composer (Duplicate in Phalcon for now)
@@ -24,8 +24,10 @@ if [ ! -f /usr/local/bin/composer ]; then
     # ------------------------------------
     echo "(+) Installing PHP Composer."
     curl -sS https://getcomposer.org/installer | php
+
     echo "(+) Moved composer to /usr/local/bin/composer"
     sudo mv composer.phar /usr/local/bin/composer
+
     echo "(+) Installing Composer Autocomplete"
     composer global require bamarni/symfony-console-autocomplete
 else

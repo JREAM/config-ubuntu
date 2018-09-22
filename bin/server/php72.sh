@@ -18,37 +18,40 @@ sudo apt-get apt update
 
 # PHP 7.1
 sudo apt-get install -y\
-    php7.1\
-    php7.1-bz2\
-    php7.1-dev\
-    php7.1-cli\
-    php7.1-common\
-    php7.1-curl\
-    php7.1-fpm\
-    php7.1-gd\
-    php7.1-imap\
-    php7.1-intl\
-    php7.1-json\
-    php7.1-mbstring\
-    php7.1-mcrypt\
-    php7.1-mysql\
-    php7.1-odbc\
-    php7.1-opcache\
-    php7.1-readline\
-    php7.1-soap\
-    php7.1-sqlite3\
-    php7.1-tidy\
-    php7.1-xml\
-    php7.1-xmlrpc\
-    php7.1-zip\
+    php7.2\
+    php7.2-bz2\
+    php7.2-dev\
+    php7.2-cli\
+    php7.2-common\
+    php7.2-curl\
+    #php7.2-fpm\
+    php7.2-gd\
+    php7.2-imap\
+    php7.2-intl\
+    php7.2-json\
+    php7.2-mbstring\
+    php7.2-mcrypt\
+    php7.2-mysql\
+    php7.2-odbc\
+    php7.2-opcache\
+    php7.2-readline\
+    php7.2-soap\
+    php7.2-sqlite3\
+    php7.2-tidy\
+    php7.2-xml\
+    php7.2-xmlrpc\
+    php7.2-zip\
     php-redis\
     php-memcached\ # There is memcache also, but this ones used more
     memcached\
     memcachedb
 
+
 if hash apache2 2>/dev/null; then
   sudo apt install libapache2-mod-php7.1
 fi
+
+#sudo phpdismod php7.2-fpm
 
 # IMPORTANT: Do NOT have a trailing \ on the LAST item!
 # Turn on Short Open Tags
