@@ -47,6 +47,8 @@ cat <<- command_list
     projects      Creates ~/projects folder with www-data:www-data user/group
     shutter       Best Screenshot Tool (Instructions to overwrite PrintScreen after install)
 
+    nemo          File Browser Alternative, very good!
+
     FTP/Cloud
     ---------
     crossftp      (Only Good one for S3/Glacier on Linux I could find)
@@ -238,6 +240,12 @@ read -e -p "Type a Command: " cmd
             ;;
         mysqlwb)
             bash ./bin/desktop/mysql-workbench.sh
+            echo ""
+            echo "====================================================================="
+            echo ""
+            ;;
+        nemo)
+            bash ./bin/desktop/nemo.sh
             echo ""
             echo "====================================================================="
             echo ""

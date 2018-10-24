@@ -5,10 +5,36 @@ if [[ ! $INSTALL_SCRIPT ]]; then
 fi
 
 
+echo "(+) Installing jhbuild"
 
-echo "(+) Installing PyGtk and three & Glade GUI Editor"
 
 sudo apt install -y\
+    jhbuild \
+    build-essential \
+    libxml2-utils \
+    docbook-xsl \
+    flex \
+    bison \
+    cvs \
+    gperf \
+    cmake \
+    valac \
+    g++ \
+    lib{pam0g,iw,db,gdbm,png12,ffi,tiff,boost-signals,ldap2}-dev \
+    lib{vorbis,gl1-mesa,unistring,icu,neon27,usb-1.0-0,sasl2}-dev \
+    lib{asound2,ncurses5,nss3,udev,usb,acl1,polkit-gobject-1,cairo}-dev \
+    lib{oauth,nl-route-3,nl-genl-3,cups2,rsvg2}-dev \
+    lib{dvdread,soundtouch,wnck-3,avahi-gobject}-dev \
+    libtasn1-bin \
+    libx{cb-util0,composite,randr,damage,ft2,i,t}-dev \
+    {uuid,ppp,python-cairo}-dev \
+    icc-profiles-free libxml-simple-perl subversion ruby gnome-doc-utils \
+    yelp-tools apt-file
+
+jhbuild sysdeps --install
+
+echo "(+) Installing PyGtk and three & Glade GUI Editor"
+sudo apt install -y
     python-glade2\
     python-gtk2\
     libgtk2.0\
