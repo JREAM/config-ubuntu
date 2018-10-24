@@ -15,7 +15,8 @@ if hash git 2> /dev/null; then
 
   git clone https://github.com/pyenv/pyenv.git $HOME_PATH/.pyenv
   echo "(+) Installing PyEnv Virtualenvwrapper"
-  git clone https://github.com/pyenv/pyenv-virtualenvwrapper.git $HOME/.pyenv/plugins/pyenv-virtualenvwrapper
+  git clone https://github.com/yyuu/pyenv-virtualenv.git $HOME_PATH/.pyenv/plugins/pyenv-virtualenv
+  git clone https://github.com/pyenv/pyenv-virtualenvwrapper.git $HOME_PATH/.pyenv/plugins/pyenv-virtualenvwrapper
 
   # Set Permissions to local user
   sudo chown -R $USER:$USER /home/$USER/.pyenv/
