@@ -14,6 +14,8 @@ if hash git 2> /dev/null; then
     xz-utils tk-dev
 
   git clone https://github.com/pyenv/pyenv.git $HOME_PATH/.pyenv
+  echo "(+) Installing PyEnv Virtualenvwrapper"
+  git clone https://github.com/pyenv/pyenv-virtualenvwrapper.git $HOME/.pyenv/plugins/pyenv-virtualenvwrapper
 
   # Set Permissions to local user
   sudo chown -R $USER:$USER /home/$USER/.pyenv/
@@ -28,6 +30,8 @@ echo -e '\texport PYENV_ROOT="$HOME/.pyenv"'
 echo -e '\texport PATH="$PYENV_ROOT/bin:$PATH"'
 echo -e 'if command -v pyenv 1>/dev/null 2>&1; then\n  eval "$(pyenv init -)"\nfi'
 echo ""
+echo "(!) Suggested to have pyenv virtualenvwrapper create venvs, add to .bash_aliases/etc"
+echo 'export PYENV_VIRTUALENVWRAPPER_PREFER_PYVENV=\"true\"'
 
 if [ $SKIP_SLEEP == false ]; then
     sleep 3

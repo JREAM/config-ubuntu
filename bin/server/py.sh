@@ -9,15 +9,16 @@ echo "(+) Installing python2-dev, and python-3"
 
 sudo apt-get install -y\
     libssl-dev\
-    python-dev\
     libffi-dev\
     libjpeg8-dev\
     libjpeg-dev\
+    python-dev\
     python-pip\
     python-dev\
     python3\
     python3-dev\
-    python3-pip
+    python3-pip\
+    python3-venv
 
 # IMPORTANT: Do NOT have a trailing \ on the LAST item!
 echo "(+) Upgrading PIP"
