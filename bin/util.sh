@@ -40,6 +40,7 @@ UTILS=(
   super
   supervisor
   synaptic
+  task-spooler
   tmux
   tree
   libkrb5-dev # Fornnode-gym rebuild (rm -rf ~/.node-gyp && npm i -g update
