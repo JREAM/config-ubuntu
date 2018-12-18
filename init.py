@@ -8,15 +8,16 @@ try:
     import tableprint
     from colorama import Fore, Style
 except ImportError:
-    # This is fine, they will be prompted with the install
+    print("Please run: pip install -r requirements.txt")
+    sys.exit()
     pass
 
 DEPS = ['tableprint', 'colorama']
 MENU = [
     ['GO', 'golang'],
     ['RUBY', 'ruby'],
-    ['PHP', 'php71', 'php72', 'composer'],
-    ['ENVS', 'pyenv', 'pipenv', 'nvm', 'phpenv'],
+    ['PHP', 'php72', 'composer'],
+    ['ENVS', 'pyenv', 'pipenv', 'nvm', 'rbenv'],
     ['DEVOPS', 'docker', 'kubectl', 'minikube'],
     ['SERVERS', 'nginx', 'apache2'],
     ['COMMON', 'dotfiles', 'utils']
@@ -43,7 +44,8 @@ def install_check():
             for m in missing:
                 print("- %s" % m)
 
-            run_pip = raw_input("Would you like to Run PIP Install? [Y/n]: ").lower()
+            run_pip = raw_input(
+                "Would you like to Run PIP Install? [Y/n]: ").lower()
             if run_pip.startswith('n'):
                 sys.exit('Exiting...')
             else:
@@ -53,15 +55,15 @@ def install_check():
                         "pip install {0}".format(dependency_string)],
                         shell=True
                     ))
-                    sys.exit("[+] Success! Re-run this script to start installing.")
-                except subprocess.CalledProcessError, e:
-                    sys.exit('[!] Failed. Please ensure PIP is working. %s' % str(e.output))
+                    sys.exit(
+                        "[+] Success! Re-run this script to start installing.")
+                except subprocess.CalledProcessError as e:
+                    sys.exit(
+                        '[!] Failed. Please ensure PIP is working. %s' % str(e.output))
 
 
 def menu():
-    """Main menu display w/options.
-    """
-
+    """Main menu display w/options."""
     total_sections = len(MENU)
     max_str = 0
     for i in xrange(0, total_sections):
@@ -76,10 +78,12 @@ def menu():
 
 
 def run_command():
+    """Runs command."""
     pass
 
 
 def start():
+    """I Forgot."""
     subprocess.call(["echo", "What we do in this life echoes in eternity"])
     menu()
 
