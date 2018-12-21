@@ -26,6 +26,7 @@ UTILS=(
   htop
   lsb-core # For lsb_release when missing
   ncdu
+  nmap # nmap -p 3333 localhost  (cannot ping ports, this checks them)
   net-tools
   netperf
   preload
