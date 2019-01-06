@@ -71,7 +71,7 @@ Also, for anything GUI related I will focus on Gnome as a UI because I never lik
     - [Improve: Adjust Mouse and Devices](#improve-adjust-mouse-and-devices)
     - [Preserve Settings](#preserve-settings)
 - [Virtual Machine](#virtual-machine)
-    - [Global Configuratioh Locations](#global-configuratioh-locations)
+    - [Global Configuration Locations](#global-configuration-locations)
     - [Speed up Guest Machine](#speed-up-guest-machine)
     - [Fix Mouse Side Buttons in VMWare](#fix-mouse-side-buttons-in-vmware)
     - [Fix Copy/Paste From Host and Guest](#fix-copypaste-from-host-and-guest)
@@ -501,7 +501,7 @@ sudo apt-get install -y php7.1 php7.1-dev libpcre3-dev
 curl -sS https://getcomposer.org/installer | php && sudo mv composer.phar /usr/local/bin/composer
 ```
 
-> **Location**: You PHP Configuration will be in `/etc/php/<version>/cli/php.ini` and `/etc/php/apache2/cli/php.ini`
+> **Location**: Your PHP Configuration will be in `/etc/php/<version>/cli/php.ini` and `/etc/php/apache2/cli/php.ini`
 
 If you are looking for more PHP modules try:
 ```sh
@@ -973,7 +973,7 @@ gnome-session-properties
 - These are focused on **VMWare workstation 11+* unless mentioned. Many settings may work in older version!
 - You can edit your `*.vmx` files individually or you can configure a global settings:
 
-## Global Configuratioh Locations
+## Global Configuration Locations
 
 - How the Settings work:
     - **CONFIGURATION**: The Global settings in the GUI preferences.
