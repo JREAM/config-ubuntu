@@ -67,6 +67,7 @@ cat <<- command_list
     vscode        Install Visual Studio Code (apt) (x64)
     postman       The popular Postman Client for API testing
     jekyll        Install Jekyll Docgen
+    monodevelop   Install C#/.NET editor (Install .NET and Monodevelop)
 
     IRC:
     -----------------------
