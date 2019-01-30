@@ -29,6 +29,7 @@ UTILS=(
   nmap # nmap -p 3333 localhost  (cannot ping ports, this checks them)
   net-tools
   netperf
+  parallel
   preload
   putty-tools
   pwgen
@@ -82,6 +83,7 @@ fi
 # Git Extras Autocomplete
 cp "$PROJECT_FILE_PATH/gh_complete.sh" "$HOME_PATH/.bash/"
 sudo chown $USER:$USER "$HOME_PATH/.bash/gh_complete.sh"
+
 
 echo "(+) Completed install utilities."
 echo ""
