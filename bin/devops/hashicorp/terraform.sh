@@ -4,7 +4,7 @@ if [[ ! $INSTALL_SCRIPT ]]; then
     exit
 fi
 
-ver="0.11.7"
+ver="0.11.11"
 
 echo "(+) Downloading Hashicorp Terraform v$ver"
 

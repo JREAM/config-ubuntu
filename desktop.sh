@@ -32,10 +32,6 @@ while true; do
 cat <<- command_list
     Configure:
     ----------
-    btnleft       Move Close/Min/Max to Left on Windows
-    btnright      Move Min/Max/Close to Right on Windows (Familiar to Windows OS)
-    dismm         Disable MiddleMouse Copy/Paste (Scroll Works), makes Backup file.
-
     gnome         Install Gnome 3 GUI + Tweak Tool (You toggle at login or see README)
     gnome-chrome  Install Chrome Addon to allow installing Gnome Ext from Chrome
     gnome-vpn     Install OpenVPN items for Gnome
@@ -66,12 +62,7 @@ cat <<- command_list
     st3                         (alias: sublime text 3)
     vscode        Install Visual Studio Code (apt) (x64)
     postman       The popular Postman Client for API testing
-    jekyll        Install Jekyll Docgen
     monodevelop   Install C#/.NET editor (Install .NET and Monodevelop)
-
-    IRC:
-    -----------------------
-    irssi         Terminal based IRC client (issrie.org)
 
     Utilities:
     ----------
@@ -125,18 +116,6 @@ read -e -p "Type a Command: " cmd
             echo "====================================================================="
             echo ""
             ;;
-        btnleft)
-            bash ./bin/desktop/btn-left.sh
-            echo ""
-            echo "====================================================================="
-            echo ""
-            ;;
-        btnright)
-            bash ./bin/desktop/btn-right.sh
-            echo ""
-            echo "====================================================================="
-            echo ""
-            ;;
         chrome)
             bash ./bin/desktop/chrome.sh
             echo ""
@@ -161,12 +140,6 @@ read -e -p "Type a Command: " cmd
             echo "====================================================================="
             echo ""
             ;;
-        dismm)
-            bash ./bin/desktop/disable-middle-mouse.sh
-            echo ""
-            echo "====================================================================="
-            echo ""
-            ;;
         dot)
             bash ./bin/dot.sh
             echo ""
@@ -181,12 +154,6 @@ read -e -p "Type a Command: " cmd
             ;;
         hub)
             bash ./bin/misc/hub-cli.sh
-            echo ""
-            echo "====================================================================="
-            echo ""
-            ;;
-        jekyll)
-            bash ./bin/desktop/jekyll.sh
             echo ""
             echo "====================================================================="
             echo ""
@@ -229,12 +196,6 @@ read -e -p "Type a Command: " cmd
             ;;
         gui)
             bash ./bin/desktop/gui.sh
-            echo ""
-            echo "====================================================================="
-            echo ""
-            ;;
-        irssi)
-            bash ./bin/desktop/irssi.sh
             echo ""
             echo "====================================================================="
             echo ""
