@@ -56,6 +56,7 @@ cat <<- command_list
     Languages:
     ----------
     go            Install Google Go
+    lua           Install Lua Language
     java          Install JRE and JDK (default-jre, not Oracle)
     node          Install NodeJS v8.X via Repo
     php72         Install PHP7.1 with common modules
@@ -167,6 +168,12 @@ read -p "Type a Command: " cmd
             ;;
         letsencrypt)
             bash ./bin/server/letsencrypt.sh
+            echo ""
+            echo "====================================================================="
+            echo ""
+            ;;
+        lua)
+            bash ./bin/server/lua.sh
             echo ""
             echo "====================================================================="
             echo ""
