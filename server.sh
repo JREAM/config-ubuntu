@@ -55,6 +55,7 @@ cat <<- command_list
 
     Languages:
     ----------
+    dart          Install Dart Language
     go            Install Google Go
     lua           Install Lua Language
     java          Install JRE and JDK (default-jre, not Oracle)
@@ -120,6 +121,12 @@ read -p "Type a Command: " cmd
             ;;
         apache)
             bash ./bin/server/apache.sh
+            echo ""
+            echo "====================================================================="
+            echo ""
+            ;;
+        dart)
+            bash ./bin/server/dart.sh
             echo ""
             echo "====================================================================="
             echo ""
