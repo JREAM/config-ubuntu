@@ -75,6 +75,7 @@ cat <<- command_list
     perm          Update /usr/local permissions
     mysqlwb       Install MySQL Workbench
     security      Install ClamAV, RKHunter (read instructions after install)
+    stacer        Memory & System Optmizer
     touchpad-tool Install touchpad-indicator.
     util          Install Utilities: (git, curl, htop, unzip, terminator, tmux, screen)
     utilxtra      Intall Bonus CLI Utilities (peco)
@@ -250,6 +251,12 @@ read -e -p "Type a Command: " cmd
             ;;
         shutter)
             bash ./bin/desktop/shutter.sh
+            echo ""
+            echo "====================================================================="
+            echo ""
+            ;;
+        stacer)
+            bash ./bin/desktop/stacer.sh
             echo ""
             echo "====================================================================="
             echo ""
