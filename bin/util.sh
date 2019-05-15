@@ -35,6 +35,7 @@ UTILS=(
   pwgen
   pydf
   python-software-properties
+  rename
   screen
   software-properties-common
   stress
