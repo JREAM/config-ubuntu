@@ -4,9 +4,9 @@ if [[ ! $INSTALL_SCRIPT ]]; then
     exit
 fi
 
-ver="1.3.3"
+VERSION="1.4.1"
 
-curl -o packer.zip "https://releases.hashicorp.com/packer/$ver/packer_${ver}_linux_amd64.zip"
+curl -o packer.zip "https://releases.hashicorp.com/packer/$VERSION/packer_${VERSION}_linux_amd64.zip"
 
 unzip packer.zip && rm packer.zip
 sudo chmod +x packer && sudo mv packer /usr/local/bin
@@ -19,4 +19,3 @@ echo "(+) Complete! Run with $ packer"
 if [ $SKIP_SLEEP == false ]; then
     sleep 4
 fi
-

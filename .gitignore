@@ -33,6 +33,10 @@ __pycache__/
 *.egg
 pip-log.txt
 pip-delete-this-directory.txt
+*.zip
+*.tar.gz
+*.bz2
+*.xz
 
 # pyenv
 .python-version

@@ -4,11 +4,11 @@ if [[ ! $INSTALL_SCRIPT ]]; then
     exit
 fi
 
-ver="2.2.3"
-echo "(+) Downloading Hashicorp Vagrant v$ver"
+VERSION="2.2.4"
+echo "(+) Downloading Hashicorp Vagrant v$VERSION"
 
 
-curl -o vagrant.deb "https://releases.hashicorp.com/vagrant/$ver/vagrant_${ver}_x86_64.deb"
+curl -o vagrant.deb "https://releases.hashicorp.com/vagrant/$VERSION/vagrant_${VERSION}_x86_64.deb"
 sudo dpkg -i vagrant.deb
 rm vagrant.deb
 
@@ -20,4 +20,3 @@ echo "(+) Complete! Run with $ vagrant"
 if [ $SKIP_SLEEP == false ]; then
     sleep 4
 fi
-
