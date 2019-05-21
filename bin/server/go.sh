@@ -4,7 +4,7 @@ if [[ ! $INSTALL_SCRIPT ]]; then
     exit
 fi
 
-GO_VERSION="go1.11.5.linux-amd64"
+VERSION="go1.12.5.linux-amd64"
 
 if [[ -d "/usr/local/go" ]]; then
     echo "(!) Your path /usr/local/go already exists, assuming upgrade, clearing folder! (CTRL+C to stop)"
@@ -12,12 +12,12 @@ if [[ -d "/usr/local/go" ]]; then
     sleep 5
 fi
 
-echo "(+) Downloading Google Go: $GO_VERSION"
+echo "(+) Downloading Google Go: $VERSION"
 
 # Download Time!
 #[ ! -d /usr/local/go ] && sudo mkdir /usr/local/go
 
-sudo curl -o /usr/local/go.tar.gz "https://dl.google.com/go/${GO_VERSION}.tar.gz"
+sudo curl -o /usr/local/go.tar.gz "https://dl.google.com/go/${VERSION}.tar.gz"
   sudo tar zxf /usr/local/go.tar.gz -C /usr/local/ &&\
   sudo rm /usr/local/go.tar.gz
 
@@ -96,4 +96,3 @@ echo ""
 if [ $SKIP_SLEEP == false ]; then
     sleep 6
 fi
-

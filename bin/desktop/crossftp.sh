@@ -4,14 +4,16 @@ if [[ ! $INSTALL_SCRIPT ]]; then
     exit
 fi
 
+VERSION=1.99.0
+
 # Create user Permissions for usr/local
 echo "(+) Downloading Cross FTP (30 Day Trial; FTP/FTPS/S3/CloudFront/Glacier/Google Cloud/etc)"
-wget http://www.crossftp.com/crossftp_1.98.6.deb -P $PROJECT_TEMP_PATH
+wget http://www.crossftp.com/crossftp_$VERSION.deb -P $PROJECT_TEMP_PATH
 
-sudo dpkg -i "$PROJECT_TEMP_PATH/crossftp_1.97.9.deb"
+sudo dpkg -i "$PROJECT_TEMP_PATH/crossftp_$VERSION.deb"
 sudo apt-get install -y -f
 
-rm "$PROJECT_TEMP_PATH/crossftp_1.98.6.deb"
+rm "$PROJECT_TEMP_PATH/crossftp_$VERSION.deb"
 
 
 echo "(+) Complete! "

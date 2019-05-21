@@ -5,19 +5,19 @@ if [[ ! $INSTALL_SCRIPT ]]; then
     exit
 fi
 
-sources=(xenlism)
+SOURCES=(xenlism)
 
-echo "(+) Removing and Re-Adding Sources List"
+echo "(+) Removing and Re-Adding SOURCES List"
 
-for s in $sources; do
-    if [ -f /etc/apt/sources.list.d/$s*ppa ]; then
-        sudo rm /etc/apt/sources.list.d/$s*ppa
+for s in $SOURCES; do
+    if [ -f /etc/apt/SOURCES.list.d/$s*ppa ]; then
+        sudo rm /etc/apt/SOURCES.list.d/$s*ppa
     fi
     sudo add-apt-repository -y ppa:xenatt/$s
 done
 
-echo "(+) Updating Sources List"
-echo "(+) Sources List Update Complete."
+echo "(+) Updating SOURCES List"
+echo "(+) SOURCES List Update Complete."
 
 echo "(+) Installing Xenlism Theme (Use Tweak UI)."
 sudo apt-get update
@@ -30,4 +30,3 @@ sudo apt-get install -y\
 if [ $SKIP_SLEEP == false ]; then
     sleep 4
 fi
-
