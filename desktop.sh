@@ -64,6 +64,10 @@ cat <<- command_list
     postman       The popular Postman Client for API testing
     monodevelop   Install C#/.NET editor (Install .NET and Monodevelop)
 
+    CLI
+    ---
+    sdkman       Install SDKs with ease
+
     Utilities:
     ----------
     arronax       Easily Create Launchers for any Linux Environment
@@ -239,6 +243,12 @@ read -e -p "Type a Command: " cmd
             ;;
         projects)
             bash ./bin/_mkproject_folder.sh
+            echo ""
+            echo "====================================================================="
+            echo ""
+            ;;
+        sdkman)
+            bash ./bin/desktop/sdkman.sh
             echo ""
             echo "====================================================================="
             echo ""
