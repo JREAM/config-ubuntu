@@ -107,6 +107,8 @@ echo ""
 
 read -e -p "Type a Command: " cmd
 
+  # Enable previous commands with arrow key
+  history -s $cmd
 
     case $cmd in
         apport-off)

@@ -75,7 +75,10 @@ echo ""
 echo "====================================================================="
 echo ""
 
-read -p "Type a Command: " cmd
+read -e -p "Type a Command: " cmd
+
+  # Enable previous commands with arrow key
+  history -s $cmd
 
     case $cmd in
         awscli)

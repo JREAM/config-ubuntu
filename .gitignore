@@ -37,6 +37,7 @@ pip-delete-this-directory.txt
 *.tar.gz
 *.bz2
 *.xz
+*.deb
 
 # pyenv
 .python-version
