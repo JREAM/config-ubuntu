@@ -1,0 +1,30 @@
+{
+  "name": "config-ubuntu",
+  "version": "1.0.0",
+  "description": "Install Ubuntu Packages Quickly",
+  "private": true,
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "test": "mocha",
+    "lint": "eslint src --fix"
+  },
+  "dependencies": {
+    "execa": "^2.0.2",
+    "listr": "^0.14.3",
+    "ora": "^3.4.0"
+  },
+  "devDependencies": {
+    "babel-eslint": "^10.0.2",
+    "eslint": "^6.0.1",
+    "eslint-config-eslint": "^5.0.1",
+    "eslint-plugin-import": "^2.18.0",
+    "mocha": "^6.1.4"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jream/config-ubuntu.git"
+  },
+  "author": "Jesse Boyer",
+  "license": "MIT"
+}

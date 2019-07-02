@@ -1,0 +1,38 @@
+{
+  "parser": "babel-eslint",
+  "plugins": [],
+  "extends": ["eslint:recommended"],
+  "parserOptions": {
+    "ecmaFeatures": {
+    },
+    "ecmaVersion": 2017,
+    "sourceType": "module"
+  },
+  "env": {
+    "browser": true,
+    "node": true,
+    "mocha": true
+  },
+  "settings": {
+  },
+  "rules": {
+    "array-bracket-newline": [0, "never"],
+    "array-bracket-spacing": [2, "always"],
+    "array-element-newline": 0,
+    "arrow-spacing": 2,
+    "arrow-parens": [2, "always"],
+    "brace-style": [2, "1tbs", { "allowSingleLine": true }],
+    "comma-dangle": [2, "only-multiline", {"functions": "never"}],
+    "curly": 2,
+    "keyword-spacing": [2],
+    "linebreak-style": [2, "unix"],
+    "no-console": 0,
+    "no-unused-vars": 0,
+    "object-curly-spacing": 2,
+    "object-property-newline": [2, { "allowAllPropertiesOnSameLine": true }],
+    "padded-blocks": [2, {"classes": "always"}],
+    "quotes": [2, "single"],
+    "semi": [1, "always", {"omitLastInOneLineBlock": true}],
+    "wrap-iife": [2]
+  }
+}
