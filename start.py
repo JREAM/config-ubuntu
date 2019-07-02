@@ -1,8 +1,10 @@
 #!/usr/bin/python
+"""Import modules."""
 from __future__ import print_function
 import sys
 import subprocess
 import imp
+from scripts.common import apt
 
 try:
     import tableprint
@@ -13,21 +15,20 @@ except ImportError:
     pass
 
 DEPS = ['tableprint', 'colorama']
-MENU = [
+PACKAGES = [
+    ['DART', 'dart'],
     ['GO', 'golang'],
     ['RUBY', 'ruby'],
     ['PHP', 'php72', 'composer'],
     ['ENVS', 'pyenv', 'pipenv', 'nvm', 'rbenv'],
     ['DEVOPS', 'docker', 'kubectl', 'minikube'],
     ['SERVERS', 'nginx', 'apache2'],
-    ['COMMON', 'dotfiles', 'utils']
+    ['COMMON', 'dotfiles', 'utils'],
 ]
 
 
 def install_check():
-    """ IMPORTANT: Colorama is possibly not installed here, do not use it.
-    """
-
+    """IMPORTANT: Colorama is possibly not installed here, do not use it."""
     found = []
     try:
         for d in DEPS:
@@ -44,7 +45,7 @@ def install_check():
             for m in missing:
                 print("- %s" % m)
 
-            run_pip = raw_input(
+            run_pip = input(
                 "Would you like to Run PIP Install? [Y/n]: ").lower()
             if run_pip.startswith('n'):
                 sys.exit('Exiting...')
@@ -63,23 +64,32 @@ def install_check():
 
 
 def menu():
-    """Main menu display w/options."""
-    total_sections = len(MENU)
+    """Display the Main menu display w/options."""
+    total_sections = len(PACKAGES)
     max_str = 0
-    for i in xrange(0, total_sections):
-        output = MENU[i][0] + ' | '
-        MENU[i].pop(0)
-        output += '  '.join(MENU[i])
+    for i in range(0, total_sections):
+        output = PACKAGES[i][0] + ' | '
+        PACKAGES[i].pop(0)
+        output += '  '.join(PACKAGES[i])
         if len(output) > max_str:
             max_str = len(output)
         print(output)
 
     print('-' * max_str)
+    command = input('Enter packages: ')
+    """Pass array."""
+    run_command(command.split(' '))
 
 
-def run_command():
-    """Runs command."""
-    pass
+def run_command(*packages):
+    """Run a command."""
+    for pkg in packages:
+        if pkg not in PACKAGES:
+            print("Package not found: %s".format(pkg))
+            sys.exit()
+
+    """Install multiple packages."""
+    apt(packages.join(' '))
 
 
 def start():

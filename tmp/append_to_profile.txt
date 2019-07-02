@@ -1,0 +1,30 @@
+------------------------
+-- START INSTRUCTIONS --
+------------------------
+
+1: Copy/Paste the text below into:
+    ~/.profile
+2: Next, apply ENV Variable change  by sourcing:
+    $ . ~/profile
+3. You should be able to type:
+    $ go
+    $ go version
+----------------------
+-- END INSTRUCTIONS --
+----------------------
+
+
+
+# ---------------------------------------------------
+# Google Golang
+# ---------------------------------------------------
+
+# Add Go to our path if it exists
+if [[ -d "/usr/local/go/bin" ]]; then
+    PATH=$PATH:/usr/local/go/bin
+fi
+
+# Include Google go default path if installed
+if [[ -d "$HOME/go" ]]; then
+    export GOPATH=$HOME/go
+fi

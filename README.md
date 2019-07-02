@@ -1,26 +1,42 @@
 # Config Ubuntu
 
-- Updated Version 2.0.0
-- Changed from Bash Scripting to Python
-- Python 2.7 is used for New System Setups which don't use Python 3.X
+<!-- TOC -->
+
+- [Config Ubuntu](#config-ubuntu)
+	- [Usage](#usage)
+	- [Testing](#testing)
+
+<!-- /TOC -->
+
+---
 
 ## Usage
 
 To get your options you can do this one of two ways:
-```
+```sh
+# Install requirements for Python
+pip instal -r requirements.txt
+
+# Run the python script
 ./init.py
+# or
+python init.py
+# or, possibly
+python3 init.py
 
 # (If this fails, run: $ chmod +x init.py)
 ```
 
-or
+## Testing
 
-```
-python init.py
+Once requirements.txt is complete, to test run:
+
+```sh
+pytest tests
 ```
 
 ---
 
-Apache 2.0 License | Open Source
+MIT | Open Source
 
-Copyright 2017 Jesse Boyer | [JREAM](https://jream.com)
+(C) Copyright 2017-2019 Jesse Boyer | [JREAM](https://jream.com)

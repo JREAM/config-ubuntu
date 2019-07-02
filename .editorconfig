@@ -1,0 +1,107 @@
+## Jesse's EditorConfig
+# http://editorconfig.org
+root = true
+
+
+#  All
+# ____________________________________________
+[*]
+indent_style = space
+indent_size = 2
+end_of_line = lf
+charset = utf-8
+trim_trailing_whitespace = true
+insert_final_newline = true
+
+
+#  JSON
+# ____________________________________________
+[*.{json}]
+indent_size = 2
+indent_style = space
+max_line_length = 120
+
+
+#  JavaScript
+# ____________________________________________
+[*.{js,jsx,ts,tsx,coffee,vue}]
+indent_style = space
+
+
+#  C, CPP, C#, Go, PHP
+# ____________________________________________
+[*.{c,cpp,cs,go,php}]
+indent_size = 4
+indent_style = space
+
+
+#  Ruby, Python
+# ____________________________________________
+[*.{rb,py}]
+indent_size = 2
+indent_style = space
+
+
+#  Stylesheets
+# ____________________________________________
+[*.{css,sass,scss,less,styl}]
+indent_size = 2
+
+
+#  Generics
+# ____________________________________________
+[*.{md,txt,yaml,yml,toml}]
+indent_size = 2
+indent_style = space
+trim_trailing_whitespace = false
+
+
+#  Templates / Markup
+# ____________________________________________
+[*.{ejs,handlebars,hbs,jade,mustache}]
+indent_style = space
+indent_size = 2
+
+[*.{htm,html,j2,jinj{a,a2},kjs,knunjucks}]
+indent_size = 2
+indent_style = space
+
+[**.{blade,twig,volt}.php}]
+[**.{blade,twig,volt}]
+indent_size = 2
+indent_style = space
+
+
+#  Dotfiles
+# ____________________________________________
+[*.{babelrc,env,envrc,exports,gitconfig,nvmrc}]
+[*.env.{example,sample}*]
+insert_final_newline = ignore
+
+[*.{bash*,sh,profile,vimrc,zsh}]
+indent_size = 2
+indent_style = space
+trim_trailing_whitespace = true
+insert_final_newline = ignore
+
+
+#  Configs
+# ____________________________________________
+[*.{conf,htaccess,ini}]
+indent_size = 2
+indent_style = space
+
+
+#  (Ignore) Minified JS/CSS
+# ____________________________________________
+[*.{min.js,.min.css}]
+indent_size = ignore
+indent_style = ignore
+insert_final_newline = ignore
+
+
+# Makefile and Batch (Always Tab)
+# ____________________________________________
+[Makefile,*.bat]
+indent_style = tab
+indent_size = 4
