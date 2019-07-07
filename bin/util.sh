@@ -24,9 +24,11 @@ UTILS=(
   gparted
   gpw
   htop
-  lsb-core # For lsb_release when missing
+  lsscsi    # Addtl Tool to Inspect SCSI Devices (HDD/Optical)
+  hwinfo    # Addtl Tool to Inspect Hardware
+  lsb-core  # For lsb_release when missing
   ncdu
-  nmap # nmap -p 3333 localhost  (cannot ping ports, this checks them)
+  nmap      # nmap -p 3333 localhost  (cannot ping ports, this checks them)
   net-tools
   netperf
   parallel
