@@ -43,6 +43,10 @@ cat <<- command_list
     projects      Creates ~/projects folder with www-data:www-data user/group
     shutter       Best Screenshot Tool (Instructions to overwrite PrintScreen after install)
 
+    gdrivefuse    Install Google Drive "Fuse" tool for REMOTE access
+                  (Doesn't download files) see ~/google... instructions
+                  when complete
+
     nemo          File Browser Alternative, very good!
 
     FTP/Cloud
@@ -179,6 +183,12 @@ read -e -p "Type a Command: " cmd
             ;;
         fz|filezilla)
             bash ./bin/desktop/filezilla.sh
+            echo ""
+            echo "====================================================================="
+            echo ""
+            ;;
+        gdrivefuse)
+            bash ./bin/desktop/google-drive-fuse.sh
             echo ""
             echo "====================================================================="
             echo ""
