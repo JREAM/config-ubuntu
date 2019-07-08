@@ -4,6 +4,11 @@ if [[ ! $INSTALL_SCRIPT ]]; then
     exit
 fi
 
+# Add fix for Nautlus Glitch
+sudo add-apt-repository -y ppa:costales/folder-color
+sudo apt-get install -y folder-color
+nautilus -q
+
 # These are core tools
 UTILS=(
   ack-grep
