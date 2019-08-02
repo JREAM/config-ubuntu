@@ -4,7 +4,7 @@ if [[ ! $INSTALL_SCRIPT ]]; then
     exit
 fi
 
-VERSION="go1.12.6.linux-amd64"
+VERSION="go1.12.7.linux-amd64"
 
 if [[ -d "/usr/local/go" ]]; then
     echo "(!) Your path /usr/local/go already exists, assuming upgrade, clearing folder! (CTRL+C to stop)"
@@ -16,9 +16,13 @@ echo "(+) Downloading Google Go: $VERSION"
 # Download Time!
 #[ ! -d /usr/local/go ] && sudo mkdir /usr/local/go
 
+echo "[+] Downloading Go $VERSION"
 sudo curl -o /usr/local/go.tar.gz "https://dl.google.com/go/${VERSION}.tar.gz"
 sudo tar -C /usr/local -xzf /usr/local/go.tar.gz
 sudo rm /usr/local/go.tar.gz
+
+echo "[+] Adding /etc/bash_completion.d/go"
+sudo curl -o /etc/bash_completion.d/go "https://raw.githubusercontent.com/kura/go-bash-completion/master/etc/bash_completion.d/go"
 
 # Now we need the USER to setup:
 cat > $HOME_PATH/golang-update-profile.txt <<- EOM
