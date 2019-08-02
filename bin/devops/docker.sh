@@ -35,6 +35,8 @@ sudo curl -L "https://github.com/docker/compose/releases/download/$COMPOSE_VERSI
 echo "(+) Adding: bash-completion for docker-compose"
 sudo curl -L https://raw.githubusercontent.com/docker/compose/1.23.2/contrib/completion/bash/docker-compose -o /etc/bash_completion.d/docker-compose
 
+echo "(+) Adding: Lazy Docker (/usr/local/bin/lazydocker)"
+curl https://raw.githubusercontent.com/jesseduffield/lazydocker/master/scripts/install_update_linux.sh | bash
 
 echo "(+) Complete! Run with $ docker / $ docker-compose"
 echo -e "\t You may need to reload your shell to apply the new user group permissions."
