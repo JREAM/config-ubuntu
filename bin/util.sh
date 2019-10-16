@@ -50,6 +50,7 @@ UTILS=(
   super
   supervisor
   synaptic
+  slugify
   task-spooler
   tmux
   tree
