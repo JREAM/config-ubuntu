@@ -5,51 +5,12 @@ if [[ ! $INSTALL_SCRIPT ]]; then
     exit
 fi
 
-
-# This PPA Is Great
-sudo LC_ALL=C.UTF-8 add-apt-repository ppa:ondrej/php -y
-
-if [ "$(lsb_release -c | grep bionic)" ]; then
-  sudo sed '/s/bionic/xenial/g' /etc/apt/sources.list.d/ondrej-ubuntu-php-bionic.list
-  sudo mv /etc/apt/sources.list.d/ondrej-ubuntu-php-bionic.list /etc/apt/sources.list.d/ondrej-ubuntu-php-xenial.list
-fi
-
-sudo apt-get apt update
-
-# PHP 7.1
 sudo apt-get install -y\
     php7.2\
-    php7.2-bz2\
     php7.2-dev\
-    php7.2-cli\
     php7.2-common\
-    php7.2-curl\
     #php7.2-fpm\
-    php7.2-gd\
-    php7.2-imap\
-    php7.2-intl\
-    php7.2-json\
-    php7.2-mbstring\
-    php7.2-mcrypt\
-    php7.2-mysql\
-    php7.2-odbc\
-    php7.2-opcache\
-    php7.2-readline\
-    php7.2-soap\
-    php7.2-sqlite3\
-    php7.2-tidy\
-    php7.2-xml\
-    php7.2-xmlrpc\
-    php7.2-zip\
-    php-redis\
-    php-memcached\ # There is memcache also, but this ones used more
-    memcached\
-    memcachedb
-
-
-if hash apache2 2>/dev/null; then
-  sudo apt install libapache2-mod-php7.2
-fi
+    php7.2-mbstring
 
 #sudo phpdismod php7.2-fpm
 

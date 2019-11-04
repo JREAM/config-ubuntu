@@ -59,8 +59,9 @@ cat <<- command_list
     go            Install Google Go
     lua           Install Lua Language
     java          Install JRE and JDK (default-jre, not Oracle)
-    node          Install NodeJS v8.X via Repo
-    php72         Install PHP7.1 with common modules
+    node10        Install NodeJS v8.X via Repo
+    php72         Install PHP7.2 with common modules
+    php73         Install PHP7.3 with common modules
     py            Install Python2/3 PIP2/3 Devel,(bpython, mycli, virtualenvwrapper)
     rb            Install Ruby (ruby, ruby-dev, gem)
     rust          Install Rust Language (Installer)
@@ -212,8 +213,8 @@ read -e -p "Type a Command: " cmd
             echo "====================================================================="
             echo ""
             ;;
-        node)
-            bash ./bin/server/node.sh
+        node10)
+            bash ./bin/server/node10.sh
             echo ""
             echo "====================================================================="
             echo ""
