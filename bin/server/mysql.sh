@@ -20,6 +20,13 @@ sudo sed -i '/long_query_time/s/#//g' /etc/mysql/mysql.conf.d/mysqld.cnf
 
 echo "(+) Complete! Installed MySQL Utilities."
 echo "    MySQL Server, Client, Utilities"
+echo "    ---"
+echo "    @help: to go around the root install"
+echo "    sudo mysql"
+echo "    mysql> ALTER USER 'root'@'localhost' IDENTIFIED BY 'new_password';"
+echo "    mysql> FLUSH PRIVILEGES;"
+echo "    mysql> exit;"
+echo ""
 
 if [ $SKIP_SLEEP == false ]; then
     sleep 4

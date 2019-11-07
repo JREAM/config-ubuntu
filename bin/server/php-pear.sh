@@ -13,11 +13,7 @@ php go-pear.phar
 rm go-pear.phar
 pear version
 
-sudo apt install php7.2-dev -y # for phpize
-
 pecl install xdebug
-
-
 
 echo "\n"
 echo "Complete: Pear Installed && Xdebug"

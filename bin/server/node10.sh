@@ -4,10 +4,12 @@ if [[ ! $INSTALL_SCRIPT ]]; then
     exit
 fi
 
+VERSION='10.x'
+
 # For compiling addons, this should be installed already but just incase..
 sudo apt-get install -y build-essential
 
-curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
+curl -sL https://deb.nodesource.com/setup_$VERSION | sudo -E bash -
 sudo apt-get install -y nodejs
 
 echo "(+) Adding Bash Autocompletions"

@@ -4,6 +4,8 @@ if [[ ! $INSTALL_SCRIPT ]]; then
     exit
 fi
 
+VERSION=4.2
+
 echo "(+) Adding Swift Key"
 wget -qO- http://dev.iachieved.it/iachievedit.gpg.key | sudo apt-key add -
 
@@ -11,7 +13,7 @@ echo "Adding Xenial Source List"
 echo "deb http://iachievedit-repos.s3.amazonaws.com/ xenial main" | sudo tee --append /etc/apt/sources.list
 
 sudo apt update
-sudo apt install -y swift-4.2
+sudo apt install -y swift-$VERSION
 
 echo "(+) Complete! Update your .bashrc with:"
 echo "    export PATH=/opt/swift/swift-3.0/usr/bin:$PATH"

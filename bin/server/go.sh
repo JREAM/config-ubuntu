@@ -4,7 +4,7 @@ if [[ ! $INSTALL_SCRIPT ]]; then
     exit
 fi
 
-VERSION="go1.12.7.linux-amd64"
+VERSION="go1.13.4.linux-amd64"
 
 if [[ -d "/usr/local/go" ]]; then
     echo "(!) Your path /usr/local/go already exists, assuming upgrade, clearing folder! (CTRL+C to stop)"

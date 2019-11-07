@@ -60,7 +60,6 @@ cat <<- command_list
     lua           Install Lua Language
     java          Install JRE and JDK (default-jre, not Oracle)
     node10        Install NodeJS v8.X via Repo
-    php72         Install PHP7.2 with common modules
     php73         Install PHP7.3 with common modules
     py            Install Python2/3 PIP2/3 Devel,(bpython, mycli, virtualenvwrapper)
     rb            Install Ruby (ruby, ruby-dev, gem)
@@ -255,8 +254,8 @@ read -e -p "Type a Command: " cmd
             echo "====================================================================="
             echo ""
             ;;
-        php72)
-            bash ./bin/server/php72.sh
+        php73)
+            bash ./bin/server/php73.sh
             echo ""
             echo "====================================================================="
             echo ""

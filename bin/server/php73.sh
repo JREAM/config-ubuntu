@@ -5,32 +5,35 @@ if [[ ! $INSTALL_SCRIPT ]]; then
     exit
 fi
 
-sudo apt-get install -y\
-    php7.2\
-    php7.2-dev\
-    php7.2-common\
-    #php7.2-fpm\
-    php7.2-mbstring
+VERSION=7.3
 
-#sudo phpdismod php7.2-fpm
+sudo apt-get install -y\
+    php$VERSION\
+    php$VERSION-dev\
+    php$VERSION-common\
+    #php$VERSION-fpm\
+    php$VERSION-mbstring\
+    php$VERSION-curl
+
+#sudo phpdismod php$VERSION-fpm
 
 # IMPORTANT: Do NOT have a trailing \ on the LAST item!
 # Turn on Short Open Tags
 #
-sudo sed -i 's/short_open_tag*/short_open_tag = On/' /etc/php/7.1/{apache2,fpm,cli}/php.ini
+sudo sed -i 's/short_open_tag*/short_open_tag = On/' /etc/php/$VERSION/{apache2,fpm,cli}/php.ini
 
 # Turn Error Reporting On
-sudo sed -i 's/error_reporting = E_ALL &*/error_reporting = E_ALL/' /etc/php/7.1/{apache2,cli,fpm}/php.ini
+sudo sed -i 's/error_reporting = E_ALL &*/error_reporting = E_ALL/' /etc/php/$VERSION/{apache2,cli,fpm}/php.ini
 
 # Turn Display Errors On
-sudo sed -i 's/display_errors =*/display_errors = On/' /etc/php/7.1/{apache2,cli,fpm}/php.ini
+sudo sed -i 's/display_errors =*/display_errors = On/' /etc/php/$VERSION/{apache2,cli,fpm}/php.ini
 
 
 # Setup the Log file to /var/log/php/error.log
-sudo sed -i 's/;error_log.*$/error_log = /var/log/php/error.log/'  /etc/php/7.1/{apache2,cli,fpm}/php.ini
+sudo sed -i 's/;error_log.*$/error_log = /var/log/php/error.log/'  /etc/php/$VERSION/{apache2,cli,fpm}/php.ini
 
 # Turn down from 60
-sudo sed -i 's/;max_execution_time.*$/max_execution_time = 30/' /etc/php/7.1/{apache2,cli,fpm}/php.ini
+sudo sed -i 's/;max_execution_time.*$/max_execution_time = 30/' /etc/php/$VERSION/{apache2,cli,fpm}/php.ini
 
 
 echo "(+) PHP7 Installed"

@@ -4,22 +4,12 @@ if [[ ! $INSTALL_SCRIPT ]]; then
     exit
 fi
 
-echo "(+) Downloading elasticsearch .deb File"
-wget https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-6.0.0.deb
-mv elasticsearch-2.3.1.deb $PROJECT_TEMP_PATH
+echo "(+) Adding Elastic PPA to APT"
+sudo wget -qO - https://artifacts.elastic.co/GPG-KEY-elasticsearch | sudo apt-key add -
+sudo echo "deb https://artifacts.elastic.co/packages/7.x/apt stable main" | sudo tee -a /etc/apt/sources.list.d/elastic-7.x.list
 
-echo "(+) Installing elasticsearch"
-cd $PROJECT_TEMP_PATH
-sudo dpkg -i elasticsearch-2.3.1.deb
-
-echo "(+) Removing .deb file"
-rm elasticsearch-2.3.1.deb
-
-echo "(+) SystemCtl: Enable autostart"
-sudo systemctl enable elasticsearch.service
-
-echo "(+) Restarting elasticsearch"
-sudo systemctl restart elasticsearch
+echo "(+) Installing ElasticSearch"
+sudo apt-get update && sudo apt-get install elasticsearch
 
 echo "(+) Elastic Search Installed"
 echo ""

@@ -4,10 +4,12 @@ if [[ ! $INSTALL_SCRIPT ]]; then
     exit
 fi
 
-echo "(+) Install Ruby 2.3 and Gem Package Manager"
+VERSION=2.3
+
+echo "(+) Install Ruby $VERSION and Gem Package Manager"
 sudo apt-get install -y\
-    ruby2.3\
-    ruby2.3-dev\
+    ruby$VERSION\
+    ruby$VERSION-dev\
     gem
 
 # IMPORTANT: Do NOT have a trailing \ on the LAST item!
