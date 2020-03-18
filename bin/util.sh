@@ -21,6 +21,7 @@ UTILS=(
   curl
   dconf-editor
   elinks
+  figlet    # For output of ASCII, http://www.figlet.org/examples.html
   gdebi
   git
   git-extras
@@ -29,6 +30,7 @@ UTILS=(
   gparted
   gpw
   htop
+  lolcat    # For rainbow output, ls | lolcat
   lsscsi    # Addtl Tool to Inspect SCSI Devices (HDD/Optical)
   hwinfo    # Addtl Tool to Inspect Hardware
   lsb-core  # For lsb_release when missing
