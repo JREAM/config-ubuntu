@@ -33,6 +33,7 @@ UTILS=(
   lolcat    # For rainbow output, ls | lolcat
   lsscsi    # Addtl Tool to Inspect SCSI Devices (HDD/Optical)
   hwinfo    # Addtl Tool to Inspect Hardware
+  imagemagick
   lsb-core  # For lsb_release when missing
   ncdu
   nmap      # nmap -p 3333 localhost  (cannot ping ports, this checks them)
@@ -46,6 +47,7 @@ UTILS=(
   python-software-properties
   rename
   screen
+  shotwell  # Image Viewer
   software-properties-common
   stress
   stress-ng
