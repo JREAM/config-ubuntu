@@ -6,10 +6,9 @@ fi
 
 # Create user Permissions for usr/local
 echo "(+) Installing Shutter Screenshot & Dependencies"
+sudo add-apt-repository -y ppa:linuxuprising/shutter
 sudo apt install -y\
-    shutter\
-    libimage-exiftool-perl\
-    gnome-web-photo
+    shutter
 
 echo "(+) Complete! "
 echo "(+) Check your Applications menu for Shutter"
