@@ -61,6 +61,7 @@ cat <<- command_list
     java          Install JRE and JDK (default-jre, not Oracle)
     node10        Install NodeJS v8.X via Repo
     php73         Install PHP7.3 with common modules
+    php8-nginx    Install PHP8 with Modules and NGinx
     py            Install Python2/3 PIP2/3 Devel,(bpython, mycli, virtualenvwrapper)
     rb            Install Ruby (ruby, ruby-dev, gem)
     rust          Install Rust Language (Installer)
@@ -232,6 +233,12 @@ read -e -p "Type a Command: " cmd
             ;;
         pipenv)
             bash ./bin/server/pipenv.sh
+            echo ""
+            echo "====================================================================="
+            echo ""
+            ;;
+        php8-nginx)
+            bash ./bin/server/php8-nginx.sh
             echo ""
             echo "====================================================================="
             echo ""
