@@ -29,7 +29,7 @@ echo "(+) Complete! Run with $ pyenv"
 echo -e "\tIf you are not using my dotfiles, please add this to ~/.bash_profile or similar:"
 echo -e '\texport PYENV_ROOT="$HOME/.pyenv"'
 echo -e '\texport PATH="$PYENV_ROOT/bin:$PATH"'
-echo -e 'if command -v pyenv 1>/dev/null 2>&1; then\n  eval "$(pyenv init -)"\nfi'
+echo -e 'if command -v pyenv 1>/dev/null 2>&1; then\n  eval "$(pyenv init --path)"\nfi'
 echo ""
 echo "(!) Suggested to have pyenv virtualenvwrapper create venvs, add to .bash_aliases/etc"
 echo 'export PYENV_VIRTUALENVWRAPPER_PREFER_PYVENV=\"true\"'
