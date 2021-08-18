@@ -75,6 +75,7 @@ Also, for anything GUI related I will focus on Gnome as a UI because I never lik
     - [Speed up Guest Machine](#speed-up-guest-machine)
     - [Fix Mouse Side Buttons in VMWare](#fix-mouse-side-buttons-in-vmware)
     - [Fix Copy/Paste From Host and Guest](#fix-copypaste-from-host-and-guest)
+    - [Virtualbox: Fix Touchpad Scroll](#virtualbox-fix-touchpad-scroll)
     - [Speed up Mouse Wheel](#speed-up-mouse-wheel)
     - [Vagrant VBGuest Fix:](#vagrant-vbguest-fix)
     - [Windows 8 VirtualBox Fix](#windows-8-virtualbox-fix)
@@ -1077,7 +1078,7 @@ unity.wasCapable = "FALSE"
 Append the following to `yourbox.vmx` and restart your machine. You can also place this in the global settings.ini to apply
 to every Guast Machine.
 
-```
+```txt
 ; -------------------------------------------------------
 ; Fix Mouse Left/Right Navigation
 ; -------------------------------------------------------
@@ -1087,15 +1088,38 @@ usb.generic.allowHID = "TRUE"
 ```
 
 ## Fix Copy/Paste From Host and Guest
-On Windows 10 the copy paste from Host to Guess and vice versa does not appear to work no matter what you do.
+
+On Windows 10 the copy/paste from Host to Guest and vice-versa does not appear to work no matter what you do.
 The only solution I have found that worked is this.
 
-    - Right click your VirtualMachine
-    - Select Settings
-    - Go to the Options Tab
-    - Go to Shared Folders
-    - Set to Always Enabled
-    - Reboot Guest
+- Right click your VirtualMachine
+- Select Settings
+- Go to the Options Tab
+- Go to Shared Folders
+- Set to Always Enabled
+- Reboot Guest
+
+## VirtualBox: Fix Touchpad Scroll
+
+__Working Solution, Needs Improvements__
+
+In VirtualBox (Not VMWare Workstation) when running a Windows Host (In my case Windows 10) from
+Linux (Ubuntu in my case) you have have issues with the touchpad scroll with two fingers.
+The solution is as follow.
+
+Edit the file: `sudo vim /usr/share/applications/virtualbox.desktop`.
+
+```txt
+#Change this line:
+Exec=VirtualBox VirtualBox %U
+
+#To This
+Exec=env QT_XCB_NO_XI2=1 VirtualBox VirtualBox %U
+```
+
+The `env` sets an environment variable inside the .desktop file. If you want to 
+run the above with CLI only simply type `QT_XCB_NO_XI2=1 VirtualBox VirtualBox %U
+`. 
 
 ## Speed up Mouse Wheel
 If your mouse just won't seem to cooperate no matter what you do a last option is to install this program:
