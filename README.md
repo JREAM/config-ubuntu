@@ -68,6 +68,7 @@ Also, for anything GUI related I will focus on Gnome as a UI because I never lik
     - [Fix: Gnome Lockscreen](#fix-gnome-lockscreen)
     - [Fix: Touchpad When Typing](#fix-touchpad-when-typing)
     - [Fix: Gnome Freeze](#fix-gnome-freeze)
+    - [Fix: Touchpad on Type](#fix-touchpad-on-type)
     - [Improve: Adjust Mouse and Devices](#improve-adjust-mouse-and-devices)
     - [Preserve Settings](#preserve-settings)
 - [Virtual Machine](#virtual-machine)
@@ -915,6 +916,36 @@ This is a rare things for me, it happens much more in unity and requires a lot m
 
 ***
 [(Back to top)](#table-of-contents)
+
+
+## Fix: Touchpad on Type
+
+This is TERRIBLY irritating and it's taken me far too long to figure out. On a laptop,
+my case being the T480s In Ubuntu 20 LTS I find the Tweak tool to "Disable touchpad while typing" 
+does nothing.
+
+**Syndaemon**: a program that monitors keyboard activity and disables the touchpad when the keyboard is being used.
+
+1. Turn OFF "Disable Touchpad While Typing" in Tweak Tools (So it's not enabled)
+2. Stop the syndaemon process `sudo killall syndaemon`
+3. Start syndaemon with the settings you prefer, you can also type `syndaemon --help`
+4. See (My Settings Below)
+5. Add a startup Application (`Super` and search for `Startup`)
+  1. Supply a name, give the command as you decide (See My example)
+  2. NOTE: Syndaemon will only start AFTER login by this method, for a global setting you could 
+    perhaps do a crontab on start for root. __I don't do this incase I forget!__ 
+
+- **My Settings:** 
+  - `syndaemon -i 1 -d -K`
+  - On Type, Touchpad disabled for 1 second (`-i` for interval)
+  - Syndaemon is run in the background (`-d` for start as daemon)
+  - Also ignore modifier keys + combos (`-K`)
+  - There are other options to adjust if you like, the default polling is 200ms.
+
+If you change your settings a few times be sure to `killall` again because you'll
+have multiple daemons running by checking `ps aux | grep syndaemon`.
+
+
 
 ## Improve: Adjust Mouse and Devices
 When using a USB mouse sometimes the speed is just not right, in my case it's too slow often. Here is how to adjust it:
