@@ -5,12 +5,12 @@ if [[ ! $INSTALL_SCRIPT ]]; then
 fi
 
 echo "(+) Downloading Postman"
-wget https://dl.pstmn.io/download/latest/linux64 -O $PROJECT_TEMP_PATH/postman.tar.gz
-cd $PROJECT_TEMP_PATH
+wget https://dl.pstmn.io/download/latest/linux64 -O $REPO_TMP_PATH/postman.tar.gz
+cd $REPO_TMP_PATH
 
 echo "(+) Moving Postman to /opt/Postman"
-sudo tar -xvf $PROJECT_TEMP_PATH/postman.tar.gz -C /opt
-rm $PROJECT_TEMP_PATH/postman.tar.gz
+sudo tar -xvf $REPO_TMP_PATH/postman.tar.gz -C /opt
+rm $REPO_TMP_PATH/postman.tar.gz
 
 if [ ! -s /usr/bin/postman ]; then
   echo "(+) Symlink in /usr/bin/postman"

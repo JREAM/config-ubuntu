@@ -1,8 +1,7 @@
 #!/bin/bash
-#
-# This will automatically install a lot of the packages for a quick start.
+# DevOps: Quick Installer
 
-# Flag this as a proper starting point
+# Required FLAG for child processes to run
 export INSTALL_SCRIPT=true
 
 # Allow an install to pause a brief moment after running
@@ -11,11 +10,11 @@ export SKIP_SLEEP=false
 # The base script if needed
 export BASE_SCRIPT='desktop'
 
-# Source Temporary Environment Variables.
-source ./bin/_export_path_variables.sh
+# 1. PATH_VARS - Temporary Environment Variables.
+# 2. USER_VARS - Temporary User Variables.
+source ./bin/_export_path_vars.sh
+source ./bin/_export_user_vars.sh
 
-# Source the variables so they are exported and assigned
-source ./bin/_export_user_variables.sh
 
 echo "====================================================================="
 echo ""

@@ -9,7 +9,7 @@ sudo apt-get install -y\
     nginx-extras
 
 # Copy project folder over
-/bin/bash $PROJECT_BIN_PATH/_mkproject_folder.sh
+/bin/bash $REPO_BIN_PATH/_mkproject_folder.sh
 
 # Create VHost for the /home/user/projects folder
 if [ ! -f /etc/nginx/sites-available/projects.conf ]; then

@@ -6,12 +6,12 @@ fi
 
 echo "Installing Deploy (Shell)"
 
-cd $PROJECT_TEMP_PATH
+cd $REPO_TMP_PATH
 wget https://github.com/visionmedia/deploy/archive/master.zip
 unzip master.zip
 cd deploy-master
 sudo make install
-cd $PROJECT_TEMP_PATH
+cd $REPO_TMP_PATH
 rm -rf deploy-master
 rm master.zip
 

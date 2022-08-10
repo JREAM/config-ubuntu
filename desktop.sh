@@ -1,8 +1,7 @@
 #!/bin/bash
-#
-# This will automatically install a lot of the packages for a quick start.
+# Desktop: Quick Installer
 
-# Flag this as a proper starting point
+# Required FLAG for child processes to run
 export INSTALL_SCRIPT=true
 
 # Allow an install to pause a brief moment after running
@@ -11,11 +10,10 @@ export SKIP_SLEEP=false
 # The base script if needed
 export BASE_SCRIPT='desktop'
 
-# Source Temporary Environment Variables.
-source ./bin/_export_path_variables.sh
-
-# Source the variables so they are exported and assigned
-source ./bin/_export_user_variables.sh
+# 1. PATH_VARS - Temporary Environment Variables.
+# 2. USER_VARS - Temporary User Variables.
+source ./bin/_export_path_vars.sh
+source ./bin/_export_user_vars.sh
 
 
 echo "====================================================================="
@@ -86,12 +84,12 @@ cat <<- command_list
     stacer        Memory & System Optmizer
     touchpad-tool Install touchpad-indicator.
     util          Install Utilities: (git, curl, htop, unzip, terminator, tmux, screen)
-    utilxtra      Intall Bonus CLI Utilities (peco)
     vim           Install Vim (.vimrc and Vundle Plugins)
     vimycm        Install/Compile Vim YCM (You Compelete Me)
 
     Browser
     -------
+    brave         Install Brave Browser
     chromium      Install Chromium Browser and FFMPEG Codecs (blue icon)
     chrome        Install Chrome Stable (latest debian file)
 
@@ -123,6 +121,12 @@ read -e -p "Type a Command: " cmd
             ;;
         arronax)
             bash ./bin/desktop/arronax.sh
+            echo ""
+            echo "====================================================================="
+            echo ""
+            ;;
+        brave)
+            bash ./bin/desktop/brave.sh
             echo ""
             echo "====================================================================="
             echo ""
@@ -307,20 +311,8 @@ read -e -p "Type a Command: " cmd
             echo "====================================================================="
             echo ""
             ;;
-        utilxtra)
-            bash ./bin/utilxtra.sh
-            echo ""
-            echo "====================================================================="
-            echo ""
-            ;;
         vim)
             bash ./bin/vim.sh
-            echo ""
-            echo "====================================================================="
-            echo ""
-            ;;
-        vimycm)
-            bash ./bin/vimycm.sh
             echo ""
             echo "====================================================================="
             echo ""

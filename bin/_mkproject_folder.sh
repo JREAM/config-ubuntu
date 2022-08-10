@@ -16,7 +16,7 @@ if [ ! -d $MK_PROJECT_FOLDER ]; then
     mkdir -p $MK_PROJECT_FOLDER
 
     echo "(+) Copying Default Index Filed Over."
-    cp -r $PROJECT_FILE_PATH/projects/* $MK_PROJECT_FOLDER
+    cp -r $REPO_FILES_PATH/projects/* $MK_PROJECT_FOLDER
 
     echo "(+) Setting permissions to www-data:www-data and g+rwx"
     sudo chown -R $USER:www-data $MK_PROJECT_FOLDER

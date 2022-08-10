@@ -49,7 +49,7 @@ sudo apt-get install -y\
 echo "(+) Copying $HOME_PATH/project folder if it doesn't exist"
 
 # Copy project folder over
-. $PROJECT_BIN_PATH/_mkproject_folder.sh
+. $REPO_BIN_PATH/_mkproject_folder.sh
 
 # Handle Composer
 . ./php-composer.sh

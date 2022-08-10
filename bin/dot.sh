@@ -5,7 +5,7 @@ if [[ ! $INSTALL_SCRIPT ]]; then
 fi
 
 # Ensure the dotfile submodule is installed
-if [ "$(ls -A $PROJECT_DOTFILE_PATH)"  ]; then
+if [ "$(ls -A $REPO_DOTFILES_PATH)"  ]; then
     echo "(+) Dotfiles exists, overwriting old.";
 else
     echo "(!) Error: You must install the submodule(s)."
@@ -14,7 +14,7 @@ else
     exit
 fi
 
-source $PROJECT_DOTFILE_PATH/copy-dotfiles.sh
+source $REPO_DOTFILES_PATH/copy-dotfiles.sh
 
 echo "(+) Complete! Make sure to $ source $HOME_PATH/.bashrc && source $HOME_PATH/.profile"
 

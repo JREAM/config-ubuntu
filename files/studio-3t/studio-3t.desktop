@@ -1,8 +1,0 @@
-[Desktop Entry]
-Version=1.0
-Type=Application
-Terminal=false
-Name=Mongo Studio 3T
-Icon=/home/jesse/.local/share/icons/studio-3t.png
-Exec=/home/jesse/apps/studio-3t/bin/studio-3t.sh
-Category=Development;

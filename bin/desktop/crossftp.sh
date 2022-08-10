@@ -8,12 +8,12 @@ VERSION=1.99.0
 
 # Create user Permissions for usr/local
 echo "(+) Downloading Cross FTP (30 Day Trial; FTP/FTPS/S3/CloudFront/Glacier/Google Cloud/etc)"
-wget http://www.crossftp.com/crossftp_$VERSION.deb -P $PROJECT_TEMP_PATH
+wget http://www.crossftp.com/crossftp_$VERSION.deb -P $REPO_TMP_PATH
 
-sudo dpkg -i "$PROJECT_TEMP_PATH/crossftp_$VERSION.deb"
+sudo dpkg -i "$REPO_TMP_PATH/crossftp_$VERSION.deb"
 sudo apt-get install -y -f
 
-rm "$PROJECT_TEMP_PATH/crossftp_$VERSION.deb"
+rm "$REPO_TMP_PATH/crossftp_$VERSION.deb"
 
 
 echo "(+) Complete! "

@@ -6,10 +6,10 @@ if [[ ! $INSTALL_SCRIPT ]]; then
 fi
 
 export OS_CODENAME=`lsb_release -s -c`
-export PROJECT_BIN_PATH=$PWD/bin            # (NO Trailing Slash!)
-export PROJECT_FILE_PATH=$PWD/files         # (NO Trailing Slash!)
-export PROJECT_DOTFILE_PATH=$PWD/dotfiles
-export PROJECT_TEMP_PATH=$PWD/tmp           # (NO Trailing Slash!)
+export REPO_BIN_PATH=$PWD/bin            # (NO Trailing Slash!)
+export REPO_FILES_PATH=$PWD/files         # (NO Trailing Slash!)
+export REPO_DOTFILES_PATH=$PWD/dotfiles   # (NO Trailing Slash!)
+export REPO_TMP_PATH=$PWD/tmp           # (NO Trailing Slash!)
 
 # @important
 #
