@@ -5,26 +5,17 @@ if [[ ! $INSTALL_SCRIPT ]]; then
     exit
 fi
 
-sources=(numix)
-
-echo "(+) Removing and Re-Adding Sources List"
-
-for s in $sources; do
-    if [ -f /etc/apt/sources.list.d/$s*ppa ]; then
-        sudo rm /etc/apt/sources.list.d/$s*ppa
-    fi
-    sudo add-apt-repository -y ppa:$s
-done
-
 echo "(+) Updating Sources List"
+curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo dd of=/usr/share/keyrings/githubcli-archive-keyring.gpg
+sudo chmod go+r /usr/share/keyrings/githubcli-archive-keyring.gpg
+
+echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | sudo tee /etc/apt/sources.list.d/github-cli.list > /dev/null
 echo "(+) Sources List Update Complete."
 
-echo "(+) Installing Numix Theme (Use Tweak UI)."
-sudo apt-get update
-sudo apt-get install -y\
-    numix-gtk-theme\
-    numix-icon-theme\
-    numix-icon-theme-circle
+sudo apt install gh -y
+
+
+echo "(+) GitHub Client Installed!"
 
 if [ $SKIP_SLEEP == false ]; then
     sleep 4

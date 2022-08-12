@@ -51,7 +51,7 @@ echo "(+) Adding $USER user to www-data"
 # Add user to www-data
 
 sudo usermod -aG www-data $USER
-"
+
 
 if [ $SKIP_SLEEP == false ]; then
     sleep 4

@@ -41,41 +41,25 @@ cat <<- command_list
     projects      Creates ~/projects folder with www-data:www-data user/group
     shutter       Best Screenshot Tool (Instructions to overwrite PrintScreen after install)
 
-    gdrivefuse    Install Google Drive "Fuse" tool for REMOTE access
-                  (Doesn't download files) see ~/google... instructions
-                  when complete
-
-    nemo          File Browser Alternative, very good!
-
-    FTP/Cloud
-    ---------
-    crossftp      (Only Good one for S3/Glacier on Linux I could find)
-                  30 Day Trial, Works with S3 and Glacier
-    filezilla     FTP/FTPS Client
-    fz                          (alias: filezilla)
-
     Firewall Personal
     -----------------
     ufw           Enable UFW Local: 80 443 3306 1337 2375 9000 8000-02
 
     Code Editors:
     ----------
-    sublime-text  Installs sublime text 3 (deb package) (x64)
-    st3                         (alias: sublime text 3)
+    sublime-text  Installs Sublime text 3 (deb package) (x64)
     vscode        Install Visual Studio Code (apt) (x64)
     postman       The popular Postman Client for API testing
     monodevelop   Install C#/.NET editor (Install .NET and Monodevelop)
-
-    CLI
-    ---
-    sdkman       Install SDKs with ease
 
     Utilities:
     ----------
     arronax       Easily Create Launchers for any Linux Environment
     dot           Copy Dotfiles (.bashrc, .gitconfig, .gitignore)
     dropbox       Installs Dropbox (x64)
-    hub           Official GitHub CLI tool $ hub
+
+    gh|gh-cli     Official GitHub CLI tool $ gh
+
     ffmpeg        ffmpeg cli converter
     flux          f.lux for eye strain, GUI app
     perm          Update /usr/local permissions
@@ -90,12 +74,7 @@ cat <<- command_list
     Browser
     -------
     brave         Install Brave Browser
-    chromium      Install Chromium Browser and FFMPEG Codecs (blue icon)
     chrome        Install Chrome Stable (latest debian file)
-
-    GUI
-    -------
-    cinnamon      Install Cinnamon GUI + Muffin + OpenGL
 
     Quit:
     -----
@@ -131,26 +110,14 @@ read -e -p "Type a Command: " cmd
             echo "====================================================================="
             echo ""
             ;;
+        beekeeper)
+            bash ./bin/desktop/mysql-beekeeper-studio.sh
+            echo ""
+            echo "====================================================================="
+            echo ""
+            ;;
         chrome)
             bash ./bin/desktop/chrome.sh
-            echo ""
-            echo "====================================================================="
-            echo ""
-            ;;
-        cinnamon)
-            bash ./bin/desktop/cinnamon.sh
-            echo ""
-            echo "====================================================================="
-            echo ""
-            ;;
-        chromium)
-            bash ./bin/desktop/chromium.sh
-            echo ""
-            echo "====================================================================="
-            echo ""
-            ;;
-        crossftp)
-            bash ./bin/desktop/crossftp.sh
             echo ""
             echo "====================================================================="
             echo ""
@@ -167,8 +134,8 @@ read -e -p "Type a Command: " cmd
             echo "====================================================================="
             echo ""
             ;;
-        hub)
-            bash ./bin/misc/hub-cli.sh
+        gh|gh-cli)
+            bash ./bin/misc/gh-cli.sh
             echo ""
             echo "====================================================================="
             echo ""
@@ -181,18 +148,6 @@ read -e -p "Type a Command: " cmd
             ;;
         flux)
           bash ./bin/desktop/flux.sh
-            echo ""
-            echo "====================================================================="
-            echo ""
-            ;;
-        fz|filezilla)
-            bash ./bin/desktop/filezilla.sh
-            echo ""
-            echo "====================================================================="
-            echo ""
-            ;;
-        gdrivefuse)
-            bash ./bin/desktop/google-drive-fuse.sh
             echo ""
             echo "====================================================================="
             echo ""
@@ -215,20 +170,8 @@ read -e -p "Type a Command: " cmd
             echo "====================================================================="
             echo ""
             ;;
-        gui)
-            bash ./bin/desktop/gui.sh
-            echo ""
-            echo "====================================================================="
-            echo ""
-            ;;
         mysqlwb)
             bash ./bin/desktop/mysql-workbench.sh
-            echo ""
-            echo "====================================================================="
-            echo ""
-            ;;
-        nemo)
-            bash ./bin/desktop/nemo.sh
             echo ""
             echo "====================================================================="
             echo ""
@@ -259,12 +202,6 @@ read -e -p "Type a Command: " cmd
             ;;
         projects)
             bash ./bin/_mkproject_folder.sh
-            echo ""
-            echo "====================================================================="
-            echo ""
-            ;;
-        sdkman)
-            bash ./bin/desktop/sdkman.sh
             echo ""
             echo "====================================================================="
             echo ""

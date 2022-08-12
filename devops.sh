@@ -31,11 +31,9 @@ cat <<- command_list
     DevOps:
     -------
     awscli         Install AWS CLI tools
-    azurecli       Install Microsoft Azure CLI tools
     gcloud         Install Google Cloud CLI tools
 
     docker         Install Docker, Compose, Machine & bash-autocomplete
-    docker-mint    Install Docker on Linux Mint 18.2
 
     ansible        Install Ansible Provisioner
     saltstack      Install Saltstack Provisioner
@@ -86,12 +84,6 @@ read -e -p "Type a Command: " cmd
             echo "====================================================================="
             echo ""
             ;;
-        azurecli)
-            bash ./bin/devops/azurecli.sh
-            echo ""
-            echo "====================================================================="
-            echo ""
-            ;;
         consul)
             bash ./bin/devops/hashicorp/consul.sh
             echo ""
@@ -100,12 +92,6 @@ read -e -p "Type a Command: " cmd
             ;;
         docker)
             bash ./bin/devops/docker.sh
-            echo ""
-            echo "====================================================================="
-            echo ""
-            ;;
-        docker-mint)
-            bash ./bin/devops/docker-mint.sh
             echo ""
             echo "====================================================================="
             echo ""
@@ -137,14 +123,14 @@ read -e -p "Type a Command: " cmd
         kubernetes|kubectl)
             bash ./bin/devops/kubernetes.sh
             echo ""
-  ¦ ¦ ¦ ¦ ¦ echo "====================================================================="
-  ¦ ¦ ¦ ¦ ¦ echo ""
+            echo "====================================================================="
+            echo ""
             ;;
         minikube)
             bash ./bin/devops/minikube.sh
-  ¦ ¦ ¦ ¦ ¦ echo ""
-  ¦ ¦ ¦ ¦ ¦ echo "====================================================================="
-  ¦ ¦ ¦ ¦ ¦ echo ""
+            echo ""
+            echo "====================================================================="
+            echo ""
             ;;
         saltstack)
             bash ./bin/devops/saltstack.sh
