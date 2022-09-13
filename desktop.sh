@@ -66,6 +66,8 @@ cat <<- command_list
     mysqlwb       Install MySQL Workbench
     security      Install ClamAV, RKHunter (read instructions after install)
     stacer        Memory & System Optmizer
+    guake         Drop down terminal
+
     touchpad-tool Install touchpad-indicator.
     util          Install Utilities: (git, curl, htop, unzip, terminator, tmux, screen)
     vim           Install Vim (.vimrc and Vundle Plugins)
@@ -166,6 +168,12 @@ read -e -p "Type a Command: " cmd
             ;;
         gnome-vpn)
             bash ./bin/desktop/gnome/gnome-vpn.sh
+            echo ""
+            echo "====================================================================="
+            echo ""
+            ;;
+        guake)
+            bash ./bin/desktop/guake.sh
             echo ""
             echo "====================================================================="
             echo ""
