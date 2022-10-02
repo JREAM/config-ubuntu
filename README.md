@@ -27,4 +27,22 @@ Sometimes I post to a little blog on [JREAM](https://jream.com) if you are inter
   - Missing server.sh, redo it
   - Combine into one menu, not separate files, ./install.sh or similar
   - Dont forget to use exports.sh
+  - Would like to use a Pager or something for the long list, not sure yet
+## Changes
+
+- Code Reduction 50% or greater
+- Simpler File Structure
+- One Entry Point `./installable.sh`
+- categories:
+  - benchmarks
+  - code-editors
+  - databases
+  - gui-tools
+  - hashicorp
+  - provisioners
+  - util
+  - version-managers
+  - webservers
+
+
 - Jesse

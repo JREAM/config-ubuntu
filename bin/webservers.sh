@@ -4,7 +4,7 @@ if [[ ! $INSTALL_SCRIPT ]]; then
   exit
 fi
 
-source ../exports.sh
+source _exports.sh
 
 if [ ! -z $1 ]; then
   error "Developer Error! Missing Argument for php.sh"
@@ -39,10 +39,10 @@ caddy)
     debian-keyring \
     debian-archive-keyring \
     apt-transport-https
-    log "Package: Caddy Webserver, adding /etc/apt/sources.list.d/caddy-stable.list"
-    curl -1sLf 'https://dl.cloudsmith.io/public/caddy/stable/gpg.key' | sudo gpg --dearmor -o /usr/share/keyrings/caddy-stable-archive-keyring.gpg
-    curl -1sLf 'https://dl.cloudsmith.io/public/caddy/stable/debian.deb.txt' | sudo tee /etc/apt/sources.list.d/caddy-stable.list
-    sudo apt update && sudo apt install -y caddy
+  log "Package: Caddy Webserver, adding /etc/apt/sources.list.d/caddy-stable.list"
+  curl -1sLf 'https://dl.cloudsmith.io/public/caddy/stable/gpg.key' | sudo gpg --dearmor -o /usr/share/keyrings/caddy-stable-archive-keyring.gpg
+  curl -1sLf 'https://dl.cloudsmith.io/public/caddy/stable/debian.deb.txt' | sudo tee /etc/apt/sources.list.d/caddy-stable.list
+  sudo apt update && sudo apt install -y caddy
   ;;
 *)
   error "Developer Error! Invalid \$program for webservers.sh"

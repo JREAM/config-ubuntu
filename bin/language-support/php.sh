@@ -5,7 +5,7 @@ if [[ ! $INSTALL_SCRIPT ]]; then
   exit
 fi
 
-source ../exports.sh
+source _exports.sh
 
 if [ -n "$1" ]; then
   error "Developer Error! Missing Argument for php.sh"
@@ -81,32 +81,34 @@ MODULES=(
   zip
 )
 
+for
+
 sudo apt-get install -y \
   php$VERSION-
-  php$VERSION-
-  php$VERSION-
-  php$VERSION-
-  php$VERSION-
-  php$VERSION-
-  php$VERSION-
-  php$VERSION-
-  php$VERSION-
-  php$VERSION-
-  php$VERSION-
-  php$VERSION-
-  php$VERSION-
-  php$VERSION-
-  php$VERSION-
-  php$VERSION-
-  php$VERSION-
-  php$VERSION-
-  php$VERSION-
-  php$VERSION-
-  php$VERSION-
-  php$VERSION-
-  php$VERSION-
-  php$VERSION-
-  php$VERSION-
+php$VERSION-
+php$VERSION-
+php$VERSION-
+php$VERSION-
+php$VERSION-
+php$VERSION-
+php$VERSION-
+php$VERSION-
+php$VERSION-
+php$VERSION-
+php$VERSION-
+php$VERSION-
+php$VERSION-
+php$VERSION-
+php$VERSION-
+php$VERSION-
+php$VERSION-
+php$VERSION-
+php$VERSION-
+php$VERSION-
+php$VERSION-
+php$VERSION-
+php$VERSION-
+php$VERSION-
 
 echo "Adding current user to www-data group and setting permissions"
 

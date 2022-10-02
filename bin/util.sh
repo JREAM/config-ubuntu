@@ -31,6 +31,7 @@ UTILS=(
   pydf
   python-software-properties
   screen
+  shellcheck
   software-properties-common
   synaptic
   slugify

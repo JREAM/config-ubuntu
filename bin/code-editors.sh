@@ -44,16 +44,25 @@ case $PROGRAM in
 vscode)
   check_vscode_apt_list
   sudo apt install -y code
+  log "Package: Code (VSCode) installed" success
   ;;
 vscode-insiders)
   check_vscode_apt_list
   sudo apt install -y code-insiders
+  log "Package: Code Insiders (VSCode Insiders) installed" success
   ;;
 sublimetext)
   check_sublimetext_apt_list
   sudo apt install -y sublime-text
+  log "Package: Sublime Text installed" success
   ;;
-  *)
-  error "Developer Error! Invalid \$program for vscode.sh"
+vim)
+  # @TODO i prefer this in XDG paths.
+  sudo apt-get install -y vim
+  [ ! -d ~/.vim/bundle/Vundle.vim ] && git clone https://github.com/gmarik/Vundle.vim.git $HOME/.vim/bundle/Vundle.vim
+  log "Package: Vim + Vundle installed" succe
+  ;;
+*)
+  error "Developer Error! Invalid \$program"
   ;;
 esac

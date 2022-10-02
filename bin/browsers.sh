@@ -4,7 +4,7 @@ if [[ ! $INSTALL_SCRIPT ]]; then
   exit
 fi
 
-source ../exports.sh
+source _exports.sh
 
 if [ ! -z $1 ]; then
   error "Developer Error! Missing Argument for browesers.sh"
