@@ -1,5 +1,11 @@
 dotfiles
 
+# Output Results (Not sure what Ill use)
+OUTPUT.LOG
+OUTPUT.TXT
+RESULTS.LOG
+RESULTS.TXT
+
 # VIM
 
 node_modules
@@ -48,4 +54,3 @@ pip-delete-this-directory.txt
 
 # editors
 .vscode
-

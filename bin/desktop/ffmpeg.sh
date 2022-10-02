@@ -1,9 +1,8 @@
 #!/bin/bash
 if [[ ! $INSTALL_SCRIPT ]]; then
-    echo "(!) Error: You must use the installer script."
-    exit
+  echo "(!) Error: You must use the installer script."
+  exit
 fi
-
 
 echo "(+) Installing ffmpeg CLI Tool"
 
@@ -15,8 +14,3 @@ sudo apt install -y ffmpeg libav-tools x264 x265
 # sudo apt-get install -f
 
 echo "(+) Complete!  From Terminal, $ ffmpeg"
-
-
-if [ $SKIP_SLEEP == false ]; then
-    sleep 4
-fi

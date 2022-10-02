@@ -1,9 +1,8 @@
 #!/bin/bash
 if [[ ! $INSTALL_SCRIPT ]]; then
-    echo "(!) Error: You must use the installer script."
-    exit
+  echo "(!) Error: You must use the installer script."
+  exit
 fi
-
 
 echo "(+) Adding Beekeeper Key"
 wget --quiet -O - https://deb.beekeeperstudio.io/beekeeper.key | sudo apt-key add -
@@ -15,8 +14,3 @@ echo "(+) Installing Beekeeper Studio"
 sudo apt install beekeeper-studio -y
 
 echo "(+) Complete!"
-
-if [ $SKIP_SLEEP == false ]; then
-    sleep 4
-fi
-

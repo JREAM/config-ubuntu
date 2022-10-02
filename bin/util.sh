@@ -1,7 +1,7 @@
 #!/bin/bash
 if [[ ! $INSTALL_SCRIPT ]]; then
-    echo "(!) Error: You must use the installer script."
-    exit
+  echo "(!) Error: You must use the installer script."
+  exit
 fi
 
 # Add fix for Nautlus Glitch
@@ -19,12 +19,12 @@ UTILS=(
   gnupg2
   gparted
   htop
-  lsscsi    # Addtl Tool to Inspect SCSI Devices (HDD/Optical)
-  hwinfo    # Addtl Tool to Inspect Hardware
+  lsscsi # Addtl Tool to Inspect SCSI Devices (HDD/Optical)
+  hwinfo # Addtl Tool to Inspect Hardware
   imagemagick
-  lsb-core  # For lsb_release when missing
+  lsb-core # For lsb_release when missing
   ncdu
-  nmap      # nmap -p 3333 localhost  (cannot ping ports, this checks them)
+  nmap # nmap -p 3333 localhost  (cannot ping ports, this checks them)
   net-tools
   netperf
   preload
@@ -66,9 +66,8 @@ fi
 # IMPORTANT: Do NOT have a trailing \ on the LAST item!
 
 # Git Extras Autocomplete
-cp "$REPO_FILES_PATH/gh_complete.sh" "$HOME_PATH/.bash/"
-sudo chown $USER:$USER "$HOME_PATH/.bash/gh_complete.sh"
-
+cp "$REPO_FILES_PATH/gh_complete.sh" "$HOME/.bash/"
+sudo chown $USER:$USER "$HOME/.bash/gh_complete.sh"
 
 echo "(+) Completed install utilities."
 echo ""
@@ -79,7 +78,3 @@ echo 'if [ -f "$HOME/.bash/gh_complete.sh" ]; then'
 echo '   source "$HOME/.bash/gh_complete.sh"'
 echo 'fi'
 echo ""
-
-if [ $SKIP_SLEEP == false ]; then
-    sleep 6
-fi

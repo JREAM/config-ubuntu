@@ -4,39 +4,34 @@
 # Required FLAG for child processes to run
 export INSTALL_SCRIPT=true
 
-# Allow an install to pause a brief moment after running
-export SKIP_SLEEP=false
-
 # The base script if needed
 export BASE_SCRIPT='desktop'
 
-# 1. PATH_VARS - Temporary Environment Variables.
-# 2. USER_VARS - Temporary User Variables.
-source ./bin/_export_path_vars.sh
-source ./bin/_export_user_vars.sh
+# Exports used throughout scripts
+source ./bin/exports.sh
 
-
-echo "====================================================================="
+echo " ╔════════════════════════════════════════════════════════════════════╗ "
+echo " ║                      JREAM - Ubuntu Installer                      ║ "
+echo " ╠════════════════════════════════════════════════════════════════════╣ "
+echo " ║ Installation runs after command is entered.                        ║ "
+echo " ║ View OUTPUT.LOG when complete.                                     ║ "
+echo " ║                                                                    ║ "
+echo " ║ (q) to Quit                                      (Or press CTRL+C) ║ "
+echo " ╚════════════════════════════════════════════════════════════════════╝ "
 echo ""
-echo "                        JREAM - Ubuntu Server                        "
-echo ""
-echo " * To exit at anytime press CTRL+C"
-echo " * Installation runs after command is entered."
-echo ""
-echo "====================================================================="
-echo ""
+sleep 1
 
 while true; do
-cat <<- command_list
-    DevOps:
-    -------
-    awscli         Install AWS CLI tools
-    gcloud         Install Google Cloud CLI tools
-
+  cat <<-command_list
+    (DevOps)
+    ──────────────────────────────────────────────────────────────────────
     docker         Install Docker, Compose, Machine & bash-autocomplete
 
     ansible        Install Ansible Provisioner
     saltstack      Install Saltstack Provisioner
+
+    (Hashicorp)
+    ──────────────────────────────────────────────────────────────────────
     consul         Install Hashicorp Consul
     nomad          Install Hashicorp Nomad
     packer         Install Hashicorp Packer
@@ -45,159 +40,61 @@ cat <<- command_list
     vault          Install Hashicorp Vault
     vagrant        Install Hashicorp Vagrant
 
-    Deployment
-    ----------
-    kubernetes     Install Kubernetes (kubectl)
-                   (or use: kubtectl to install)
-    minikube       Install Minikube (local kubernetes development)
-                   (You will need virtualbox installed for minikube)
-
-    Benchmarking:
-    -------------
+    (Benchmarking):
+    ──────────────────────────────────────────────────────────────────────
     iperf          Install iperf CLI util
     sysbench       Install sysbench CLI util
     wrk2           Install wrk2 CLI util
 
-    Utilities:
-    ----------
+    (Utilities)
+    ──────────────────────────────────────────────────────────────────────
     security      Install ClamAV, RKHunter (read instructions after install)
 
-    Quit:
-    -----
+    ──────────────────────────────────────────────────────────────────────
     q             Quit (or CTRL + C)
 
 command_list
 
-echo ""
-echo "====================================================================="
-echo ""
+  echo -e "\n══════════════════════════════════════════════════════════════════════\n"
 
-read -e -p "Type a Command: " cmd
+  read -e -p "Type a Command: " cmd
 
   # Enable previous commands with arrow key
-  history -s $cmd
+  history -s "$cmd"
 
-    case $cmd in
-        awscli)
-            bash ./bin/devops/awscli.sh
-            echo ""
-            echo "====================================================================="
-            echo ""
-            ;;
-        consul)
-            bash ./bin/devops/hashicorp/consul.sh
-            echo ""
-            echo "====================================================================="
-            echo ""
-            ;;
-        docker)
-            bash ./bin/devops/docker.sh
-            echo ""
-            echo "====================================================================="
-            echo ""
-            ;;
-        gcloud)
-            bash ./bin/devops/gcloud.sh
-            echo ""
-            echo "====================================================================="
-            echo ""
-            ;;
-        iperf)
-            bash ./bin/devops/benchmark/iperf.sh
-            echo ""
-            echo "====================================================================="
-            echo ""
-            ;;
-        nomad)
-            bash ./bin/devops/hashicorp/nomad.sh
-            echo ""
-            echo "====================================================================="
-            echo ""
-            ;;
-        packer)
-            bash ./bin/devops/hashicorp/packer.sh
-            echo ""
-            echo "====================================================================="
-            echo ""
-            ;;
-        kubernetes|kubectl)
-            bash ./bin/devops/kubernetes.sh
-            echo ""
-            echo "====================================================================="
-            echo ""
-            ;;
-        minikube)
-            bash ./bin/devops/minikube.sh
-            echo ""
-            echo "====================================================================="
-            echo ""
-            ;;
-        saltstack)
-            bash ./bin/devops/saltstack.sh
-            echo ""
-            echo "====================================================================="
-            echo ""
-            ;;
-        serf)
-            bash ./bin/devops/hashicorp/serf.sh
-            echo ""
-            echo "====================================================================="
-            echo ""
-            ;;
-        saltstack)
-            bash ./bin/devops/saltstack.sh
-            echo ""
-            echo "====================================================================="
-            echo ""
-            ;;
-        security)
-            bash ./bin/security.sh
-            echo ""
-            echo "====================================================================="
-            echo ""
-            ;;
-        sysbench)
-            bash ./bin/devops/benchmark/sysbench.sh
-            echo ""
-            echo "====================================================================="
-            echo ""
-            ;;
-        terraform)
-            bash ./bin/devops/hashicorp/terraform.sh
-            echo ""
-            echo "====================================================================="
-            echo ""
-            ;;
-        vagrant)
-            bash ./bin/devops/hashicorp/vagrant.sh
-            echo ""
-            echo "====================================================================="
-            echo ""
-            ;;
-        vault)
-            bash ./bin/devops/hashicorp/vault.sh
-            echo ""
-            echo "====================================================================="
-            echo ""
-            ;;
-        wrk2)
-            bash ./bin/devops/benchmark/wrk2.sh
-            echo ""
-            echo "====================================================================="
-            echo ""
-            ;;
-        q)
-            exit 1
-            ;;
-        *)
-            echo ""
-            echo "    (!) OOPS! You typed a command that's not available."
-            echo ""
-            echo "====================================================================="
-            echo ""
-            sleep 2
+  case $cmd in
+  # @TODO ensure all the pacakges are avail double check
+  consul | nomad | packer | serf | terraform | vagrant | vault)
+    bash ./bin/devops/hashicorp.sh "$cmd"
+    ;;
+  docker)
+    bash ./bin/devops/docker.sh
+    ;;
+  iperf)
+    bash ./bin/devops/benchmark/iperf.sh
+    ;;
+  saltstack)
+    bash ./bin/devops/saltstack.sh
+    ;;
+  security)
+    bash ./bin/security.sh
+    ;;
+  sysbench)
+    bash ./bin/devops/benchmark/sysbench.sh
+    ;;
+  wrk2)
+    bash ./bin/devops/benchmark/wrk2.sh
+    ;;
+  q)
+    exit 1
+    ;;
+  *)
+    echo -e "\n    (!) OOPS! You typed a command that's not available. \n"
+    sleep 2
+    ;;
 
-    esac
+  esac
 
+  echo -e "\n══════════════════════════════════════════════════════════════════════\n"
 
 done

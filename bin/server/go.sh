@@ -1,14 +1,14 @@
 #!/bin/bash
 if [[ ! $INSTALL_SCRIPT ]]; then
-    echo "(!) Error: You must use the installer script."
-    exit
+  echo "(!) Error: You must use the installer script."
+  exit
 fi
 
 VERSION="go1.16.5.linux-amd64"
 
 if [[ -d "/usr/local/go" ]]; then
-    echo "(!) Your path /usr/local/go already exists, assuming upgrade, clearing folder! (CTRL+C to stop)"
-    sudo rm -rf /usr/local/go
+  echo "(!) Your path /usr/local/go already exists, assuming upgrade, clearing folder! (CTRL+C to stop)"
+  sudo rm -rf /usr/local/go
 fi
 
 echo "(+) Downloading Google Go: $VERSION"
@@ -25,7 +25,7 @@ echo "[+] Adding /etc/bash_completion.d/go"
 sudo curl -o /etc/bash_completion.d/go "https://raw.githubusercontent.com/kura/go-bash-completion/master/etc/bash_completion.d/go"
 
 # Now we need the USER to setup:
-cat > $HOME_PATH/golang-update-profile.txt <<- EOM
+cat >$HOME/golang-update-profile.txt <<-EOM
 
 (1) https://golang.org/doc/install
 
@@ -81,10 +81,5 @@ cd $GOPATH/src &&\
 
 EOM
 
-read -e -p  "[?] To finish, please follow the simple THREE (3) steps saved in $HOME/golang-update-profile.txt, then press
+read -e -p "[?] To finish, please follow the simple THREE (3) steps saved in $HOME/golang-update-profile.txt, then press
   ANY KEY to acknowledge this message" completed
-
-
-if [ $SKIP_SLEEP == false ]; then
-    sleep 6
-fi

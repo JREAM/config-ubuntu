@@ -1,9 +1,8 @@
 #!/bin/bash
 if [[ ! $INSTALL_SCRIPT ]]; then
-    echo "(!) Error: You must use the installer script."
-    exit
+  echo "(!) Error: You must use the installer script."
+  exit
 fi
-
 
 echo "(+) Installing Typora Markdown Editor (Cross Platform)"
 sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys BA300B7755AFCFAE
@@ -15,8 +14,3 @@ sudo apt-get install typora -y
 # sudo apt-get install -f
 
 echo "(+) Complete! It's great to sync with Google Drive/Dropbox for notes!"
-
-
-if [ $SKIP_SLEEP == false ]; then
-    sleep 4
-fi

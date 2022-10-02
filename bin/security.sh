@@ -1,7 +1,7 @@
 #!/bin/bash
 if [[ ! $INSTALL_SCRIPT ]]; then
-    echo "(!) Error: You must use the installer script."
-    exit
+  echo "(!) Error: You must use the installer script."
+  exit
 fi
 
 echo "(+) Installing RKHunter (Rootkit), ClamAV (Antivirus)"
@@ -22,8 +22,3 @@ echo "55 08 * * * sudo rkhunter --update"
 echo "-----------------------------------------------------"
 echo "To run ClamAV: $ clamscan (try --help for more, it does not auto scan)"
 echo "To run RKHunter: $ sudo rkhunter -c"
-
-if [ $SKIP_SLEEP == false ]; then
-    sleep 4
-fi
-

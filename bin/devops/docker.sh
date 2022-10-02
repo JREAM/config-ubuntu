@@ -42,7 +42,3 @@ sudo usermod -aG docker root
 echo "(+) Complete! Run with $ docker / $ docker-compose"
 echo -e "\t You may need to reload your shell to apply the new user group permissions."
 echo -e "\t Which were: sudo usermod -aG docker \$USER"
-
-if [ $SKIP_SLEEP == false ]; then
-  sleep 4
-fi

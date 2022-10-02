@@ -1,7 +1,7 @@
 #!/bin/bash
 if [[ ! $INSTALL_SCRIPT ]]; then
-    echo "(!) Error: You must use the installer script."
-    exit
+  echo "(!) Error: You must use the installer script."
+  exit
 fi
 
 echo "[+] Installing RVM (Ruby Version Manager)"
@@ -24,7 +24,3 @@ echo ""
 echo -e "\tYou should also the following: (@TODO I want to fix this, perhaps using GPG key rather than Ubuntu package they suggested)"
 echo -e "\tsudo su"
 echo -e "\Add the above line to the root users \".bashrc\" as well (or startup file)"
-echo -e "\tb) This seems od
-if [ $SKIP_SLEEP == false ]; then
-    sleep 4
-fi

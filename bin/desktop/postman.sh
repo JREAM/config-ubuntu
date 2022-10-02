@@ -1,7 +1,7 @@
 #!/bin/bash
 if [[ ! $INSTALL_SCRIPT ]]; then
-    echo "(!) Error: You must use the installer script."
-    exit
+  echo "(!) Error: You must use the installer script."
+  exit
 fi
 
 echo "(+) Downloading Postman"
@@ -17,9 +17,9 @@ if [ ! -s /usr/bin/postman ]; then
   sudo ln -s /opt/Postman/Postman /usr/bin/postman
 fi
 
-echo "(+) Creating Desktop Entry $HOME_PATH/.local/share/applications/postman.desktop"
+echo "(+) Creating Desktop Entry $HOME/.local/share/applications/postman.desktop"
 
-cat > $HOME_PATH/.local/share/applications/postman.desktop << EOF
+cat >$HOME/.local/share/applications/postman.desktop <<EOF
 [Desktop Entry]
 Version=1.0
 Name=Postman
@@ -31,7 +31,3 @@ Categories=Development;
 EOF
 
 echo "(+) Complete! Look for Postman in your application menu."
-
-if [ $SKIP_SLEEP == false ]; then
-    sleep 4
-fi

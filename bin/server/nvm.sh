@@ -15,17 +15,11 @@ else
   echo wget -qO- $URL | bash
 fi
 
-sleep 4
-
-# echo "(+) Adding to $HOME_PATH/.nvm"
-# sudo chown -R $USER:$USER $HOME_PATH/.nvm
+# echo "(+) Adding to $HOME/.nvm"
+# sudo chown -R $USER:$USER $HOME/.nvm
 
 # echo "(+) Complete! Run with $ nvm ls-remote"
 # echo "If not using my dotfiles ensure this is in .bashrc:"
 # echo ""
 # echo '    export NVM_DIR="$HOME/.nvm"'
 # echo '    [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"'
-
-# if [ $SKIP_SLEEP == false ]; then
-#   sleep 4
-# fi
