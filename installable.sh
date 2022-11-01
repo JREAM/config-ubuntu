@@ -56,7 +56,7 @@ while true; do
     ──────────────────────────────────────────────────────────────────────
     php             FPM Only: 7.0-4, 8.0-2 (Select Version) *in progress*
     lua             *in progress*
-    golang          *in progress*
+    go              1.19.2
     rust            *in progress*
 
     (Database Support)
@@ -163,6 +163,9 @@ command_list
   # Code Editors
   vscode | vscode-insiders | sublime-text | vim)
     bash ./bin/code-editors.sh "$cmd"
+    ;;
+  go | golang)
+    bash ./bin/language-support/go.sh
     ;;
   util)
     bash ./bin/util.sh
