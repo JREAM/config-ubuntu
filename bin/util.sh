@@ -1,7 +1,15 @@
 #!/bin/bash
+# Variables/Logging
+source $PWD/bin/_exports.sh
+FILE=$(basename "$0")
+
 if [[ ! $INSTALL_SCRIPT ]]; then
-  echo "(!) Error: You must use the installer script."
-  exit
+  error "Error: You must use the installer script."; exit
+fi
+
+# Argument Required for File
+if [ -z "$1" ]; then
+  error "Developer Error! Missing Argument for $FILE"; exit
 fi
 
 # Add fix for Nautlus Glitch
@@ -71,12 +79,12 @@ fi
 cp "$REPO_FILES_PATH/gh_complete.sh" "$HOME/.bash/"
 sudo chown $USER:$USER "$HOME/.bash/gh_complete.sh"
 
-echo "(+) Completed install utilities."
-echo ""
-echo "    If you'd like git-extras autocomplete installed,"
-echo "    add this to your ~/.bashrc file:"
-echo ""
-echo 'if [ -f "$HOME/.bash/gh_complete.sh" ]; then'
-echo '   source "$HOME/.bash/gh_complete.sh"'
-echo 'fi'
-echo ""
+success "(+) Completed install utilities."
+success ""
+success "    If you'd like git-extras autocomplete installed,"
+success "    add this to your ~/.bashrc file:"
+success ""
+success 'if [ -f "$HOME/.bash/gh_complete.sh" ]; then'
+success '   source "$HOME/.bash/gh_complete.sh"'
+success 'fi'
+success ""

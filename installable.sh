@@ -39,10 +39,10 @@ while true; do
 
     (Browsers)
     ──────────────────────────────────────────────────────────────────────
-    Brave           Install Brave Browser
-    Chrome          Install Google Chrome Browser
-    Firefox         Install Firefox Browser (Default: In Ubuntu)
-    Vivaldi         Install Vivaldi Browser
+    brave           Install Brave Browser
+    chrome          Install Google Chrome Browser
+    firefox         Install Firefox Browser (Default: In Ubuntu)
+    vivaldi         Install Vivaldi Browser
 
     (Code Editors)
     ──────────────────────────────────────────────────────────────────────
@@ -54,10 +54,11 @@ while true; do
 
     (Language Support)
     ──────────────────────────────────────────────────────────────────────
-    php             FPM Only: 7.0-4, 8.0-2 (Select Version) *in progress*
+    php             # WIP # FPM Only: 7.0-4, 8.0-2 (Select Version) *in progress*
     lua             *in progress*
-    go              1.19.2
-    rust            *in progress*
+    go              1.22.6
+    java            (Default JRE/JDK)
+    rust            Run the Rust installer
 
     (Database Support)
     ──────────────────────────────────────────────────────────────────────
@@ -65,6 +66,7 @@ while true; do
     mongo             Install Mongo Community Edition
     postgres          Install Postgres SQL
     redis             Install Redis Server In  Memory Database
+    pgadmin           Install PostgresAdmin (APT)
 
     (Webserver Support)
     ──────────────────────────────────────────────────────────────────────
@@ -146,7 +148,7 @@ command_list
     bash ./bin/browsers.sh "$cmd"
     ;;
   # Gui tools
-  dropbox | flux | gnome-tweak | guake | mysql-workbench | mysqlwb | postman | beekeeper | flameshot | kazam)
+  dropbox | flux | gnome-tweak | guake | pgadmin | mysql-workbench | mysqlwb | postman | beekeeper | flameshot | kazam)
     bash ./bin/gui-tools.sh "$cmd"
     ;;
   security)
@@ -167,6 +169,18 @@ command_list
   go | golang)
     bash ./bin/language-support/go.sh
     ;;
+  lua)
+    bash ./bin/language-support/lua.sh
+    ;;
+  rust)
+    bash ./bin/language-support/rust.sh
+    ;;
+  java)
+    bash ./bin/language-support/java.sh
+    ;;
+  # php)
+  #   bash ./bin/language-support/php.sh
+  #   ;;
   util)
     bash ./bin/util.sh
     ;;
@@ -179,7 +193,7 @@ command_list
     ;;
   # Benchmarks
   iperf | sysbench | wrk2)
-    bash ./bin/benchmarks.sh "$cmd"
+    bash ./bin/benchmarks.sh $cmd
     ;;
   # Provisioners
   ansible | saltstack | puppet)

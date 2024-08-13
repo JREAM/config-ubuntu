@@ -1,14 +1,16 @@
 #!/bin/bash
+# Variables/Logging
+source $PWD/bin/_exports.sh
+FILE=$(basename "$0")
+
 if [[ ! $INSTALL_SCRIPT ]]; then
-  echo "(!) Error: You must use the installer script."
-  exit
+  error "Error: You must use the installer script."; exit
 fi
 
-source _exports.sh
-
-if [ ! -z $1 ]; then
-  error "Developer Error! Missing Argument for hashicorp.sh"
-  return 0
+# Argument Required for File
+if [ -z "$1" ]; then
+  error "Developer Error! Missing Argument for $FILE"
+  exit
 fi
 
 function check_apt_list() {
@@ -32,15 +34,15 @@ PROGRAM=$1
 case $PROGRAM in
 boundary)
   sudo apt install -y boundary
-  log "Installed Hashicorp Nomad; $ boundary"
+  log "Installed Hashicorp Boundary; $ boundary"
   ;;
 consul)
   sudo apt install -y consul
-  log "Installed Hashicorp Nomad; $ consul"
+  log "Installed Hashicorp Consul; $ consul" sucess
   ;;
 nomad)
   sudo apt install -y nomad
-  log "Installed Hashicorp Nomad; $ nomad"
+  log "Installed Hashicorp Nomad; $ nomad" sucess
   ;;
 packer)
   sudo apt install -y packer
@@ -51,24 +53,24 @@ serf)
   if [ -x /usr/bin/serf ]; then
     log "Package: /usr/bin/serf installed. ( $ serf )"
   else
-    log "Package: /usr/bin/serf not found, problem installing"
+    log "Package: /usr/bin/serf not found, problem installing" error
   fi
   ;;
 terraform)
   sudo apt install -y terraform
-  log "Installed Hashicorp Terraform; $ terraform"
+  log "Installed Hashicorp Terraform; $ terraform" success
   ;;
 vagrant)
   sudo apt install -y vagrant
-  log "Installed Hashicorp Vagrant; $ vagrant"
+  log "Installed Hashicorp Vagrant; $ vagrant" success
   ;;
 vault)
   sudo apt install -y vault
-  log "Installed Hashicorp Vault; $ vault"
+  log "Installed Hashicorp Vault; $ vault" success
   ;;
 waypoint)
   sudo apt install -y waypoint
-  log "Installed Hashicorp Vault; $ waypoint"
+  log "Installed Hashicorp Vault; $ waypoint" success
   ;;
 *)
   error "Developer Error! Invalid \$program for hashicorp.sh"

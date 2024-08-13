@@ -1,21 +1,16 @@
 #!/bin/bash
-# @depends php-composer.sh
+# Variables/Logging
+source $PWD/bin/_exports.sh
+FILE=$(basename "$0")
+
 if [[ ! $INSTALL_SCRIPT ]]; then
-  echo "(!) Error: You must use the installer script."
-  exit
-fi
-
-source _exports.sh
-
-if [ -n "$1" ]; then
-  error "Developer Error! Missing Argument for php.sh"
-  return 0
+  error "Error: You must use the installer script."; exit
 fi
 
 function check_apt_list() {
 
   if [ -f /etc/apt/sources.list.d/ondrej-ubuntu-php-jammy.list ]; then
-    echo -e "[+] Found: /etc/apt/sources.list.d/ondrej-ubuntu-php-jammy.list -- continuing."
+    info "[+] Found: /etc/apt/sources.list.d/ondrej-ubuntu-php-jammy.list -- continuing."
     return 0
   fi
 
@@ -25,9 +20,6 @@ function check_apt_list() {
 }
 
 check_apt_list
-
-# PHP Version to install
-PROGRAM=$1
 
 VALID=(
   7.1
@@ -80,6 +72,8 @@ MODULES=(
   yaml
   zip
 )
+
+## NOT READY
 
 for
 

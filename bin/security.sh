@@ -1,24 +1,27 @@
 #!/bin/bash
+# Variables/Logging
+source $PWD/bin/_exports.sh
+FILE=$(basename "$0")
+
 if [[ ! $INSTALL_SCRIPT ]]; then
-  echo "(!) Error: You must use the installer script."
-  exit
+  error "Error: You must use the installer script."; exit
 fi
 
-echo "(+) Installing RKHunter (Rootkit), ClamAV (Antivirus)"
+info "(+) Installing RKHunter (Rootkit), ClamAV (Antivirus)"
 sudo apt-get install -y rkhunter clamav
 
-echo "(+) Updating ClamAV Defintions"
+info "(+) Updating ClamAV Defintions"
 sudo freshclam
 
-echo "(+) Updating RKHunter Definitions"
+info "(+) Updating RKHunter Definitions"
 sudo rkhunter --update
 
-echo "(+) Complete! ClamAV (AntiVirus) installed."
-echo "To have ClamAV Definition updates periodically, set:"
-echo "----------------------------------------------------"
-echo "$ sudo crontab -e"
-echo "55 08 * * * freshclam"
-echo "55 08 * * * sudo rkhunter --update"
-echo "-----------------------------------------------------"
-echo "To run ClamAV: $ clamscan (try --help for more, it does not auto scan)"
-echo "To run RKHunter: $ sudo rkhunter -c"
+info "(+) Complete! ClamAV (AntiVirus) installed."
+info "To have ClamAV Definition updates periodically, set:"
+info "----------------------------------------------------"
+info "$ sudo crontab -e"
+info "55 08 * * * freshclam"
+info "55 08 * * * sudo rkhunter --update"
+info "-----------------------------------------------------"
+info "To run ClamAV: $ clamscan (try --help for more, it does not auto scan)"
+info "To run RKHunter: $ sudo rkhunter -c"

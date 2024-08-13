@@ -1,13 +1,16 @@
 #!/bin/bash
+# Variables/Logging
+source $PWD/bin/_exports.sh
+FILE=$(basename "$0")
+
 if [[ ! $INSTALL_SCRIPT ]]; then
-  echo "(!) Error: You must use the installer script."
-  exit
+  error "Error: You must use the installer script."; exit
 fi
 
-echo "Getting the Build tools"
+info "Getting the Build tools"
 sudo apt install build-essential libreadline-dev
 
-echo "Compiling lua"
+info "Compiling lua"
 cd ~ && mkdir lua_build &&
   cd lua_build &&
   curl -R -O http://www.lua.org/ftp/lua-5.3.4.tar.gz &&
@@ -18,8 +21,6 @@ cd ~ && mkdir lua_build &&
 
 rm ../lua-5.3.4.tar.gz
 
-echo ""
-echo "[+] Finished, ensure there were no errors."
-echo "    Try typing: $ lua"
-echo ""
-echo "You may also delete the $HOME/lua_build folder."
+success "[+] Finished, ensure there were no errors."
+success "    Try typing: $ lua"
+success  "You may also delete the $HOME/lua_build folder."

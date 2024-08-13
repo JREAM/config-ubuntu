@@ -1,14 +1,18 @@
 #!/bin/bash
+# Variables/Logging
+source $PWD/bin/_exports.sh
+FILE=$(basename "$0")
+
 if [[ ! $INSTALL_SCRIPT ]]; then
-  echo "(!) Error: You must use the installer script."
-  exit
+  error "Error: You must use the installer script."; exit
 fi
 
-if [ -n "$1" ]; then
-  error "Developer Error! Missing Argument for databases.sh"
-  return 0
+# Argument Required for File
+if [ -z "$1" ]; then
+  error "Developer Error! Missing Argument for $FILE"; exit
 fi
 
+# Program to install
 PROGRAM=$1
 
 case $PROGRAM in
@@ -20,8 +24,8 @@ mysql)
     log "(1) sudo mysql" info
     log "(2) mysql> ALTER USER 'root'@'localhost' IDENTIFIED WITH caching_sha2_password BY 'YOUR_PASSWORD';" info
     log "Enable Poor Query Logging:" info
-    log "(1) sudo sed -i '/log_slow_queries/s/#//g' /etc/mysql/mysql.conf.d/mysqld.cnf"
-    log "(2) sudo sed -i '/long_query_time/s/#//g' /etc/mysql/mysql.conf.d/mysqld.cnf"
+    log "(1) sudo sed -i '/log_slow_queries/s/#//g' /etc/mysql/mysql.conf.d/mysqld.cnf" info
+    log "(2) sudo sed -i '/long_query_time/s/#//g' /etc/mysql/mysql.conf.d/mysqld.cnf" info
   else
     log "Package: MySQL had an installation error." error
   fi
@@ -44,9 +48,9 @@ mongo)
   # wget -qO - https://www.mongodb.org/static/pgp/server-6.0.asc | gpg --dearmor | sudo tee /usr/share/keyrings/mongodb-org-6.0.gpg | > /dev/null 2&1
   # sudo apt install -y mongodb
   if [ -x /usr/bin/mongod ]; then
-    log "PackageL Mongod installed. ( $ mongo )"
+    log "PackageL Mongod installed. ( $ mongo )" success
   else
-    log "Package: Mongod had an installation error."
+    log "Package: Mongod had an installation error." error
   fi
   ;;
 postgres)
@@ -59,6 +63,6 @@ postgres)
   fi
   ;;
 *)
-  log "Database: $PROGRAM is not a valid choice in install"
+  error "Developer Error! Invalid \$program for $FILE"
   ;;
 esac

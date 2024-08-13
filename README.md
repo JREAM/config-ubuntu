@@ -1,48 +1,27 @@
 # Config Ubuntu
 
-This is being simplied and rewrtten for Ubuntu Jammy.
-You can look at old tags or commits for the old documents and files.
+A Bash utility for installing various programs.
+Feel free to clone and customize or copy to get ideas of your own.
 
-There are better approaches to install scripts such as writing your own in one file for a one time automation.
-You could use a docker ubuntu jammy container to continually retest your setup if you went that route. This little toolkit
-is just for fun.
+There are probably better approaches to installer scripts such as provisions but sometimes those are a bit tedious. It's also a bit fun to use pure `bash` to write something custom.
 
-I am aware of the many Node, Go, Python, and so on CLI helper tools but I don't want to use helpers or frameworks for every
-single thing I write. Especially on non-critical projects. This is just a little "break" piece of code for me to get my mind
-of the mundane stuff sometimes. Not that I'm boasting of any impressive skill here,  it's just nice to tinker here and there.
-
-I know you can use Docker to install containerized version as well but my goal is not to do this. I don't think you should
-use docker for everything, especially for someone who just wants a simple setup on they linux box. Containerization will come
-in time for them. You can fork this and make it better if you find it useful.
-
-I'll update this to some better bash features when its there, shorten some scripts, and make it simpler.
-Sometimes I post to a little blog on [JREAM](https://jream.com) if you are interested in nerd lingo.
-
-- @TODO
-  - webservers - to combine apache/nginx (maybe
-  - php - to combine any php version
-  - hashicorp - combined all packages w/APT key they now have (Just Test It)
-  - log file results in `OUTPUT.LOG` so it all doesn't go missing on the screen
-  - add some colors
-  - Missing server.sh, redo it
-  - Combine into one menu, not separate files, ./install.sh or similar
-  - Dont forget to use exports.sh
-  - Would like to use a Pager or something for the long list, not sure yet
-## Changes
-
-- Code Reduction 50% or greater
-- Simpler File Structure
-- One Entry Point `./installable.sh`
-- categories:
-  - benchmarks
-  - code-editors
-  - databases
-  - gui-tools
-  - hashicorp
-  - provisioners
-  - util
-  - version-managers
-  - webservers
+![Screenshot](https://private-user-images.githubusercontent.com/145959/357254178-ade79ed6-f094-4340-82e7-7bfc85111858.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MjM1MTU0ODIsIm5iZiI6MTcyMzUxNTE4MiwicGF0aCI6Ii8xNDU5NTkvMzU3MjU0MTc4LWFkZTc5ZWQ2LWYwOTQtNDM0MC04MmU3LTdiZmM4NTExMTg1OC5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjQwODEzJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI0MDgxM1QwMjEzMDJaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT0xMWJjOTY3NGU3ZmViNTIxOGFiYzFjOGM3MzYyYjAxZDkzMmNkYWEzMWIyZWYzZGRmMWY1NTBiMzQyYzRlZmVjJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZhY3Rvcl9pZD0wJmtleV9pZD0wJnJlcG9faWQ9MCJ9.gBWz3dqOEtYMcZZmBkMR7Tdzy_M4aTKa9t6dYIGT6ds)
 
 
-- Jesse
+## File Setup
+
+This is a brief explanation of the file setup if you choose to clone or get ideas for your own utility script.
+
+> HELPFUL: Think of the `./bin` scripts as containers to customize your preferred way of installing a package or category of pacakges.
+
+- **File Structure**
+- `./installable.sh` - Entrypoint; Lists all installable items which are only defined in this file.
+  - Above triggers a file in `./bin/*.sh`, it will first `source _export.sh` for color variables and log functions for the installer output.
+  - Next, the respective file, optionally with an `$1` argument is loaded into a `./bin/<file-here>.sh` to execute the installer.
+
+It should be pretty simple!
+
+---
+MIT Open Source
+
+&copy; 2014 [JREAM](https://jream.com)

@@ -1,12 +1,16 @@
 #!/bin/bash
+# Variables/Logging
+source $PWD/bin/_exports.sh
+FILE=$(basename "$0")
+
 if [[ ! $INSTALL_SCRIPT ]]; then
-  echo "(!) Error: You must use the installer script."
-  exit
+  error "Error: You must use the installer script."; exit
 fi
 
-if [ ! -z $1 ]; then
-  error "Developer Error! Missing Argument for hashicorp.sh"
-  return 0
+# Argument Required for File
+if [ -z "$1" ]; then
+  error "Developer Error! Missing Argument for $FILE"
+  exit
 fi
 
 # Program to install
@@ -63,6 +67,6 @@ vim)
   log "Package: Vim + Vundle installed" succe
   ;;
 *)
-  error "Developer Error! Invalid \$program"
+  error "Developer Error! Invalid \$program for $FILE"
   ;;
 esac

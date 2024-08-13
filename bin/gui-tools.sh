@@ -1,27 +1,36 @@
 #!/bin/bash
+# Variables/Logging
+source $PWD/bin/_exports.sh
+FILE=$(basename "$0")
+
 if [[ ! $INSTALL_SCRIPT ]]; then
-  echo "(!) Error: You must use the installer script."
+  error "Error: You must use the installer script."; exit
+fi
+
+# Argument Required for File
+if [ -z "$1" ]; then
+  error "Developer Error! Missing Argument for $FILE"
   exit
 fi
 
-source _exports.sh
-
-if [ ! -z $1 ]; then
-  error "Developer Error! Missing Argument"
-  return 0
-fi
-
-# Hashicorp Program to install
+# Program to install
 PROGRAM=$1
 
 case $PROGRAM in
 dropbox)
   cd ~
   wget -O - "https://www.dropbox.com/download?plat=lnx.x86_64" | tar xzf -
-  sudo chown -R $USER:$USER ~/.dropbox
-  sudo chown -R $USER:$USER ~/Dropbox
+  sudo chown -R "$USER":"$USER" ~/.dropbox
+  sudo chown -R "$USER":"$USER" ~/Dropbox
   ~/.dropbox-dist/dropboxd
   log "Installed DropBox; You must authenticate from Gnome." success
+  ;;
+pgadmin)
+  cd ~
+  curl -fsS https://www.pgadmin.org/static/packages_pgadmin_org.pub | sudo gpg --dearmor -o /usr/share/keyrings/packages-pgadmin-org.gpg
+  sudo sh -c 'echo "deb [signed-by=/usr/share/keyrings/packages-pgadmin-org.gpg] https://ftp.postgresql.org/pub/pgadmin/pgadmin4/apt/$(lsb_release -cs) pgadmin4 main" > /etc/apt/sources.list.d/pgadmin4.list && apt update'
+  sudo apt install -y pgadmin4
+  log "Installed Pgadmin Web/Desktop Client." success
   ;;
 flameshot)
   sudo apt install -y flameshot

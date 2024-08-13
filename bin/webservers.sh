@@ -1,17 +1,19 @@
 #!/bin/bash
+# Variables/Logging
+source $PWD/bin/_exports.sh
+FILE=$(basename "$0")
+
 if [[ ! $INSTALL_SCRIPT ]]; then
-  echo "(!) Error: You must use the installer script."
-  exit
+  error "Error: You must use the installer script."; exit
 fi
 
-source _exports.sh
-
-if [ ! -z $1 ]; then
-  error "Developer Error! Missing Argument for php.sh"
-  return 0
+# Argument Required for File
+if [ -z "$1" ]; then
+  error "Developer Error! Missing Argument for $FILE"; exit
 fi
 
-PROGRAM=#1
+# Program to install
+PROGRAM=$1
 
 case $PROGRAM in
 apache)
@@ -45,6 +47,6 @@ caddy)
   sudo apt update && sudo apt install -y caddy
   ;;
 *)
-  error "Developer Error! Invalid \$program for webservers.sh"
+  error "Developer Error! Invalid \$program for $FILE"
   ;;
 esac

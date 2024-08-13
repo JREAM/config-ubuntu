@@ -33,29 +33,30 @@ fi
 # ──────────────────────────────────────────────────────────────────────
 # Since this is internal only I won't worry about checki
 function success() {
-  if [ -z "$1" ]; then echo "{$__RED}[X]{$__RESET} Developer Error! Missing argument."; fi
-  MSG="{$__GREEN}[+]{$__RESET} $1"
-  echo -e $MSG
-  [ "$2" == 'log' ] && log $MSG
+  if [ -z "$1" ]; then echo "$__RED(!)$__RESET Developer Error! Missing argument."; fi
+  MSG="$__GREEN(+)$__RESET $1"
+  echo -e "$MSG"
+  [ "$2" == "log" ] && log "$MSG"
 }
 
 function info() {
-  if [ -z "$1" ]; then echo "{$__RED}[X]{$__RESET} Developer Error! Missing argument."; fi
-  MSG="{$__BLUE}[+]{$__RESET} $1"
-  echo -e $MSG
-  [ "$2" == 'log' ] && log $MSG
+  if [ -z "$1" ]; then echo "$__RED(!)$__RESET Developer Error! Missing argument."; fi
+  MSG="$__BLUE(+)$__RESET $1"
+  echo -e "$MSG"
+  [ "$2" == "log" ] && log "$MSG"
 }
 
 function warn() {
-  if [ -z "$1" ]; then echo "{$__RED}[X]{$__RESET} Developer Error! Missing argument."; fi
-  MSG="{$__YELLOW}[!]{$__RESET} $1"
-  echo -e $MSG
-  [ "$2" == 'log' ] && log $MSG
+  if [ -z "$1" ]; then echo "$__RED(!)$__RESET Developer Error! Missing argument."; fi
+  MSG="$__YELLOW(!)$__RESET $1"
+  echo -e "$MSG"
+  [ "$2" == "log" ] && log "$MSG"
 }
 
 function error() {
-  if [ -z "$1" ]; then echo "{$__RED}[X]{$__RESET} Developer Error! Missing argument."; fi
-  echo -e "{$__RED}[X]{$__RESET} $1"
+  if [ -z "$1" ]; then echo "$__RED(!)$__RESET Developer Error! Missing argument."; fi
+  echo -e " $__RED(!)$__RESET $1"
+  [ "$2" == "log" ] && log "$MSG"
 }
 
 function log() {
@@ -63,12 +64,12 @@ function log() {
   local MSG=$1
 
   if [ -z "$TYPE" ]; then
-    echo -e "{$__RED}[X]{$__RESET} Developer Error! Missing argument for: log <\$TYPE: info|warn|error|success>."
+    echo -e "$__RED(!)$__RESET Developer Error! Missing argument for: log <\$TYPE: info|warn|error|success>."
     return 0
   fi
 
   if [ -z "$MSG" ]; then
-    echo -e "{$__RED}[X]{$__RESET} Developer Error! Missing argument for: log $TYPE <\$MSG: message content>."
+    echo -e "$__RED(!)$__RESET Developer Error! Missing argument for: log $TYPE <\$MSG: message content>."
     return 0
   fi
 
@@ -87,7 +88,7 @@ function log() {
     STDOUT="{$__GREEN}[good]{$__RESET} $MSG"
     ;;
   *)
-    echo -e "{$__RED}[X]{$__RESET} Developer Error! Using invalid parameter for: log <\$TYPE: info|warn|error|success>."
+    echo -e "$__RED(!)$__RESET Developer Error! Using invalid parameter for: log <\$TYPE: info|warn|error|success>."
     return 0
     ;;
   esac
