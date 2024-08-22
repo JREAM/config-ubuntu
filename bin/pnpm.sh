@@ -27,5 +27,12 @@ info -e "[+] You can install everything with $ pn / $ pnpm i -g rather than npm 
 
 
 
+info "[+] Installing Bun (NodeJS Runtime)"
+curl -fsSL https://bun.sh/install | bash
 
+warn "[+] Make to sure update your ~/.bashrc related file to include Bun in the \$PATH"
+
+info "\n # Example:"
+info "\n export BUN_INSTALL=\"\$HOME/.bun\""
+info "\n export PATH=\$BUN_INSTALL/bin:\$PATH"
 
