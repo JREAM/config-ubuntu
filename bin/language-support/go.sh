@@ -7,7 +7,7 @@ if [[ ! $INSTALL_SCRIPT ]]; then
   error "Error: You must use the installer script."; exit
 fi
 
-VERSION="go1.22.6.linux-amd64"
+VERSION="go1.24.1.linux-amd64"
 
 if [[ -d "/usr/local/go" ]]; then
   warn "(!) Your path /usr/local/go already exists, assuming upgrade, clearing folder! (CTRL+C to stop)"
