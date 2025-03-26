@@ -63,8 +63,8 @@ sublimetext)
 vim)
   # @TODO i prefer this in XDG paths.
   sudo apt-get install -y vim
-  [ ! -d ~/.vim/bundle/Vundle.vim ] && git clone https://github.com/gmarik/Vundle.vim.git $HOME/.vim/bundle/Vundle.vim
-  log "Package: Vim + Vundle installed" succe
+  curl -fLo $XDG_CONFIG_HOME/vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  log "Package: Vim + Plugged" success
   ;;
 *)
   error "Developer Error! Invalid \$program for $FILE"
